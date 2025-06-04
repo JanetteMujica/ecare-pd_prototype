@@ -1,0 +1,23 @@
+@import './styles/fonts.css';
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: 'Filson Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Add custom CSS classes for better accessibility */
+.border-3 {
+	border-width: 3px;
+}
+
+/* Ensure proper focus indicators */
+button:focus {
+	outline: none;
+}
