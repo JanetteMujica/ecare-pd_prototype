@@ -84,8 +84,8 @@ const CircularProcess = ({ onFeatureClick }) => {
 							const circleRadius = 70; // Circle radius (matches SVG)
 
 							// FIXED: More distance for left/right cards, less for top/bottom
-							const horizontalCardDistance = 220; // FIXED: More space for Resources & Tracking
-							const verticalCardDistance = 140; // FIXED: Optimal space for Goals & Journey
+							const horizontalCardDistance = 240; // FIXED: More space for Resources & Tracking
+							const verticalCardDistance = 160; // FIXED: Optimal space for Goals & Journey
 
 							// Determine if this is a horizontal or vertical position
 							const isHorizontal = index === 1 || index === 3; // Tracking (0°) or Resources (180°)
