@@ -1,0 +1,102 @@
+ecare-pd_prototype
+├─ .gitignore
+├─ docs
+├─ package-lock.json
+├─ package.json
+├─ project-hierarchy.txt
+├─ public
+│  ├─ favicon.ico
+│  ├─ index.html
+│  ├─ manifest.json
+│  └─ robots.txt
+├─ README.md
+└─ src
+   ├─ App.css
+   ├─ App.js
+   ├─ assets
+   │  ├─ fonts
+   │  │  ├─ FilsonProBlack.otf
+   │  │  ├─ FilsonProBlackItalic.otf
+   │  │  ├─ FilsonProBold.otf
+   │  │  ├─ FilsonProBoldItalic.otf
+   │  │  ├─ FilsonProBook.otf
+   │  │  ├─ FilsonProBookItalic.otf
+   │  │  ├─ FilsonProHeavy.otf
+   │  │  ├─ FilsonProHeavyItalic.otf
+   │  │  ├─ FilsonProLight.otf
+   │  │  ├─ FilsonProLightItalic.otf
+   │  │  ├─ FilsonProMedium.otf
+   │  │  ├─ FilsonProMediumItalic.otf
+   │  │  ├─ FilsonProRegular.otf
+   │  │  ├─ FilsonProRegularItalic.otf
+   │  │  ├─ FilsonProThin.otf
+   │  │  └─ FilsonProThinItalic.otf
+   │  ├─ icons
+   │  └─ images
+   │     ├─ cafy_logo.svg
+   │     └─ eCarePD_logo.svg
+   ├─ components
+   │  ├─ features
+   │  │  └─ CircularProcess
+   │  │     ├─ CircularProcess.js
+   │  │     ├─ CircularProcess.module.css
+   │  │     └─ index.js
+   │  ├─ layout
+   │  │  ├─ AppLayout
+   │  │  │  ├─ AppLayout.js
+   │  │  │  ├─ AppLayout.module.css
+   │  │  │  └─ index.js
+   │  │  └─ Navigation
+   │  │     ├─ index.js
+   │  │     ├─ Navigation.js
+   │  │     └─ Navigation.module.css
+   │  └─ ui
+   │     ├─ Button
+   │     │  ├─ Button.js
+   │     │  ├─ Button.module.css
+   │     │  └─ index.js
+   │     ├─ FeatureCard
+   │     │  ├─ FeatureCard.js
+   │     │  ├─ FeatureCard.module.css
+   │     │  └─ index.js
+   │     └─ Logo
+   │        ├─ index.js
+   │        ├─ LogoPlaceholder.js
+   │        └─ LogoPlaceholder.module.css
+   ├─ constants
+   │  ├─ colors.js
+   │  └─ features.js
+   ├─ hooks
+   ├─ index.css
+   ├─ index.js
+   ├─ pages
+   │  ├─ CafyIntroPage
+   │  │  ├─ CafyIntroPage.js
+   │  │  ├─ CafyIntroPage.module.css
+   │  │  └─ index.js
+   │  ├─ GoalsPage
+   │  │  ├─ GoalsPage.js
+   │  │  └─ index.js
+   │  ├─ JourneyPage
+   │  │  ├─ index.js
+   │  │  └─ JourneyPage.js
+   │  ├─ PlaceholderPage
+   │  │  ├─ index.js
+   │  │  ├─ PlaceholderPage.js
+   │  │  └─ PlaceholderPage.module.css
+   │  ├─ RessourcesPage
+   │  │  ├─ index.js
+   │  │  └─ RessourcesPage.js
+   │  ├─ TrackingPage
+   │  │  ├─ index.js
+   │  │  └─ TrackingPage.js
+   │  └─ WelcomePage
+   │     ├─ index.js
+   │     ├─ WelcomePage.js
+   │     └─ WelcomePage.module.css
+   ├─ styles
+   │  ├─ accessibility.css
+   │  ├─ fonts.css
+   │  ├─ global.css
+   │  └─ variables.css
+   └─ utils

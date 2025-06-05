@@ -1,0 +1,213 @@
+/* Logo Placeholder Styles - FIXED with eCare logo dark blue background */
+.placeholder {
+	background-color: #e5e7eb;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 2px dashed #9ca3af;
+	transition: all 0.2s ease;
+}
+
+.placeholder:hover {
+	background-color: #d1d5db;
+	border-color: #6b7280;
+}
+
+/* Real Logo Container - FIXED: Simplified, no background for eCare */
+.logoContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.2s ease;
+	/* All logos use clean presentation without background */
+}
+
+/* REMOVED: eCare-specific background styling - now handled by parent container */
+
+.logoImage {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	transition: all 0.2s ease;
+}
+
+/* FIXED: Keep original logo colors - no filter */
+.logoContainer.ecare .logoImage {
+	/* No filter - keep original logo colors */
+}
+
+.logoImage:hover {
+	transform: scale(1.05);
+}
+
+/* Shapes */
+.rectangular {
+	border-radius: 0.5rem;
+}
+
+/* FIXED: eCare logo container overrides border radius */
+.logoContainer.ecare.rectangular {
+	border-radius: 0.75rem; /* Slightly more rounded for the container */
+}
+
+.circular {
+	border-radius: 50%;
+}
+
+/* FIXED: Enhanced sizes with larger options */
+.small {
+	width: 3rem;
+	height: 3rem;
+}
+
+.medium {
+	width: 5rem; /* Increased from 4rem */
+	height: 5rem;
+}
+
+.large {
+	width: 7rem; /* Increased from 5rem */
+	height: 7rem;
+}
+
+.xlarge {
+	width: 9rem; /* Increased from 6rem */
+	height: 9rem;
+}
+
+/* FIXED: Add even larger size option */
+.xxlarge {
+	width: 12rem;
+	height: 12rem;
+}
+
+/* Text for placeholders */
+.text {
+	color: #6b7280;
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: 500;
+	font-size: 0.75rem;
+	text-align: center;
+	line-height: 1.2;
+	padding: 0.25rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+	.text {
+		font-size: 0.625rem;
+	}
+}
+
+/* FIXED: Rectangular specific sizing */
+.rectangular.small {
+	width: 4rem;
+	height: 3rem;
+}
+
+.rectangular.medium {
+	width: 6rem; /* Increased */
+	height: 4.5rem; /* Increased */
+}
+
+.rectangular.large {
+	width: 8rem; /* Increased */
+	height: 6rem; /* Increased */
+}
+
+.rectangular.xlarge {
+	width: 10rem; /* Increased */
+	height: 7.5rem; /* Increased */
+}
+
+.rectangular.xxlarge {
+	width: 14rem;
+	height: 10rem;
+}
+
+/* FIXED: Tablet responsiveness */
+@media (min-width: 768px) and (max-width: 1023px) {
+	.medium {
+		width: 6rem;
+		height: 6rem;
+	}
+
+	.large {
+		width: 8rem;
+		height: 8rem;
+	}
+
+	.xlarge {
+		width: 10rem;
+		height: 10rem;
+	}
+}
+
+/* FIXED: Desktop responsiveness */
+@media (min-width: 1024px) {
+	.medium {
+		width: 6rem;
+		height: 6rem;
+	}
+
+	.large {
+		width: 9rem;
+		height: 9rem;
+	}
+
+	.xlarge {
+		width: 11rem;
+		height: 11rem;
+	}
+
+	.xxlarge {
+		width: 14rem;
+		height: 14rem;
+	}
+}
+
+/* FIXED: Large screen adjustments */
+@media (min-width: 1280px) {
+	.large {
+		width: 10rem;
+		height: 10rem;
+	}
+
+	.xlarge {
+		width: 13rem;
+		height: 13rem;
+	}
+
+	.xxlarge {
+		width: 16rem;
+		height: 16rem;
+	}
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+	.placeholder {
+		border-style: solid;
+		border-width: 2px;
+	}
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+	.logoImage,
+	.placeholder,
+	.logoContainer {
+		transition: none;
+	}
+
+	.logoImage:hover {
+		transform: none;
+	}
+}
+
+/* Print styles */
+@media print {
+	.logoImage {
+		filter: grayscale(100%);
+	}
+}

@@ -1,18 +1,170 @@
-/* Add this when you have your Filson fonts */
+/* Filson Pro Font Family - Fixed paths for React */
+
+/* Regular weight */
 @font-face {
 	font-family: 'Filson Pro';
-	src: url('../assets/fonts/FilsonPro-Regular.woff2') format('woff2');
-	font-weight: normal;
+	src: url('../assets/fonts/FilsonProRegular.otf') format('opentype');
+	font-weight: 400;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
 	font-family: 'Filson Pro';
-	src: url('../assets/fonts/FilsonPro-Bold.woff2') format('woff2');
-	font-weight: bold;
-	font-style: normal;
+	src: url('../assets/fonts/FilsonProRegularItalic.otf') format('opentype');
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
 }
 
+/* Medium weight */
+@font-face {
+	font-family: 'Filson Pro';
+	src: url('../assets/fonts/FilsonProMedium.otf') format('opentype');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Filson Pro';
+	src: url('../assets/fonts/FilsonProMediumItalic.otf') format('opentype');
+	font-weight: 500;
+	font-style: italic;
+	font-display: swap;
+}
+
+/* Bold weight */
+@font-face {
+	font-family: 'Filson Pro';
+	src: url('../assets/fonts/FilsonProBold.otf') format('opentype');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Filson Pro';
+	src: url('../assets/fonts/FilsonProBoldItalic.otf') format('opentype');
+	font-weight: 700;
+	font-style: italic;
+	font-display: swap;
+}
+
+/* Light weight */
+@font-face {
+	font-family: 'Filson Pro';
+	src: url('../assets/fonts/FilsonProLight.otf') format('opentype');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Filson Pro';
+	src: url('../assets/fonts/FilsonProLightItalic.otf') format('opentype');
+	font-weight: 300;
+	font-style: italic;
+	font-display: swap;
+}
+
+/* Book weight */
+@font-face {
+	font-family: 'Filson Pro';
+	src: url('../assets/fonts/FilsonProBook.otf') format('opentype');
+	font-weight: 350;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Filson Pro';
+	src: url('../assets/fonts/FilsonProBookItalic.otf') format('opentype');
+	font-weight: 350;
+	font-style: italic;
+	font-display: swap;
+}
+
+/* Heavy weight */
+@font-face {
+	font-family: 'Filson Pro';
+	src: url('../assets/fonts/FilsonProHeavy.otf') format('opentype');
+	font-weight: 800;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Filson Pro';
+	src: url('../assets/fonts/FilsonProHeavyItalic.otf') format('opentype');
+	font-weight: 800;
+	font-style: italic;
+	font-display: swap;
+}
+
+/* Black weight */
+@font-face {
+	font-family: 'Filson Pro';
+	src: url('../assets/fonts/FilsonProBlack.otf') format('opentype');
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Filson Pro';
+	src: url('../assets/fonts/FilsonProBlackItalic.otf') format('opentype');
+	font-weight: 900;
+	font-style: italic;
+	font-display: swap;
+}
+
+/* Thin weight */
+@font-face {
+	font-family: 'Filson Pro';
+	src: url('../assets/fonts/FilsonProThin.otf') format('opentype');
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Filson Pro';
+	src: url('../assets/fonts/FilsonProThinItalic.otf') format('opentype');
+	font-weight: 100;
+	font-style: italic;
+	font-display: swap;
+}
+
+/* Global font application */
 body {
-	font-family: 'Filson Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+	font-family: 'Filson Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		sans-serif;
+	font-weight: 400;
+}
+
+/* Utility classes for font weights */
+.font-thin {
+	font-weight: 100;
+}
+.font-light {
+	font-weight: 300;
+}
+.font-book {
+	font-weight: 350;
+}
+.font-regular {
+	font-weight: 400;
+}
+.font-medium {
+	font-weight: 500;
+}
+.font-bold {
+	font-weight: 700;
+}
+.font-heavy {
+	font-weight: 800;
+}
+.font-black {
+	font-weight: 900;
 }
