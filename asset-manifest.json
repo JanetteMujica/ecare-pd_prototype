@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/JanetteMujica/ecare-pd_prototype.git/static/css/main.53b7de53.css",
+    "main.js": "/JanetteMujica/ecare-pd_prototype.git/static/js/main.ecb5917f.js",
+    "static/media/FilsonProBlackItalic.otf": "/JanetteMujica/ecare-pd_prototype.git/static/media/FilsonProBlackItalic.6603ced6d767d04b008f.otf",
+    "static/media/FilsonProMediumItalic.otf": "/JanetteMujica/ecare-pd_prototype.git/static/media/FilsonProMediumItalic.521f17964a81ae6d36b6.otf",
+    "static/media/FilsonProBoldItalic.otf": "/JanetteMujica/ecare-pd_prototype.git/static/media/FilsonProBoldItalic.d49c98267ddaaefd8705.otf",
+    "static/media/FilsonProHeavyItalic.otf": "/JanetteMujica/ecare-pd_prototype.git/static/media/FilsonProHeavyItalic.d81eccfc615906813ecf.otf",
+    "static/media/FilsonProThinItalic.otf": "/JanetteMujica/ecare-pd_prototype.git/static/media/FilsonProThinItalic.864181416e607e11d79f.otf",
+    "static/media/FilsonProRegularItalic.otf": "/JanetteMujica/ecare-pd_prototype.git/static/media/FilsonProRegularItalic.6bf88257d20ef6d6766c.otf",
+    "static/media/FilsonProLightItalic.otf": "/JanetteMujica/ecare-pd_prototype.git/static/media/FilsonProLightItalic.a99d74978cb3e4e2183f.otf",
+    "static/media/FilsonProBookItalic.otf": "/JanetteMujica/ecare-pd_prototype.git/static/media/FilsonProBookItalic.08b85aef95cf4ed5e3ca.otf",
+    "static/media/FilsonProBlack.otf": "/JanetteMujica/ecare-pd_prototype.git/static/media/FilsonProBlack.03a9993b8c09e0e6cc2f.otf",
+    "static/media/FilsonProMedium.otf": "/JanetteMujica/ecare-pd_prototype.git/static/media/FilsonProMedium.7c25286bbf25f763b7f9.otf",
+    "static/media/FilsonProBold.otf": "/JanetteMujica/ecare-pd_prototype.git/static/media/FilsonProBold.2dfc3c131c5cbb335b6d.otf",
+    "static/media/FilsonProHeavy.otf": "/JanetteMujica/ecare-pd_prototype.git/static/media/FilsonProHeavy.b3ba9093117cba4c1ec3.otf",
+    "static/media/FilsonProLight.otf": "/JanetteMujica/ecare-pd_prototype.git/static/media/FilsonProLight.b434465135b1d2ba404b.otf",
+    "static/media/FilsonProRegular.otf": "/JanetteMujica/ecare-pd_prototype.git/static/media/FilsonProRegular.ae328a20dd3039063679.otf",
+    "static/media/FilsonProThin.otf": "/JanetteMujica/ecare-pd_prototype.git/static/media/FilsonProThin.ce895acb0838536bb0d8.otf",
+    "static/media/FilsonProBook.otf": "/JanetteMujica/ecare-pd_prototype.git/static/media/FilsonProBook.368fd876d268f2e30a7f.otf",
+    "static/media/eCarePD_logo.svg": "/JanetteMujica/ecare-pd_prototype.git/static/media/eCarePD_logo.5ce863dbb4d14a1447778f8228ceb3f8.svg",
+    "static/media/cafy_logo.svg": "/JanetteMujica/ecare-pd_prototype.git/static/media/cafy_logo.73664aaa995382c6ab003c2497300b58.svg",
+    "index.html": "/JanetteMujica/ecare-pd_prototype.git/index.html",
+    "main.53b7de53.css.map": "/JanetteMujica/ecare-pd_prototype.git/static/css/main.53b7de53.css.map",
+    "main.ecb5917f.js.map": "/JanetteMujica/ecare-pd_prototype.git/static/js/main.ecb5917f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.53b7de53.css",
+    "static/js/main.ecb5917f.js"
+  ]
+}
