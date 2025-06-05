@@ -1,4 +1,4 @@
-/* WelcomePage Component Styles - FIXED: Mobile Spacing */
+/* WelcomePage Component Styles - FIXED: Optimized Space for Circular Process */
 .container {
 	height: 100vh;
 	background: linear-gradient(135deg, #f0f4ff 0%, #e5f3f0 100%);
@@ -7,11 +7,11 @@
 	overflow: hidden;
 }
 
-/* Consistent blue banner */
+/* Consistent blue banner - FIXED: More compact */
 .blueBanner {
 	width: 100%;
 	background-color: #263b7f;
-	padding: 0.5rem 0;
+	padding: 0.375rem 0; /* FIXED: Smaller padding */
 	box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1);
 	position: relative;
 	z-index: 10;
@@ -29,7 +29,7 @@
 
 @media (min-width: 768px) {
 	.blueBanner {
-		padding: 0.75rem 0;
+		padding: 0.5rem 0;
 	}
 
 	.bannerContent {
@@ -39,7 +39,7 @@
 
 @media (min-width: 1024px) {
 	.blueBanner {
-		padding: 0.875rem 0;
+		padding: 0.625rem 0;
 	}
 
 	.bannerContent {
@@ -59,55 +59,66 @@
 	min-height: 0;
 }
 
-/* Hero section with mobile-optimized spacing */
+/* Hero section - FIXED: Optimized for circular process */
 .hero {
-	/* flex: 1;*/
 	display: flex;
 	flex-direction: column;
-	padding: 1rem;
+	padding: 0.5rem; /* FIXED: Minimal padding */
 	text-align: center;
 	min-height: 0;
-	margin-top: 2rem;
-	margin-bottom: 2rem;
-	gap: 2rem;
+	flex: 1;
+	justify-content: space-between; /* FIXED: Better space distribution */
 }
 
 @media (min-width: 768px) {
 	.hero {
-		padding: 1.5rem 2rem;
+		padding: 0.75rem 1rem;
 	}
 }
 
 @media (min-width: 1024px) {
 	.hero {
-		padding: 2rem 3rem;
+		padding: 1rem 1.5rem;
 	}
 }
 
-/* Title section - FIXED: Much smaller margins on mobile */
+@media (min-width: 1280px) {
+	.hero {
+		padding: 1.25rem 2rem;
+	}
+}
+
+/* Title section - FIXED: Much more compact */
 .headingContainer {
 	max-width: 64rem;
-	margin: 0.5rem auto 0.5rem auto; /* FIXED: Much smaller margins on mobile */
+	margin: 0.25rem auto; /* FIXED: Minimal margins */
 	animation: fadeInUp 1s ease-out 0.2s both;
+	flex-shrink: 0; /* FIXED: Don't let this shrink */
 }
 
 @media (min-width: 768px) {
 	.headingContainer {
-		margin: 1.5rem auto;
+		margin: 0.375rem auto;
 	}
 }
 
 @media (min-width: 1024px) {
 	.headingContainer {
-		margin: 2rem auto;
+		margin: 0.5rem auto;
 	}
 }
 
-/* Responsive title sizing */
+@media (min-width: 1280px) {
+	.headingContainer {
+		margin: 0.75rem auto;
+	}
+}
+
+/* Responsive title sizing - FIXED: More compact but still readable */
 .mainHeading {
 	font-family: 'Filson Pro', sans-serif;
 	font-weight: bold;
-	font-size: 1.25rem;
+	font-size: 1.125rem; /* FIXED: Reasonable starting size */
 	line-height: 1.1;
 	letter-spacing: -0.025em;
 	margin: 0;
@@ -116,31 +127,31 @@
 
 @media (min-width: 480px) {
 	.mainHeading {
-		font-size: 1.5rem;
+		font-size: 1.25rem;
 	}
 }
 
 @media (min-width: 640px) {
 	.mainHeading {
-		font-size: 1.75rem;
+		font-size: 1.375rem;
 	}
 }
 
 @media (min-width: 768px) {
 	.mainHeading {
-		font-size: 2rem;
+		font-size: 1.5rem;
 	}
 }
 
 @media (min-width: 1024px) {
 	.mainHeading {
-		font-size: 2.5rem;
+		font-size: 1.625rem; /* FIXED: Reasonable size */
 	}
 }
 
 @media (min-width: 1280px) {
 	.mainHeading {
-		font-size: 3rem;
+		font-size: 1.75rem; /* FIXED: Maximum reasonable size */
 	}
 }
 
@@ -148,87 +159,103 @@
 	font-weight: bold;
 }
 
-/* Subtitle */
+/* Subtitle - FIXED: Compact but readable */
 .subtitle {
 	font-family: 'Filson Pro', sans-serif;
 	font-weight: 500;
 	font-style: italic;
-	font-size: 0.875rem;
+	font-size: 0.75rem; /* FIXED: Reasonable starting size */
 	opacity: 0.9;
-	margin: 0.5rem 0 0 0;
+	margin: 0.25rem 0 0 0; /* FIXED: Minimal margin */
 }
 
 @media (min-width: 480px) {
 	.subtitle {
-		font-size: 1rem;
+		font-size: 0.875rem;
 	}
 }
 
 @media (min-width: 640px) {
 	.subtitle {
-		font-size: 1.125rem;
+		font-size: 1rem;
 	}
 }
 
 @media (min-width: 768px) {
+	.subtitle {
+		font-size: 1.125rem;
+	}
+}
+
+@media (min-width: 1024px) {
 	.subtitle {
 		font-size: 1.25rem;
 	}
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
 	.subtitle {
-		font-size: 1.5rem;
+		font-size: 1.375rem; /* FIXED: Reasonable maximum */
+	}
+}
+
+/* Circular process container - FIXED: Takes most available space */
+.circularProcessContainer {
+	flex: 1; /* FIXED: Take all remaining space */
+	margin: 0.5rem 0; /* FIXED: Minimal margins */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 320px; /* FIXED: Ensure minimum space for circular layout */
+	overflow: visible;
+}
+
+@media (min-width: 768px) {
+	.circularProcessContainer {
+		margin: 0.75rem 0;
+		min-height: 380px; /* FIXED: More space for larger circular layout */
+	}
+}
+
+@media (min-width: 1024px) {
+	.circularProcessContainer {
+		margin: 1rem 0;
+		min-height: 420px; /* FIXED: Even more space */
 	}
 }
 
 @media (min-width: 1280px) {
-	.subtitle {
-		font-size: 1.75rem;
-	}
-}
-
-/* Circular process container - FIXED: Much smaller margins on mobile */
-.circularProcessContainer {
-	flex: 1;
-	margin: 0.25rem 0; /* FIXED: Much smaller margins on mobile */
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	min-height: 0;
-}
-
-@media (min-width: 768px) {
 	.circularProcessContainer {
-		margin: 1.5rem 0;
+		margin: 1.25rem 0;
+		min-height: 460px; /* FIXED: Maximum space for large screens */
 	}
 }
 
-@media (min-width: 1024px) {
-	.circularProcessContainer {
-		margin: 2rem 0;
-	}
-}
-
-/* CTA Section - FIXED: Much smaller padding on mobile */
+/* CTA Section - FIXED: Compact */
 .ctaSection {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 0.5rem 0; /* FIXED: Much smaller padding on mobile */
+	padding: 0.25rem 0; /* FIXED: Minimal padding */
 	animation: fadeInUp 1s ease-out 0.8s both;
-	flex-shrink: 0;
+	flex-shrink: 0; /* FIXED: Don't let this shrink */
 }
 
 @media (min-width: 768px) {
 	.ctaSection {
-		padding: 1.5rem 0;
+		padding: 0.375rem 0;
 	}
 }
 
 @media (min-width: 1024px) {
 	.ctaSection {
-		padding: 2rem 0;
+		padding: 0.5rem 0;
+	}
+}
+
+@media (min-width: 1280px) {
+	.ctaSection {
+		padding: 0.75rem 0;
 	}
 }
 
@@ -269,40 +296,7 @@
 /* FIXED: Ultra-compact mobile spacing */
 @media (max-width: 480px) {
 	.hero {
-		padding: 0.5rem; /* FIXED: Smaller padding */
-	}
-
-	.headingContainer {
-		margin: 0.25rem auto 0.25rem auto; /* FIXED: Very small margins */
-	}
-
-	.mainHeading {
-		font-size: 1.125rem;
-		line-height: 1.05;
-	}
-
-	.subtitle {
-		font-size: 0.8rem;
-		margin: 0.25rem 0 0 0; /* FIXED: Smaller margin */
-	}
-
-	.circularProcessContainer {
-		margin: 0.125rem 0; /* FIXED: Very small margins */
-	}
-
-	.ctaSection {
-		padding: 0.25rem 0; /* FIXED: Very small padding */
-	}
-
-	.blueBanner {
-		padding: 0.375rem 0;
-	}
-}
-
-/* FIXED: Landscape mobile - ultra-compact */
-@media (max-height: 600px) and (orientation: landscape) {
-	.hero {
-		padding: 0.25rem 1rem;
+		padding: 0.375rem;
 	}
 
 	.headingContainer {
@@ -311,18 +305,21 @@
 
 	.mainHeading {
 		font-size: 1rem;
+		line-height: 1.05;
 	}
 
 	.subtitle {
 		font-size: 0.75rem;
+		margin: 0.125rem 0 0 0;
 	}
 
 	.circularProcessContainer {
-		margin: 0.125rem 0;
+		margin: 0.25rem 0;
+		min-height: 280px; /* FIXED: Smaller minimum for mobile */
 	}
 
 	.ctaSection {
-		padding: 0.125rem 0;
+		padding: 0.1875rem 0;
 	}
 
 	.blueBanner {
@@ -330,10 +327,11 @@
 	}
 }
 
-/* FIXED: Very short screens - minimal spacing */
-@media (max-height: 500px) {
+/* FIXED: Landscape mobile - optimized for circular process */
+@media (max-height: 600px) and (orientation: landscape) {
 	.hero {
-		padding: 0.1875rem 1rem;
+		padding: 0.25rem 1rem;
+		justify-content: space-around; /* FIXED: Better distribution */
 	}
 
 	.headingContainer {
@@ -347,11 +345,12 @@
 
 	.subtitle {
 		font-size: 0.625rem;
-		margin: 0.125rem 0 0 0;
+		margin: 0.0625rem 0 0 0;
 	}
 
 	.circularProcessContainer {
-		margin: 0.0625rem 0;
+		margin: 0.125rem 0;
+		min-height: 240px; /* FIXED: Adequate space for landscape */
 	}
 
 	.ctaSection {
@@ -359,14 +358,15 @@
 	}
 
 	.blueBanner {
-		padding: 0.25rem 0;
+		padding: 0.1875rem 0;
 	}
 }
 
-/* FIXED: Super short screens */
-@media (max-height: 400px) {
+/* FIXED: Very short screens - prioritize circular process */
+@media (max-height: 500px) {
 	.hero {
 		padding: 0.125rem 1rem;
+		justify-content: space-around;
 	}
 
 	.headingContainer {
@@ -385,6 +385,7 @@
 
 	.circularProcessContainer {
 		margin: 0.0625rem 0;
+		min-height: 200px; /* FIXED: Still give space for circular process */
 	}
 
 	.ctaSection {
@@ -393,6 +394,60 @@
 
 	.blueBanner {
 		padding: 0.1875rem 0;
+	}
+}
+
+/* FIXED: Super short screens */
+@media (max-height: 400px) {
+	.hero {
+		padding: 0.0625rem 1rem;
+		justify-content: space-around;
+	}
+
+	.headingContainer {
+		margin: 0.0625rem auto;
+	}
+
+	.mainHeading {
+		font-size: 0.625rem;
+		line-height: 0.9;
+	}
+
+	.subtitle {
+		font-size: 0.4375rem;
+		margin: 0.0625rem 0 0 0;
+	}
+
+	.circularProcessContainer {
+		margin: 0.0625rem 0;
+		min-height: 160px; /* FIXED: Minimum viable space */
+	}
+
+	.ctaSection {
+		padding: 0.0625rem 0;
+	}
+
+	.blueBanner {
+		padding: 0.125rem 0;
+	}
+}
+
+/* FIXED: Constrained height optimization */
+@media (max-height: 700px) {
+	.circularProcessContainer {
+		min-height: 300px; /* FIXED: Ensure adequate space */
+	}
+}
+
+@media (min-height: 800px) {
+	.circularProcessContainer {
+		min-height: 450px; /* FIXED: More space on taller screens */
+	}
+}
+
+@media (min-height: 900px) {
+	.circularProcessContainer {
+		min-height: 520px; /* FIXED: Generous space on very tall screens */
 	}
 }
 

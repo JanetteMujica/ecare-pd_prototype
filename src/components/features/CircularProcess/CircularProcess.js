@@ -36,26 +36,27 @@ const CircularProcess = ({ onFeatureClick }) => {
 						</div>
 					</div>
 
-					{/* Connecting lines and arrows */}
-					<svg className={styles.connectionLines} viewBox='0 0 500 400'>
-						{/* Main circle - FIXED: Even larger viewBox for no overlap */}
+					{/* Connecting lines and arrows - FIXED: Adjusted for smaller container */}
+					<svg className={styles.connectionLines} viewBox='0 0 420 320'>
+						{/* Main circle - FIXED: Centered and sized for smaller container */}
 						<circle
-							cx='250'
-							cy='200'
-							r='90'
+							cx='210'
+							cy='160'
+							r='70' /* FIXED: Smaller radius for compact layout */
 							fill='none'
-							stroke={colors.mint}
-							strokeWidth='2'
+							stroke='#4ade80'
+							strokeWidth='3'
 							strokeDasharray='4,2'
 							className={styles.animatedCircle}
 						/>
 
-						{/* Directional arrows - FIXED: Positioned on circle edge */}
+						{/* Directional arrows */}
 						{[0, 1, 2, 3].map((index) => {
-							const angle = index * 90 - 45;
+							const cardinalAngles = [-90, 0, 90, 180];
+							const angle = cardinalAngles[index] - 45; // Offset for arrow direction
 							const radian = (angle * Math.PI) / 180;
-							const x = 250 + Math.cos(radian) * 77;
-							const y = 200 + Math.sin(radian) * 77;
+							const x = 210 + Math.cos(radian) * 60; // FIXED: Adjusted for new center and radius
+							const y = 160 + Math.sin(radian) * 60;
 							const rotation = angle + 90;
 
 							return (
@@ -71,39 +72,57 @@ const CircularProcess = ({ onFeatureClick }) => {
 						})}
 					</svg>
 
-					{/* Feature nodes with text */}
+					{/* Feature nodes with text - FIXED: Better positioning calculations */}
 					<div className={styles.featuresContainer}>
 						{appFeatures.map((feature, index) => {
-							const angle = index * 90 - 90; // Start from top
+							// FIXED: Position at exact cardinal directions
+							const cardinalAngles = [-90, 0, 90, 180]; // Goals, Tracking, Journey, Resources
+							const angle = cardinalAngles[index];
 							const radian = (angle * Math.PI) / 180;
 
-							// FIXED: Much larger distances to ensure no overlap
-							const baseNodeRadius = 90; // Nodes on the circle
-							const baseTextRadius = 200; // FIXED: Much further out - no overlap possible
+							// FIXED: Different distances for horizontal vs vertical positioning
+							const circleRadius = 70; // Circle radius (matches SVG)
 
-							// Node position
-							const nodeX = Math.cos(radian) * baseNodeRadius;
-							const nodeY = Math.sin(radian) * baseNodeRadius;
+							// FIXED: More distance for left/right cards, less for top/bottom
+							const horizontalCardDistance = 220; // FIXED: More space for Resources & Tracking
+							const verticalCardDistance = 140; // FIXED: Optimal space for Goals & Journey
 
-							// Text position (very far from circle and nodes)
-							const textX = Math.cos(radian) * baseTextRadius;
-							const textY = Math.sin(radian) * baseTextRadius;
+							// Determine if this is a horizontal or vertical position
+							const isHorizontal = index === 1 || index === 3; // Tracking (0°) or Resources (180°)
+							const cardDistance = isHorizontal
+								? horizontalCardDistance
+								: verticalCardDistance;
+
+							// Base container dimensions (matching CSS)
+							const containerWidth = 420;
+							const containerHeight = 320;
+
+							// Calculate positions relative to container center
+							const nodeXPercent =
+								50 + (Math.cos(radian) * circleRadius * 100) / containerWidth;
+							const nodeYPercent =
+								50 + (Math.sin(radian) * circleRadius * 100) / containerHeight;
+
+							const textXPercent =
+								50 + (Math.cos(radian) * cardDistance * 100) / containerWidth;
+							const textYPercent =
+								50 + (Math.sin(radian) * cardDistance * 100) / containerHeight;
 
 							return (
 								<div key={feature.id}>
-									{/* Feature node */}
+									{/* Feature node - FIXED: Better positioning */}
 									<div
 										className={styles.featureNode}
 										style={{
-											left: `calc(50% + ${nodeX}px)`,
-											top: `calc(50% + ${nodeY}px)`,
+											left: `${nodeXPercent}%`,
+											top: `${nodeYPercent}%`,
 										}}
 									>
 										<div
 											className={styles.featureNodeIcon}
 											style={{ backgroundColor: feature.color }}
 										>
-											<feature.icon size={16} color='white' />
+											<feature.icon size={24} color='white' />
 											{/* Step number */}
 											<div
 												className={styles.stepNumber}
@@ -114,19 +133,17 @@ const CircularProcess = ({ onFeatureClick }) => {
 										</div>
 									</div>
 
-									{/* Feature text using reusable component */}
+									{/* Feature text - FIXED: Much further from center */}
 									<div
 										className={styles.featureText}
 										style={{
-											left: `calc(50% + ${textX}px)`,
-											top: `calc(50% + ${textY}px)`,
+											left: `${textXPercent}%`,
+											top: `${textYPercent}%`,
 										}}
 									>
 										<FeatureCard
 											feature={feature}
-											className={
-												index % 2 === 0 ? styles.textLeft : styles.textRight
-											}
+											className={styles.centeredCard}
 											onClick={onFeatureClick}
 											interactive={!!onFeatureClick}
 										/>

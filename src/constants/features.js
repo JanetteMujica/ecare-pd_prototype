@@ -1,11 +1,17 @@
-import { Target, Activity, Map, Lightbulb } from 'lucide-react';
+import {
+	Lightbulb,
+	Sailboat,
+	ShipWheel,
+	Telescope,
+	Sparkles,
+} from 'lucide-react';
 import { colors } from './colors';
 
 // Main app features for circular process and navigation
 export const appFeatures = [
 	{
 		id: 'goals',
-		icon: Target,
+		icon: ShipWheel,
 		title: 'Goals',
 		desc: 'Set simple goals that matter to you',
 		color: colors.coral,
@@ -14,7 +20,7 @@ export const appFeatures = [
 	},
 	{
 		id: 'tracking',
-		icon: Activity,
+		icon: Telescope,
 		title: 'Tracking',
 		desc: 'Keep track of your care priorities',
 		color: colors.primary,
@@ -23,7 +29,7 @@ export const appFeatures = [
 	},
 	{
 		id: 'journey',
-		icon: Map,
+		icon: Sailboat,
 		title: 'Journey',
 		desc: 'See your journey over time',
 		color: colors.primaryDark,
@@ -32,9 +38,9 @@ export const appFeatures = [
 	},
 	{
 		id: 'resources',
-		icon: Lightbulb,
-		title: 'Resources',
-		desc: 'Get helpful care-tips and trusted resources',
+		icon: Sparkles,
+		title: 'Ressources',
+		desc: 'Get helpful care-tips & trusted resources',
 		color: colors.peach,
 		number: '4',
 		path: '/resources',
@@ -58,7 +64,7 @@ export const appContent = {
 		description:
 			"Living with Parkinson's has its challenges, but you don't have to face them alone. eCARE-PD helps you stay active in your care, one step at a time. Together, we'll set goals, track your health, and offer support that's tailored to your experience.",
 		ctaText: 'Start today by focusing on what matters most to you',
-		cta: 'Begin Your Journey',
+		cta: 'Begin Your Care Journey',
 	},
 
 	cafy: {

@@ -23,9 +23,9 @@ const Button = ({
 
 	const variantStyles =
 		variant === 'primary'
-			? { backgroundColor: colors.primary }
+			? { backgroundColor: colors.coral }
 			: variant === 'secondary'
-			? { borderColor: colors.primary, color: colors.primary }
+			? { borderColor: colors.coral, color: colors.coral }
 			: {};
 
 	return (

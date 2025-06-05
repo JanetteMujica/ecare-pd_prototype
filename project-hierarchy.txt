@@ -1,9 +1,40 @@
 ecare-pd_prototype
 ├─ .gitignore
+├─ build
+│  ├─ asset-manifest.json
+│  ├─ favicon.ico
+│  ├─ index.html
+│  ├─ manifest.json
+│  ├─ robots.txt
+│  └─ static
+│     ├─ css
+│     │  ├─ main.c77b407e.css
+│     │  └─ main.c77b407e.css.map
+│     ├─ js
+│     │  ├─ main.eb4c45f4.js
+│     │  └─ main.eb4c45f4.js.LICENSE.txt
+│     └─ media
+│        ├─ cafy_logo.73664aaa995382c6ab003c2497300b58.svg
+│        ├─ eCarePD_logo.5ce863dbb4d14a1447778f8228ceb3f8.svg
+│        ├─ FilsonProBlack.03a9993b8c09e0e6cc2f.otf
+│        ├─ FilsonProBlackItalic.6603ced6d767d04b008f.otf
+│        ├─ FilsonProBold.2dfc3c131c5cbb335b6d.otf
+│        ├─ FilsonProBoldItalic.d49c98267ddaaefd8705.otf
+│        ├─ FilsonProBook.368fd876d268f2e30a7f.otf
+│        ├─ FilsonProBookItalic.08b85aef95cf4ed5e3ca.otf
+│        ├─ FilsonProHeavy.b3ba9093117cba4c1ec3.otf
+│        ├─ FilsonProHeavyItalic.d81eccfc615906813ecf.otf
+│        ├─ FilsonProLight.b434465135b1d2ba404b.otf
+│        ├─ FilsonProLightItalic.a99d74978cb3e4e2183f.otf
+│        ├─ FilsonProMedium.7c25286bbf25f763b7f9.otf
+│        ├─ FilsonProMediumItalic.521f17964a81ae6d36b6.otf
+│        ├─ FilsonProRegular.ae328a20dd3039063679.otf
+│        ├─ FilsonProRegularItalic.6bf88257d20ef6d6766c.otf
+│        ├─ FilsonProThin.ce895acb0838536bb0d8.otf
+│        └─ FilsonProThinItalic.864181416e607e11d79f.otf
 ├─ docs
 ├─ package-lock.json
 ├─ package.json
-├─ project-hierarchy.txt
 ├─ public
 │  ├─ favicon.ico
 │  ├─ index.html

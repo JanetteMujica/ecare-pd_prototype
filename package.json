@@ -3,7 +3,7 @@
 	"version": "0.1.0",
 	"description": "A companion app for living well with Parkinson's disease",
 	"private": true,
-	"homepage": "https://github.com/JanetteMujica/ecare-pd_prototype.git",
+	"homepage": "https://JanetteMujica.github.io/ecare-pd_prototype",
 	"dependencies": {
 		"@testing-library/dom": "^10.4.0",
 		"@testing-library/jest-dom": "^6.6.3",
