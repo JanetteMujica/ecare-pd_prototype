@@ -1,4 +1,4 @@
-/* Main container - FIXED: Better responsive scaling */
+/* Main container - Mobile-First Responsive Design */
 .container {
 	width: 100%;
 	height: 100%;
@@ -12,8 +12,8 @@
 .mobileLayout {
 	display: flex;
 	flex-direction: column;
-	gap: 0.5rem;
-	padding: 0 1rem;
+	gap: var(--spacing-sm);
+	padding: 0 var(--spacing-md);
 	width: 100%;
 	height: 100%;
 	justify-content: center;
@@ -26,12 +26,12 @@
 	}
 }
 
-/* Desktop Layout - FIXED: More flexible sizing */
+/* Desktop Layout - More flexible sizing */
 .desktopLayout {
 	display: none;
 	width: 100%;
 	height: 100%;
-	padding: 0.5rem;
+	padding: var(--spacing-sm);
 	overflow: visible;
 }
 
@@ -40,57 +40,57 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding: 1rem;
+		padding: var(--spacing-md);
 	}
 }
 
 @media (min-width: 1024px) {
 	.desktopLayout {
-		padding: 1.5rem;
+		padding: var(--spacing-lg);
 	}
 }
 
 @media (min-width: 1280px) {
 	.desktopLayout {
-		padding: 2rem;
+		padding: var(--spacing-xl);
 	}
 }
 
 /* Circular Container - FIXED: Smaller sizes to prevent overlap */
 .circularContainer {
 	position: relative;
-	width: 420px !important; /* FIXED: Smaller to fit better */
-	height: 320px !important;
-	max-width: 85vw !important; /* FIXED: More conservative maximum */
-	max-height: 45vh !important;
-	min-width: 360px !important;
-	min-height: 280px !important;
+	width: 380px !important;
+	height: 280px !important;
+	max-width: 80vw !important;
+	max-height: 35vh !important;
+	min-width: 320px !important;
+	min-height: 240px !important;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
 	.circularContainer {
-		width: 460px !important;
-		height: 360px !important;
-		min-width: 400px !important;
-		min-height: 300px !important;
+		width: 420px !important;
+		height: 320px !important;
+		min-width: 360px !important;
+		min-height: 260px !important;
 	}
 }
 
 @media (min-width: 1024px) {
 	.circularContainer {
-		width: 500px !important; /* FIXED: More conservative size */
-		height: 380px !important;
-		min-width: 440px !important;
-		min-height: 320px !important;
+		width: 460px !important;
+		height: 340px !important;
+		min-width: 400px !important;
+		min-height: 280px !important;
 	}
 }
 
 @media (min-width: 1280px) {
 	.circularContainer {
-		width: 540px !important; /* FIXED: Still reasonable but smaller */
-		height: 420px !important;
-		min-width: 480px !important;
-		min-height: 360px !important;
+		width: 500px !important;
+		height: 380px !important;
+		min-width: 440px !important;
+		min-height: 320px !important;
 	}
 }
 
@@ -133,25 +133,25 @@
 
 .centralText {
 	text-align: center;
-	color: #263b7f;
+	color: var(--color-text-primary);
 	font-family: 'Filson Pro', sans-serif;
 }
 
 .centralTextLine {
-	font-size: 0.75rem; /* FIXED: Larger text */
-	font-weight: bold;
-	line-height: 1.1;
+	font-size: var(--font-size-xs);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--line-height-tight);
 }
 
 @media (min-width: 1024px) {
 	.centralTextLine {
-		font-size: 0.875rem;
+		font-size: var(--font-size-sm);
 	}
 }
 
 @media (min-width: 1280px) {
 	.centralTextLine {
-		font-size: 1rem;
+		font-size: var(--font-size-base);
 	}
 }
 
@@ -341,14 +341,15 @@
 .featureText .card .title,
 .featureText .vertical .title,
 .featureText .title,
-.featureText h3 {
-	font-size: 0.75rem !important; /* FIXED: Smaller title */
+.featureText h3,
+.featureText .card.vertical .title {
+	font-size: 0.75rem !important;
 	line-height: 1.3 !important;
 	margin-bottom: 0.25rem !important;
 	text-align: center !important;
 	word-wrap: break-word !important;
 	white-space: normal !important;
-	font-weight: bold !important;
+	font-weight: 900 !important;
 }
 
 .featureText .card .description,
@@ -373,8 +374,10 @@
 	.featureText .card .title,
 	.featureText .vertical .title,
 	.featureText .title,
-	.featureText h3 {
-		font-size: 0.8125rem !important; /* FIXED: Still small but readable */
+	.featureText h3,
+	.featureText .card.vertical .title {
+		font-size: 0.8125rem !important;
+		font-weight: 900 !important;
 	}
 	.featureText .card .description,
 	.featureText .vertical .description,
@@ -394,8 +397,10 @@
 	.featureText .card .title,
 	.featureText .vertical .title,
 	.featureText .title,
-	.featureText h3 {
-		font-size: 0.875rem !important; /* FIXED: Reasonable size */
+	.featureText h3,
+	.featureText .card.vertical .title {
+		font-size: 0.875rem !important;
+		font-weight: 900 !important;
 	}
 	.featureText .card .description,
 	.featureText .vertical .description,
@@ -415,8 +420,10 @@
 	.featureText .card .title,
 	.featureText .vertical .title,
 	.featureText .title,
-	.featureText h3 {
-		font-size: 0.9375rem !important; /* FIXED: Maximum readable size */
+	.featureText h3,
+	.featureText .card.vertical .title {
+		font-size: 0.9375rem !important;
+		font-weight: 900 !important;
 	}
 	.featureText .card .description,
 	.featureText .vertical .description,
@@ -433,6 +440,13 @@
 
 .centeredCard * {
 	text-align: center !important;
+}
+
+/* Force font weight for centered cards */
+.centeredCard .title,
+.featureText .centeredCard .title,
+.circularContainer .featureText .centeredCard .title {
+	font-weight: 900 !important;
 }
 
 /* Mobile-specific styles */

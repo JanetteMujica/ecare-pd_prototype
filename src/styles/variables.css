@@ -15,7 +15,7 @@
 
 	/* Background Colors */
 	--color-bg-primary: #ffffff;
-	--color-bg-app: #f9fafb;
+	--color-bg-app: linear-gradient(135deg, #f0f4ff 0%, #e5f3f0 100%);
 	--color-bg-gradient: linear-gradient(135deg, #f3f4f6 0%, #e5f3f0 100%);
 	--color-bg-welcome: linear-gradient(135deg, #f0f4ff 0%, #e5f3f0 100%);
 

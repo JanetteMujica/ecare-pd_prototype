@@ -1,19 +1,22 @@
-/* CafyIntroPage Component Styles - FIXED: Consistent Spacing */
+/* CafyIntroPage Component Styles - Mobile-First Responsive Design */
 .container {
 	min-height: 100vh;
 	background: linear-gradient(135deg, #f0f4ff 0%, #e5f3f0 100%);
 	display: flex;
 	flex-direction: column;
+	overflow: hidden;
+	width: 100%;
 }
 
-/* FIXED: Consistent blue banner with eCare-PD logo */
+/* Blue banner - Mobile-first responsive */
 .blueBanner {
 	width: 100%;
 	background-color: #263b7f;
-	padding: 0.5rem 0;
-	box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+	padding: var(--spacing-sm) 0;
+	box-shadow: var(--shadow-md);
 	position: relative;
-	z-index: 10;
+	z-index: var(--z-sticky);
+	flex-shrink: 0;
 }
 
 .bannerContent {
@@ -22,26 +25,26 @@
 	justify-content: center;
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: 0 1rem;
+	padding: 0 var(--spacing-md);
 }
 
 @media (min-width: 768px) {
 	.blueBanner {
-		padding: 0.75rem 0;
+		padding: var(--spacing-md) 0;
 	}
 
 	.bannerContent {
-		padding: 0 2rem;
+		padding: 0 var(--spacing-xl);
 	}
 }
 
 @media (min-width: 1024px) {
 	.blueBanner {
-		padding: 0.875rem 0;
+		padding: var(--spacing-lg) 0;
 	}
 
 	.bannerContent {
-		padding: 0 3rem;
+		padding: 0 var(--spacing-2xl);
 	}
 }
 
@@ -49,133 +52,138 @@
 	/* eCare-PD logo styling handled by LogoPlaceholder component */
 }
 
-/* FIXED: Main content with consistent spacing */
+/* Main content - Single screen without scrolling */
 .content {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 2rem; /* FIXED: Consistent padding */
-	min-height: calc(100vh - 60px);
-	gap: 2rem; /* FIXED: Consistent gap between all elements */
-	margin-top: 2rem;
+	justify-content: center;
+	padding: var(--spacing-md);
+	flex: 1;
+	gap: var(--spacing-lg);
+	overflow: hidden;
 }
 
 @media (min-width: 768px) {
 	.content {
-		padding: 1.5rem 2rem;
-		min-height: calc(100vh - 80px);
-		gap: 1.5rem;
+		padding: var(--spacing-lg) var(--spacing-xl);
+		gap: var(--spacing-xl);
 	}
 }
 
 @media (min-width: 1024px) {
 	.content {
-		padding: 2rem 3rem;
-		min-height: calc(100vh - 90px);
-		gap: 2rem;
+		padding: var(--spacing-xl) var(--spacing-2xl);
+		gap: var(--spacing-2xl);
 	}
 }
 
-/* FIXED: CAFY logo positioned above text */
+/* CAFY logo - Mobile-first responsive */
 .cafyLogo {
 	animation: fadeInUp 0.6s ease-out;
+	flex-shrink: 0;
 }
 
-/* FIXED: Text Content with consistent spacing */
+/* Text Content - Mobile-first responsive */
 .textContent {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
-	gap: 1rem; /* FIXED: Consistent internal spacing */
+	gap: var(--spacing-md);
 	max-width: 42rem;
 	width: 100%;
 	animation: fadeInUp 0.8s ease-out 0.2s both;
+	flex-shrink: 0;
+	padding-bottom: var(--spacing-md);
 }
 
 @media (min-width: 768px) {
 	.textContent {
-		gap: 1.5rem;
+		gap: var(--spacing-lg);
 	}
 }
 
 @media (min-width: 1024px) {
 	.textContent {
-		gap: 2rem;
+		gap: var(--spacing-xl);
 	}
 }
 
 .heading {
 	font-family: 'Filson Pro', sans-serif;
-	font-weight: bold;
-	font-size: 1.25rem; /* FIXED: Proportional sizing */
-	line-height: 1.2;
+	font-weight: var(--font-weight-black);
+	font-size: var(--font-size-xl);
+	line-height: var(--line-height-tight);
 	margin: 0;
 	max-width: 36rem;
+	color: var(--color-text-primary);
 }
 
 @media (min-width: 480px) {
 	.heading {
-		font-size: 1.5rem;
+		font-size: var(--font-size-2xl);
 	}
 }
 
 @media (min-width: 640px) {
 	.heading {
-		font-size: 1.75rem;
+		font-size: var(--font-size-3xl);
 	}
 }
 
 @media (min-width: 768px) {
 	.heading {
-		font-size: 2rem;
+		font-size: var(--font-size-4xl);
 	}
 }
 
 @media (min-width: 1024px) {
 	.heading {
-		font-size: 2.25rem;
+		font-size: var(--font-size-5xl);
 	}
 }
 
 @media (min-width: 1280px) {
 	.heading {
-		font-size: 2.5rem;
+		font-size: var(--font-size-6xl);
 	}
 }
 
 .description {
 	font-family: 'Filson Pro', sans-serif;
-	font-size: 1rem; /* FIXED: Proportional to heading */
-	line-height: 1.4;
+	font-size: var(--font-size-base);
+	line-height: var(--line-height-normal);
 	margin: 0;
 	opacity: 0.9;
 	max-width: 32rem;
+	color: var(--color-text-primary);
+	font-weight: var(--font-weight-heavy);
 }
 
 @media (min-width: 480px) {
 	.description {
-		font-size: 1.125rem;
+		font-size: var(--font-size-lg);
 	}
 }
 
 @media (min-width: 640px) {
 	.description {
-		font-size: 1.25rem;
-		line-height: 1.5;
+		font-size: var(--font-size-xl);
+		line-height: var(--line-height-relaxed);
 	}
 }
 
 @media (min-width: 768px) {
 	.description {
-		font-size: 1.375rem;
-		line-height: 1.6;
+		font-size: var(--font-size-2xl);
+		line-height: var(--line-height-loose);
 	}
 }
 
 @media (min-width: 1024px) {
 	.description {
-		font-size: 1.5rem;
+		font-size: var(--font-size-3xl);
 	}
 }
 
@@ -323,7 +331,7 @@
 /* High contrast mode support */
 @media (prefers-contrast: high) {
 	.container {
-		background: white;
+		background: var(--color-bg-primary);
 	}
 
 	.blueBanner {
@@ -333,7 +341,7 @@
 
 	.heading,
 	.description {
-		color: black;
+		color: var(--color-text-primary);
 	}
 }
 

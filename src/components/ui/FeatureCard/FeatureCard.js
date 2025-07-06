@@ -34,6 +34,7 @@ const FeatureCard = ({
 
 	const titleStyles = {
 		color: colors.text?.primary || colors.primaryDark,
+		fontWeight: 900,
 	};
 
 	const descStyles = {
@@ -66,9 +67,9 @@ const FeatureCard = ({
 								{feature.number}
 							</span>
 							<div className={styles.textContainer}>
-								<h3 className={styles.title} style={titleStyles}>
+								<h2 className={styles.title} style={titleStyles}>
 									{feature.title}
-								</h3>
+								</h2>
 								<p className={styles.description} style={descStyles}>
 									{feature.desc}
 								</p>

@@ -1,23 +1,24 @@
-/* FeatureCard Component Styles - FIXED: Proper Alignment & Sizing */
+/* FeatureCard Component Styles - Mobile-First Responsive Design */
 .card {
 	background-color: white;
-	border-radius: 0.5rem;
+	border-radius: var(--border-radius-lg);
 	border-width: 2px;
 	border-style: solid;
-	transition: all 0.3s ease;
+	transition: var(--transition-normal);
 	font-family: 'Filson Pro', sans-serif;
+	width: 100%;
 }
 
 .vertical {
 	display: flex;
-	align-items: center; /* FIXED: Center align all content vertically */
-	gap: 0.75rem;
-	padding: 1rem;
+	align-items: center;
+	gap: var(--spacing-sm);
+	padding: var(--spacing-md);
 }
 
 .horizontal {
 	text-align: center;
-	padding: 1rem;
+	padding: var(--spacing-md);
 }
 
 .interactive {
@@ -29,43 +30,43 @@
 
 .interactive:hover {
 	transform: translateY(-2px);
-	box-shadow: 0 12px 25px -5px rgba(0, 0, 0, 0.15);
+	box-shadow: var(--shadow-xl);
 }
 
 .interactive:focus {
 	outline: none;
-	box-shadow: 0 0 0 3px rgba(79, 110, 212, 0.3);
+	box-shadow: 0 0 0 var(--focus-ring-width) var(--focus-ring-color);
 }
 
 .interactive:active {
 	transform: translateY(0);
 }
 
-/* Icon Container - FIXED: Larger and better proportioned */
+/* Icon Container - Mobile-first responsive */
 .iconContainer {
-	width: 3.5rem; /* FIXED: Larger base size */
+	width: 3.5rem;
 	height: 3.5rem;
-	border-radius: 50%;
+	border-radius: var(--border-radius-full);
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.15);
-	border: 3px solid white;
+	box-shadow: var(--shadow-md);
+	border: 3px solid var(--color-bg-primary);
 	flex-shrink: 0;
 }
 
-/* Content Layout - FIXED: Better structure */
+/* Content Layout - Mobile-first responsive */
 .contentContainer {
 	flex: 1;
 	min-width: 0;
 	display: flex;
-	align-items: center; /* FIXED: Center align content */
+	align-items: center;
 }
 
 .headerContainer {
 	display: flex;
-	align-items: center; /* FIXED: Center align icon, number, and text */
-	gap: 0.75rem;
+	align-items: center;
+	gap: var(--spacing-sm);
 	width: 100%;
 }
 
@@ -74,30 +75,34 @@
 	min-width: 0;
 }
 
-/* Typography - FIXED: Proper scaling and minimum sizes */
+/* Typography - Mobile-first responsive */
 .number {
-	font-size: 2.5rem; /* FIXED: Proportional to icon */
-	font-weight: bold;
-	line-height: 1;
+	font-size: var(--font-size-4xl);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--line-height-tight);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	min-width: 2rem;
 	flex-shrink: 0;
+	color: var(--color-text-primary);
 }
 
 .title {
-	font-size: 1.125rem; /* FIXED: Above minimum requirement */
-	font-weight: bold;
-	margin: 0 0 0.25rem 0;
-	line-height: 1.3;
+	font-size: var(--font-size-lg);
+	font-weight: var(--font-weight-black);
+	margin: 0 0 var(--spacing-xs) 0;
+	line-height: var(--line-height-tight);
+	color: var(--color-text-primary);
+	text-transform: uppercase;
 }
 
 .description {
-	font-size: 0.875rem; /* FIXED: Meets minimum requirement */
-	line-height: 1.4;
+	font-size: var(--font-size-sm);
+	line-height: var(--line-height-normal);
 	margin: 0;
 	opacity: 0.9;
+	color: var(--color-text-primary);
 }
 
 /* Tablet - FIXED: Maintain good proportions */

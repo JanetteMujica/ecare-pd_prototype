@@ -1,42 +1,42 @@
-/* AppLayout Component Styles - FIXED for Full Screen Usage */
+/* AppLayout Component Styles - Mobile-First Responsive Design */
 .layout {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-	background-color: #f9fafb;
+	background: linear-gradient(135deg, #f0f4ff 0%, #e5f3f0 100%);
+	width: 100%;
+	overflow-x: hidden;
 }
 
-/* Mobile & Tablet Layout (navigation at bottom) */
+/* Mobile Layout (navigation at bottom) */
 .mobileLayout {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	max-width: 28rem;
-	margin: 0 auto;
+	width: 100%;
+	margin: 0;
 	position: relative;
-	/* Add padding bottom for fixed bottom navigation */
 	padding-bottom: 80px;
+	overflow: hidden;
 }
 
-/* Tablet: FIXED - Use full width instead of constraining */
+/* Tablet Layout */
 @media (min-width: 768px) and (max-width: 1023px) {
 	.mobileLayout {
-		max-width: 100%; /* FIXED: Use full screen width */
-		margin: 0; /* Remove auto centering */
 		padding-bottom: 85px;
-		padding-left: 2rem; /* Add side padding instead */
-		padding-right: 2rem;
+		padding-left: var(--spacing-xl);
+		padding-right: var(--spacing-xl);
 	}
 }
 
-/* Desktop: top navigation, no bottom padding */
+/* Desktop: Hide mobile layout */
 @media (min-width: 1024px) {
 	.mobileLayout {
 		display: none;
 	}
 }
 
-/* Desktop Layout - FIXED for full screen usage */
+/* Desktop Layout */
 .desktopLayout {
 	display: none;
 }
@@ -46,28 +46,27 @@
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
-		width: 100%; /* FIXED: Use full width */
-		max-width: none; /* FIXED: Remove width constraints */
-		margin: 0; /* Remove auto centering */
+		width: 100%;
+		margin: 0;
 		padding-bottom: 0;
-		/* Add some padding for content readability */
-		padding-left: 2rem;
-		padding-right: 2rem;
+		padding-left: var(--spacing-xl);
+		padding-right: var(--spacing-xl);
+		overflow: hidden;
 	}
 }
 
-/* FIXED: Remove the constraining max-widths for larger screens */
+/* Large Desktop Layout */
 @media (min-width: 1280px) {
 	.desktopLayout {
-		padding-left: 3rem;
-		padding-right: 3rem;
+		padding-left: var(--spacing-2xl);
+		padding-right: var(--spacing-2xl);
 	}
 }
 
 @media (min-width: 1536px) {
 	.desktopLayout {
-		padding-left: 4rem;
-		padding-right: 4rem;
+		padding-left: var(--spacing-3xl);
+		padding-right: var(--spacing-3xl);
 	}
 }
 
@@ -77,13 +76,15 @@
 	isolation: isolate;
 }
 
-/* Content area styling - FIXED to use full available space */
+/* Content area styling - Single screen without scrolling */
 .mobileLayout > main,
 .desktopLayout > main {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
 	width: 100%;
+	overflow: hidden;
+	min-height: 0;
 }
 
 /* Desktop: Navigation goes first */
@@ -103,6 +104,6 @@
 /* High contrast mode support */
 @media (prefers-contrast: high) {
 	.layout {
-		background-color: white;
+		background-color: var(--color-bg-primary);
 	}
 }

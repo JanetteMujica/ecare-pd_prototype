@@ -59,7 +59,7 @@ export const navigationItems = appFeatures.map((feature) => ({
 // App content for pages
 export const appContent = {
 	welcome: {
-		title: 'Track what matters. Take care of yourself, your way.',
+		title: 'Track what matters. <br>Take care of yourself, your way.',
 		subtitle: "Your companion for living well with Parkinson's",
 		description:
 			"Living with Parkinson's has its challenges, but you don't have to face them alone. eCARE-PD helps you stay active in your care, one step at a time. Together, we'll set goals, track your health, and offer support that's tailored to your experience.",

@@ -24,7 +24,7 @@ const CafyIntroPage = ({ onStartGoals }) => {
 
 				{/* Content */}
 				<div className={styles.textContent}>
-					<h2 className={styles.heading} style={{ color: colors.primaryDark }}>
+					<h2 className={styles.heading} style={{ color: colors.primaryDark, fontWeight: 900 }}>
 						{cafy.greeting}
 					</h2>
 
@@ -37,7 +37,8 @@ const CafyIntroPage = ({ onStartGoals }) => {
 
 					<Button
 						onClick={onStartGoals}
-						size='medium'
+						size='large'
+						variant='primary'
 						ariaLabel='Start setting goals with CAFY'
 					>
 						{cafy.cta}

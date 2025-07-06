@@ -1,16 +1,16 @@
-/* Logo Placeholder Styles - Main Component */
+/* Logo Placeholder Styles - Mobile-First Responsive Design */
 .placeholder {
-	background-color: #e5e7eb;
+	background-color: var(--color-border-light);
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border: 2px dashed #9ca3af;
-	transition: all 0.2s ease;
+	border: 2px dashed var(--color-border-medium);
+	transition: var(--transition-fast);
 }
 
 .placeholder:hover {
-	background-color: #d1d5db;
-	border-color: #6b7280;
+	background-color: var(--color-border-medium);
+	border-color: var(--color-text-muted);
 }
 
 /* Real Logo Container */
@@ -18,14 +18,15 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	transition: all 0.2s ease;
+	transition: var(--transition-fast);
+	background: transparent;
 }
 
 .logoImage {
 	width: 100%;
 	height: 100%;
 	object-fit: contain;
-	transition: all 0.2s ease;
+	transition: var(--transition-fast);
 }
 
 .logoImage:hover {
@@ -34,11 +35,11 @@
 
 /* Shapes */
 .rectangular {
-	border-radius: 0.5rem;
+	border-radius: var(--border-radius-lg);
 }
 
 .circular {
-	border-radius: 50%;
+	border-radius: var(--border-radius-full);
 }
 
 /* Sizes */
@@ -69,13 +70,13 @@
 
 /* Text for placeholders */
 .text {
-	color: #6b7280;
+	color: var(--color-text-muted);
 	font-family: 'Filson Pro', sans-serif;
-	font-weight: 500;
-	font-size: 0.75rem;
+	font-weight: var(--font-weight-medium);
+	font-size: var(--font-size-xs);
 	text-align: center;
-	line-height: 1.2;
-	padding: 0.25rem;
+	line-height: var(--line-height-tight);
+	padding: var(--spacing-xs);
 }
 
 /* Responsive adjustments */
