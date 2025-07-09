@@ -24,7 +24,10 @@ const WelcomePage = ({ onGetStarted, onFeatureClick }) => {
 				<div className={styles.hero}>
 					{/* FIXED: Title section with consistent spacing */}
 					<div className={styles.headingContainer}>
-						<h1 className={styles.mainHeading} style={{ color: colors.primaryDark }}>
+						<h1
+							className={styles.mainHeading}
+							style={{ color: colors.primaryDark }}
+						>
 							Track what matters. <br />
 							Take care of yourself,
 							<span
@@ -36,7 +39,12 @@ const WelcomePage = ({ onGetStarted, onFeatureClick }) => {
 						</h1>
 
 						{/* Subtitle */}
-						<p className={styles.subtitle} style={{ color: colors.primaryDark }}>{welcome.subtitle}</p>
+						<p
+							className={styles.subtitle}
+							style={{ color: colors.primaryDark }}
+						>
+							{welcome.subtitle}
+						</p>
 					</div>
 
 					{/* FIXED: Circular Process with consistent spacing */}

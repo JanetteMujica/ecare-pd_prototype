@@ -1,586 +1,206 @@
-/* Main container - Mobile-First Responsive Design */
+/* Main container - Base responsive styles */
 .container {
 	width: 100%;
 	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	overflow: visible;
+	overflow: hidden;
+	padding: var(--spacing-xs);
 }
 
-/* Mobile Layout - Clean vertical stack */
-.mobileLayout {
+/* Unified vertical layout - Base styles */
+.verticalLayout {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-sm);
-	padding: 0 var(--spacing-md);
+	gap: 0.75rem;
 	width: 100%;
+	max-width: 480px;
 	height: 100%;
 	justify-content: center;
 	align-items: center;
+	overflow: hidden;
 }
 
-@media (min-width: 768px) {
-	.mobileLayout {
-		display: none;
+/* Smallest iPhones - Keep existing compact styles */
+@media (max-width: 375px) {
+	.container {
+		padding: 0.25rem;
+	}
+
+	.verticalLayout {
+		gap: 0.25rem;
+		max-width: 320px;
+	}
+
+	/* Height-constrained screens */
+	@media (max-height: 600px) {
+		.container {
+			padding: 0.25rem;
+		}
+
+		.verticalLayout {
+			gap: 0.25rem;
+			justify-content: space-evenly;
+		}
+	}
+
+	@media (max-height: 500px) {
+		.container {
+			padding: 0.1875rem;
+		}
+
+		.verticalLayout {
+			gap: 0.1875rem;
+			justify-content: space-evenly;
+		}
+	}
+
+	@media (max-height: 400px) {
+		.container {
+			padding: 0.0625rem;
+		}
+
+		.verticalLayout {
+			gap: 0.0625rem;
+			justify-content: space-evenly;
+		}
+	}
+
+	/* Landscape phones - ultra compact */
+	@media (orientation: landscape) and (max-height: 500px) and (max-width: 900px) {
+		.container {
+			padding: 0.125rem;
+		}
+
+		.verticalLayout {
+			gap: 0.125rem;
+			max-width: 320px;
+			justify-content: space-evenly;
+		}
+	}
+
+	/* Very constrained landscape */
+	@media (orientation: landscape) and (max-height: 600px) {
+		.container {
+			padding: 0.1875rem;
+		}
+
+		.verticalLayout {
+			gap: 0.1875rem;
+			max-width: 340px;
+			justify-content: space-evenly;
+		}
 	}
 }
 
-/* Desktop Layout - More flexible sizing */
-.desktopLayout {
-	display: none;
-	width: 100%;
-	height: 100%;
-	padding: var(--spacing-sm);
-	overflow: visible;
+/* Standard iPads in landscape (up to 10.2" models) */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+	.container {
+		padding: var(--spacing-sm);
+	}
+
+	.verticalLayout {
+		gap: 1rem;
+		max-width: 520px;
+	}
 }
 
-@media (min-width: 768px) {
-	.desktopLayout {
-		display: flex;
-		align-items: center;
-		justify-content: center;
+/* Larger iPads in landscape (e.g., iPad Pro) */
+@media (min-width: 1025px) and (max-width: 1366px) and (orientation: landscape) {
+	.container {
 		padding: var(--spacing-md);
 	}
-}
 
-@media (min-width: 1024px) {
-	.desktopLayout {
-		padding: var(--spacing-lg);
+	.verticalLayout {
+		gap: 0.75rem;
+		max-width: 650px;
+		justify-content: space-evenly;
+	}
+
+	/* Force compact card layout for landscape tablets */
+	.verticalLayout > * {
+		min-height: 60px !important;
+		max-height: 70px !important;
 	}
 }
 
-@media (min-width: 1280px) {
-	.desktopLayout {
-		padding: var(--spacing-xl);
-	}
-}
-
-/* Circular Container - FIXED: Smaller sizes to prevent overlap */
-.circularContainer {
-	position: relative;
-	width: 380px !important;
-	height: 280px !important;
-	max-width: 80vw !important;
-	max-height: 35vh !important;
-	min-width: 320px !important;
-	min-height: 240px !important;
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-	.circularContainer {
-		width: 420px !important;
-		height: 320px !important;
-		min-width: 360px !important;
-		min-height: 260px !important;
-	}
-}
-
-@media (min-width: 1024px) {
-	.circularContainer {
-		width: 460px !important;
-		height: 340px !important;
-		min-width: 400px !important;
-		min-height: 280px !important;
-	}
-}
-
-@media (min-width: 1280px) {
-	.circularContainer {
-		width: 500px !important;
-		height: 380px !important;
-		min-width: 440px !important;
-		min-height: 320px !important;
-	}
-}
-
-/* Central Hub */
-.centralHub {
-	position: absolute;
-	inset: 0;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	z-index: 10;
-}
-
-.centralHubContent {
-	width: 4.5rem; /* FIXED: Slightly larger */
-	height: 4.5rem;
-	border-radius: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.15),
-		0 3px 6px -1px rgba(0, 0, 0, 0.1);
-	border: 3px solid white;
-}
-
-@media (min-width: 1024px) {
-	.centralHubContent {
-		width: 5.5rem;
-		height: 5.5rem;
-		border: 4px solid white;
-	}
-}
-
-@media (min-width: 1280px) {
-	.centralHubContent {
-		width: 6.5rem;
-		height: 6.5rem;
-	}
-}
-
-.centralText {
-	text-align: center;
-	color: var(--color-text-primary);
-	font-family: 'Filson Pro', sans-serif;
-}
-
-.centralTextLine {
-	font-size: var(--font-size-xs);
-	font-weight: var(--font-weight-bold);
-	line-height: var(--line-height-tight);
-}
-
-@media (min-width: 1024px) {
-	.centralTextLine {
-		font-size: var(--font-size-sm);
-	}
-}
-
-@media (min-width: 1280px) {
-	.centralTextLine {
-		font-size: var(--font-size-base);
-	}
-}
-
-/* Connection Lines - FIXED: Adjusted for new container size */
-.connectionLines {
-	position: absolute;
-	inset: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 5;
-}
-
-.animatedCircle {
-	animation: pulse 3s ease-in-out infinite;
-}
-
-@keyframes pulse {
-	0%,
-	100% {
-		opacity: 0.7;
-	}
-	50% {
-		opacity: 1;
-	}
-}
-
-/* Features Container */
-.featuresContainer {
-	position: absolute;
-	inset: 0;
-	width: 100%;
-	height: 100%;
-}
-
-/* Feature Nodes - FIXED: Better positioning */
-.featureNode {
-	position: absolute;
-	transform: translate(-50%, -50%);
-	z-index: 20;
-}
-
-.featureNodeIcon {
-	position: relative;
-	width: 3.5rem; /* FIXED: Larger icons */
-	height: 3.5rem;
-	border-radius: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.15),
-		0 3px 6px -1px rgba(0, 0, 0, 0.1);
-	border: 3px solid white;
-}
-
-@media (min-width: 1024px) {
-	.featureNodeIcon {
-		width: 4rem;
-		height: 4rem;
-		border: 4px solid white;
-	}
-}
-
-@media (min-width: 1280px) {
-	.featureNodeIcon {
-		width: 4.5rem;
-		height: 4.5rem;
-	}
-}
-
-/* Step Number */
-.stepNumber {
-	position: absolute;
-	top: -0.375rem;
-	right: -0.375rem;
-	width: 1.5rem;
-	height: 1.5rem;
-	border-radius: 50%;
-	background-color: white;
-	box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.15);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 0.75rem;
-	font-weight: bold;
-	font-family: 'Filson Pro', sans-serif;
-	border: 2px solid white;
-}
-
-@media (min-width: 1024px) {
-	.stepNumber {
-		width: 1.75rem;
-		height: 1.75rem;
-		font-size: 0.875rem;
-		top: -0.5rem;
-		right: -0.5rem;
-	}
-}
-
-@media (min-width: 1280px) {
-	.stepNumber {
-		width: 2rem;
-		height: 2rem;
-		font-size: 1rem;
-		top: -0.625rem;
-		right: -0.625rem;
-	}
-}
-
-/* Feature Text - FIXED: Much wider cards for 1-2 line descriptions */
-.featureText {
-	position: absolute;
-	transform: translate(-50%, -50%);
-	width: 12rem; /* FIXED: Much wider for shorter descriptions */
-	z-index: 15;
-}
-
-@media (min-width: 768px) {
-	.featureText {
-		width: 14rem; /* FIXED: Even wider for tablet */
-	}
-}
-
-@media (min-width: 1024px) {
-	.featureText {
-		width: 16rem; /* FIXED: Very wide for desktop */
-	}
-}
-
-@media (min-width: 1280px) {
-	.featureText {
-		width: 18rem; /* FIXED: Maximum width for large screens */
-	}
-}
-
-/* FIXED: Clean card layout for circular design */
-.featureText .vertical {
-	display: block !important;
-	text-align: center !important;
-}
-
-.featureText .iconContainer {
-	display: none !important;
-}
-
-.featureText .number {
-	display: none !important;
-}
-
-.featureText .contentContainer {
-	display: block !important;
-	text-align: center !important;
-}
-
-.featureText .headerContainer {
-	display: block !important;
-	text-align: center !important;
-}
-
-.featureText .textContainer {
-	width: 100% !important;
-	text-align: center !important;
-}
-
-/* FIXED: Force center alignment for ALL text */
-.featureText,
-.featureText *,
-.featureText .card,
-.featureText .card *,
-.featureText .vertical,
-.featureText .vertical * {
-	text-align: center !important;
-}
-
-/* FIXED: Better card styling - readable and attractive */
-.featureText .card.vertical,
-.featureText .card {
-	padding: 0.75rem !important; /* FIXED: More padding */
-	border-radius: 0.5rem !important;
-	text-align: center !important;
-	min-height: 6rem !important; /* FIXED: Taller for better proportions */
-	display: flex !important;
-	flex-direction: column !important;
-	justify-content: center !important;
-}
-
-/* FIXED: Smaller, more readable text sizes for wider cards */
-.featureText .card .title,
-.featureText .vertical .title,
-.featureText .title,
-.featureText h3,
-.featureText .card.vertical .title {
-	font-size: 0.75rem !important;
-	line-height: 1.3 !important;
-	margin-bottom: 0.25rem !important;
-	text-align: center !important;
-	word-wrap: break-word !important;
-	white-space: normal !important;
-	font-weight: 900 !important;
-}
-
-.featureText .card .description,
-.featureText .vertical .description,
-.featureText .description,
-.featureText p {
-	font-size: 0.625rem !important; /* FIXED: Smaller description */
-	line-height: 1.3 !important;
-	text-align: center !important;
-	word-wrap: break-word !important;
-	white-space: normal !important;
-	opacity: 0.9 !important;
-}
-
-@media (min-width: 768px) {
-	.featureText .card.vertical,
-	.featureText .card {
-		padding: 0.875rem !important;
-		min-height: 5.5rem !important; /* FIXED: Shorter cards for wider layout */
+/* Laptops and larger */
+@media (min-width: 1367px) {
+	.container {
+		padding: var(--spacing-md);
 	}
 
-	.featureText .card .title,
-	.featureText .vertical .title,
-	.featureText .title,
-	.featureText h3,
-	.featureText .card.vertical .title {
-		font-size: 0.8125rem !important;
-		font-weight: 900 !important;
-	}
-	.featureText .card .description,
-	.featureText .vertical .description,
-	.featureText .description,
-	.featureText p {
-		font-size: 0.6875rem !important; /* FIXED: Small description */
-	}
-}
-
-@media (min-width: 1024px) {
-	.featureText .card.vertical,
-	.featureText .card {
-		padding: 1rem !important;
-		min-height: 6rem !important; /* FIXED: Moderate height */
+	.verticalLayout {
+		gap: 0.75rem;
+		max-width: 650px;
+		justify-content: space-evenly;
 	}
 
-	.featureText .card .title,
-	.featureText .vertical .title,
-	.featureText .title,
-	.featureText h3,
-	.featureText .card.vertical .title {
-		font-size: 0.875rem !important;
-		font-weight: 900 !important;
-	}
-	.featureText .card .description,
-	.featureText .vertical .description,
-	.featureText .description,
-	.featureText p {
-		font-size: 0.75rem !important; /* FIXED: Good readable size */
-	}
-}
-
-@media (min-width: 1280px) {
-	.featureText .card.vertical,
-	.featureText .card {
-		padding: 1.125rem !important;
-		min-height: 6.5rem !important; /* FIXED: Optimal height for wide cards */
+	/* Standard laptop screens - ensure all cards fit */
+	@media (min-height: 700px) and (max-height: 900px) {
+		.verticalLayout {
+			gap: 0.625rem;
+			justify-content: space-evenly;
+		}
 	}
 
-	.featureText .card .title,
-	.featureText .vertical .title,
-	.featureText .title,
-	.featureText h3,
-	.featureText .card.vertical .title {
-		font-size: 0.9375rem !important;
-		font-weight: 900 !important;
-	}
-	.featureText .card .description,
-	.featureText .vertical .description,
-	.featureText .description,
-	.featureText p {
-		font-size: 0.8125rem !important; /* FIXED: Optimal description size */
-	}
-}
-
-/* Simple centered card class */
-.centeredCard {
-	text-align: center !important;
-}
-
-.centeredCard * {
-	text-align: center !important;
-}
-
-/* Force font weight for centered cards */
-.centeredCard .title,
-.featureText .centeredCard .title,
-.circularContainer .featureText .centeredCard .title {
-	font-weight: 900 !important;
-}
-
-/* Mobile-specific styles */
-@media (max-width: 767px) {
-	.mobileLayout {
-		gap: 0.375rem;
-		padding: 0 0.75rem;
-	}
-}
-
-/* Compact for constrained vertical space */
-@media (max-height: 600px) {
-	.circularContainer {
-		width: 360px !important; /* FIXED: Smaller for constrained space */
-		height: 280px !important;
-		max-width: 80vw !important;
-		max-height: 40vh !important;
+	/* Taller laptop screens */
+	@media (min-height: 901px) and (max-height: 1080px) {
+		.verticalLayout {
+			gap: 1rem;
+			justify-content: center;
+		}
 	}
 
-	.centralHubContent {
-		width: 3.5rem;
-		height: 3.5rem;
+	/* Very tall screens - prevent content from being too spread out */
+	@media (min-height: 1081px) and (max-height: 1200px) {
+		.verticalLayout {
+			gap: 1.25rem;
+			justify-content: center;
+		}
 	}
 
-	.centralTextLine {
-		font-size: 0.625rem;
+	@media (min-height: 1201px) {
+		.verticalLayout {
+			gap: 1.5rem;
+			justify-content: center;
+		}
 	}
 
-	.featureNodeIcon {
-		width: 3rem;
-		height: 3rem;
-	}
-
-	.featureText {
-		width: 10rem; /* FIXED: Still wide but smaller */
-	}
-
-	.featureText .card.vertical,
-	.featureText .card {
-		min-height: 4.5rem !important;
-		padding: 0.5rem !important;
-	}
-
-	.featureText .card .title,
-	.featureText .vertical .title,
-	.featureText .title,
-	.featureText h3 {
-		font-size: 0.6875rem !important;
-	}
-
-	.featureText .card .description,
-	.featureText .vertical .description,
-	.featureText .description,
-	.featureText p {
-		font-size: 0.5625rem !important;
-	}
-
-	.stepNumber {
-		width: 1.25rem;
-		height: 1.25rem;
-		font-size: 0.625rem;
-	}
-}
-
-/* Landscape optimization */
-@media (max-height: 700px) and (orientation: landscape) {
-	.desktopLayout {
-		padding: 0.5rem;
-	}
-
-	.circularContainer {
-		width: 380px !important;
-		height: 300px !important;
-		max-width: 75vw !important;
-		max-height: 45vh !important;
-	}
-
-	.centralHubContent {
-		width: 4rem;
-		height: 4rem;
-	}
-
-	.centralTextLine {
-		font-size: 0.625rem;
-	}
-
-	.featureNodeIcon {
-		width: 3.25rem;
-		height: 3.25rem;
-	}
-
-	.featureText {
-		width: 11rem; /* FIXED: Reasonable width for landscape */
-	}
-
-	.featureText .card.vertical,
-	.featureText .card {
-		min-height: 5rem !important;
-		padding: 0.75rem !important;
-	}
-
-	.featureText .card .title,
-	.featureText .vertical .title,
-	.featureText .title,
-	.featureText h3 {
-		font-size: 0.75rem !important;
-	}
-
-	.featureText .card .description,
-	.featureText .vertical .description,
-	.featureText .description,
-	.featureText p {
-		font-size: 0.625rem !important;
+	/* Very wide screens - keep content centered and readable */
+	@media (min-width: 1600px) {
+		.verticalLayout {
+			max-width: 700px;
+			gap: 1rem;
+		}
 	}
 }
 
 /* Accessibility improvements */
 @media (prefers-reduced-motion: reduce) {
-	.animatedCircle {
-		animation: none;
+	.verticalLayout {
+		transition: none;
 	}
 }
 
 /* High contrast mode support */
 @media (prefers-contrast: high) {
-	.centralHubContent {
-		border-width: 3px;
+	.container {
+		border: 2px solid var(--color-border-primary);
+	}
+}
+
+/* Print styles */
+@media print {
+	.container {
+		height: auto;
+		overflow: visible;
+		page-break-inside: avoid;
 	}
 
-	.featureNodeIcon {
-		border-width: 3px;
-	}
-
-	.stepNumber {
-		border: 2px solid;
+	.verticalLayout {
+		gap: 1rem;
+		height: auto;
 	}
 }

@@ -8,7 +8,7 @@
 	width: 100%;
 }
 
-/* Blue banner - Mobile-first responsive */
+/* Blue banner - Base styles */
 .blueBanner {
 	width: 100%;
 	background-color: #263b7f;
@@ -28,26 +28,6 @@
 	padding: 0 var(--spacing-md);
 }
 
-@media (min-width: 768px) {
-	.blueBanner {
-		padding: var(--spacing-sm) 0;
-	}
-
-	.bannerContent {
-		padding: 0 var(--spacing-xl);
-	}
-}
-
-@media (min-width: 1024px) {
-	.blueBanner {
-		padding: var(--spacing-md) 0;
-	}
-
-	.bannerContent {
-		padding: 0 var(--spacing-2xl);
-	}
-}
-
 .logo {
 	/* Logo styling handled by LogoPlaceholder component */
 }
@@ -61,7 +41,7 @@
 	overflow: hidden;
 }
 
-/* Hero section - Mobile-first responsive */
+/* Hero section - Base mobile styles */
 .hero {
 	display: flex;
 	flex-direction: column;
@@ -69,214 +49,76 @@
 	text-align: center;
 	min-height: 0;
 	flex: 1;
-	justify-content: space-evenly;
-	gap: var(--spacing-xs);
-	overflow: hidden;
+	justify-content: center;
+	gap: 0;
+	overflow: visible;
 }
 
-@media (min-width: 768px) {
-	.hero {
-		padding: var(--spacing-md) var(--spacing-lg);
-		gap: var(--spacing-sm);
-	}
-}
-
-@media (min-width: 1024px) {
-	.hero {
-		padding: var(--spacing-lg) var(--spacing-xl);
-		gap: var(--spacing-md);
-	}
-}
-
-@media (min-width: 1280px) {
-	.hero {
-		padding: var(--spacing-xl) var(--spacing-2xl);
-		gap: var(--spacing-lg);
-	}
-}
-
-/* Title section - Mobile-first responsive */
+/* Title section - Base styles */
 .headingContainer {
 	max-width: 64rem;
-	margin: 0 auto;
+	margin: 0.5rem auto 0.25rem auto;
 	animation: fadeInUp 1s ease-out 0.2s both;
 	flex-shrink: 0;
 	align-self: center;
 }
 
-@media (min-width: 768px) {
-	.headingContainer {
-		margin: 0.375rem auto;
-	}
-}
-
-@media (min-width: 1024px) {
-	.headingContainer {
-		margin: 0.5rem auto;
-	}
-}
-
-@media (min-width: 1280px) {
-	.headingContainer {
-		margin: 0.75rem auto;
-	}
-}
-
-/* Responsive title sizing - Mobile-first */
+/* Responsive title sizing - Base mobile */
 .mainHeading {
 	font-family: 'Filson Pro', sans-serif;
 	font-weight: var(--font-weight-bold);
-	font-size: var(--font-size-lg);
+	font-size: 1.125rem;
 	line-height: var(--line-height-tight);
 	letter-spacing: -0.025em;
 	margin: 0;
 	color: var(--color-text-primary);
 }
 
-@media (min-width: 480px) {
-	.mainHeading {
-		font-size: var(--font-size-xl);
-	}
-}
-
-@media (min-width: 640px) {
-	.mainHeading {
-		font-size: var(--font-size-2xl);
-	}
-}
-
-@media (min-width: 768px) {
-	.mainHeading {
-		font-size: var(--font-size-3xl);
-	}
-}
-
-@media (min-width: 1024px) {
-	.mainHeading {
-		font-size: var(--font-size-4xl);
-	}
-}
-
-@media (min-width: 1280px) {
-	.mainHeading {
-		font-size: var(--font-size-5xl);
-	}
-}
-
 .highlight {
 	font-weight: var(--font-weight-bold);
 }
 
-/* Subtitle - Mobile-first responsive */
+/* Subtitle - Base mobile */
 .subtitle {
 	font-family: 'Filson Pro', sans-serif;
 	font-weight: var(--font-weight-medium);
 	font-style: italic;
-	font-size: var(--font-size-xs);
+	font-size: 0.875rem;
 	opacity: 0.9;
 	margin: var(--spacing-xs) 0 0 0;
 	color: var(--color-text-primary);
 }
 
-@media (min-width: 480px) {
-	.subtitle {
-		font-size: var(--font-size-sm);
-	}
-}
-
-@media (min-width: 640px) {
-	.subtitle {
-		font-size: var(--font-size-base);
-	}
-}
-
-@media (min-width: 768px) {
-	.subtitle {
-		font-size: var(--font-size-lg);
-	}
-}
-
-@media (min-width: 1024px) {
-	.subtitle {
-		font-size: var(--font-size-xl);
-	}
-}
-
-@media (min-width: 1280px) {
-	.subtitle {
-		font-size: var(--font-size-2xl);
-	}
-}
-
-/* Circular process container - Mobile-first responsive */
+/* Circular process container - Base styles */
 .circularProcessContainer {
 	flex: 1;
-	margin: var(--spacing-xs) 0;
+	margin: 0.25rem 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	min-height: 280px;
-	max-height: 350px;
+	min-height: auto;
+	max-height: none;
 	overflow: visible;
 }
 
-@media (min-width: 768px) {
-	.circularProcessContainer {
-		margin: var(--spacing-xs) 0;
-		min-height: 320px;
-		max-height: 380px;
-	}
-}
-
-@media (min-width: 1024px) {
-	.circularProcessContainer {
-		margin: var(--spacing-sm) 0;
-		min-height: 340px;
-		max-height: 420px;
-	}
-}
-
-@media (min-width: 1280px) {
-	.circularProcessContainer {
-		margin: var(--spacing-sm) 0;
-		min-height: 380px;
-		max-height: 460px;
-	}
-}
-
-/* CTA Section - Mobile-first responsive */
+/* CTA Section - Base styles */
 .ctaSection {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: var(--spacing-xs) 0 var(--spacing-md) 0;
+	padding: 0.25rem 0 var(--spacing-md) 0;
 	animation: fadeInUp 1s ease-out 0.8s both;
 	flex-shrink: 0;
 }
 
-@media (min-width: 768px) {
-	.ctaSection {
-		padding: var(--spacing-sm) 0;
-	}
-}
-
-@media (min-width: 1024px) {
-	.ctaSection {
-		padding: var(--spacing-md) 0;
-	}
-}
-
-@media (min-width: 1280px) {
-	.ctaSection {
-		padding: var(--spacing-lg) 0;
-	}
-}
-
-/* CTA Button */
+/* CTA Button - Base styles */
 .ctaButton {
 	position: relative;
 	overflow: hidden;
 	animation: buttonPulse 2s ease-in-out infinite;
+	font-size: 1rem !important;
+	padding: 0.875rem 1.75rem !important;
+	min-height: 48px !important;
 }
 
 .buttonGlow {
@@ -300,14 +142,16 @@
 
 .buttonIcon {
 	transition: var(--transition-normal);
+	width: 18px;
+	height: 18px;
 }
 
 .ctaButton:hover .buttonIcon {
 	transform: translateX(var(--spacing-xs));
 }
 
-/* FIXED: Ultra-compact mobile spacing */
-@media (max-width: 480px) {
+/* Smallest iPhones - Keep existing ultra-compact styles */
+@media (max-width: 375px) {
 	.hero {
 		padding: 0.375rem;
 	}
@@ -328,139 +172,244 @@
 
 	.circularProcessContainer {
 		margin: 0.25rem 0;
-		min-height: 280px; /* FIXED: Smaller minimum for mobile */
+		min-height: 280px;
+		max-height: 370px;
 	}
 
 	.ctaSection {
 		padding: 0.1875rem 0;
+	}
+
+	.ctaButton {
+		font-size: 0.875rem !important;
+		padding: 0.75rem 1.5rem !important;
+		min-height: 44px !important;
+	}
+
+	.buttonIcon {
+		width: 16px !important;
+		height: 16px !important;
 	}
 
 	.blueBanner {
 		padding: 0.25rem 0;
 	}
+
+	/* Landscape mobile - optimized for all elements */
+	@media (orientation: landscape) and (max-height: 600px) {
+		.hero {
+			padding: 0.25rem 1rem;
+			justify-content: space-around;
+		}
+
+		.headingContainer {
+			margin: 0.0625rem auto;
+		}
+
+		.mainHeading {
+			font-size: 0.875rem;
+			line-height: 1;
+		}
+
+		.subtitle {
+			font-size: 0.625rem;
+			margin: 0.0625rem 0 0 0;
+		}
+
+		.circularProcessContainer {
+			margin: 0rem 0;
+			min-height: 180px;
+			max-height: 270px;
+		}
+
+		.ctaSection {
+			padding: 0.0625rem 0;
+		}
+
+		.ctaButton {
+			font-size: 0.75rem !important;
+			padding: 0.5rem 1rem !important;
+			min-height: 36px !important;
+		}
+
+		.buttonIcon {
+			width: 14px !important;
+			height: 14px !important;
+		}
+
+		.blueBanner {
+			padding: 0.1875rem 0;
+		}
+	}
 }
 
-/* FIXED: Landscape mobile - optimized for circular process */
-@media (max-height: 600px) and (orientation: landscape) {
+/* Standard iPads in landscape (up to 10.2" models) */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+	.blueBanner {
+		padding: var(--spacing-sm) 0;
+	}
+
+	.bannerContent {
+		padding: 0 var(--spacing-xl);
+	}
+
 	.hero {
-		padding: 0.25rem 1rem;
-		justify-content: space-around; /* FIXED: Better distribution */
+		padding: var(--spacing-md) var(--spacing-lg);
+		gap: var(--spacing-sm);
+		justify-content: space-between;
 	}
 
 	.headingContainer {
-		margin: 0.0625rem auto;
+		margin: 0.375rem auto;
 	}
 
 	.mainHeading {
-		font-size: 0.875rem;
-		line-height: 1;
+		font-size: 2.25rem;
 	}
 
 	.subtitle {
-		font-size: 0.625rem;
-		margin: 0.0625rem 0 0 0;
+		font-size: 1.25rem;
 	}
 
 	.circularProcessContainer {
-		margin: 0.125rem 0;
-		min-height: 240px; /* FIXED: Adequate space for landscape */
+		margin: var(--spacing-xs) 0;
+		min-height: 380px;
+		max-height: 450px;
+		flex: 1;
 	}
 
 	.ctaSection {
-		padding: 0.0625rem 0;
+		padding: var(--spacing-sm) 0;
 	}
 
-	.blueBanner {
-		padding: 0.1875rem 0;
+	.ctaButton {
+		font-size: 1.125rem !important;
+		padding: 1rem 2rem !important;
+		min-height: 52px !important;
+	}
+
+	.buttonIcon {
+		width: 20px;
+		height: 20px;
 	}
 }
 
-/* FIXED: Very short screens - prioritize circular process */
-@media (max-height: 500px) {
+/* Larger iPads in landscape (e.g., iPad Pro) */
+@media (min-width: 1025px) and (max-width: 1366px) and (orientation: landscape) {
+	.blueBanner {
+		padding: var(--spacing-md) 0;
+	}
+
+	.bannerContent {
+		padding: 0 var(--spacing-2xl);
+	}
+
 	.hero {
-		padding: 0.125rem 1rem;
-		justify-content: space-around;
+		padding: var(--spacing-lg) var(--spacing-xl);
+		gap: var(--spacing-md);
+		justify-content: space-between;
 	}
 
 	.headingContainer {
-		margin: 0.0625rem auto;
+		margin: 0.5rem auto;
 	}
 
 	.mainHeading {
-		font-size: 0.75rem;
-		line-height: 0.95;
+		font-size: 3rem;
 	}
 
 	.subtitle {
-		font-size: 0.5rem;
-		margin: 0.0625rem 0 0 0;
+		font-size: 1.5rem;
 	}
 
 	.circularProcessContainer {
-		margin: 0.0625rem 0;
-		min-height: 200px; /* FIXED: Still give space for circular process */
+		margin: var(--spacing-sm) 0;
+		min-height: 420px;
+		max-height: 500px;
+		flex: 1;
 	}
 
 	.ctaSection {
-		padding: 0.0625rem 0;
+		padding: var(--spacing-md) 0;
 	}
 
-	.blueBanner {
-		padding: 0.1875rem 0;
+	.ctaButton {
+		font-size: 1.25rem !important;
+		padding: 1.125rem 2.25rem !important;
+		min-height: 56px !important;
+	}
+
+	.buttonIcon {
+		width: 22px;
+		height: 22px;
 	}
 }
 
-/* FIXED: Super short screens */
-@media (max-height: 400px) {
+/* Laptops and larger */
+@media (min-width: 1367px) {
+	.blueBanner {
+		padding: var(--spacing-lg) 0;
+	}
+
+	.bannerContent {
+		padding: 0 var(--spacing-2xl);
+	}
+
 	.hero {
-		padding: 0.0625rem 1rem;
-		justify-content: space-around;
+		padding: var(--spacing-xl) var(--spacing-2xl);
+		gap: var(--spacing-lg);
+		justify-content: space-between;
 	}
 
 	.headingContainer {
-		margin: 0.0625rem auto;
+		margin: 0.75rem auto;
 	}
 
 	.mainHeading {
-		font-size: 0.625rem;
-		line-height: 0.9;
+		font-size: 3.5rem;
 	}
 
 	.subtitle {
-		font-size: 0.4375rem;
-		margin: 0.0625rem 0 0 0;
+		font-size: 1.75rem;
 	}
 
 	.circularProcessContainer {
-		margin: 0.0625rem 0;
-		min-height: 160px; /* FIXED: Minimum viable space */
+		margin: var(--spacing-sm) 0;
+		min-height: 480px;
+		max-height: 560px;
+		flex: 1;
 	}
 
 	.ctaSection {
-		padding: 0.0625rem 0;
+		padding: var(--spacing-lg) 0;
 	}
 
-	.blueBanner {
-		padding: 0.125rem 0;
+	.ctaButton {
+		font-size: 1.375rem !important;
+		padding: 1.25rem 2.5rem !important;
+		min-height: 60px !important;
 	}
-}
 
-/* FIXED: Constrained height optimization */
-@media (max-height: 700px) {
-	.circularProcessContainer {
-		min-height: 300px; /* FIXED: Ensure adequate space */
+	.buttonIcon {
+		width: 24px;
+		height: 24px;
 	}
-}
 
-@media (min-height: 800px) {
-	.circularProcessContainer {
-		min-height: 450px; /* FIXED: More space on taller screens */
-	}
-}
+	/* Very large screens */
+	@media (min-width: 1440px) {
+		.mainHeading {
+			font-size: 4rem;
+		}
 
-@media (min-height: 900px) {
-	.circularProcessContainer {
-		min-height: 520px; /* FIXED: Generous space on very tall screens */
+		.subtitle {
+			font-size: 2rem;
+		}
+
+		.ctaButton {
+			font-size: 1.5rem !important;
+			padding: 1.375rem 2.75rem !important;
+			min-height: 64px !important;
+		}
 	}
 }
 
