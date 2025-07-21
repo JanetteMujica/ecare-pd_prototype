@@ -1,4 +1,6 @@
 ecare-pd_prototype
+├─ .claude
+│  └─ settings.local.json
 ├─ .gitignore
 ├─ build
 │  ├─ asset-manifest.json
@@ -8,14 +10,14 @@ ecare-pd_prototype
 │  ├─ robots.txt
 │  └─ static
 │     ├─ css
-│     │  ├─ main.c77b407e.css
-│     │  └─ main.c77b407e.css.map
+│     │  ├─ main.701675ec.css
+│     │  └─ main.701675ec.css.map
 │     ├─ js
-│     │  ├─ main.eb4c45f4.js
-│     │  └─ main.eb4c45f4.js.LICENSE.txt
+│     │  ├─ main.24d05b15.js
+│     │  └─ main.24d05b15.js.LICENSE.txt
 │     └─ media
-│        ├─ cafy_logo.73664aaa995382c6ab003c2497300b58.svg
-│        ├─ eCarePD_logo.5ce863dbb4d14a1447778f8228ceb3f8.svg
+│        ├─ cafy_logo.ff6170f1cdf1297d0d121e36cb9889bc.svg
+│        ├─ eCarePD_logo.24a9014d75be2d0a58d66693dd1f58d3.svg
 │        ├─ FilsonProBlack.03a9993b8c09e0e6cc2f.otf
 │        ├─ FilsonProBlackItalic.6603ced6d767d04b008f.otf
 │        ├─ FilsonProBold.2dfc3c131c5cbb335b6d.otf
@@ -62,15 +64,18 @@ ecare-pd_prototype
    │  │  ├─ FilsonProRegularItalic.otf
    │  │  ├─ FilsonProThin.otf
    │  │  └─ FilsonProThinItalic.otf
-   │  ├─ icons
    │  └─ images
    │     ├─ cafy_logo.svg
    │     └─ eCarePD_logo.svg
    ├─ components
    │  ├─ features
-   │  │  └─ CircularProcess
-   │  │     ├─ CircularProcess.js
-   │  │     ├─ CircularProcess.module.css
+   │  │  ├─ CircularProcess
+   │  │  │  ├─ CircularProcess.js
+   │  │  │  ├─ CircularProcess.module.css
+   │  │  │  └─ index.js
+   │  │  └─ GoalSettingFlow
+   │  │     ├─ GoalSettingFlow.css
+   │  │     ├─ GoalSettingFlow.js
    │  │     └─ index.js
    │  ├─ layout
    │  │  ├─ AppLayout
@@ -97,6 +102,8 @@ ecare-pd_prototype
    ├─ constants
    │  ├─ colors.js
    │  └─ features.js
+   ├─ data
+   │  └─ taxonomy.json
    ├─ hooks
    ├─ index.css
    ├─ index.js

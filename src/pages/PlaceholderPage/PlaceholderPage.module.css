@@ -6,7 +6,7 @@
 	flex-direction: column;
 	overflow: hidden;
 	width: 100%;
-  color: var(--color-text-primary)
+	color: var(--color-text-primary);
 }
 
 .content {
@@ -19,7 +19,11 @@
 	gap: var(--spacing-xl);
 	overflow: hidden;
 	text-align: center;
-  color: var(--color-text-primary)
+	color: var(--color-text-primary);
+}
+
+.actionButton {
+	margin-top: var(--spacing-lg);
 }
 
 @media (min-width: 768px) {

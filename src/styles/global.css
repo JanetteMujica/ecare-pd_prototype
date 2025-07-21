@@ -1,9 +1,9 @@
 /* eCare-PD Global Styles - Mobile-First Responsive Design */
 
-/* Import all stylesheets */
-@import './styles/fonts.css';
-@import './styles/variables.css';
-@import './styles/accessibility.css';
+/* Import all stylesheets - Fixed paths */
+@import './variables.css';
+@import './fonts.css';
+@import './accessibility.css';
 
 /* Reset and base styles */
 *,

@@ -10,21 +10,20 @@ const CafyIntroPage = ({ onStartGoals }) => {
 
 	return (
 		<div className={styles.container}>
-			{/* FIXED: eCare-PD logo in banner (consistent with WelcomePage) */}
 			<div className={styles.blueBanner}>
 				<div className={styles.bannerContent}>
 					<ECareLogo size='medium' className={styles.bannerLogo} />
 				</div>
 			</div>
 
-			{/* Main content */}
 			<div className={styles.content}>
-				{/* FIXED: CAFY Logo above text content (not in banner) */}
 				<CafyLogoPlaceholder size='large' className={styles.cafyLogo} />
 
-				{/* Content */}
 				<div className={styles.textContent}>
-					<h2 className={styles.heading} style={{ color: colors.primaryDark, fontWeight: 900 }}>
+					<h2
+						className={styles.heading}
+						style={{ color: colors.primaryDark, fontWeight: 900 }}
+					>
 						{cafy.greeting}
 					</h2>
 
