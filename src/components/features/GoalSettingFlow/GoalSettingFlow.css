@@ -212,7 +212,7 @@
 
 .option-box-selected:hover {
 	border-color: var(--color-primary-dark);
-	background: rgba(79, 110, 212, 0.08);
+	background: var(--color-peach);
 }
 
 .option-content {
@@ -242,28 +242,6 @@
 	flex-shrink: 0;
 }
 
-.info-button {
-	width: 20px;
-	height: 20px;
-	border-radius: var(--border-radius-full);
-	background: rgba(79, 110, 212, 0.1); /* Light blue background */
-	border: 1px solid rgba(79, 110, 212, 0.3); /* Subtle blue border */
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-	transition: var(--transition-fast);
-	color: var(--color-primary); /* Blue color for the icon */
-	min-height: auto;
-	min-width: auto;
-}
-
-.info-button:hover {
-	background: rgba(79, 110, 212, 0.2);
-	border-color: rgba(79, 110, 212, 0.5);
-	color: var(--color-primary-dark);
-}
-
 .checkbox {
 	width: 20px;
 	height: 20px;
@@ -278,24 +256,6 @@
 .checkbox-selected {
 	border-color: var(--color-primary-dark);
 	background: var(--color-primary-dark);
-}
-
-/* Tooltip */
-.tooltip {
-	position: absolute;
-	top: 100%;
-	left: 0;
-	right: 0;
-	margin-top: var(--spacing-sm);
-	padding: var(--spacing-sm);
-	background: var(--color-text-primary);
-	color: white;
-	font-size: var(--font-size-sm);
-	border-radius: var(--border-radius-lg);
-	box-shadow: var(--shadow-lg);
-	z-index: var(--z-tooltip);
-	font-family: 'Filson Pro', sans-serif;
-	line-height: var(--line-height-normal);
 }
 
 /* Navigation */
@@ -476,7 +436,6 @@
 	.option-box,
 	.next-button,
 	.back-button,
-	.info-button,
 	.checkbox,
 	.progress-fill {
 		transition: none;

@@ -10,11 +10,11 @@ ecare-pd_prototype
 │  ├─ robots.txt
 │  └─ static
 │     ├─ css
-│     │  ├─ main.701675ec.css
-│     │  └─ main.701675ec.css.map
+│     │  ├─ main.848afd0e.css
+│     │  └─ main.848afd0e.css.map
 │     ├─ js
-│     │  ├─ main.24d05b15.js
-│     │  └─ main.24d05b15.js.LICENSE.txt
+│     │  ├─ main.53f4c68e.js
+│     │  └─ main.53f4c68e.js.LICENSE.txt
 │     └─ media
 │        ├─ cafy_logo.ff6170f1cdf1297d0d121e36cb9889bc.svg
 │        ├─ eCarePD_logo.24a9014d75be2d0a58d66693dd1f58d3.svg

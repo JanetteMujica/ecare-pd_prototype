@@ -3,7 +3,7 @@
 		"initial_dialogue": {
 			"id": "initial",
 			"title": "Initial Assessment",
-			"message": "Everyone's experience with Parkinson's is different. It can affect your body, your mood, your energy --- and your everyday life. Let's start with a few simple statements to explore what matters most to you right now. Choose the ones you'd like to focus on.",
+			"message": "Everyone’s experience with Parkinson’s is different. It can affect your body, your mood, your energy — and your everyday life. Let’s start with a few simple statements to explore what matters most to you right now. Choose the ones you’d like to focus on. ",
 			"question_type": "multiple_choice",
 			"allow_multiple": true,
 			"options": [
@@ -14,12 +14,12 @@
 				},
 				{
 					"id": "stay_active",
-					"text": "I want to stay active --- physically, socially, or through hobbies.",
+					"text": "I want to stay active — physically, socially, or through hobbies.",
 					"next_flow": "lifestyle"
 				},
 				{
 					"id": "mental_changes",
-					"text": "I've noticed changes in my mood, memory, or focus --- I'd like to pay more attention to that.",
+					"text": "I've noticed changes in my mood, memory, or focus — I'd like to pay more attention to that.",
 					"next_flow": "mental_health"
 				},
 				{
@@ -37,8 +37,13 @@
 		"final_dialogue": {
 			"id": "final_summary",
 			"title": "Care Priorities Summary",
-			"message": "Thanks for sharing what matters most to you. Here's a quick summary of the care priorities you've selected:",
-			"message_template": "Thanks for sharing what matters most to you. Here's a quick summary of the care priorities you've selected:\n{{selected_priorities}}\n\nWould you like to move on and set your goals now, or would you prefer to chat with me again to explore other care priorities?",
+			"finalmessage_followedbyBulletList": "Thanks for sharing what matters most to you. Here's a quick summary of the care priorities you've selected:",
+			"selection_summary": {
+				"format": "bullet_list",
+				"prefix": "• ",
+				"display_field": ["name", "short definition"]
+			},
+			"finalmessage_question": "Would you like to move on and set your goals now, or would you prefer to chat with me again to add other care priorities?",
 			"question_type": "single_choice",
 			"options": [
 				{
@@ -51,12 +56,7 @@
 					"text": "Restart the conversation with CAFY",
 					"action": "restart_initial_dialogue"
 				}
-			],
-			"selection_summary": {
-				"format": "bullet_list",
-				"prefix": "• ",
-				"display_field": "goal_setting"
-			}
+			]
 		},
 
 		"flows": {
@@ -66,73 +66,84 @@
 				"steps": [
 					{
 						"id": "physical_main",
-						"message": "You've chosen to focus on your physical symptoms and body changes. Let's take a closer look at what's been affecting you most. Which of these areas would you like to pay more attention to right now?",
+						"message": "You’ve chosen to focus on your physical symptoms and body changes. Let’s take a closer look at what’s been affecting you most. Which of these areas would you like to pay more attention to right now?",
+						"message_after_selection": "Thanks — let’s take a closer look at [selected_areas_name], and set a goal to help you feel more comfortable and supported day by day.",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
 							{
 								"id": "moving_walking",
-								"text": "Moving & Walking -- Trouble walking, freezing, or keeping your balance.",
+								"name": "Moving & Walking",
+								"text": "Moving & Walking — Trouble walking, freezing, or keeping your balance.",
 								"next_step": "moving_walking_details"
 							},
 							{
 								"id": "body_reactions",
-								"text": "Body Reactions & Pain -- Aches, sharp pain, dizziness, sweating, or skin changes.",
+								"name": "Body Reactions & Pain",
+								"text": "Body Reactions & Pain — Aches, sharp pain, dizziness, sweating, or skin changes.",
 								"next_step": "body_reactions_details"
 							},
 							{
 								"id": "saliva_control",
-								"text": "Saliva control -- Extra saliva or slow swallowing.",
+								"name": "Saliva Control & Swallowing",
+								"text": "Saliva control — Extra saliva or slow swallowing.",
 								"next_step": "saliva_control_details"
 							},
 							{
 								"id": "bowel_bladder",
-								"text": "Bowel & Bladder Dysfunction -- Constipation, bloating, or needing to urinate often.",
+								"name": "Bowel & Bladder",
+								"text": "Bowel & Bladder Dysfunction — Constipation, bloating, or needing to urinate often.",
 								"next_step": "bowel_bladder_details"
 							},
 							{
 								"id": "sleep_fatigue",
-								"text": "Sleep Disorders & Fatigue -- Trouble falling asleep, waking at night, or feeling exhausted.",
+								"name": "Sleep & Fatigue",
+								"text": "Sleep Disorders & Fatigue — Trouble falling asleep, waking at night, or feeling exhausted.",
 								"next_step": "sleep_fatigue_details"
 							},
 							{
 								"id": "sensory_voice",
-								"text": "Sensory & Voice Changes -- Blurry vision, reduced smell/taste, tingling, or weak voice.",
+								"name": "Sensory & Voice Changes",
+								"text": "Sensory & Voice Changes — Blurry vision, reduced smell/taste, tingling, or weak voice.",
 								"next_step": "sensory_voice_details"
 							}
 						]
 					},
 					{
 						"id": "moving_walking_details",
-						"message": "Many people with Parkinson's notice changes in how they walk or move --- like slowness, freezing, or trouble keeping their balance. To better support your mobility, I'd like to ask a few simple questions.",
+						"message": "Many people with Parkinson's notice changes in how they walk or move — like slowness, freezing, or trouble keeping their balance. To better support your mobility, I'd like to ask a few simple questions.",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
 							{
 								"id": "tremor",
-								"text": "Do you feel shaky when resting?",
-								"goal_setting": "Tremor",
+								"name": "Tremor",
+								"text": "Do you experience any shaking or tremors? ",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							},
 							{
 								"id": "bradykinesia",
+								"name": "Bradykinesia-slow movement",
 								"text": "Are your movements slower than they used to be?",
-								"goal_setting": "Bradykinesia-slow movement",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							},
 							{
 								"id": "balance",
+								"name": "Balance",
 								"text": "Do you sometimes feel unsteady or afraid of falling?",
-								"goal_setting": "Balance",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							},
 							{
 								"id": "freezing",
+								"name": "Gait Freezing",
 								"text": "Have you had moments where your feet feel \"stuck\" or frozen when you try to start walking?",
-								"goal_setting": "Freezing",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							}
@@ -140,35 +151,39 @@
 					},
 					{
 						"id": "body_reactions_details",
-						"message": "People with Parkinson's can feel different kinds of discomfort --- sometimes it's pain, sometimes it's other changes that affect your body and sensations. Which of these symptoms has been the most bothersome for you lately?",
+						"message": "People with Parkinson's can feel different kinds of discomfort — sometimes it's pain, sometimes it's other changes that affect your body and sensations. Which of these symptoms has been the most bothersome for you lately?",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
 							{
 								"id": "pain",
-								"text": "Pain -- like muscle or joint aches, cramping, or unexplained pain.",
-								"goal_setting": "Pain",
+								"name": "Pain",
+								"text": "Pain — like muscle or joint aches, cramping, or unexplained pain.",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							},
 							{
 								"id": "light_headedness",
-								"text": "Light-headedness or dizziness -- especially when standing up.",
-								"goal_setting": "Light-headedness",
+								"name": "Light-headedness (Dizziness)",
+								"text": "Light-headedness or dizziness — especially when standing up.",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							},
 							{
 								"id": "unusual_sweating",
-								"text": "Unusual sweating -- sweating too much or too little.",
-								"goal_setting": "Unusual sweating",
+								"name": "Unusual Sweating",
+								"text": "Unusual sweating — sweating too much or too little.",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							},
 							{
 								"id": "skin_changes",
-								"text": "Skin changes -- dryness, itchiness, or irritation.",
-								"goal_setting": "Skin changes",
+								"name": "Skin Changes",
+								"text": "Skin changes — dryness, itchiness, or irritation.",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							}
@@ -176,21 +191,23 @@
 					},
 					{
 						"id": "saliva_control_details",
-						"message": "Some people with Parkinson's notice more saliva in their mouth or trouble swallowing---especially at night or during meals. Have you noticed any of the following?",
+						"message": "Some people with Parkinson's notice more saliva in their mouth or trouble swallowing—especially at night or during meals. Have you noticed any of the following?",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
 							{
 								"id": "drooling",
+								"name": "Drooling",
 								"text": "Do you feel like you have too much saliva in your mouth?",
-								"goal_setting": "drooling",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							},
 							{
 								"id": "swallowing",
+								"name": "Swallowing",
 								"text": "Do you ever find it difficult to chew or swallow food or drinks?",
-								"goal_setting": "swallowing problems",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							}
@@ -204,15 +221,17 @@
 						"options": [
 							{
 								"id": "constipation",
+								"name": "Constipation",
 								"text": "Constipation - Do you often feel bloated or have trouble passing stool?",
-								"goal_setting": "Constipation",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							},
 							{
 								"id": "urinary_issues",
-								"text": "Urinary issues -- Do you need to pee often, especially at night, or feel like your bladder doesn't empty fully?",
-								"goal_setting": "Urinary issue",
+								"name": "Urinary issues",
+								"text": "Urinary issues — Do you need to pee often, especially at night, or feel like your bladder doesn't empty fully?",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							}
@@ -220,35 +239,39 @@
 					},
 					{
 						"id": "sleep_fatigue_details",
-						"message": "Parkinson's can affect both your sleep and your energy during the day. You might find it harder to fall or stay asleep, feel very tired even after resting, or notice strange sensations in your legs at night. Which of these feels most important to you right now?",
+						"message": "Parkinson’s can affect both your sleep and your energy during the day. You might find it harder to fall or stay asleep, feel very tired even after resting, or notice strange sensations in your legs at night. Which of these feels most important to you right now?",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
 							{
 								"id": "insomnia",
-								"text": "Insomnia -- Do you often wake up at night or struggle to fall asleep?",
-								"goal_setting": "Insomnia",
+								"name": "Insomnia",
+								"text": "Insomnia — Do you often wake up at night or struggle to fall asleep?",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							},
 							{
 								"id": "daytime_sleepiness",
-								"text": "Daytime sleepiness -- Do you feel drowsy during the day or fall asleep without meaning to?",
-								"goal_setting": "Daytime sleepiness",
+								"name": "Daytime sleepiness",
+								"text": "Daytime sleepiness — Do you feel drowsy during the day or fall asleep without meaning to?",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							},
 							{
 								"id": "fatigue",
-								"text": "Fatigue -- Do you feel deeply tired or worn out, even after resting?",
-								"goal_setting": "Fatigue",
+								"name": "Fatigue",
+								"text": "Fatigue — Do you feel deeply tired or worn out, even after resting?",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							},
 							{
 								"id": "restless_legs",
-								"text": "Restless legs -- Do you feel a need to move your legs at night, or get uncomfortable sensations when lying down?",
-								"goal_setting": "Restless legs",
+								"name": "Restless legs",
+								"text": "Restless legs — Do you feel a need to move your legs at night, or get uncomfortable sensations when lying down?",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							}
@@ -262,36 +285,41 @@
 						"options": [
 							{
 								"id": "vision_problems",
+								"name": "Vision problems",
 								"text": "Do you find your vision blurry, see double, or notice your eyes feel dry when you read?",
-								"goal_setting": "vision disturbances",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							},
 							{
 								"id": "smell_loss",
+								"name": "Smell loss",
 								"text": "Have scents you used to enjoy becoming fainter or disappeared?",
-								"goal_setting": "loss of smell",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							},
 							{
 								"id": "taste_loss",
+								"name": "Taste loss",
 								"text": "Do foods taste dull or lack their usual flavor?",
-								"goal_setting": "loss of taste",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							},
 							{
 								"id": "abnormal_sensations",
-								"text": "Are you experiencing odd sensations---like tingling, burning, or numb spots in your body?",
-								"goal_setting": "abnormal sensations",
+								"name": "Abnormal sensations",
+								"text": "Are you experiencing odd sensations—like tingling, burning, or numb spots in your body?",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							},
 							{
 								"id": "speech_problems",
+								"name": "Speech problems",
 								"text": "Does your voice feel weak or faint when you speak, making it hard for others to hear you?",
-								"goal_setting": "speech problems",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							}
@@ -305,18 +333,21 @@
 				"steps": [
 					{
 						"id": "lifestyle_main",
-						"message": "Staying active is a powerful way to care for yourself --- whether that means moving, connecting with others, or doing what brings you joy. Where would you like to focus attention right now?",
+						"message": "Staying active is a powerful way to care for yourself — whether that means moving, connecting with others, or doing what brings you joy. Where would you like to focus attention right now?",
+						"message_after_selection": "Thanks — let’s take a closer look at [selected_areas_name], and set a goal to help you feel more comfortable and supported day by day.",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
 							{
 								"id": "staying_active",
-								"text": "Staying active -- like doing exercises, walking, stretching, or doing hobbies that keep your body and mind engaged.",
+								"name": "Staying Active",
+								"text": "Staying active — like doing exercises, walking, stretching, or doing hobbies that keep your body and mind engaged. ",
 								"next_step": "staying_active_details"
 							},
 							{
 								"id": "social_relationships",
-								"text": "Taking care of your social life & relationships -- maintaining bonds, sharing moments with others, and staying socially and emotionally engaged.",
+								"name": "Social Relationships",
+								"text": "Taking care of your social life & relationships – maintaining bonds, sharing moments with others, and staying socially and emotionally engaged. ",
 								"next_step": "social_relationships_details"
 							}
 						]
@@ -329,15 +360,17 @@
 						"options": [
 							{
 								"id": "physical_activity",
+								"name": "Physical activity",
 								"text": "Would you like to be more active by walking, stretching, or doing other kinds of exercise?",
-								"goal_setting": "Physical activity",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							},
 							{
 								"id": "hobbies",
+								"name": "Hobbies",
 								"text": "Would you like to spend more time on a hobby or activity you enjoy?",
-								"goal_setting": "Hobbies",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							}
@@ -345,35 +378,39 @@
 					},
 					{
 						"id": "social_relationships_details",
-						"message": "Whether it's spending time with loved ones, planning a small outing, or staying emotionally close to someone who matters --- taking care of your relationships is part of taking care of yourself. Here are some common areas where people need support. Just let me know what feels most relevant for you right now.",
+						"message": "Whether it’s spending time with loved ones, planning a small outing, or staying emotionally close to someone who matters — taking care of your relationships is part of taking care of yourself. Here are some common areas where people need support. Just let me know what feels most relevant for you right now.",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
 							{
-								"id": "living_alone",
-								"text": "Do you live alone and want to feel more supported or connected day to day?",
-								"goal_setting": "Living alone",
+								"id": "living_connected",
+								"name": "Living connected",
+								"text": "Is staying socially connected important to you right now? ",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							},
 							{
 								"id": "leisure",
+								"name": "Leisure",
 								"text": "Would you like help planning social activities, vacations or going out more often?",
-								"goal_setting": "Leisure",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							},
 							{
 								"id": "respite",
+								"name": "Caregiver Respite",
 								"text": "Are you looking for ways to support your caregivers or make family life feel more balanced?",
-								"goal_setting": "Respite",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							},
 							{
 								"id": "intimacy",
+								"name": "Intimacy",
 								"text": "Would you like help understanding how Parkinson's may affect your intimacy or emotional closeness?",
-								"goal_setting": "Intimacy",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							}
@@ -387,23 +424,27 @@
 				"steps": [
 					{
 						"id": "mental_health_main",
-						"message": "People with Parkinson could notice some changes in their mood, memory, or perception. Being aware of these changes is a way to take care of yourself. Let's take a moment to better understand what you've been going through. Which of these areas would you like to focus on first?",
+						"message": "People with Parkinson could notice some changes in their mood, memory, or perception. Being aware of these changes is a way to take care of yourself. Let’s take a moment to better understand what you’ve been going through. Which of these areas would you like to focus on first?",
+						"message_after_selection": "Thanks — let’s take a closer look at [selected_areas_name], and set a goal to help you feel more comfortable and supported day by day.",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
 							{
 								"id": "emotional_behavioral",
+								"name": "Emotional & Behavioral Changes",
 								"text": "Emotional & Behavioral Changes - Feeling anxious, low, angry, or unmotivated.",
 								"next_step": "emotional_behavioral_details"
 							},
 							{
 								"id": "memory_focus",
+								"name": "Memory & Focus",
 								"text": "Memory & Focus - Having trouble remembering or concentrating.",
 								"next_step": "memory_focus_details"
 							},
 							{
 								"id": "perceptions",
-								"text": "Seeing or hearing things -- Perceiving things that aren't there, or feeling confused by surroundings.",
+								"name": "Perceptions",
+								"text": "Seeing or hearing things — Perceiving things that aren't there, or feeling confused by surroundings.",
 								"next_step": "perceptions_details"
 							}
 						]
@@ -416,22 +457,25 @@
 						"options": [
 							{
 								"id": "panic_attack",
-								"text": "Panic Attack - Have you recently felt sudden fear or anxiety that caused physical reactions, like a racing heart or shortness of breath?",
-								"goal_setting": "Panic Attack",
+								"name": "Anxiety & Panick Attack ",
+								"text": "Anxiety & Panick Attack  - Have you recently felt sudden fear or anxiety that caused physical reactions, like a racing heart or shortness of breath?",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							},
 							{
 								"id": "impulsive_behavior",
-								"text": "Impulsive behavior - Have you noticed urges that feel hard to control---like overspending, overeating?",
-								"goal_setting": "Impulse Behavior",
+								"name": "Impulsive behavior",
+								"text": "Impulsive behavior - Have you noticed urges that feel hard to control—like overspending, overeating?",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							},
 							{
 								"id": "emotional_changes",
-								"text": "Emotional changes - Have you been feeling down, anxious, or less motivated than usual lately?",
-								"goal_setting": "Emotional changes",
+								"name": "Emotional changes (Depression)",
+								"text": "Emotional changes (Depression) - Have you been feeling down or less motivated than usual lately? ",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							}
@@ -445,22 +489,25 @@
 						"options": [
 							{
 								"id": "forgetfulness",
+								"name": "Forgetfulness",
 								"text": "Have you been forgetting things more often, like names, appointments, or steps in a task you usually do with ease?",
-								"goal_setting": "Forgetfulness",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							},
 							{
-								"id": "overthinking",
+								"id": "mental_overload ",
+								"name": "Mental Overload",
 								"text": "Do you feel overwhelmed or find it hard to focus when there's a lot going on, or when decisions need to be made?",
-								"goal_setting": "Overthinking",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							},
 							{
 								"id": "brain_fog",
+								"name": "Brain Fog",
 								"text": "Have you noticed it takes more time to understand or respond to things, or that judging distances or space feels harder?",
-								"goal_setting": "Brain Fog",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							}
@@ -474,22 +521,25 @@
 						"options": [
 							{
 								"id": "hallucinations",
+								"name": "Hallucinations",
 								"text": "Seeing things or hearing voices or sounds that others don't.",
-								"goal_setting": "Hallucinations",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							},
 							{
 								"id": "false_beliefs",
+								"name": "False beliefs",
 								"text": "Feeling confused, suspicious, or firmly convinced of things that later don't seem to make sense.",
-								"goal_setting": "False belief",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							},
 							{
-								"id": "misinterpretation",
+								"id": "perceptual_distortion ",
+								"name": "Perceptual Distortion ",
 								"text": "Feeling confused by objects or surroundings, and it takes a moment to figure out what's real.",
-								"goal_setting": "Misinterpretation of surrounding",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							}
@@ -504,20 +554,23 @@
 					{
 						"id": "medication_main",
 						"message": "Managing Parkinson's every day starts with your medication routine. When you take your medication at the right time and dose, you give yourself the best chance to reduce \"off\" periods and feel more in control throughout your day. But managing symptoms it's also about understanding how your body reacts. Would you like to:",
+						"message_after_selection": "Thanks — let’s take a closer look at [selected_areas_name], and set a goal to help you feel more comfortable and supported day by day.",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
 							{
-								"id": "medication_routine",
+								"id": "medication_adherence",
+								"name": "Medication Adherence",
 								"text": "Build a strong medication routine",
-								"goal_setting": "Medication adherence",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							},
 							{
 								"id": "side_effects",
+								"name": "Side Effects Awareness ",
 								"text": "Record side effects or something unusual you've noticed",
-								"goal_setting": "Side effects awareness",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							}
@@ -531,17 +584,20 @@
 				"steps": [
 					{
 						"id": "wellbeing_main",
-						"message": "Managing your home life, meals, and daily routines can take effort --- but small changes can make a big difference. Let's take a closer look at what might help you most right now. Where would you like to focus your attention?",
+						"message": "Managing your home life, meals, and daily routines can take effort — but small changes can make a big difference. Let's take a closer look at what might help you most right now. Where would you like to focus your attention?",
+						"message_after_selection": "Thanks — let’s take a closer look at [selected_areas_name], and set a goal to help you feel more comfortable and supported day by day.",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
 							{
 								"id": "weight_nutrition",
+								"name": "Weight & Nutrition",
 								"text": "Would support with meals or diet be helpful to you right now?",
 								"next_step": "weight_nutrition_details"
 							},
 							{
 								"id": "daily_tasks",
+								"name": "Daily Tasks & Reorganizing Space",
 								"text": "Would you like help making daily tasks easier or finding simple ways to feel safer and more independent at home?",
 								"next_step": "daily_tasks_details"
 							}
@@ -549,21 +605,23 @@
 					},
 					{
 						"id": "weight_nutrition_details",
-						"message": "What you eat --- and how your body responds --- can really affect how you feel day to day. Let's see where you'd like support.",
+						"message": "What you eat — and how your body responds — can really affect how you feel day to day. Let's see where you'd like support.",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
 							{
 								"id": "weight_management",
+								"name": "Weight",
 								"text": "Do you want to better manage weight loss or gain linked to Parkinson's?",
-								"goal_setting": "Weight",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							},
 							{
 								"id": "nutrition",
+								"name": "Nutrition",
 								"text": "Would you like to improve digestion, energy, or balanced meals?",
-								"goal_setting": "Nutrition",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							}
@@ -571,21 +629,23 @@
 					},
 					{
 						"id": "daily_tasks_details",
-						"message": "Everyday activities --- like getting dressed, cooking, or moving safely around your home --- can take extra effort with Parkinson's. Let's see where you need support.",
+						"message": "Everyday activities — like getting dressed, cooking, or moving safely around your home — can take extra effort with Parkinson's. Let's see where you need support.",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
 							{
 								"id": "daily_living",
+								"name": "Empowering Daily Life",
 								"text": "Would you like help making daily routines easier and more manageable?",
-								"goal_setting": "Daily living activities",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							},
 							{
-								"id": "physical_challenges",
+								"id": "physical_safety",
+								"name": "Enhancing Physical Safety",
 								"text": "Would you feel more secure if you had support for balance, falls, or home safety?",
-								"goal_setting": "Daily physical challenges",
+								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description"
 							}
