@@ -1,11 +1,12 @@
 import React from 'react';
+import { ArrowLeft } from 'lucide-react';
 import Button from '../../components/ui/Button';
 import { CafyLogoPlaceholder, ECareLogo } from '../../components/ui/Logo';
 import { appContent } from '../../constants/features';
 import { colors } from '../../constants/colors';
 import styles from './CafyIntroPage.module.css';
 
-const CafyIntroPage = ({ onStartGoals }) => {
+const CafyIntroPage = ({ onStartGoals, onCancel }) => {
 	const { cafy } = appContent;
 
 	return (
@@ -13,6 +14,16 @@ const CafyIntroPage = ({ onStartGoals }) => {
 			<div className={styles.blueBanner}>
 				<div className={styles.bannerContent}>
 					<ECareLogo size='medium' className={styles.bannerLogo} />
+					{onCancel && (
+						<button
+							onClick={onCancel}
+							className={styles.backButton}
+							aria-label='Go back to welcome page'
+						>
+							<ArrowLeft size={16} />
+							Back
+						</button>
+					)}
 				</div>
 			</div>
 

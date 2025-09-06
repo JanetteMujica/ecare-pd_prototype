@@ -6,7 +6,7 @@ import taxonomyData from '../../../data/taxonomy.json';
 import './GoalSettingFlow.css';
 
 const GoalSettingFlow = ({ onComplete, onCancel }) => {
-	const [currentStep, setCurrentStep] = useState('intro');
+	const [currentStep, setCurrentStep] = useState('initial');
 	const [currentFlow, setCurrentFlow] = useState(null);
 	const [currentStepIndex, setCurrentStepIndex] = useState(0);
 	const [selectedOptions, setSelectedOptions] = useState({});
@@ -36,7 +36,6 @@ const GoalSettingFlow = ({ onComplete, onCancel }) => {
 
 	// Calculate progress
 	const calculateProgress = () => {
-		if (currentStep === 'intro') return 0;
 		if (currentStep === 'initial') return 10;
 		if (currentStep === 'flow') {
 			const totalSteps = completedFlows.size + (currentFlow ? 1 : 0);
@@ -81,10 +80,7 @@ const GoalSettingFlow = ({ onComplete, onCancel }) => {
 
 	const handleNext = () => {
 		console.log('handleNext called, current step:', currentStep);
-
-		if (currentStep === 'intro') {
-			setCurrentStep('initial');
-		} else if (currentStep === 'initial') {
+		if (currentStep === 'initial') {
 			const selectedFlows = Object.keys(selectedOptions.initial || {}).filter(
 				(key) => selectedOptions.initial[key]
 			);
@@ -201,26 +197,7 @@ const GoalSettingFlow = ({ onComplete, onCancel }) => {
 				navigateToNextFlow();
 			}
 		} else if (currentStep === 'summary') {
-			const selectedSummaryOption = Object.keys(
-				selectedOptions.summary || {}
-			).find((key) => selectedOptions.summary[key]);
-
-			const summaryOption = finalDialogue.options.find(
-				(opt) => opt.id === selectedSummaryOption
-			);
-
-			if (summaryOption?.action === 'restart_initial_dialogue') {
-				// Reset and restart
-				setCurrentStep('initial');
-				setCurrentFlow(null);
-				setCurrentStepIndex(0);
-				setSelectedOptions({});
-				setCompletedFlows(new Set());
-				setFinalSelections([]);
-				setShowingAfterSelection(false);
-			} else {
-				setCurrentStep('complete');
-			}
+			setCurrentStep('complete');
 		}
 	};
 
@@ -335,9 +312,7 @@ const GoalSettingFlow = ({ onComplete, onCancel }) => {
 	};
 
 	const handleBack = () => {
-		if (currentStep === 'initial') {
-			setCurrentStep('intro');
-		} else if (currentStep === 'flow') {
+		if (currentStep === 'flow') {
 			if (showingAfterSelection) {
 				setShowingAfterSelection(false);
 				return;
@@ -383,21 +358,6 @@ const GoalSettingFlow = ({ onComplete, onCancel }) => {
 			onComplete(true, finalSelections);
 		}
 	};
-
-	const renderIntro = () => (
-		<div className='intro-container'>
-			<CafyLogoPlaceholder size='large' className='cafyLogo' />
-			<h1 className='intro-title'>Hi there ! I am CAFY.</h1>
-			<p className='intro-description'>
-				This conversation will take about 5-10 minutes. We'll explore different
-				areas of your health and daily life to understand your priorities and
-				create a personalized care plan.
-			</p>
-			<button onClick={handleNext} className='next-button next-button-enabled'>
-				Let's get started
-			</button>
-		</div>
-	);
 
 	const renderStepWithLogo = (
 		title,
@@ -494,8 +454,6 @@ const GoalSettingFlow = ({ onComplete, onCancel }) => {
 	};
 
 	const renderCurrentStep = () => {
-		if (currentStep === 'intro') return renderIntro();
-
 		if (currentStep === 'initial') {
 			const hasSelections = Object.keys(selectedOptions.initial || {}).some(
 				(key) => selectedOptions.initial[key]
@@ -597,10 +555,6 @@ const GoalSettingFlow = ({ onComplete, onCancel }) => {
 		}
 
 		if (currentStep === 'summary') {
-			const hasSelection = Object.keys(selectedOptions.summary || {}).some(
-				(key) => selectedOptions.summary[key]
-			);
-
 			return renderStepWithLogo(
 				finalDialogue.title,
 				finalDialogue.finalmessage_followedbyBulletList,
@@ -622,33 +576,6 @@ const GoalSettingFlow = ({ onComplete, onCancel }) => {
 						</ul>
 					</div>
 
-					<div
-						style={{
-							display: 'flex',
-							alignItems: 'flex-start',
-							gap: 'var(--spacing-md)',
-							marginBottom: 'var(--spacing-lg)',
-						}}
-					>
-						<CafyLogoPlaceholder
-							size='medium'
-							style={{ flexShrink: 0, marginTop: 'var(--spacing-xs)' }}
-						/>
-						<p
-							className='step-message'
-							style={{ textAlign: 'left', margin: 0, flex: 1 }}
-						>
-							{finalDialogue.finalmessage_question}
-						</p>
-					</div>
-
-					<div className='options-container'>
-						{finalDialogue.options.map((option) => {
-							const isSelected = selectedOptions.summary?.[option.id] || false;
-							return renderOptionBox(option, isSelected, false, 'summary');
-						})}
-					</div>
-
 					<div className='navigation'>
 						<button onClick={handleBack} className='back-button'>
 							<ArrowLeft size={16} />
@@ -657,10 +584,7 @@ const GoalSettingFlow = ({ onComplete, onCancel }) => {
 
 						<button
 							onClick={handleNext}
-							disabled={!hasSelection}
-							className={`next-button ${
-								hasSelection ? 'next-button-enabled' : 'next-button-disabled'
-							}`}
+							className='next-button next-button-enabled'
 						>
 							<span>Continue</span>
 							<ArrowRight size={16} />

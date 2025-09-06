@@ -121,7 +121,9 @@
 								"text": "Do you experience any shaking or tremors? ",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							},
 							{
 								"id": "bradykinesia",
@@ -129,7 +131,9 @@
 								"text": "Are your movements slower than they used to be?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							},
 							{
 								"id": "balance",
@@ -137,7 +141,9 @@
 								"text": "Do you sometimes feel unsteady or afraid of falling?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							},
 							{
 								"id": "freezing",
@@ -145,7 +151,9 @@
 								"text": "Have you had moments where your feet feel \"stuck\" or frozen when you try to start walking?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							}
 						]
 					},
@@ -161,7 +169,9 @@
 								"text": "Pain — like muscle or joint aches, cramping, or unexplained pain.",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							},
 							{
 								"id": "light_headedness",
@@ -169,7 +179,9 @@
 								"text": "Light-headedness or dizziness — especially when standing up.",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							},
 							{
 								"id": "unusual_sweating",
@@ -177,7 +189,9 @@
 								"text": "Unusual sweating — sweating too much or too little.",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							},
 							{
 								"id": "skin_changes",
@@ -185,7 +199,9 @@
 								"text": "Skin changes — dryness, itchiness, or irritation.",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							}
 						]
 					},
@@ -201,7 +217,9 @@
 								"text": "Do you feel like you have too much saliva in your mouth?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							},
 							{
 								"id": "swallowing",
@@ -209,7 +227,9 @@
 								"text": "Do you ever find it difficult to chew or swallow food or drinks?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							}
 						]
 					},
@@ -225,7 +245,9 @@
 								"text": "Constipation - Do you often feel bloated or have trouble passing stool?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							},
 							{
 								"id": "urinary_issues",
@@ -233,7 +255,9 @@
 								"text": "Urinary issues — Do you need to pee often, especially at night, or feel like your bladder doesn't empty fully?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							}
 						]
 					},
@@ -249,7 +273,9 @@
 								"text": "Insomnia — Do you often wake up at night or struggle to fall asleep?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": true
 							},
 							{
 								"id": "daytime_sleepiness",
@@ -257,7 +283,9 @@
 								"text": "Daytime sleepiness — Do you feel drowsy during the day or fall asleep without meaning to?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": true
 							},
 							{
 								"id": "fatigue",
@@ -265,7 +293,9 @@
 								"text": "Fatigue — Do you feel deeply tired or worn out, even after resting?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": true
 							},
 							{
 								"id": "restless_legs",
@@ -273,7 +303,9 @@
 								"text": "Restless legs — Do you feel a need to move your legs at night, or get uncomfortable sensations when lying down?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": true
 							}
 						]
 					},
@@ -289,7 +321,9 @@
 								"text": "Do you find your vision blurry, see double, or notice your eyes feel dry when you read?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							},
 							{
 								"id": "smell_loss",
@@ -297,7 +331,9 @@
 								"text": "Have scents you used to enjoy becoming fainter or disappeared?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							},
 							{
 								"id": "taste_loss",
@@ -305,7 +341,9 @@
 								"text": "Do foods taste dull or lack their usual flavor?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							},
 							{
 								"id": "abnormal_sensations",
@@ -313,7 +351,9 @@
 								"text": "Are you experiencing odd sensations—like tingling, burning, or numb spots in your body?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							},
 							{
 								"id": "speech_problems",
@@ -321,7 +361,9 @@
 								"text": "Does your voice feel weak or faint when you speak, making it hard for others to hear you?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							}
 						]
 					}
@@ -364,7 +406,9 @@
 								"text": "Would you like to be more active by walking, stretching, or doing other kinds of exercise?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": true
 							},
 							{
 								"id": "hobbies",
@@ -372,7 +416,9 @@
 								"text": "Would you like to spend more time on a hobby or activity you enjoy?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							}
 						]
 					},
@@ -388,7 +434,9 @@
 								"text": "Is staying socially connected important to you right now? ",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							},
 							{
 								"id": "leisure",
@@ -396,7 +444,9 @@
 								"text": "Would you like help planning social activities, vacations or going out more often?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							},
 							{
 								"id": "respite",
@@ -404,7 +454,9 @@
 								"text": "Are you looking for ways to support your caregivers or make family life feel more balanced?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							},
 							{
 								"id": "intimacy",
@@ -412,7 +464,9 @@
 								"text": "Would you like help understanding how Parkinson's may affect your intimacy or emotional closeness?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							}
 						]
 					}
@@ -461,7 +515,9 @@
 								"text": "Anxiety & Panick Attack  - Have you recently felt sudden fear or anxiety that caused physical reactions, like a racing heart or shortness of breath?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							},
 							{
 								"id": "impulsive_behavior",
@@ -469,7 +525,9 @@
 								"text": "Impulsive behavior - Have you noticed urges that feel hard to control—like overspending, overeating?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							},
 							{
 								"id": "emotional_changes",
@@ -477,7 +535,9 @@
 								"text": "Emotional changes (Depression) - Have you been feeling down or less motivated than usual lately? ",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							}
 						]
 					},
@@ -493,7 +553,9 @@
 								"text": "Have you been forgetting things more often, like names, appointments, or steps in a task you usually do with ease?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							},
 							{
 								"id": "mental_overload ",
@@ -501,7 +563,9 @@
 								"text": "Do you feel overwhelmed or find it hard to focus when there's a lot going on, or when decisions need to be made?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							},
 							{
 								"id": "brain_fog",
@@ -509,7 +573,9 @@
 								"text": "Have you noticed it takes more time to understand or respond to things, or that judging distances or space feels harder?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							}
 						]
 					},
@@ -525,7 +591,9 @@
 								"text": "Seeing things or hearing voices or sounds that others don't.",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							},
 							{
 								"id": "false_beliefs",
@@ -533,7 +601,9 @@
 								"text": "Feeling confused, suspicious, or firmly convinced of things that later don't seem to make sense.",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							},
 							{
 								"id": "perceptual_distortion ",
@@ -541,7 +611,9 @@
 								"text": "Feeling confused by objects or surroundings, and it takes a moment to figure out what's real.",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							}
 						]
 					}
@@ -564,7 +636,9 @@
 								"text": "Build a strong medication routine",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							},
 							{
 								"id": "side_effects",
@@ -572,7 +646,9 @@
 								"text": "Record side effects or something unusual you've noticed",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							}
 						]
 					}
@@ -615,7 +691,9 @@
 								"text": "Do you want to better manage weight loss or gain linked to Parkinson's?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							},
 							{
 								"id": "nutrition",
@@ -623,7 +701,9 @@
 								"text": "Would you like to improve digestion, energy, or balanced meals?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							}
 						]
 					},
@@ -639,7 +719,9 @@
 								"text": "Would you like help making daily routines easier and more manageable?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							},
 							{
 								"id": "physical_safety",
@@ -647,7 +729,9 @@
 								"text": "Would you feel more secure if you had support for balance, falls, or home safety?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description"
+								"short_description": "short description",
+								"goal_description": "goal description",
+								"smart_watch": false
 							}
 						]
 					}
