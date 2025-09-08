@@ -1,42 +1,59 @@
-/* Navigation Component Styles - Mobile-First Responsive Design */
+/* Navigation Component Styles - Always Bottom Navigation - Mobile First */
 
-/* Mobile: Bottom Navigation */
+/* Navigation always at bottom - Mobile optimized */
 .navigation {
 	background-color: white;
 	border-top: 1px solid var(--color-border-light);
-	padding: var(--spacing-sm) var(--spacing-md);
+	padding: var(--spacing-xs) var(--spacing-sm);
 	position: fixed;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	z-index: var(--z-fixed);
-	box-shadow: var(--shadow-lg);
 	box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	max-width: 100vw;
+	height: 68px; /* Fixed height for consistency */
+	display: flex;
+	align-items: center;
 }
 
-/* Desktop: Top Navigation */
-@media (min-width: 1024px) {
+/* Small Mobile optimizations */
+@media (max-width: 480px) {
 	.navigation {
-		border-top: none;
-		border-bottom: 1px solid var(--color-border-light);
-		position: sticky;
-		top: 0;
-		bottom: auto;
-		box-shadow: var(--shadow-md);
-		padding: var(--spacing-lg) var(--spacing-xl);
+		height: 64px;
+		padding: var(--spacing-xs) var(--spacing-xs);
 	}
 }
 
-/* Large screen navigation padding */
+/* Tablet optimizations */
+@media (min-width: 481px) and (max-width: 1023px) {
+	.navigation {
+		height: 80px;
+		padding: var(--spacing-sm) var(--spacing-lg);
+	}
+}
+
+/* Desktop optimizations */
+@media (min-width: 1024px) {
+	.navigation {
+		height: 90px;
+		padding: var(--spacing-md) var(--spacing-2xl);
+	}
+}
+
+/* Large screen navigation */
 @media (min-width: 1280px) {
 	.navigation {
-		padding: var(--spacing-lg) var(--spacing-2xl);
+		height: 100px;
+		padding: var(--spacing-lg) var(--spacing-3xl);
 	}
 }
 
 @media (min-width: 1536px) {
 	.navigation {
-		padding: var(--spacing-lg) var(--spacing-3xl);
+		height: 110px;
+		padding: var(--spacing-lg) var(--spacing-4xl);
 	}
 }
 
@@ -47,13 +64,23 @@
 	width: 100%;
 	margin: 0;
 	gap: var(--spacing-xs);
+	height: 100%;
+	flex-shrink: 0;
+}
+
+/* Small mobile: Tighter spacing */
+@media (max-width: 480px) {
+	.container {
+		gap: var(--spacing-xs);
+		padding: 0;
+	}
 }
 
 /* Tablet: Full width container */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 481px) and (max-width: 1023px) {
 	.container {
-		padding: 0 var(--spacing-xl);
 		gap: var(--spacing-sm);
+		padding: 0 var(--spacing-md);
 	}
 }
 
@@ -63,6 +90,7 @@
 		max-width: 64rem;
 		margin: 0 auto;
 		gap: var(--spacing-md);
+		padding: 0;
 	}
 }
 
@@ -86,29 +114,65 @@
 	align-items: center;
 	justify-content: center;
 	gap: var(--spacing-xs);
-	padding: var(--spacing-sm);
+	padding: var(--spacing-xs);
 	border-radius: var(--border-radius-lg);
 	border: none;
 	background: none;
 	cursor: pointer;
 	transition: var(--transition-fast);
-	min-height: var(--min-touch-target-mobile);
-	min-width: var(--min-touch-target-mobile);
+	min-height: 48px;
+	min-width: 48px;
 	font-family: 'Filson Pro', sans-serif;
 	position: relative;
 	color: var(--color-text-primary);
 	flex: 1;
-	max-width: 80px;
+	max-width: 68px;
+	height: 52px;
+}
+
+/* Small mobile button sizing */
+@media (max-width: 480px) {
+	.navButton {
+		min-height: 44px;
+		min-width: 44px;
+		max-width: 56px;
+		padding: var(--spacing-xs);
+		gap: 2px;
+		height: 48px;
+	}
+}
+
+/* Tablet button sizing */
+@media (min-width: 481px) and (max-width: 1023px) {
+	.navButton {
+		min-height: 56px;
+		min-width: 56px;
+		max-width: 90px;
+		padding: var(--spacing-sm);
+		gap: var(--spacing-xs);
+		height: 64px;
+	}
 }
 
 /* Desktop: Enhanced button sizing */
 @media (min-width: 1024px) {
 	.navButton {
-		min-height: 70px;
-		min-width: 70px;
+		min-height: 64px;
+		min-width: 64px;
 		max-width: 120px;
 		padding: var(--spacing-md);
 		gap: var(--spacing-sm);
+		height: 72px;
+	}
+}
+
+/* Large desktop button sizing */
+@media (min-width: 1280px) {
+	.navButton {
+		min-height: 72px;
+		min-width: 72px;
+		max-width: 140px;
+		height: 80px;
 	}
 }
 
@@ -137,24 +201,37 @@
 }
 
 .label {
-	font-size: var(--font-size-xs);
+	font-size: 0.625rem; /* 10px - Smaller for mobile */
 	font-weight: var(--font-weight-medium);
 	text-align: center;
 	line-height: var(--line-height-tight);
 	color: inherit;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 100%;
+}
+
+/* Small mobile: Even smaller labels */
+@media (max-width: 480px) {
+	.label {
+		font-size: 0.5rem; /* 8px */
+		font-weight: var(--font-weight-regular);
+	}
 }
 
 /* Tablet: Slightly larger labels */
-@media (min-width: 768px) {
+@media (min-width: 481px) and (max-width: 1023px) {
 	.label {
-		font-size: var(--font-size-sm);
+		font-size: var(--font-size-xs);
+		font-weight: var(--font-weight-medium);
 	}
 }
 
 /* Desktop: Even larger labels */
 @media (min-width: 1024px) {
 	.label {
-		font-size: var(--font-size-base);
+		font-size: var(--font-size-sm);
 		font-weight: var(--font-weight-bold);
 	}
 }
@@ -162,27 +239,10 @@
 /* Large screen label sizing */
 @media (min-width: 1280px) {
 	.label {
-		font-size: var(--font-size-lg);
+		font-size: var(--font-size-base);
 	}
 }
 
-/* Small mobile adjustments */
-@media (max-width: 480px) {
-	.navigation {
-		padding: var(--spacing-xs) var(--spacing-sm);
-	}
-
-	.navButton {
-		min-height: 56px;
-		min-width: 56px;
-		max-width: 60px;
-		padding: var(--spacing-xs);
-	}
-
-	.label {
-		font-size: 0.625rem;
-	}
-}
 
 /* High contrast mode support */
 @media (prefers-contrast: high) {

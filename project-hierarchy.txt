@@ -73,6 +73,10 @@ ecare-pd_prototype
    │  │  │  ├─ CircularProcess.js
    │  │  │  ├─ CircularProcess.module.css
    │  │  │  └─ index.js
+   │  │  ├─ GoalCard
+   │  │  │  ├─ GoalCard.js
+   │  │  │  ├─ GoalCard.module.css
+   │  │  │  └─ index.js
    │  │  └─ GoalSettingFlow
    │  │     ├─ GoalSettingFlow.css
    │  │     ├─ GoalSettingFlow.js
@@ -81,6 +85,10 @@ ecare-pd_prototype
    │  │  ├─ AppLayout
    │  │  │  ├─ AppLayout.js
    │  │  │  ├─ AppLayout.module.css
+   │  │  │  └─ index.js
+   │  │  ├─ Banner
+   │  │  │  ├─ Banner.js
+   │  │  │  ├─ Banner.module.css
    │  │  │  └─ index.js
    │  │  └─ Navigation
    │  │     ├─ index.js
@@ -114,6 +122,7 @@ ecare-pd_prototype
    │  │  └─ index.js
    │  ├─ GoalsPage
    │  │  ├─ GoalsPage.js
+   │  │  ├─ GoalsPage.module.css
    │  │  └─ index.js
    │  ├─ JourneyPage
    │  │  ├─ index.js

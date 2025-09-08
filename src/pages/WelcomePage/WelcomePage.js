@@ -8,20 +8,22 @@ import GoalSettingFlow from '../../components/features/GoalSettingFlow';
 import { appContent } from '../../constants/features';
 import { colors } from '../../constants/colors';
 import styles from './WelcomePage.module.css';
+import Banner from '../../components/layout/Banner';
 
-const WelcomePage = ({ onGetStarted, onFeatureClick }) => {
+const WelcomePage = ({ onGetStarted, onFeatureClick, onLogoClick }) => {
+	// ADD: Accept onLogoClick prop
 	const { welcome } = appContent;
 	const [currentView, setCurrentView] = useState('welcome'); // 'welcome', 'cafy-intro', 'goal-setting'
 	const [hasStartedGoalSetting, setHasStartedGoalSetting] = useState(false);
 
-	const handleFeatureClick = (featureId) => {
-		if (featureId === 'goals' && !hasStartedGoalSetting) {
+	const handleFeatureClick = (feature) => {
+		if (feature.id === 'goals' && !hasStartedGoalSetting) {
 			// First time clicking Goals - go to CAFY intro
 			setCurrentView('cafy-intro');
 		} else {
 			// For other features or if goals already started, use the original handler
 			if (onFeatureClick) {
-				onFeatureClick(featureId);
+				onFeatureClick(feature);
 			}
 		}
 	};
@@ -34,11 +36,18 @@ const WelcomePage = ({ onGetStarted, onFeatureClick }) => {
 
 	const handleGoalSettingComplete = (success, selections) => {
 		if (success) {
-			// Goals completed successfully
+			// Goals completed successfully - pass to parent to handle navigation
 			console.log('Goals completed with selections:', selections);
-			// You can store the selections or pass them up to parent component
-			// For now, return to welcome page
-			setCurrentView('welcome');
+			setHasStartedGoalSetting(true);
+
+			// Call the parent's feature click handler to properly navigate
+			if (onFeatureClick) {
+				// Create a custom event to trigger the app's goal completion logic
+				onFeatureClick({
+					id: 'goals-completed',
+					selections: selections,
+				});
+			}
 		} else {
 			// User cancelled goal setting
 			setCurrentView('welcome');
@@ -77,13 +86,8 @@ const WelcomePage = ({ onGetStarted, onFeatureClick }) => {
 	// Default welcome page view
 	return (
 		<div className={styles.container}>
-			{/* FIXED: Consistent blue banner with eCare-PD logo */}
-			<div className={styles.blueBanner}>
-				<div className={styles.bannerContent}>
-					<ECareLogo className={styles.logo} size='medium' />
-				</div>
-			</div>
-
+			{/* Banner with clickable logo - Pass onLogoClick */}
+			<Banner onLogoClick={onLogoClick} />
 			{/* Main content */}
 			<div className={styles.content}>
 				<div className={styles.hero}>

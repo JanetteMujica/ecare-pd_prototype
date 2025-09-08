@@ -1,35 +1,11 @@
 /* WelcomePage Component Styles - Mobile-First Responsive Design */
 .container {
 	height: 100vh;
-	background: linear-gradient(135deg, #f0f4ff 0%, #e5f3f0 100%);
+	background: var(--color-bg-welcome);
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
 	width: 100%;
-}
-
-/* Blue banner - Base styles */
-.blueBanner {
-	width: 100%;
-	background-color: #263b7f;
-	padding: var(--spacing-xs) 0;
-	box-shadow: var(--shadow-md);
-	position: relative;
-	z-index: var(--z-sticky);
-	flex-shrink: 0;
-}
-
-.bannerContent {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 0 var(--spacing-md);
-}
-
-.logo {
-	/* Logo styling handled by LogoPlaceholder component */
 }
 
 /* Main content area - Single screen without scrolling */
@@ -63,11 +39,11 @@
 	align-self: center;
 }
 
-/* Responsive title sizing - Base mobile */
+/* Responsive title sizing - Mobile-first base */
 .mainHeading {
 	font-family: 'Filson Pro', sans-serif;
 	font-weight: var(--font-weight-bold);
-	font-size: 1.125rem;
+	font-size: var(--font-size-lg);
 	line-height: var(--line-height-tight);
 	letter-spacing: -0.025em;
 	margin: 0;
@@ -78,12 +54,12 @@
 	font-weight: var(--font-weight-bold);
 }
 
-/* Subtitle - Base mobile */
+/* Subtitle - Mobile-first base */
 .subtitle {
 	font-family: 'Filson Pro', sans-serif;
 	font-weight: var(--font-weight-medium);
 	font-style: italic;
-	font-size: 0.875rem;
+	font-size: var(--font-size-sm);
 	opacity: 0.9;
 	margin: var(--spacing-xs) 0 0 0;
 	color: var(--color-text-primary);
@@ -111,14 +87,14 @@
 	flex-shrink: 0;
 }
 
-/* CTA Button - Base styles */
+/* CTA Button - Mobile-first base */
 .ctaButton {
 	position: relative;
 	overflow: hidden;
 	animation: buttonPulse 2s ease-in-out infinite;
-	font-size: 1rem !important;
+	font-size: var(--font-size-base) !important;
 	padding: 0.875rem 1.75rem !important;
-	min-height: 48px !important;
+	min-height: var(--min-touch-target-mobile) !important;
 }
 
 .buttonGlow {
@@ -161,12 +137,12 @@
 	}
 
 	.mainHeading {
-		font-size: 1rem;
+		font-size: var(--font-size-base);
 		line-height: 1.05;
 	}
 
 	.subtitle {
-		font-size: 0.75rem;
+		font-size: var(--font-size-xs);
 		margin: 0.125rem 0 0 0;
 	}
 
@@ -181,18 +157,14 @@
 	}
 
 	.ctaButton {
-		font-size: 0.875rem !important;
+		font-size: var(--font-size-sm) !important;
 		padding: 0.75rem 1.5rem !important;
-		min-height: 44px !important;
+		min-height: var(--min-touch-target) !important;
 	}
 
 	.buttonIcon {
 		width: 16px !important;
 		height: 16px !important;
-	}
-
-	.blueBanner {
-		padding: 0.25rem 0;
 	}
 
 	/* Landscape mobile - optimized for all elements */
@@ -236,23 +208,11 @@
 			width: 14px !important;
 			height: 14px !important;
 		}
-
-		.blueBanner {
-			padding: 0.1875rem 0;
-		}
 	}
 }
 
 /* Standard iPads in landscape (up to 10.2" models) */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-	.blueBanner {
-		padding: var(--spacing-sm) 0;
-	}
-
-	.bannerContent {
-		padding: 0 var(--spacing-xl);
-	}
-
 	.hero {
 		padding: var(--spacing-md) var(--spacing-lg);
 		gap: var(--spacing-sm);
@@ -296,14 +256,6 @@
 
 /* Larger iPads in landscape (e.g., iPad Pro) */
 @media (min-width: 1025px) and (max-width: 1366px) and (orientation: landscape) {
-	.blueBanner {
-		padding: var(--spacing-md) 0;
-	}
-
-	.bannerContent {
-		padding: 0 var(--spacing-2xl);
-	}
-
 	.hero {
 		padding: var(--spacing-lg) var(--spacing-xl);
 		gap: var(--spacing-md);
@@ -347,14 +299,6 @@
 
 /* Laptops and larger */
 @media (min-width: 1367px) {
-	.blueBanner {
-		padding: var(--spacing-lg) 0;
-	}
-
-	.bannerContent {
-		padding: 0 var(--spacing-2xl);
-	}
-
 	.hero {
 		padding: var(--spacing-xl) var(--spacing-2xl);
 		gap: var(--spacing-lg);
@@ -462,11 +406,6 @@
 		background: var(--color-bg-primary);
 	}
 
-	.blueBanner {
-		background-color: #000000 !important;
-		border-bottom: 2px solid #000000;
-	}
-
 	.mainHeading,
 	.subtitle {
 		color: var(--color-text-primary);
@@ -483,12 +422,6 @@
 		background: white;
 		height: auto;
 		overflow: visible;
-	}
-
-	.blueBanner {
-		background-color: #263b7f !important;
-		-webkit-print-color-adjust: exact;
-		color-adjust: exact;
 	}
 
 	.ctaButton {

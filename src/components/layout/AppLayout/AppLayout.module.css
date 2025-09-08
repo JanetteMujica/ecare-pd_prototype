@@ -5,7 +5,11 @@
 	flex-direction: column;
 	background: linear-gradient(135deg, #f0f4ff 0%, #e5f3f0 100%);
 	width: 100%;
+	max-width: 100vw;
 	overflow-x: hidden;
+	position: relative;
+	/* Account for fixed banner at top */
+	padding-top: 0;
 }
 
 /* Mobile Layout (navigation at bottom) */
@@ -13,19 +17,39 @@
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+	min-height: 100dvh; /* Dynamic viewport height for mobile browsers */
 	width: 100%;
+	max-width: 100vw;
 	margin: 0;
 	position: relative;
-	padding-bottom: 80px;
-	overflow: hidden;
+	padding-bottom: 72px; /* Mobile nav height + buffer */
+	padding-left: var(--spacing-md);
+	padding-right: var(--spacing-md);
+	overflow-x: hidden;
+	overflow-y: auto;
+	/* Ensure content can scroll under the fixed banner */
+	scroll-padding-top: calc(var(--spacing-xs) * 2 + var(--font-size-lg) + 1rem);
 }
 
-/* Tablet Layout */
-@media (min-width: 768px) and (max-width: 1023px) {
+/* Small Mobile (320px-480px) */
+@media (max-width: 480px) {
+	.mobileLayout {
+		padding-bottom: 68px;
+		padding-left: var(--spacing-sm);
+		padding-right: var(--spacing-sm);
+		scroll-padding-top: calc(0.5rem + var(--font-size-base) + 0.8rem);
+	}
+}
+
+/* Tablet Portrait and Landscape */
+@media (min-width: 481px) and (max-width: 1023px) {
 	.mobileLayout {
 		padding-bottom: 85px;
 		padding-left: var(--spacing-xl);
 		padding-right: var(--spacing-xl);
+		scroll-padding-top: calc(
+			var(--spacing-sm) * 2 + var(--font-size-2xl) + 1.2rem
+		);
 	}
 }
 
@@ -47,26 +71,39 @@
 		flex-direction: column;
 		min-height: 100vh;
 		width: 100%;
+		max-width: 100vw;
 		margin: 0;
 		padding-bottom: 0;
-		padding-left: var(--spacing-xl);
-		padding-right: var(--spacing-xl);
-		overflow: hidden;
+		padding-left: var(--spacing-2xl);
+		padding-right: var(--spacing-2xl);
+		overflow-x: hidden;
+		overflow-y: auto;
+		/* Desktop scroll padding for fixed banner */
+		scroll-padding-top: calc(
+			var(--spacing-md) * 2 + var(--font-size-3xl) + 1.5rem
+		);
 	}
 }
 
 /* Large Desktop Layout */
 @media (min-width: 1280px) {
 	.desktopLayout {
-		padding-left: var(--spacing-2xl);
-		padding-right: var(--spacing-2xl);
+		padding-left: var(--spacing-3xl);
+		padding-right: var(--spacing-3xl);
+		max-width: var(--container-xl);
+		margin: 0 auto;
+		scroll-padding-top: calc(
+			var(--spacing-lg) * 2 + var(--font-size-4xl) + 1.8rem
+		);
 	}
 }
 
 @media (min-width: 1536px) {
 	.desktopLayout {
-		padding-left: var(--spacing-3xl);
-		padding-right: var(--spacing-3xl);
+		padding-left: var(--spacing-4xl);
+		padding-right: var(--spacing-4xl);
+		max-width: var(--container-2xl);
+		scroll-padding-top: 6rem; /* Banner height: 1.5rem + 3rem + 1.5rem */
 	}
 }
 
@@ -76,15 +113,25 @@
 	isolation: isolate;
 }
 
-/* Content area styling - Single screen without scrolling */
+/* Content area styling - Proper scrolling with fixed banner */
 .mobileLayout > main,
 .desktopLayout > main {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	overflow: hidden;
+	overflow-y: auto;
+	overflow-x: hidden;
 	min-height: 0;
+	/* Ensure main content can scroll smoothly */
+	scroll-behavior: smooth;
+}
+
+/* Content sections should have proper spacing from top */
+.mobileLayout > main > *:first-child,
+.desktopLayout > main > *:first-child {
+	/* Only apply to direct children that aren't PageTitle */
+	/* PageTitle handles its own top margin */
 }
 
 /* Desktop: Navigation goes first */
@@ -105,5 +152,21 @@
 @media (prefers-contrast: high) {
 	.layout {
 		background-color: var(--color-bg-primary);
+	}
+}
+
+/* Smooth scrolling for better UX */
+@media (prefers-reduced-motion: no-preference) {
+	.mobileLayout,
+	.desktopLayout {
+		scroll-behavior: smooth;
+	}
+}
+
+/* Disable smooth scrolling for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	.mobileLayout,
+	.desktopLayout {
+		scroll-behavior: auto;
 	}
 }

@@ -8,6 +8,7 @@ import ResourcesPage from './pages/RessourcesPage';
 import GoalSettingFlow from './components/features/GoalSettingFlow';
 import Navigation from './components/layout/Navigation';
 import AppLayout from './components/layout/AppLayout';
+import taxonomyData from './data/taxonomy.json';
 import './App.css';
 
 const App = () => {
@@ -15,73 +16,159 @@ const App = () => {
 	const [showWelcome, setShowWelcome] = useState(true);
 	const [showGoalSettingFlow, setShowGoalSettingFlow] = useState(false);
 	const [goalSettingCompleted, setGoalSettingCompleted] = useState(false);
-	const [goalData, setGoalData] = useState([]);
-	const [cameFromWelcome, setCameFromWelcome] = useState(false); // Track if user came from welcome
+	const [userGoals, setUserGoals] = useState([]);
+	const [cameFromWelcome, setCameFromWelcome] = useState(false);
+
+	// Function to find smart_watch value from taxonomy data
+	const getSmartWatchValue = (goalId) => {
+		const flows = taxonomyData.cafy_conversation_flow.flows;
+
+		// Search through all flows and steps to find the option with this goalId
+		for (const flowKey in flows) {
+			const flow = flows[flowKey];
+			for (const step of flow.steps) {
+				if (step.options) {
+					const option = step.options.find((opt) => opt.id === goalId);
+					if (option && option.hasOwnProperty('smart_watch')) {
+						return option.smart_watch;
+					}
+				}
+			}
+		}
+
+		// Default to false if not found
+		return false;
+	};
+
+	// Handle logo click - Navigate back to welcome page
+	const handleLogoClick = () => {
+		setShowWelcome(true);
+		setCurrentPage('welcome');
+		setShowGoalSettingFlow(false);
+		setCameFromWelcome(false);
+	};
 
 	// Handle getting started from welcome page
 	const handleGetStarted = () => {
 		setShowWelcome(false);
 		setCurrentPage('cafy-intro');
-		setCameFromWelcome(false); // Regular navigation, not from welcome circular process
+		setCameFromWelcome(false);
 	};
 
 	// Handle navigation
 	const handleNavigate = (pageId) => {
 		setCurrentPage(pageId);
-		setShowGoalSettingFlow(false); // Hide goal flow when navigating
-		setCameFromWelcome(false); // Reset welcome flag
+		setShowGoalSettingFlow(false);
+		setCameFromWelcome(false);
 	};
 
 	// Handle feature clicks from circular process (Goals button on welcome page)
 	const handleFeatureClick = (feature) => {
+		if (feature.id === 'goals-completed') {
+			// Handle goal completion from welcome page
+			handleGoalSettingComplete(true, feature.selections);
+			return;
+		}
 		if (feature.id === 'goals') {
-			// Special case: Goals button from welcome page should go to CAFY intro
-			setShowWelcome(false);
-			setCurrentPage('cafy-intro');
-			setCameFromWelcome(true); // Mark that we came from welcome
+			if (goalSettingCompleted && userGoals.length > 0) {
+				// If goals already completed, go directly to goals page
+				setShowWelcome(false);
+				setCurrentPage('goals');
+			} else {
+				// First time or no goals yet, go to CAFY intro
+				setShowWelcome(false);
+				setCurrentPage('cafy-intro');
+				setCameFromWelcome(true);
+			}
 		} else {
 			// Other features go directly to their pages
 			setShowWelcome(false);
 			setCurrentPage(feature.id);
 			setCameFromWelcome(false);
 		}
-		setShowGoalSettingFlow(false); // Hide goal flow when navigating
+		setShowGoalSettingFlow(false);
 	};
 
 	// Handle going back to welcome from CAFY intro
 	const handleCafyCancel = () => {
 		if (cameFromWelcome) {
-			// If we came from welcome page, go back there
 			setShowWelcome(true);
 			setCurrentPage('welcome');
 			setCameFromWelcome(false);
 		} else {
-			// Otherwise, this shouldn't happen in normal flow, but handle gracefully
-			setCurrentPage('goals'); // or wherever makes sense in your app
+			setCurrentPage('goals');
 		}
 	};
 
 	// Handle starting goal setting flow from CAFY intro page
 	const handleStartGoalSetting = () => {
 		setShowGoalSettingFlow(true);
-		// Don't change currentPage - let the flow handle its own display
 	};
 
 	// Handle completing or canceling goal setting flow
 	const handleGoalSettingComplete = (completed = false, selections = []) => {
+		console.log('Goal setting complete called:', { completed, selections });
+
 		setShowGoalSettingFlow(false);
 
 		if (completed && selections && selections.length > 0) {
 			setGoalSettingCompleted(true);
-			setGoalData(selections);
-			setCurrentPage('goals'); // Navigate to goals page to show results
-			setCameFromWelcome(false); // Reset welcome flag
-			console.log('Goal setting completed successfully!', selections);
+
+			// Transform selections to match GoalsPage expected format
+			const goalsWithMetadata = selections.map((goal) => ({
+				...goal,
+				// Use smart_watch value directly from taxonomy data
+				smart_watch: getSmartWatchValue(goal.id),
+				goal_description:
+					goal.goal_description ||
+					goal.short_description ||
+					'No description available',
+			}));
+
+			setUserGoals(goalsWithMetadata);
+
+			// IMPORTANT: Set showWelcome to false and navigate to goals
+			setShowWelcome(false);
+			setCurrentPage('goals');
+			setCameFromWelcome(false);
+
+			console.log('Navigating to goals page with:', goalsWithMetadata);
 		} else {
-			// If canceled or no selections, return to CAFY intro
+			// If canceled, go back to cafy-intro
 			setCurrentPage('cafy-intro');
-			// Keep cameFromWelcome flag as is, so back button works correctly
 		}
+	};
+
+	// Goal management handlers
+	const handleEditGoal = (goalId) => {
+		console.log('Edit goal:', goalId);
+		// Restart goal setting flow to edit
+		setShowGoalSettingFlow(true);
+	};
+
+	const handleDeleteGoal = (goalId) => {
+		setUserGoals((prev) => prev.filter((goal) => goal.id !== goalId));
+		console.log('Deleted goal:', goalId);
+	};
+
+	const handleTrackGoal = (goalId) => {
+		console.log('Track goal:', goalId);
+		setCurrentPage('tracking');
+	};
+
+	const handleViewInfo = (goalId) => {
+		console.log('View info for goal:', goalId);
+		// TODO: Show goal information modal or page
+	};
+
+	const handleViewCareTips = (goalId) => {
+		console.log('View care tips for goal:', goalId);
+		setCurrentPage('resources');
+	};
+
+	const handleWatchGoal = (goalId) => {
+		console.log('Watch goal:', goalId);
+		// TODO: Implement smartwatch integration
 	};
 
 	// Show welcome page
@@ -90,6 +177,7 @@ const App = () => {
 			<WelcomePage
 				onGetStarted={handleGetStarted}
 				onFeatureClick={handleFeatureClick}
+				onLogoClick={handleLogoClick}
 			/>
 		);
 	}
@@ -106,30 +194,43 @@ const App = () => {
 
 	// Render page content based on current page
 	const renderPage = () => {
+		console.log('Rendering page:', currentPage, 'Goals:', userGoals.length);
+
 		switch (currentPage) {
 			case 'cafy-intro':
 				return (
 					<CafyIntroPage
 						onStartGoals={handleStartGoalSetting}
 						onCancel={cameFromWelcome ? handleCafyCancel : null}
+						onLogoClick={handleLogoClick}
 					/>
 				);
 			case 'goals':
 				return (
 					<GoalsPage
-						onStartGoalSetting={handleStartGoalSetting}
-						goalData={goalData}
-						hasCompletedGoalSetting={goalSettingCompleted}
+						goals={userGoals}
+						onEditGoal={handleEditGoal}
+						onDeleteGoal={handleDeleteGoal}
+						onTrackGoal={handleTrackGoal}
+						onViewInfo={handleViewInfo}
+						onViewCareTips={handleViewCareTips}
+						onWatchGoal={handleWatchGoal}
+						onLogoClick={handleLogoClick}
 					/>
 				);
 			case 'tracking':
-				return <TrackingPage />;
+				return <TrackingPage onLogoClick={handleLogoClick} />;
 			case 'journey':
-				return <JourneyPage />;
+				return <JourneyPage onLogoClick={handleLogoClick} />;
 			case 'resources':
-				return <ResourcesPage />;
+				return <ResourcesPage onLogoClick={handleLogoClick} />;
 			default:
-				return <CafyIntroPage onStartGoals={handleStartGoalSetting} />;
+				return (
+					<CafyIntroPage
+						onStartGoals={handleStartGoalSetting}
+						onLogoClick={handleLogoClick}
+					/>
+				);
 		}
 	};
 

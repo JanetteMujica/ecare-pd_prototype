@@ -7,13 +7,14 @@
 	justify-content: center;
 	overflow: hidden;
 	padding: var(--spacing-xs);
+	max-width: 100vw;
 }
 
 /* Unified vertical layout - Base styles */
 .verticalLayout {
 	display: flex;
 	flex-direction: column;
-	gap: 0.75rem;
+	gap: var(--spacing-sm);
 	width: 100%;
 	max-width: 480px;
 	height: 100%;
@@ -29,18 +30,18 @@
 	}
 
 	.verticalLayout {
-		gap: 0.25rem;
+		gap: var(--spacing-xs);
 		max-width: 320px;
 	}
 
 	/* Height-constrained screens */
 	@media (max-height: 600px) {
 		.container {
-			padding: 0.25rem;
+			padding: var(--spacing-xs);
 		}
 
 		.verticalLayout {
-			gap: 0.25rem;
+			gap: var(--spacing-xs);
 			justify-content: space-evenly;
 		}
 	}

@@ -1,0 +1,248 @@
+/* Banner Component Styles - Mobile-First Responsive Design */
+/* Uses fixed positioning to ensure full viewport width */
+
+/* Blue banner - Base styles (mobile-first) */
+.blueBanner {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100vw;
+	background-color: var(--color-primary-dark);
+	padding: var(--spacing-xs) 0;
+	box-shadow: var(--shadow-md);
+	z-index: 1000; /* High z-index to ensure it's above everything */
+	flex-shrink: 0;
+	border: none;
+	box-sizing: border-box;
+}
+
+.bannerContent {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: var(--container-xl);
+	margin: 0 auto;
+	padding: 0 var(--spacing-md);
+	width: 100%;
+	box-sizing: border-box;
+}
+
+/* Logo button - Make logo clickable */
+.logoButton {
+	background: none;
+	border: none;
+	padding: var(--spacing-xs);
+	margin: 0;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: var(--transition-normal);
+	border-radius: var(--border-radius-sm);
+	color: inherit;
+	text-decoration: none;
+}
+
+.logoButton:hover {
+	transform: scale(1.05);
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.logoButton:active {
+	transform: scale(0.98);
+}
+
+.logoButton:focus {
+	outline: 2px solid rgba(255, 255, 255, 0.8);
+	outline-offset: 2px;
+}
+
+/* Logo responsive sizing - Mobile-first base */
+.logo {
+	/* Base mobile size - small */
+	font-size: var(--font-size-lg);
+	height: auto;
+	transition: var(--transition-normal);
+	display: block;
+}
+
+/* Ensure logo inside button maintains proper styling */
+.logoButton .logo {
+	font-size: var(--font-size-lg);
+	height: auto;
+	transition: var(--transition-normal);
+}
+
+/* Smallest iPhones - Keep compact size */
+@media (max-width: 480px) {
+	.blueBanner {
+		padding: 0.25rem 0;
+	}
+
+	.logoButton {
+		padding: 0.125rem;
+	}
+
+	.logo,
+	.logoButton .logo {
+		font-size: var(--font-size-base);
+	}
+
+	/* Landscape mobile */
+	@media (orientation: landscape) and (max-height: 600px) {
+		.blueBanner {
+			padding: 0.1875rem 0;
+		}
+
+		.logoButton {
+			padding: 0.0625rem;
+		}
+
+		.logo,
+		.logoButton .logo {
+			font-size: var(--font-size-sm);
+		}
+	}
+}
+
+/* Standard mobile devices */
+@media (min-width: 481px) and (max-width: 767px) {
+	.logo,
+	.logoButton .logo {
+		font-size: var(--font-size-xl);
+	}
+}
+
+/* Standard tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+	.blueBanner {
+		padding: var(--spacing-sm) 0;
+	}
+
+	.bannerContent {
+		padding: 0 var(--spacing-xl);
+	}
+
+	.logoButton {
+		padding: var(--spacing-sm);
+	}
+
+	.logo,
+	.logoButton .logo {
+		font-size: var(--font-size-2xl);
+	}
+}
+
+/* Standard iPads in landscape (up to 10.2" models) */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+	.blueBanner {
+		padding: var(--spacing-sm) 0;
+	}
+
+	.bannerContent {
+		padding: 0 var(--spacing-xl);
+	}
+
+	.logoButton {
+		padding: var(--spacing-sm);
+	}
+
+	.logo,
+	.logoButton .logo {
+		font-size: var(--font-size-2xl);
+	}
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+	.blueBanner {
+		padding: var(--spacing-md) 0;
+	}
+
+	.bannerContent {
+		padding: 0 var(--spacing-2xl);
+	}
+
+	.logoButton {
+		padding: var(--spacing-md);
+	}
+
+	.logo,
+	.logoButton .logo {
+		font-size: var(--font-size-3xl);
+	}
+}
+
+/* Laptops and larger */
+@media (min-width: 1367px) {
+	.blueBanner {
+		padding: var(--spacing-lg) 0;
+	}
+
+	.logoButton {
+		padding: var(--spacing-lg);
+	}
+
+	.logo,
+	.logoButton .logo {
+		width: 5rem; /* 80px - much larger for large desktop/laptop */
+		font-size: var(--font-size-5xl);
+	}
+
+	/* Very large screens */
+	@media (min-width: 1440px) {
+		.logo,
+		.logoButton .logo {
+			width: 6rem; /* 96px - very large for biggest screens */
+			font-size: var(--font-size-6xl);
+		}
+	}
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+	.blueBanner {
+		background-color: #000000 !important;
+		border-bottom: 2px solid #000000;
+	}
+
+	.logoButton:focus {
+		outline: 3px solid #ffffff;
+		outline-offset: 2px;
+	}
+
+	.logoButton:hover {
+		background-color: rgba(255, 255, 255, 0.2);
+	}
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+	.logoButton,
+	.logo {
+		transition: none;
+	}
+
+	.logoButton:hover {
+		transform: none;
+	}
+
+	.logoButton:active {
+		transform: none;
+	}
+}
+
+/* Print styles */
+@media print {
+	.blueBanner {
+		background-color: #263b7f !important;
+		-webkit-print-color-adjust: exact;
+		color-adjust: exact;
+	}
+
+	.logoButton {
+		background: none !important;
+		transform: none !important;
+	}
+}

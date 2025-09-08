@@ -123,6 +123,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							},
 							{
@@ -133,6 +191,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							},
 							{
@@ -143,6 +259,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							},
 							{
@@ -153,6 +327,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							}
 						]
@@ -171,6 +403,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							},
 							{
@@ -181,6 +471,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							},
 							{
@@ -191,6 +539,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							},
 							{
@@ -201,6 +607,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							}
 						]
@@ -219,6 +683,121 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
 								"smart_watch": false
 							},
 							{
@@ -229,6 +808,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							}
 						]
@@ -247,6 +884,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							},
 							{
@@ -257,6 +952,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							}
 						]
@@ -275,6 +1028,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": true
 							},
 							{
@@ -285,6 +1096,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": true
 							},
 							{
@@ -295,6 +1164,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": true
 							},
 							{
@@ -305,6 +1232,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": true
 							}
 						]
@@ -323,6 +1308,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							},
 							{
@@ -333,6 +1376,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							},
 							{
@@ -343,6 +1444,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							},
 							{
@@ -353,6 +1512,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							},
 							{
@@ -363,6 +1580,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							}
 						]
@@ -408,6 +1683,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": true
 							},
 							{
@@ -418,6 +1751,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							}
 						]
@@ -436,6 +1827,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							},
 							{
@@ -446,6 +1895,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							},
 							{
@@ -456,6 +1963,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							},
 							{
@@ -466,6 +2031,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							}
 						]
@@ -517,6 +2140,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							},
 							{
@@ -527,6 +2208,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							},
 							{
@@ -537,6 +2276,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							}
 						]
@@ -555,6 +2352,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							},
 							{
@@ -565,6 +2420,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							},
 							{
@@ -575,6 +2488,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							}
 						]
@@ -593,6 +2564,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							},
 							{
@@ -603,6 +2632,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							},
 							{
@@ -613,6 +2700,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							}
 						]
@@ -638,6 +2783,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							},
 							{
@@ -648,6 +2851,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							}
 						]
@@ -693,6 +2954,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							},
 							{
@@ -703,6 +3022,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							}
 						]
@@ -721,6 +3098,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							},
 							{
@@ -731,6 +3166,64 @@
 								"definition": "definition",
 								"short_description": "short description",
 								"goal_description": "goal description",
+								"care-tips": [
+									{
+										"id": 1,
+										"type": "Initial Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 2,
+										"type": "Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 3,
+										"type": "Reinforcement-Educational Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 4,
+										"type": "Initial Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 5,
+										"type": "Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 6,
+										"type": "Reinforcement – Basic Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 7,
+										"type": "Initial Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 8,
+										"type": "Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 9,
+										"type": "Reinforcement-Advanced Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 10,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									},
+									{
+										"id": 11,
+										"type": "Escalation Care Tips",
+										"tip": "placeholder"
+									}
+								],
+
 								"smart_watch": false
 							}
 						]
