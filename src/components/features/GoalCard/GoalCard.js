@@ -21,12 +21,17 @@ const GoalCard = ({
 		smart_watch = false,
 	} = goal;
 
-	// Create consistent styling like FeatureCard
+	// Use the exact same styling approach as FeatureCard with CSS custom properties
+	const cardColor = colors.coral;
 	const cardStyles = {
-		borderColor: colors.coral,
+		borderColor: cardColor,
 		boxShadow: createColoredShadow
-			? createColoredShadow(colors.coral, 0.2)
-			: `0 8px 25px -5px ${colors.coral}30, 0 10px 10px -5px ${colors.coral}20`,
+			? createColoredShadow(cardColor, 0.4)
+			: `0 8px 25px -5px ${cardColor}66, 0 10px 10px -5px ${cardColor}40`,
+		'--card-color': cardColor,
+		'--card-shadow-hover': createColoredShadow
+			? createColoredShadow(cardColor, 0.6)
+			: `0 20px 35px -5px ${cardColor}99, 0 15px 15px -5px ${cardColor}60`,
 	};
 
 	const goalNameStyles = {
@@ -40,7 +45,7 @@ const GoalCard = ({
 
 	return (
 		<div className={styles.card} style={cardStyles}>
-			{/* Header with name and action buttons - matching FeatureCard layout */}
+			{/* Header with name and action buttons */}
 			<div className={styles.header}>
 				<h3 className={styles.goalName} style={goalNameStyles}>
 					{name}
@@ -73,7 +78,7 @@ const GoalCard = ({
 				</div>
 			</div>
 
-			{/* Goal description - matching FeatureCard description style */}
+			{/* Goal description */}
 			<div className={styles.contentContainer}>
 				<div className={styles.description}>
 					<p style={descriptionStyles}>

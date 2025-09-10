@@ -1,8 +1,6 @@
 /* PageTitle Component Styles - Mobile-First Responsive Design */
 .container {
 	width: 100%;
-	background: var(--color-bg-app);
-	padding: var(--spacing-md) 0 var(--spacing-sm) 0;
 	/* Removed border-bottom to eliminate the fine line */
 	position: relative;
 	z-index: 999; /* Below the banner (1000) but above page content */
@@ -11,9 +9,7 @@
 }
 
 .content {
-	max-width: var(--container-xl);
 	margin: 0 auto;
-	padding: 0 var(--spacing-md);
 	width: 100%;
 	box-sizing: border-box;
 }
@@ -39,13 +35,15 @@
 	transition: var(--transition-normal);
 }
 
-/* Title styling - Mobile-first (reduced sizes) */
+/* Title styling - Mobile-first (matching GoalCard title exactly) */
 .title {
 	font-family: 'Filson Pro', sans-serif;
-	font-weight: var(--font-weight-bold);
-	font-size: var(--font-size-lg); /* Reduced from xl */
+	font-weight: var(
+		--font-weight-black
+	); /* Changed from bold to match GoalCard */
+	font-size: var(--font-size-3xl);
 	line-height: var(--line-height-tight);
-	letter-spacing: -0.025em;
+	letter-spacing: 0.025em; /* Changed from -0.025em to match GoalCard */
 	margin: 0;
 	text-transform: uppercase;
 	transition: var(--transition-normal);
@@ -58,10 +56,6 @@
 		margin-top: 6rem;
 	}
 
-	.content {
-		padding: 0 var(--spacing-sm);
-	}
-
 	.titleSection {
 		gap: var(--spacing-sm);
 	}
@@ -70,10 +64,6 @@
 		width: 2rem; /* Reduced from 2.5rem */
 		height: 2rem; /* Reduced from 2.5rem */
 		border-width: 2px;
-	}
-
-	.title {
-		font-size: var(--font-size-base); /* Reduced from lg */
 	}
 
 	/* Landscape mobile */
@@ -106,17 +96,13 @@
 		margin-top: 6rem;
 	}
 
-	.content {
-		padding: 0 0.375rem;
-	}
-
 	.iconContainer {
 		width: 1.875rem; /* Reduced from 2.25rem */
 		height: 1.875rem; /* Reduced from 2.25rem */
 	}
 
 	.title {
-		font-size: var(--font-size-sm); /* Reduced from base */
+		font-size: var(--font-size-2xl); /* Reduced from base */
 	}
 
 	.titleSection {
@@ -127,29 +113,14 @@
 /* Standard mobile devices (481px-767px) */
 @media (min-width: 481px) and (max-width: 767px) {
 	.container {
-		/* Standard mobile margin: 0.25rem padding + 1.25rem logo + 0.25rem padding + 0.5rem buffer = 2.25rem */
 		margin-top: 6rem;
-	}
-
-	.title {
-		font-size: var(--font-size-xl); /* Reduced from 2xl */
 	}
 }
 
 /* Standard tablets (768px+) */
 @media (min-width: 768px) {
 	.container {
-		padding: var(--spacing-lg) 0 var(--spacing-md) 0;
-		/* Tablet margin: 0.5rem padding + 1.5rem logo + 0.5rem padding + 0.5rem buffer = 3rem */
-		margin-top: 6rem;
-	}
-
-	.content {
-		padding: 0 var(--spacing-xl);
-	}
-
-	.titleSection {
-		gap: var(--spacing-lg);
+		margin-top: 0rem;
 	}
 
 	.iconContainer {
@@ -157,22 +128,13 @@
 		height: 3rem; /* Reduced from 3.5rem */
 		border-width: 3px;
 	}
-
-	.title {
-		font-size: var(--font-size-xl); /* Reduced from 2xl */
-	}
 }
 
 /* Desktop (1024px+) */
 @media (min-width: 1024px) {
 	.container {
-		padding: var(--spacing-xl) 0 var(--spacing-lg) 0;
 		/* Desktop margin: 1rem padding + 1.875rem logo + 1rem padding + 0.5rem buffer = 4.375rem */
-		margin-top: 6rem;
-	}
-
-	.content {
-		padding: 0 var(--spacing-2xl);
+		margin-top: 5rem;
 	}
 
 	.iconContainer {
@@ -181,7 +143,7 @@
 	}
 
 	.title {
-		font-size: var(--font-size-2xl); /* Reduced from 3xl */
+		font-size: var(--font-size-3xl);
 	}
 }
 
@@ -193,11 +155,6 @@
 		margin-top: 5.75rem;
 	}
 
-	.content {
-		padding: 0 var(--spacing-3xl);
-		max-width: var(--container-xl);
-	}
-
 	.iconContainer {
 		width: 4rem; /* Reduced from 4.5rem */
 		height: 4rem; /* Reduced from 4.5rem */
@@ -205,7 +162,7 @@
 	}
 
 	.title {
-		font-size: var(--font-size-3xl); /* Reduced from 4xl */
+		font-size: var(--font-size-4xl);
 	}
 
 	.titleSection {
@@ -215,11 +172,6 @@
 
 /* Extra Large Desktop (1536px+) */
 @media (min-width: 1536px) {
-	.content {
-		padding: 0 var(--spacing-4xl);
-		max-width: var(--container-2xl);
-	}
-
 	.container {
 		/* Extra large margin: 1.5rem padding + 3rem logo + 1.5rem padding + 0.5rem buffer = 6.5rem */
 		margin-top: 7rem;
@@ -231,7 +183,7 @@
 	}
 
 	.title {
-		font-size: var(--font-size-4xl); /* Reduced from 5xl */
+		font-size: var(--font-size-5xl);
 	}
 }
 

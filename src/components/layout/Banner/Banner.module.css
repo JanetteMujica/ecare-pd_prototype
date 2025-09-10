@@ -1,5 +1,7 @@
 /* Banner Component Styles - Mobile-First Responsive Design */
 /* Uses fixed positioning to ensure full viewport width */
+/* Heights match GoalSettingFlow blue banner consistently */
+/* Logo sizing handled by LogoPlaceholder component with size='medium' */
 
 /* Blue banner - Base styles (mobile-first) */
 .blueBanner {
@@ -9,7 +11,7 @@
 	right: 0;
 	width: 100vw;
 	background-color: var(--color-primary-dark);
-	padding: var(--spacing-xs) 0;
+	padding: var(--spacing-sm) 0;
 	box-shadow: var(--shadow-md);
 	z-index: 1000; /* High z-index to ensure it's above everything */
 	flex-shrink: 0;
@@ -58,66 +60,52 @@
 	outline-offset: 2px;
 }
 
-/* Logo responsive sizing - Mobile-first base */
+/* Logo styling - Let LogoPlaceholder component handle sizing */
 .logo {
-	/* Base mobile size - small */
-	font-size: var(--font-size-lg);
-	height: auto;
 	transition: var(--transition-normal);
 	display: block;
 }
 
-/* Ensure logo inside button maintains proper styling */
-.logoButton .logo {
-	font-size: var(--font-size-lg);
-	height: auto;
-	transition: var(--transition-normal);
-}
-
-/* Smallest iPhones - Keep compact size */
-@media (max-width: 480px) {
+/* Small iPhones - Compact styles */
+@media (max-width: 375px) {
 	.blueBanner {
-		padding: 0.25rem 0;
+		padding: var(--spacing-sm) 0; /* Consistent with GoalSettingFlow */
 	}
 
 	.logoButton {
 		padding: 0.125rem;
 	}
 
-	.logo,
-	.logoButton .logo {
-		font-size: var(--font-size-base);
+	/* Very small screens */
+	@media (max-width: 360px) {
+		.logoButton {
+			padding: 0.0625rem;
+		}
 	}
 
 	/* Landscape mobile */
 	@media (orientation: landscape) and (max-height: 600px) {
 		.blueBanner {
-			padding: 0.1875rem 0;
+			padding: var(--spacing-sm) 0; /* Consistent with GoalSettingFlow */
 		}
 
 		.logoButton {
 			padding: 0.0625rem;
 		}
-
-		.logo,
-		.logoButton .logo {
-			font-size: var(--font-size-sm);
-		}
 	}
 }
 
 /* Standard mobile devices */
-@media (min-width: 481px) and (max-width: 767px) {
-	.logo,
-	.logoButton .logo {
-		font-size: var(--font-size-xl);
+@media (min-width: 376px) and (max-width: 767px) {
+	.blueBanner {
+		padding: var(--spacing-sm) 0; /* Consistent with GoalSettingFlow */
 	}
 }
 
 /* Standard tablets */
 @media (min-width: 768px) and (max-width: 1023px) {
 	.blueBanner {
-		padding: var(--spacing-sm) 0;
+		padding: var(--spacing-sm) 0; /* Consistent with GoalSettingFlow */
 	}
 
 	.bannerContent {
@@ -126,18 +114,13 @@
 
 	.logoButton {
 		padding: var(--spacing-sm);
-	}
-
-	.logo,
-	.logoButton .logo {
-		font-size: var(--font-size-2xl);
 	}
 }
 
 /* Standard iPads in landscape (up to 10.2" models) */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
 	.blueBanner {
-		padding: var(--spacing-sm) 0;
+		padding: var(--spacing-sm) 0; /* Consistent with GoalSettingFlow */
 	}
 
 	.bannerContent {
@@ -147,17 +130,12 @@
 	.logoButton {
 		padding: var(--spacing-sm);
 	}
-
-	.logo,
-	.logoButton .logo {
-		font-size: var(--font-size-2xl);
-	}
 }
 
 /* Desktop */
 @media (min-width: 1024px) {
 	.blueBanner {
-		padding: var(--spacing-md) 0;
+		padding: var(--spacing-sm) 0; /* Consistent with GoalSettingFlow */
 	}
 
 	.bannerContent {
@@ -167,36 +145,31 @@
 	.logoButton {
 		padding: var(--spacing-md);
 	}
+}
 
-	.logo,
-	.logoButton .logo {
-		font-size: var(--font-size-3xl);
+/* Larger iPads in landscape (e.g., iPad Pro) */
+@media (min-width: 1025px) and (max-width: 1366px) and (orientation: landscape) {
+	.blueBanner {
+		padding: var(--spacing-sm) 0; /* Consistent with GoalSettingFlow */
+	}
+
+	.bannerContent {
+		padding: 0 var(--spacing-2xl);
+	}
+
+	.logoButton {
+		padding: var(--spacing-lg);
 	}
 }
 
 /* Laptops and larger */
 @media (min-width: 1367px) {
 	.blueBanner {
-		padding: var(--spacing-lg) 0;
+		padding: var(--spacing-sm) 0; /* Consistent with GoalSettingFlow */
 	}
 
 	.logoButton {
 		padding: var(--spacing-lg);
-	}
-
-	.logo,
-	.logoButton .logo {
-		width: 5rem; /* 80px - much larger for large desktop/laptop */
-		font-size: var(--font-size-5xl);
-	}
-
-	/* Very large screens */
-	@media (min-width: 1440px) {
-		.logo,
-		.logoButton .logo {
-			width: 6rem; /* 96px - very large for biggest screens */
-			font-size: var(--font-size-6xl);
-		}
 	}
 }
 

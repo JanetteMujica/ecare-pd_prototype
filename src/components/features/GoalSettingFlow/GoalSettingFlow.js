@@ -19,6 +19,15 @@ const GoalSettingFlow = ({ onComplete, onCancel }) => {
 	const initialDialogue = taxonomyData.cafy_conversation_flow.initial_dialogue;
 	const finalDialogue = taxonomyData.cafy_conversation_flow.final_dialogue;
 
+	// Scroll to top function
+	const scrollToTop = () => {
+		window.scrollTo({
+			top: 0,
+			left: 0,
+			behavior: 'smooth',
+		});
+	};
+
 	// Debug logging
 	useEffect(() => {
 		console.log('Current step:', currentStep);
@@ -33,6 +42,11 @@ const GoalSettingFlow = ({ onComplete, onCancel }) => {
 		currentStepIndex,
 		finalSelections,
 	]);
+
+	// Scroll to top whenever the step changes
+	useEffect(() => {
+		scrollToTop();
+	}, [currentStep, currentStepIndex, showingAfterSelection]);
 
 	// Calculate progress
 	const calculateProgress = () => {
@@ -80,6 +94,7 @@ const GoalSettingFlow = ({ onComplete, onCancel }) => {
 
 	const handleNext = () => {
 		console.log('handleNext called, current step:', currentStep);
+
 		if (currentStep === 'initial') {
 			const selectedFlows = Object.keys(selectedOptions.initial || {}).filter(
 				(key) => selectedOptions.initial[key]

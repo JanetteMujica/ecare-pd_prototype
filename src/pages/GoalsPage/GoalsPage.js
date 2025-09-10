@@ -76,36 +76,40 @@ const GoalsPage = ({
 			{/* Banner with eCare-PD logo - FIXED: Banner comes first */}
 			<Banner />
 
-			{/* Page Title below banner - FIXED: PageTitle comes after Banner */}
+			{/* Page Title below banner - FIXED: PageTitle comes after Banner
 			<PageTitle
 				icon={goalsFeature.icon}
 				title={goalsFeature.title}
 				color={goalsFeature.color}
-			/>
+			/>*/}
 
 			{/* Main content */}
 			<div className={styles.content}>
 				<div className={styles.hero}>
 					{/* REMOVED: Old headingContainer with title and icon */}
 
+					<PageTitle
+						icon={goalsFeature.icon}
+						title={goalsFeature.title}
+						color={goalsFeature.color}
+					/>
+
 					{/* Goals container - starts directly */}
 					<div className={styles.goalsContainer}>
-						<div className={styles.goalsGrid}>
-							{goals.map((goal) => (
-								<GoalCard
-									key={goal.id}
-									goal={goal}
-									onEdit={() => handleEditGoal(goal.id)}
-									onDelete={() => handleDeleteGoal(goal.id)}
-									onTrack={() => handleTrackGoal(goal.id)}
-									onViewInfo={() => handleViewInfo(goal.id)}
-									onViewCareTips={() => handleViewCareTips(goal.id)}
-									onWatch={
-										goal.smart_watch ? () => handleWatchGoal(goal.id) : null
-									}
-								/>
-							))}
-						</div>
+						{goals.map((goal) => (
+							<GoalCard
+								key={goal.id}
+								goal={goal}
+								onEdit={() => handleEditGoal(goal.id)}
+								onDelete={() => handleDeleteGoal(goal.id)}
+								onTrack={() => handleTrackGoal(goal.id)}
+								onViewInfo={() => handleViewInfo(goal.id)}
+								onViewCareTips={() => handleViewCareTips(goal.id)}
+								onWatch={
+									goal.smart_watch ? () => handleWatchGoal(goal.id) : null
+								}
+							/>
+						))}
 					</div>
 				</div>
 			</div>

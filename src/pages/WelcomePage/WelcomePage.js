@@ -28,6 +28,19 @@ const WelcomePage = ({ onGetStarted, onFeatureClick, onLogoClick }) => {
 		}
 	};
 
+	// NEW: Handle "Begin Your Care Journey" button the same way as Goals feature card
+	const handleBeginJourney = () => {
+		if (!hasStartedGoalSetting) {
+			// First time - go to CAFY intro (same as Goals feature card)
+			setCurrentView('cafy-intro');
+		} else {
+			// If goals already started, use the original handler
+			if (onGetStarted) {
+				onGetStarted();
+			}
+		}
+	};
+
 	const handleStartGoals = () => {
 		// User clicked "Start Setting Goals" in CAFY intro
 		setCurrentView('goal-setting');
@@ -124,7 +137,7 @@ const WelcomePage = ({ onGetStarted, onFeatureClick, onLogoClick }) => {
 					{/* FIXED: Call to Action with consistent spacing */}
 					<div className={styles.ctaSection}>
 						<Button
-							onClick={onGetStarted}
+							onClick={handleBeginJourney}
 							className={styles.ctaButton}
 							size='medium'
 							ariaLabel='Enter eCare-PD app'

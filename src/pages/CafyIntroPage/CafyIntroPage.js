@@ -1,5 +1,4 @@
 import React from 'react';
-import { ArrowLeft } from 'lucide-react';
 import Button from '../../components/ui/Button';
 import { CafyLogoPlaceholder, ECareLogo } from '../../components/ui/Logo';
 import { appContent } from '../../constants/features';
@@ -17,11 +16,10 @@ const CafyIntroPage = ({ onStartGoals, onCancel }) => {
 					{onCancel && (
 						<button
 							onClick={onCancel}
-							className={styles.backButton}
-							aria-label='Go back to welcome page'
+							className={styles.cancelButton}
+							aria-label='Cancel goal setting'
 						>
-							<ArrowLeft size={16} />
-							Back
+							Cancel
 						</button>
 					)}
 				</div>

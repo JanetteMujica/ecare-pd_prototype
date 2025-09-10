@@ -18,7 +18,7 @@ const Banner = ({ className = '', onLogoClick }) => {
 					aria-label='Go to home page'
 					type='button'
 				>
-					<ECareLogo className={styles.logo} />
+					<ECareLogo size='medium' className={styles.logo} />
 				</button>
 			</div>
 		</div>

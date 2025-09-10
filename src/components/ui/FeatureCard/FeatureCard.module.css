@@ -119,7 +119,8 @@
 		border-radius: var(--border-radius-md);
 	}
 
-	.vertical, .horizontal {
+	.vertical,
+	.horizontal {
 		padding: var(--spacing-sm);
 		gap: var(--spacing-xs);
 	}
@@ -150,7 +151,8 @@
 
 /* Tablet (481px-1023px) */
 @media (min-width: 481px) and (max-width: 1023px) {
-	.vertical, .horizontal {
+	.vertical,
+	.horizontal {
 		padding: var(--spacing-lg);
 		gap: var(--spacing-md);
 	}
@@ -181,7 +183,8 @@
 
 /* Desktop (1024px+) */
 @media (min-width: 1024px) {
-	.vertical, .horizontal {
+	.vertical,
+	.horizontal {
 		padding: var(--spacing-xl);
 		gap: var(--spacing-lg);
 	}
@@ -213,7 +216,8 @@
 
 /* Large Desktop (1280px+) */
 @media (min-width: 1280px) {
-	.vertical, .horizontal {
+	.vertical,
+	.horizontal {
 		padding: var(--spacing-2xl);
 		gap: var(--spacing-xl);
 	}
