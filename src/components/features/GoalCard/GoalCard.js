@@ -13,13 +13,7 @@ const GoalCard = ({
 	onViewCareTips,
 	onWatch,
 }) => {
-	const {
-		id,
-		name,
-		short_description,
-		goal_description,
-		smart_watch = false,
-	} = goal;
+	const { id, name, goal_description, smart_watch = false } = goal;
 
 	// Use the exact same styling approach as FeatureCard with CSS custom properties
 	const cardColor = colors.coral;
@@ -82,9 +76,7 @@ const GoalCard = ({
 			<div className={styles.contentContainer}>
 				<div className={styles.description}>
 					<p style={descriptionStyles}>
-						{goal_description ||
-							short_description ||
-							'No description available'}
+						{goal_description || 'No description available'}
 					</p>
 				</div>
 
