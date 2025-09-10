@@ -19,6 +19,41 @@ const App = () => {
 	const [userGoals, setUserGoals] = useState([]);
 	const [cameFromWelcome, setCameFromWelcome] = useState(false);
 
+	// In App.js, replace the getSmartWatchValue function and add a new function:
+
+	// Function to find goal_description from taxonomy data
+	const getGoalDescription = (goalId) => {
+		const flows = taxonomyData.cafy_conversation_flow.flows;
+
+		// Search through all flows and steps to find the option with this goalId
+		for (const flowKey in flows) {
+			const flow = flows[flowKey];
+			for (const step of flow.steps) {
+				if (step.options) {
+					const option = step.options.find((opt) => opt.id === goalId);
+					if (option && option.goal_description) {
+						return option.goal_description;
+					}
+				}
+			}
+		}
+
+		// Fallback to definition or default message
+		for (const flowKey in flows) {
+			const flow = flows[flowKey];
+			for (const step of flow.steps) {
+				if (step.options) {
+					const option = step.options.find((opt) => opt.id === goalId);
+					if (option && option.definition) {
+						return option.definition;
+					}
+				}
+			}
+		}
+
+		return 'No description available';
+	};
+
 	// Function to find smart_watch value from taxonomy data
 	const getSmartWatchValue = (goalId) => {
 		const flows = taxonomyData.cafy_conversation_flow.flows;
@@ -40,6 +75,37 @@ const App = () => {
 		return false;
 	};
 
+	// Then in handleGoalSettingComplete, change the transformation:
+	const handleGoalSettingComplete = (completed = false, selections = []) => {
+		console.log('Goal setting complete called:', { completed, selections });
+
+		setShowGoalSettingFlow(false);
+
+		if (completed && selections && selections.length > 0) {
+			setGoalSettingCompleted(true);
+
+			// Transform selections to match GoalsPage expected format
+			const goalsWithMetadata = selections.map((goal) => ({
+				...goal,
+				smart_watch: getSmartWatchValue(goal.id),
+				goal_description: getGoalDescription(goal.id), // ✅ Fetch actual goal_description from taxonomy
+				// Keep short_description for any other uses
+				short_description: goal.short_description,
+			}));
+
+			setUserGoals(goalsWithMetadata);
+
+			// IMPORTANT: Set showWelcome to false and navigate to goals
+			setShowWelcome(false);
+			setCurrentPage('goals');
+			setCameFromWelcome(false);
+
+			console.log('Navigating to goals page with:', goalsWithMetadata);
+		} else {
+			// If canceled, go back to cafy-intro
+			setCurrentPage('cafy-intro');
+		}
+	};
 	// Handle logo click - Navigate back to welcome page
 	const handleLogoClick = () => {
 		setShowWelcome(true);
@@ -103,40 +169,6 @@ const App = () => {
 	// Handle starting goal setting flow from CAFY intro page
 	const handleStartGoalSetting = () => {
 		setShowGoalSettingFlow(true);
-	};
-
-	// Handle completing or canceling goal setting flow
-	const handleGoalSettingComplete = (completed = false, selections = []) => {
-		console.log('Goal setting complete called:', { completed, selections });
-
-		setShowGoalSettingFlow(false);
-
-		if (completed && selections && selections.length > 0) {
-			setGoalSettingCompleted(true);
-
-			// Transform selections to match GoalsPage expected format
-			const goalsWithMetadata = selections.map((goal) => ({
-				...goal,
-				// Use smart_watch value directly from taxonomy data
-				smart_watch: getSmartWatchValue(goal.id),
-				goal_description:
-					goal.goal_description ||
-					goal.short_description ||
-					'No description available',
-			}));
-
-			setUserGoals(goalsWithMetadata);
-
-			// IMPORTANT: Set showWelcome to false and navigate to goals
-			setShowWelcome(false);
-			setCurrentPage('goals');
-			setCameFromWelcome(false);
-
-			console.log('Navigating to goals page with:', goalsWithMetadata);
-		} else {
-			// If canceled, go back to cafy-intro
-			setCurrentPage('cafy-intro');
-		}
 	};
 
 	// Goal management handlers
