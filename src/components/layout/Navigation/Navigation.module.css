@@ -113,7 +113,7 @@
 /* Button States */
 .navButton:hover {
 	background-color: rgba(79, 110, 212, 0.1);
-	transform: translateY(-1px);
+	transform: translateY(-24px); /* Adjust the value as needed */
 }
 
 .navButton:focus {
