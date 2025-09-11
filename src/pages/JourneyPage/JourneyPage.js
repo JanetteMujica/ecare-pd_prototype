@@ -15,10 +15,7 @@ const JourneyPage = ({ onLogoClick }) => {
 
 	return (
 		<div className={styles.container}>
-			{/* Banner with clickable logo - Pass onLogoClick */}
 			<Banner onLogoClick={onLogoClick} />
-
-			{/* Page Title below banner */}
 			<PageTitle
 				icon={journeyFeature.icon}
 				title={journeyFeature.title}

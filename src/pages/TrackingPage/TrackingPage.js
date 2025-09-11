@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
 	Activity,
 	Laugh,
@@ -30,18 +30,21 @@ const TrackingPage = ({
 	const [isSaved, setIsSaved] = useState(false);
 	const [showSaveConfirmation, setShowSaveConfirmation] = useState(false);
 
+	// Ref for scrolling to top
+	const contentRef = useRef(null);
+
 	// Get the tracking feature data for consistent styling
 	const trackingFeature = appFeatures.find(
 		(feature) => feature.id === 'tracking'
 	);
 
-	// Rating scale configuration
+	// Rating scale configuration - removed labels, added lighter background colors
 	const ratingScale = [
-		{ value: 5, icon: Laugh, label: 'Excellent', color: '#10B981' },
-		{ value: 4, icon: Smile, label: 'Good', color: '#84CC16' },
-		{ value: 3, icon: Meh, label: 'Okay', color: '#F59E0B' },
-		{ value: 2, icon: Frown, label: 'Not Great', color: '#F97316' },
-		{ value: 1, icon: Annoyed, label: 'Poor', color: '#EF4444' },
+		{ value: 5, icon: Laugh, color: '#10B981', bgColor: '#ECFDF5' },
+		{ value: 4, icon: Smile, color: '#84CC16', bgColor: '#F7FEE7' },
+		{ value: 3, icon: Meh, color: '#F59E0B', bgColor: '#FFFBEB' },
+		{ value: 2, icon: Annoyed, color: '#F97316', bgColor: '#FFF7ED' },
+		{ value: 1, icon: Frown, color: '#EF4444', bgColor: '#FEF2F2' },
 	];
 
 	// Function to get care tip from taxonomy
@@ -68,12 +71,17 @@ const TrackingPage = ({
 		return 'Daily Movement Reminder: Even small movements can make a big difference. Try to incorporate gentle stretching or short walks into your daily routine. Remember, consistency is more important than intensity when building healthy habits.';
 	};
 
-	// Reset form when goal changes
+	// Reset form and scroll to top when goal changes
 	useEffect(() => {
 		setSelectedRating(null);
 		setComment('');
 		setIsSaved(false);
 		setShowSaveConfirmation(false);
+
+		// Scroll to top when goal changes
+		if (contentRef.current) {
+			contentRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+		}
 	}, [currentGoal?.id]);
 
 	// Handle rating selection
@@ -117,12 +125,12 @@ const TrackingPage = ({
 		return (
 			<div className={styles.container}>
 				<Banner onLogoClick={onLogoClick} />
-				<PageTitle
-					icon={trackingFeature.icon}
-					title={trackingFeature.title}
-					color={trackingFeature.color}
-				/>
-				<div className={styles.content}>
+				<div className={styles.content} ref={contentRef}>
+					<PageTitle
+						icon={trackingFeature.icon}
+						title={trackingFeature.title}
+						color={trackingFeature.color}
+					/>
 					<div className={styles.emptyState}>
 						<Activity className={styles.emptyIcon} size={64} />
 						<h2 className={styles.emptyTitle}>No Goal Selected</h2>
@@ -138,13 +146,13 @@ const TrackingPage = ({
 	return (
 		<div className={styles.container}>
 			<Banner onLogoClick={onLogoClick} />
-			<PageTitle
-				icon={trackingFeature.icon}
-				title={trackingFeature.title}
-				color={trackingFeature.color}
-			/>
+			<div className={styles.content} ref={contentRef}>
+				<PageTitle
+					icon={trackingFeature.icon}
+					title={trackingFeature.title}
+					color={trackingFeature.color}
+				/>
 
-			<div className={styles.content}>
 				<div className={styles.hero}>
 					{/* Single Combined Card: Question + Rating + Notes */}
 					<div className={styles.trackingCard}>
@@ -171,17 +179,13 @@ const TrackingPage = ({
 										}`}
 										onClick={() => handleRatingSelect(rating.value)}
 										style={{
-											borderColor: isSelected ? rating.color : 'transparent',
+											borderColor: isSelected ? rating.color : rating.color,
 											backgroundColor: isSelected
-												? `${rating.color}20`
-												: 'white',
+												? `${rating.color}30`
+												: rating.bgColor,
 										}}
 									>
-										<IconComponent
-											size={32}
-											color={isSelected ? rating.color : '#6B7280'}
-										/>
-										<span className={styles.ratingLabel}>{rating.label}</span>
+										<IconComponent size={40} color={rating.color} />
 									</button>
 								);
 							})}

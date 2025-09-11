@@ -97,12 +97,12 @@
 	}
 
 	.iconContainer {
-		width: 1.875rem; /* Reduced from 2.25rem */
-		height: 1.875rem; /* Reduced from 2.25rem */
+		width: 2.5rem; /* Reduced from 2.25rem */
+		height: 2.5rem; /* Reduced from 2.25rem */
 	}
 
 	.title {
-		font-size: var(--font-size-2xl); /* Reduced from base */
+		font-size: var(--font-size-3xl); /* Reduced from base */
 	}
 
 	.titleSection {
