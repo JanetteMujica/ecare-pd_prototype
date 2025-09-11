@@ -2,7 +2,7 @@
 	"cafy_conversation_flow": {
 		"initial_dialogue": {
 			"id": "initial",
-			"title": "Initial Assessment",
+			"title": "Ship Free ! Let's explore what matters most to you.",
 			"message": "Everyone’s experience with Parkinson’s is different. It can affect your body, your mood, your energy — and your everyday life. Let’s start with a few simple statements to explore what matters most to you right now. Choose the ones you’d like to focus on. ",
 			"question_type": "multiple_choice",
 			"allow_multiple": true,

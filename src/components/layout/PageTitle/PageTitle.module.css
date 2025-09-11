@@ -61,8 +61,8 @@
 	}
 
 	.iconContainer {
-		width: 2rem; /* Reduced from 2.5rem */
-		height: 2rem; /* Reduced from 2.5rem */
+		width: 2.5rem;
+		height: 2.5rem;
 		border-width: 2px;
 	}
 

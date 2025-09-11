@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import WelcomePage from './pages/WelcomePage';
 import CafyIntroPage from './pages/CafyIntroPage';
+import UpdateGoalsPage from './pages/UpdateGoalsPage';
 import GoalsPage from './pages/GoalsPage';
 import TrackingPage from './pages/TrackingPage';
 import JourneyPage from './pages/JourneyPage';
@@ -20,6 +21,10 @@ const App = () => {
 	const [cameFromWelcome, setCameFromWelcome] = useState(false);
 	// ADD: State to control welcome page initial view
 	const [welcomeInitialView, setWelcomeInitialView] = useState('welcome');
+
+	// ADD: New state for tracking functionality
+	const [currentTrackedGoal, setCurrentTrackedGoal] = useState(null);
+	const [currentGoalIndex, setCurrentGoalIndex] = useState(0);
 
 	// Function to find goal_description from taxonomy data
 	const getGoalDescription = (goalId) => {
@@ -183,6 +188,31 @@ const App = () => {
 		}
 	};
 
+	// Handle navigation to UpdateGoalsPage
+	const handleUpdateGoalsViaList = () => {
+		setShowWelcome(false);
+		setCurrentPage('update-goals');
+		setShowGoalSettingFlow(false);
+		setCameFromWelcome(false);
+		setWelcomeInitialView('welcome');
+	};
+
+	// Handle updating goals from UpdateGoalsPage
+	const handleUpdateGoalsFromList = (updatedGoals) => {
+		setUserGoals(updatedGoals);
+		setCurrentPage('goals');
+		console.log('Goals updated from list:', updatedGoals);
+	};
+
+	// Handle cancel from UpdateGoalsPage
+	const handleUpdateGoalsCancel = () => {
+		if (userGoals.length > 0) {
+			setCurrentPage('goals');
+		} else {
+			setCurrentPage('cafy-intro');
+		}
+	};
+
 	// Handle starting goal setting flow from CAFY intro page
 	const handleStartGoalSetting = () => {
 		setShowGoalSettingFlow(true);
@@ -191,8 +221,8 @@ const App = () => {
 	// Goal management handlers
 	const handleEditGoal = (goalId) => {
 		console.log('Edit goal:', goalId);
-		// Restart goal setting flow to edit
-		setShowGoalSettingFlow(true);
+		// Navigate to UpdateGoalsPage instead of restarting goal setting flow
+		setCurrentPage('update-goals');
 	};
 
 	const handleDeleteGoal = (goalId) => {
@@ -200,8 +230,13 @@ const App = () => {
 		console.log('Deleted goal:', goalId);
 	};
 
+	// UPDATED: Handle tracking goal with goal selection
 	const handleTrackGoal = (goalId) => {
 		console.log('Track goal:', goalId);
+		// Find the goal being tracked
+		const goalToTrack = userGoals.find((goal) => goal.id === goalId);
+		setCurrentTrackedGoal(goalToTrack);
+		setCurrentGoalIndex(userGoals.findIndex((goal) => goal.id === goalId));
 		setCurrentPage('tracking');
 	};
 
@@ -242,19 +277,34 @@ const App = () => {
 		);
 	}
 
-	// Render page content based on current page
+	// Show UpdateGoalsPage (full screen, no navigation)
+	if (currentPage === 'update-goals') {
+		return (
+			<UpdateGoalsPage
+				currentGoals={userGoals}
+				onUpdateGoals={handleUpdateGoalsFromList}
+				onCancel={handleUpdateGoalsCancel}
+			/>
+		);
+	}
+
+	// Show CafyIntroPage (full screen, no navigation)
+	if (currentPage === 'cafy-intro') {
+		return (
+			<CafyIntroPage
+				onStartGoals={handleStartGoalSetting}
+				onCancel={cameFromWelcome ? handleCafyCancel : null}
+				onUpdateGoalsViaList={handleUpdateGoalsViaList}
+				onLogoClick={handleLogoClick}
+			/>
+		);
+	}
+
+	// Render page content based on current page (with navigation)
 	const renderPage = () => {
 		console.log('Rendering page:', currentPage, 'Goals:', userGoals.length);
 
 		switch (currentPage) {
-			case 'cafy-intro':
-				return (
-					<CafyIntroPage
-						onStartGoals={handleStartGoalSetting}
-						onCancel={cameFromWelcome ? handleCafyCancel : null}
-						onLogoClick={handleLogoClick}
-					/>
-				);
 			case 'goals':
 				return (
 					<GoalsPage
@@ -265,19 +315,38 @@ const App = () => {
 						onViewInfo={handleViewInfo}
 						onViewCareTips={handleViewCareTips}
 						onWatchGoal={handleWatchGoal}
+						onUpdateGoalsViaList={handleUpdateGoalsViaList}
 						onLogoClick={handleLogoClick}
 					/>
 				);
 			case 'tracking':
-				return <TrackingPage onLogoClick={handleLogoClick} />;
+				return (
+					<TrackingPage
+						onLogoClick={handleLogoClick}
+						currentGoal={currentTrackedGoal}
+						allGoals={userGoals}
+						currentGoalIndex={currentGoalIndex}
+						onNextGoal={(nextIndex) => {
+							setCurrentGoalIndex(nextIndex);
+							setCurrentTrackedGoal(userGoals[nextIndex]);
+						}}
+					/>
+				);
 			case 'journey':
 				return <JourneyPage onLogoClick={handleLogoClick} />;
 			case 'resources':
 				return <ResourcesPage onLogoClick={handleLogoClick} />;
 			default:
 				return (
-					<CafyIntroPage
-						onStartGoals={handleStartGoalSetting}
+					<GoalsPage
+						goals={userGoals}
+						onEditGoal={handleEditGoal}
+						onDeleteGoal={handleDeleteGoal}
+						onTrackGoal={handleTrackGoal}
+						onViewInfo={handleViewInfo}
+						onViewCareTips={handleViewCareTips}
+						onWatchGoal={handleWatchGoal}
+						onUpdateGoalsViaList={handleUpdateGoalsViaList}
 						onLogoClick={handleLogoClick}
 					/>
 				);

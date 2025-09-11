@@ -1,5 +1,5 @@
 /* TrackingPage Component Styles - Mobile-First Responsive Design */
-/* Based on GoalsPage structure with customizations for Tracking content */
+/* Clean structure with single combined card and full-width layout */
 
 .container {
 	height: 100vh;
@@ -8,7 +8,7 @@
 	flex-direction: column;
 	overflow: hidden;
 	width: 100%;
-	position: relative; /* For fixed positioned banner */
+	position: relative;
 }
 
 /* Main content area - Fixed banner spacing */
@@ -18,22 +18,10 @@
 	flex-direction: column;
 	min-height: 0;
 	overflow: auto;
-	/* Add top padding to account for fixed positioned banner */
-	padding-top: calc(
-		var(--spacing-xs) * 2 + var(--font-size-lg) + 0.5rem
-	); /* Banner height approximation */
+	padding-top: calc(var(--spacing-xs) * 2 + var(--font-size-lg) + 0.5rem);
 }
 
-/* Title icon styling - Mobile-first base */
-.titleIcon {
-	width: 20px;
-	height: 20px;
-	color: white;
-	flex-shrink: 0;
-	transition: var(--transition-normal);
-}
-
-/* Hero section - Matching structure */
+/* Hero section - Full width layout */
 .hero {
 	display: flex;
 	flex-direction: column;
@@ -42,156 +30,254 @@
 	min-height: 0;
 	flex: 1;
 	justify-content: flex-start;
-	gap: 0;
-	overflow: visible;
-}
-
-/* Heading container */
-.headingContainer {
-	max-width: 64rem;
-	margin: 0.5rem 0 0.25rem 0;
-	animation: fadeInUp 1s ease-out 0.2s both;
-	flex-shrink: 0;
-	align-self: flex-start;
-}
-
-/* Main heading - Mobile-first typography */
-.mainHeading {
-	font-family: 'Filson Pro', sans-serif;
-	font-weight: var(--font-weight-bold);
-	font-size: var(--font-size-lg);
-	line-height: var(--line-height-tight);
-	letter-spacing: -0.025em;
-	margin: 0;
-	color: var(--color-text-primary);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: var(--spacing-sm);
-}
-
-/* Title icon container - Tracking theme color */
-.titleIconContainer {
-	width: 2rem;
-	height: 2rem;
-	border-radius: var(--border-radius-full);
-	background-color: var(--color-peach); /* Different color for Tracking */
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	box-shadow: var(--shadow-md);
-	border: 3px solid white;
-	flex-shrink: 0;
-	transition: var(--transition-normal);
-}
-
-/* Content container for Tracking-specific content */
-.trackingContainer {
-	flex: 1;
-	margin: 0.25rem 0;
-	display: flex;
-	align-items: flex-start;
-	justify-content: center;
-	min-height: auto;
-	max-height: none;
-	overflow: visible;
-	padding-top: var(--spacing-md);
-}
-
-/* Tracking dashboard layout */
-.trackingDashboard {
-	display: flex;
-	flex-direction: column;
 	gap: var(--spacing-lg);
-	width: 100%;
-	max-width: 800px;
-	padding: var(--spacing-lg);
-}
-
-/* Tracking widgets grid */
-.trackingWidgets {
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: var(--spacing-md);
+	overflow: visible;
 	width: 100%;
 }
 
-/* Individual tracking widget */
-.trackingWidget {
+/* Single Combined Card: Question + Rating + Notes */
+.trackingCard {
 	background: white;
 	border-radius: var(--border-radius-lg);
-	padding: var(--spacing-md);
+	padding: var(--spacing-lg);
 	box-shadow: var(--shadow-sm);
 	border: 1px solid var(--color-border-light);
-	transition: var(--transition-normal);
+	width: 100%;
+	box-sizing: border-box;
 }
 
-.trackingWidget:hover {
-	box-shadow: var(--shadow-md);
-	transform: translateY(-1px);
-}
-
-.widgetHeader {
-	display: flex;
-	align-items: center;
-	gap: var(--spacing-sm);
-	margin-bottom: var(--spacing-md);
-}
-
-.widgetIcon {
-	width: 24px;
-	height: 24px;
-	color: var(--color-peach);
-}
-
-.widgetTitle {
+/* Question Section */
+.questionTitle {
 	font-family: 'Filson Pro', sans-serif;
 	font-weight: var(--font-weight-bold);
-	font-size: var(--font-size-base);
+	font-size: var(--font-size-xl);
 	color: var(--color-text-primary);
-	margin: 0;
+	margin: 0 0 var(--spacing-lg) 0;
+	line-height: var(--line-height-tight);
+	text-align: center;
 }
 
-.widgetContent {
+.goalHighlight {
+	color: var(--color-coral);
+	font-weight: var(--font-weight-bold);
+	text-transform: uppercase;
+}
+
+/* Rating Scale - Directly in main card */
+.ratingScale {
+	display: flex;
+	justify-content: space-between;
+	gap: var(--spacing-sm);
+	flex-wrap: wrap;
+	margin-bottom: var(--spacing-lg);
+}
+
+.ratingButton {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--spacing-xs);
+	padding: var(--spacing-md);
+	border: 3px solid transparent;
+	border-radius: var(--border-radius-lg);
+	background: white;
+	cursor: pointer;
+	transition: var(--transition-normal);
+	flex: 1;
+	min-width: 80px;
+	box-shadow: var(--shadow-sm);
+}
+
+.ratingButton:hover {
+	transform: translateY(-2px);
+	box-shadow: var(--shadow-md);
+}
+
+.ratingButtonSelected {
+	transform: translateY(-2px);
+	box-shadow: var(--shadow-lg);
+}
+
+.ratingLabel {
 	font-family: 'Filson Pro', sans-serif;
 	font-weight: var(--font-weight-medium);
 	font-size: var(--font-size-sm);
 	color: var(--color-text-secondary);
+	text-align: center;
+}
+
+/* Comment Section - Within main card */
+.commentSection {
+	border-top: 1px solid var(--color-border-light);
+	padding-top: var(--spacing-lg);
+}
+
+.sectionTitle {
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-bold);
+	font-size: var(--font-size-base);
+	color: var(--color-text-primary);
+	margin: 0 0 var(--spacing-md) 0;
+}
+
+.commentTextarea {
+	width: 100%;
+	padding: var(--spacing-md);
+	border: 2px solid var(--color-border-light);
+	border-radius: var(--border-radius-md);
+	font-family: 'Filson Pro', sans-serif;
+	font-size: var(--font-size-base);
 	line-height: var(--line-height-normal);
+	resize: vertical;
+	transition: var(--transition-normal);
+	box-sizing: border-box;
 }
 
-/* Quick actions section */
-.quickActions {
-	display: flex;
-	flex-wrap: wrap;
-	gap: var(--spacing-sm);
+.commentTextarea:focus {
+	outline: none;
+	border-color: var(--color-peach);
+	box-shadow: 0 0 0 3px rgba(255, 168, 138, 0.1);
+}
+
+.commentTextarea::placeholder {
+	color: var(--color-text-tertiary);
+	font-style: italic;
+}
+
+/* Save Section */
+.saveSection {
 	margin-top: var(--spacing-md);
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
 }
 
-.actionButton {
+.saveButton {
 	background: var(--color-peach);
 	color: white;
 	border: none;
 	border-radius: var(--border-radius-md);
-	padding: var(--spacing-sm) var(--spacing-md);
+	padding: var(--spacing-md) var(--spacing-lg);
 	font-family: 'Filson Pro', sans-serif;
-	font-weight: var(--font-weight-medium);
-	font-size: var(--font-size-sm);
+	font-weight: var(--font-weight-bold);
+	font-size: var(--font-size-base);
 	cursor: pointer;
 	transition: var(--transition-normal);
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-sm);
+	justify-content: center;
 	min-height: var(--min-touch-target-mobile);
+	align-self: flex-start;
+	box-shadow: var(--shadow-sm);
 }
 
-.actionButton:hover {
+.saveButton:hover:not(.saveButtonDisabled) {
 	background: var(--color-coral);
 	transform: translateY(-1px);
+	box-shadow: var(--shadow-md);
 }
 
-.actionButton:active {
+.saveButton:active {
 	transform: translateY(0);
 }
 
-/* Empty state styling - Mobile-first */
+.saveButtonDisabled {
+	background: var(--color-text-tertiary);
+	cursor: not-allowed;
+	opacity: 0.6;
+}
+
+.saveConfirmation {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-xs);
+	color: #10b981;
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-medium);
+	font-size: var(--font-size-sm);
+	padding: var(--spacing-sm);
+	background: #10b98120;
+	border-radius: var(--border-radius-md);
+	border: 1px solid #10b981;
+}
+
+/* Care Tip Card - Separate card */
+.careTipCard {
+	background: white;
+	border-radius: var(--border-radius-lg);
+	padding: var(--spacing-lg);
+	box-shadow: var(--shadow-sm);
+	border: 1px solid var(--color-border-light);
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.careTipTitle {
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-bold);
+	font-size: var(--font-size-lg);
+	color: var(--color-peach);
+	margin: 0 0 var(--spacing-md) 0;
+}
+
+.careTipContent {
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-medium);
+	font-size: var(--font-size-base);
+	color: var(--color-text-secondary);
+	line-height: var(--line-height-normal);
+	margin: 0;
+}
+
+/* Next Goal Section - GoalsPage style button */
+.nextGoalSection {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--spacing-sm);
+	text-align: center;
+	width: 100%;
+}
+
+.nextGoalButton {
+	background: var(--color-peach);
+	color: white;
+	border: none;
+	border-radius: var(--border-radius-md);
+	padding: var(--spacing-md) var(--spacing-lg);
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-bold);
+	font-size: var(--font-size-base);
+	cursor: pointer;
+	transition: var(--transition-normal);
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-sm);
+	justify-content: center;
+	min-height: var(--min-touch-target-mobile);
+	box-shadow: var(--shadow-sm);
+}
+
+.nextGoalButton:hover {
+	background: var(--color-coral);
+	transform: translateY(-1px);
+	box-shadow: var(--shadow-md);
+}
+
+.nextGoalButton:active {
+	transform: translateY(0);
+}
+
+.goalProgress {
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-medium);
+	font-size: var(--font-size-sm);
+	color: var(--color-text-tertiary);
+	margin: 0;
+}
+
+/* Empty state styling */
 .emptyState {
 	flex: 1;
 	display: flex;
@@ -228,38 +314,72 @@
 	line-height: var(--line-height-normal);
 }
 
-/* Enhanced mobile-first breakpoints with banner spacing */
+/* Mobile-first breakpoints */
 @media (max-width: 480px) {
 	.content {
 		padding-top: calc(0.25rem * 2 + var(--font-size-base) + 0.5rem);
 	}
 
-	.titleIcon {
-		width: 18px;
-		height: 18px;
-	}
-
-	.titleIconContainer {
-		width: 2.25rem;
-		height: 2.25rem;
-	}
-
-	.mainHeading {
-		font-size: var(--font-size-xl);
-	}
-
-	.trackingDashboard {
+	.hero {
+		padding: var(--spacing-sm);
 		gap: var(--spacing-md);
-		max-width: 380px;
+	}
+
+	.trackingCard {
 		padding: var(--spacing-md);
 	}
 
-	.trackingWidgets {
-		gap: var(--spacing-sm);
+	.careTipCard {
+		padding: var(--spacing-md);
 	}
 
-	.emptyState {
-		min-height: 280px;
+	.questionTitle {
+		font-size: var(--font-size-lg);
+	}
+
+	.ratingScale {
+		gap: var(--spacing-xs);
+		margin-bottom: var(--spacing-md);
+	}
+
+	.ratingButton {
+		min-width: 60px;
+		padding: var(--spacing-sm);
+	}
+
+	.ratingButton svg {
+		width: 24px;
+		height: 24px;
+	}
+
+	.ratingLabel {
+		font-size: var(--font-size-xs);
+	}
+
+	.sectionTitle {
+		font-size: var(--font-size-sm);
+	}
+
+	.commentTextarea {
+		font-size: var(--font-size-sm);
+	}
+
+	.saveButton {
+		font-size: var(--font-size-sm);
+		padding: var(--spacing-sm) var(--spacing-md);
+	}
+
+	.careTipTitle {
+		font-size: var(--font-size-base);
+	}
+
+	.careTipContent {
+		font-size: var(--font-size-sm);
+	}
+
+	.nextGoalButton {
+		font-size: var(--font-size-sm);
+		padding: var(--spacing-sm) var(--spacing-md);
 	}
 
 	/* Landscape mobile */
@@ -267,58 +387,31 @@
 		.content {
 			padding-top: calc(0.1875rem * 2 + var(--font-size-sm) + 0.25rem);
 		}
+
+		.hero {
+			gap: var(--spacing-sm);
+		}
 	}
 }
 
-/* Small iPhones - Compact styles */
+/* Small iPhones */
 @media (max-width: 375px) {
 	.hero {
 		padding: 0.375rem;
 	}
 
-	.headingContainer {
-		margin: 0.125rem auto;
-	}
-
-	.mainHeading {
+	.questionTitle {
 		font-size: var(--font-size-base);
-		line-height: 1.05;
 	}
 
-	.titleIconContainer {
-		width: 1.75rem;
-		height: 1.75rem;
+	.ratingButton {
+		min-width: 50px;
+		padding: 0.5rem;
 	}
 
-	.trackingContainer {
-		margin: 0.25rem 0;
-	}
-
-	.trackingDashboard {
-		gap: var(--spacing-sm);
-		max-width: 300px;
-	}
-
-	.trackingWidget {
-		padding: var(--spacing-sm);
-	}
-
-	.widgetIcon {
+	.ratingButton svg {
 		width: 20px;
 		height: 20px;
-	}
-
-	.widgetTitle {
-		font-size: var(--font-size-sm);
-	}
-
-	.widgetContent {
-		font-size: var(--font-size-xs);
-	}
-
-	.actionButton {
-		font-size: var(--font-size-xs);
-		padding: 0.5rem var(--spacing-sm);
 	}
 
 	.emptyState {
@@ -344,34 +437,49 @@
 
 	.hero {
 		padding: var(--spacing-md) var(--spacing-lg);
-		gap: var(--spacing-sm);
+		gap: var(--spacing-lg);
 	}
 
-	.headingContainer {
-		margin: 0.375rem auto;
+	.trackingCard {
+		padding: var(--spacing-lg);
 	}
 
-	.mainHeading {
+	.careTipCard {
+		padding: var(--spacing-lg);
+	}
+
+	.questionTitle {
 		font-size: var(--font-size-2xl);
 	}
 
-	.titleIconContainer {
-		width: 3rem;
-		height: 3rem;
+	.ratingScale {
+		gap: var(--spacing-md);
+		margin-bottom: var(--spacing-lg);
 	}
 
-	.trackingContainer {
-		margin: var(--spacing-xs) 0;
-		flex: 1;
+	.ratingButton {
+		min-width: 100px;
 	}
 
-	.trackingDashboard {
-		max-width: 750px;
+	.ratingButton svg {
+		width: 40px;
+		height: 40px;
 	}
 
-	.trackingWidgets {
-		grid-template-columns: repeat(2, 1fr);
-		gap: var(--spacing-lg);
+	.sectionTitle {
+		font-size: var(--font-size-lg);
+	}
+
+	.commentTextarea {
+		font-size: var(--font-size-base);
+	}
+
+	.careTipTitle {
+		font-size: var(--font-size-xl);
+	}
+
+	.careTipContent {
+		font-size: var(--font-size-base);
 	}
 
 	.emptyTitle {
@@ -390,12 +498,13 @@
 		padding-top: calc(var(--spacing-md) * 2 + var(--font-size-3xl) + 1rem);
 	}
 
-	.trackingDashboard {
-		max-width: 900px;
+	.questionTitle {
+		font-size: var(--font-size-3xl);
 	}
 
-	.trackingWidgets {
-		grid-template-columns: repeat(3, 1fr);
+	.ratingButton svg {
+		width: 48px;
+		height: 48px;
 	}
 }
 
@@ -407,35 +516,15 @@
 
 	.hero {
 		padding: var(--spacing-xl) var(--spacing-2xl);
-		gap: var(--spacing-lg);
-		justify-content: flex-start;
-	}
-
-	.headingContainer {
-		margin: 0.75rem auto;
-	}
-
-	.mainHeading {
-		font-size: var(--font-size-4xl);
-	}
-
-	.titleIconContainer {
-		width: 4rem;
-		height: 4rem;
-	}
-
-	.trackingContainer {
-		margin: var(--spacing-sm) 0;
-		flex: 1;
-	}
-
-	.trackingDashboard {
-		max-width: 1100px;
 		gap: var(--spacing-xl);
 	}
 
-	.trackingWidgets {
-		gap: var(--spacing-xl);
+	.trackingCard {
+		padding: var(--spacing-xl);
+	}
+
+	.careTipCard {
+		padding: var(--spacing-xl);
 	}
 
 	.emptyTitle {
@@ -451,19 +540,6 @@
 	@media (min-width: 1440px) {
 		.content {
 			padding-top: calc(var(--spacing-lg) * 2 + var(--font-size-5xl) + 1.5rem);
-		}
-
-		.mainHeading {
-			font-size: var(--font-size-5xl);
-		}
-
-		.titleIconContainer {
-			width: 4.5rem;
-			height: 4.5rem;
-		}
-
-		.trackingDashboard {
-			max-width: 1200px;
 		}
 	}
 }
@@ -482,17 +558,15 @@
 
 /* Accessibility improvements */
 @media (prefers-reduced-motion: reduce) {
-	.headingContainer {
-		animation: none;
-	}
-
-	.trackingWidget,
-	.actionButton {
+	.ratingButton,
+	.saveButton,
+	.nextGoalButton {
 		transition: none;
 	}
 
-	.trackingWidget:hover,
-	.actionButton:hover {
+	.ratingButton:hover,
+	.saveButton:hover,
+	.nextGoalButton:hover {
 		transform: none;
 	}
 }
@@ -503,19 +577,22 @@
 		background: var(--color-bg-primary);
 	}
 
-	.mainHeading,
+	.questionTitle,
+	.sectionTitle,
 	.emptyTitle,
 	.emptyDescription,
-	.widgetTitle,
-	.widgetContent {
+	.careTipTitle,
+	.careTipContent {
 		color: var(--color-text-primary);
 	}
 
-	.trackingWidget {
+	.trackingCard,
+	.careTipCard {
 		border: 2px solid var(--color-border-dark);
 	}
 
-	.actionButton {
+	.saveButton,
+	.nextGoalButton {
 		border: 2px solid var(--color-text-primary);
 	}
 }
@@ -528,16 +605,14 @@
 		overflow: visible;
 	}
 
-	.trackingWidgets {
-		display: block;
-	}
-
-	.trackingWidget {
+	.trackingCard,
+	.careTipCard {
 		break-inside: avoid;
 		margin-bottom: var(--spacing-md);
 	}
 
-	.actionButton {
+	.saveButton,
+	.nextGoalButton {
 		display: none;
 	}
 }

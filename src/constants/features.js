@@ -4,6 +4,7 @@ import {
 	ShipWheel,
 	Telescope,
 	Sparkles,
+	Wind,
 } from 'lucide-react';
 import { colors } from './colors';
 
@@ -38,7 +39,7 @@ export const appFeatures = [
 	},
 	{
 		id: 'resources',
-		icon: Sparkles,
+		icon: Wind,
 		title: 'Ressources',
 		desc: 'Get helpful care-tips & trusted resources',
 		color: colors.peach,

@@ -37,6 +37,13 @@ const GoalCard = ({
 		color: colors.text?.primary || colors.primaryDark,
 	};
 
+	// Handler for update/edit button click
+	const handleUpdateClick = () => {
+		if (onEdit) {
+			onEdit(id);
+		}
+	};
+
 	return (
 		<div className={styles.card} style={cardStyles}>
 			{/* Header with name and action buttons */}
@@ -54,7 +61,7 @@ const GoalCard = ({
 						<Info size={16} />
 					</button>
 					<button
-						onClick={onEdit}
+						onClick={handleUpdateClick}
 						className={styles.iconButton}
 						aria-label={`Update ${name}`}
 						title='Update Goal'
@@ -62,7 +69,7 @@ const GoalCard = ({
 						<RefreshCw size={16} />
 					</button>
 					<button
-						onClick={onDelete}
+						onClick={() => onDelete && onDelete(id)}
 						className={`${styles.iconButton} ${styles.deleteButton}`}
 						aria-label={`Delete ${name}`}
 						title='Delete Goal'
@@ -84,7 +91,7 @@ const GoalCard = ({
 				<div className={styles.actionButtonsRow}>
 					{smart_watch && onWatch && (
 						<button
-							onClick={onWatch}
+							onClick={() => onWatch(id)}
 							className={styles.watchButton}
 							aria-label={`Monitor ${name} with smartwatch`}
 							title='Monitor with Smartwatch'
@@ -95,7 +102,7 @@ const GoalCard = ({
 					)}
 
 					<Button
-						onClick={onTrack}
+						onClick={() => onTrack && onTrack(id)}
 						variant='primary'
 						size='small'
 						className={styles.trackButton}
@@ -105,7 +112,7 @@ const GoalCard = ({
 					</Button>
 
 					<button
-						onClick={onViewCareTips}
+						onClick={() => onViewCareTips && onViewCareTips(id)}
 						className={styles.careTipButton}
 						aria-label={`View care tips for ${name}`}
 					>

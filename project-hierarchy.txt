@@ -10,11 +10,11 @@ ecare-pd_prototype
 │  ├─ robots.txt
 │  └─ static
 │     ├─ css
-│     │  ├─ main.f674d76c.css
-│     │  └─ main.f674d76c.css.map
+│     │  ├─ main.391a0047.css
+│     │  └─ main.391a0047.css.map
 │     ├─ js
-│     │  ├─ main.b5431815.js
-│     │  └─ main.b5431815.js.LICENSE.txt
+│     │  ├─ main.c8747163.js
+│     │  └─ main.c8747163.js.LICENSE.txt
 │     └─ media
 │        ├─ cafy_logo.ff6170f1cdf1297d0d121e36cb9889bc.svg
 │        ├─ eCarePD_logo.24a9014d75be2d0a58d66693dd1f58d3.svg
@@ -90,10 +90,14 @@ ecare-pd_prototype
    │  │  │  ├─ Banner.js
    │  │  │  ├─ Banner.module.css
    │  │  │  └─ index.js
-   │  │  └─ Navigation
+   │  │  ├─ Navigation
+   │  │  │  ├─ index.js
+   │  │  │  ├─ Navigation.js
+   │  │  │  └─ Navigation.module.css
+   │  │  └─ PageTitle
    │  │     ├─ index.js
-   │  │     ├─ Navigation.js
-   │  │     └─ Navigation.module.css
+   │  │     ├─ PageTitle.js
+   │  │     └─ PageTitle.module.css
    │  └─ ui
    │     ├─ Button
    │     │  ├─ Button.js
@@ -126,17 +130,20 @@ ecare-pd_prototype
    │  │  └─ index.js
    │  ├─ JourneyPage
    │  │  ├─ index.js
-   │  │  └─ JourneyPage.js
-   │  ├─ PlaceholderPage
-   │  │  ├─ index.js
-   │  │  ├─ PlaceholderPage.js
-   │  │  └─ PlaceholderPage.module.css
+   │  │  ├─ JourneyPage.js
+   │  │  └─ JourneyPage.module.css
    │  ├─ RessourcesPage
    │  │  ├─ index.js
-   │  │  └─ RessourcesPage.js
+   │  │  ├─ RessourcesPage.js
+   │  │  └─ RessourcesPage.module.css
    │  ├─ TrackingPage
    │  │  ├─ index.js
-   │  │  └─ TrackingPage.js
+   │  │  ├─ TrackingPage.js
+   │  │  └─ TrackingPage.module.css
+   │  ├─ UpdateGoalsPage
+   │  │  ├─ index.js
+   │  │  ├─ UpdateGoalsPage.js
+   │  │  └─ UpdateGoalsPage.module.css
    │  └─ WelcomePage
    │     ├─ index.js
    │     ├─ WelcomePage.js

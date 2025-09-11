@@ -1,0 +1,366 @@
+/* UpdateGoalsPage Component Styles - Mobile-First Responsive Design */
+.container {
+	min-height: 100vh;
+	background: var(--color-bg-app);
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	width: 100%;
+}
+
+/* Blue banner - Matching CafyIntroPage styling */
+.blueBanner {
+	width: 100%;
+	background-color: var(--color-primary-dark);
+	padding: var(--spacing-sm) 0;
+	box-shadow: var(--shadow-md);
+	position: relative;
+	z-index: var(--z-sticky);
+	flex-shrink: 0;
+}
+
+.bannerContent {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-width: var(--container-xl);
+	margin: 0 auto;
+	padding: 0 var(--spacing-md);
+}
+
+.bannerLogo {
+	/* eCare-PD logo styling handled by LogoPlaceholder component */
+}
+
+/* Cancel Button Styles - Matching CafyIntroPage */
+.cancelButton {
+	background: none;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	color: white;
+	padding: var(--spacing-xs) var(--spacing-md);
+	border-radius: var(--border-radius-md);
+	cursor: pointer;
+	font-family: 'Filson Pro', sans-serif;
+	font-size: var(--font-size-sm);
+	transition: var(--transition-fast);
+	min-height: auto;
+	min-width: auto;
+	display: inline-flex;
+}
+
+.cancelButton:hover {
+	background: rgba(255, 255, 255, 0.1);
+	border-color: rgba(255, 255, 255, 0.5);
+}
+
+.cancelButton:focus {
+	outline: 2px solid rgba(255, 255, 255, 0.5);
+	outline-offset: 2px;
+}
+
+/* Main content */
+.content {
+	display: flex;
+	flex-direction: column;
+	padding: var(--spacing-lg);
+	flex: 1;
+	overflow-y: auto;
+	min-height: 0;
+	max-width: var(--container-xl);
+	margin: 0 auto;
+	width: 100%;
+}
+
+/* Title styling */
+.title {
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-black);
+	font-size: var(--font-size-2xl);
+	line-height: var(--line-height-tight);
+	color: var(--color-text-primary);
+	margin: 0 0 var(--spacing-xl) 0;
+	text-align: center;
+}
+
+/* Cards container */
+.cardsContainer {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--spacing-lg);
+	margin-bottom: var(--spacing-xl);
+}
+
+/* Update cards - Similar styling to GoalCard */
+.updateCard {
+	background: var(--color-bg-primary);
+	border-radius: var(--border-radius-lg);
+	padding: var(--spacing-lg);
+	border: 2px solid var(--card-color);
+	box-shadow: var(--card-shadow);
+	transition: var(--transition-standard);
+	position: relative;
+}
+
+.updateCard:hover {
+	box-shadow: var(--card-shadow-hover);
+	transform: translateY(-2px);
+}
+
+/* Card title */
+.cardTitle {
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-black);
+	font-size: var(--font-size-lg);
+	line-height: var(--line-height-tight);
+	color: var(--color-text-primary);
+	margin: 0 0 var(--spacing-md) 0;
+}
+
+/* Options list */
+.optionsList {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+.optionItem {
+	display: flex;
+	align-items: center;
+}
+
+/* Toggle label */
+.optionLabel {
+	display: flex;
+	align-items: center;
+	justify-content: space-between; /* Add this line */
+	cursor: pointer;
+	font-family: 'Filson Pro', sans-serif;
+	font-size: var(--font-size-base);
+	color: var(--color-text-primary);
+	gap: var(--spacing-sm);
+	padding: var(--spacing-xs);
+	border-radius: var(--border-radius-md);
+	transition: var(--transition-fast);
+	width: 100%;
+}
+
+.optionLabel:hover {
+	background: var(--color-bg-secondary);
+}
+
+/* Hide default checkbox */
+.toggle {
+	display: none;
+}
+
+.toggleContainer {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+/* Custom toggle slider */
+.toggleSlider {
+	position: relative;
+	width: 50px;
+	height: 24px;
+	background-color: #ccc;
+	border-radius: 24px;
+	transition: background-color 0.2s ease;
+	cursor: pointer;
+	flex-shrink: 0;
+}
+
+.toggleSlider::before {
+	content: '';
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background-color: white;
+	top: 3px;
+	left: 3px;
+	transition: transform 0.2s ease;
+}
+
+/* Checked state */
+.toggle:checked + .toggleSlider {
+	background-color: var(--color-primary);
+}
+
+.toggle:checked + .toggleSlider::before {
+	transform: translateX(26px);
+}
+
+/* Focus state */
+.toggle:focus + .toggleSlider {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
+/* Option name */
+.optionName {
+	flex: 1;
+	font-weight: var(--font-weight-heavy);
+}
+
+/* Action buttons */
+.actionButtons {
+	display: flex;
+	justify-content: center;
+	margin-bottom: var(--spacing-lg);
+	border-top: 1px solid var(--color-border);
+}
+
+.saveButton {
+	min-width: 200px;
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+	.cardsContainer {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.content {
+		padding: var(--spacing-xl);
+	}
+
+	.title {
+		font-size: var(--font-size-3xl);
+	}
+}
+
+@media (min-width: 1024px) {
+	.cardsContainer {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media (min-width: 1200px) {
+	.cardsContainer {
+		grid-template-columns: repeat(2, 1fr);
+		max-width: 1000px;
+		margin: 0 auto var(--spacing-xl) auto;
+	}
+}
+
+/* Small mobile screens */
+@media (max-width: 480px) {
+	.content {
+		padding: var(--spacing-md);
+	}
+
+	.title {
+		font-size: var(--font-size-xl);
+		margin-bottom: var(--spacing-lg);
+	}
+
+	.updateCard {
+		padding: var(--spacing-md);
+	}
+
+	.cardTitle {
+		font-size: var(--font-size-base);
+	}
+
+	.optionLabel {
+		font-size: var(--font-size-sm);
+	}
+
+	.toggleSlider {
+		width: 44px;
+		height: 22px;
+	}
+
+	.toggleSlider::before {
+		width: 16px;
+		height: 16px;
+		top: 3px;
+		left: 3px;
+	}
+
+	.toggle:checked + .toggleSlider::before {
+		transform: translateX(22px);
+	}
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+	.container {
+		background: var(--color-bg-primary);
+	}
+
+	.blueBanner {
+		background-color: #000000 !important;
+		border-bottom: 2px solid #000000;
+	}
+
+	.title,
+	.cardTitle,
+	.optionName {
+		color: var(--color-text-primary);
+	}
+
+	.cancelButton {
+		border: 1px solid white;
+		background-color: transparent !important;
+	}
+
+	.cancelButton:hover,
+	.cancelButton:focus {
+		background-color: white !important;
+		color: #000000 !important;
+	}
+
+	.updateCard {
+		border: 2px solid var(--color-text-primary);
+	}
+
+	.toggleSlider {
+		background-color: #666;
+		border: 1px solid var(--color-text-primary);
+	}
+
+	.toggle:checked + .toggleSlider {
+		background-color: var(--color-text-primary);
+	}
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+	.updateCard,
+	.optionLabel,
+	.toggleSlider,
+	.toggleSlider::before,
+	.cancelButton {
+		transition: none;
+	}
+
+	.updateCard:hover {
+		transform: none;
+	}
+}
+
+/* Print styles */
+@media print {
+	.container {
+		background: white;
+		min-height: auto;
+	}
+
+	.blueBanner {
+		background-color: #263b7f !important;
+		-webkit-print-color-adjust: exact;
+		color-adjust: exact;
+	}
+
+	.content {
+		min-height: auto;
+		padding: 1rem;
+	}
+
+	.cancelButton {
+		display: none;
+	}
+}

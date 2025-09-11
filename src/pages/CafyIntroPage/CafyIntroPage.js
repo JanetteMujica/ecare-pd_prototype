@@ -5,7 +5,7 @@ import { appContent } from '../../constants/features';
 import { colors } from '../../constants/colors';
 import styles from './CafyIntroPage.module.css';
 
-const CafyIntroPage = ({ onStartGoals, onCancel }) => {
+const CafyIntroPage = ({ onStartGoals, onCancel, onUpdateGoalsViaList }) => {
 	const { cafy } = appContent;
 
 	return (
@@ -52,18 +52,27 @@ const CafyIntroPage = ({ onStartGoals, onCancel }) => {
 						{cafy.cta}
 					</Button>
 
-					<a
-						href='#'
-						//onClick={onSwitchToListView}
-						className={styles.linkText} // Optional: add this to style like a link or match app style
-						style={{
-							color: colors.primaryDark,
-							textDecoration: 'underline',
-							cursor: 'pointer',
-						}}
-					>
-						Update goals via list
-					</a>
+					{onUpdateGoalsViaList && (
+						<button
+							onClick={(e) => {
+								e.preventDefault();
+								onUpdateGoalsViaList();
+							}}
+							className={styles.linkText}
+							style={{
+								background: 'none',
+								border: 'none',
+								color: colors.primaryDark,
+								textDecoration: 'underline',
+								cursor: 'pointer',
+								fontSize: 'inherit',
+								fontFamily: 'inherit',
+								padding: 0,
+							}}
+						>
+							Update goals via list
+						</button>
+					)}
 				</div>
 			</div>
 		</div>
