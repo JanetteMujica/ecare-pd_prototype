@@ -18,8 +18,8 @@ const App = () => {
 	const [goalSettingCompleted, setGoalSettingCompleted] = useState(false);
 	const [userGoals, setUserGoals] = useState([]);
 	const [cameFromWelcome, setCameFromWelcome] = useState(false);
-
-	// In App.js, replace the getSmartWatchValue function and add a new function:
+	// ADD: State to control welcome page initial view
+	const [welcomeInitialView, setWelcomeInitialView] = useState('welcome');
 
 	// Function to find goal_description from taxonomy data
 	const getGoalDescription = (goalId) => {
@@ -88,8 +88,7 @@ const App = () => {
 			const goalsWithMetadata = selections.map((goal) => ({
 				...goal,
 				smart_watch: getSmartWatchValue(goal.id),
-				goal_description: getGoalDescription(goal.id), // ✅ Fetch actual goal_description from taxonomy
-				// Keep short_description for any other uses
+				goal_description: getGoalDescription(goal.id),
 				short_description: goal.short_description,
 			}));
 
@@ -99,6 +98,7 @@ const App = () => {
 			setShowWelcome(false);
 			setCurrentPage('goals');
 			setCameFromWelcome(false);
+			setWelcomeInitialView('welcome'); // Reset welcome view
 
 			console.log('Navigating to goals page with:', goalsWithMetadata);
 		} else {
@@ -106,12 +106,14 @@ const App = () => {
 			setCurrentPage('cafy-intro');
 		}
 	};
+
 	// Handle logo click - Navigate back to welcome page
 	const handleLogoClick = () => {
 		setShowWelcome(true);
 		setCurrentPage('welcome');
 		setShowGoalSettingFlow(false);
 		setCameFromWelcome(false);
+		setWelcomeInitialView('welcome'); // Reset to default welcome view
 	};
 
 	// Handle getting started from welcome page
@@ -121,11 +123,24 @@ const App = () => {
 		setCameFromWelcome(false);
 	};
 
+	// FIXED: Handle CAFY button click from navigation
+	const handleCafyClick = () => {
+		console.log('CAFY button clicked from navigation');
+		// Instead of going directly to cafy-intro page, go to welcome page
+		// and set it to show the cafy-intro view
+		setShowWelcome(true);
+		setCurrentPage('welcome');
+		setShowGoalSettingFlow(false);
+		setCameFromWelcome(true);
+		setWelcomeInitialView('cafy-intro'); // Start welcome page in cafy-intro view
+	};
+
 	// Handle navigation
 	const handleNavigate = (pageId) => {
 		setCurrentPage(pageId);
 		setShowGoalSettingFlow(false);
 		setCameFromWelcome(false);
+		setWelcomeInitialView('welcome'); // Reset welcome view when navigating
 	};
 
 	// Handle feature clicks from circular process (Goals button on welcome page)
@@ -153,6 +168,7 @@ const App = () => {
 			setCameFromWelcome(false);
 		}
 		setShowGoalSettingFlow(false);
+		setWelcomeInitialView('welcome'); // Reset welcome view
 	};
 
 	// Handle going back to welcome from CAFY intro
@@ -161,6 +177,7 @@ const App = () => {
 			setShowWelcome(true);
 			setCurrentPage('welcome');
 			setCameFromWelcome(false);
+			setWelcomeInitialView('welcome'); // Reset to default welcome view
 		} else {
 			setCurrentPage('goals');
 		}
@@ -210,6 +227,7 @@ const App = () => {
 				onGetStarted={handleGetStarted}
 				onFeatureClick={handleFeatureClick}
 				onLogoClick={handleLogoClick}
+				initialView={welcomeInitialView} // Pass the initial view state
 			/>
 		);
 	}
@@ -268,7 +286,11 @@ const App = () => {
 
 	return (
 		<AppLayout>
-			<Navigation currentPage={currentPage} onNavigate={handleNavigate} />
+			<Navigation
+				currentPage={currentPage}
+				onNavigate={handleNavigate}
+				onCafyClick={handleCafyClick}
+			/>
 			<main className='app-main'>{renderPage()}</main>
 		</AppLayout>
 	);

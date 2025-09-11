@@ -51,6 +51,19 @@ const CafyIntroPage = ({ onStartGoals, onCancel }) => {
 					>
 						{cafy.cta}
 					</Button>
+
+					<a
+						href='#'
+						//onClick={onSwitchToListView}
+						className={styles.linkText} // Optional: add this to style like a link or match app style
+						style={{
+							color: colors.primaryDark,
+							textDecoration: 'underline',
+							cursor: 'pointer',
+						}}
+					>
+						Update goals via list
+					</a>
 				</div>
 			</div>
 		</div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import Button from '../../components/ui/Button';
 import { ECareLogo } from '../../components/ui/Logo/LogoPlaceholder';
@@ -10,11 +10,21 @@ import { colors } from '../../constants/colors';
 import styles from './WelcomePage.module.css';
 import Banner from '../../components/layout/Banner';
 
-const WelcomePage = ({ onGetStarted, onFeatureClick, onLogoClick }) => {
-	// ADD: Accept onLogoClick prop
+const WelcomePage = ({
+	onGetStarted,
+	onFeatureClick,
+	onLogoClick,
+	initialView = 'welcome',
+}) => {
+	// ADD: Accept onLogoClick prop and initialView prop
 	const { welcome } = appContent;
-	const [currentView, setCurrentView] = useState('welcome'); // 'welcome', 'cafy-intro', 'goal-setting'
+	const [currentView, setCurrentView] = useState(initialView); // Use initialView prop
 	const [hasStartedGoalSetting, setHasStartedGoalSetting] = useState(false);
+
+	// Handle initialView changes
+	useEffect(() => {
+		setCurrentView(initialView);
+	}, [initialView]);
 
 	const handleFeatureClick = (feature) => {
 		if (feature.id === 'goals' && !hasStartedGoalSetting) {

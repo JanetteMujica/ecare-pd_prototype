@@ -72,7 +72,7 @@ export const appContent = {
 			"Hi, I'm CAFY — your assistant designed to help you navigate Parkinson's, one day at a time.",
 		description:
 			"Because your Parkinson's journey is unique, my role is to guide you step by step in identifying what matters most to you, so you can set goals that support your well-being.",
-		cta: 'Start Setting Goals',
+		cta: 'Start Setting Goals with CAFY',
 	},
 };
 
