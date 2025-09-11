@@ -113,7 +113,7 @@
 /* Button States */
 .navButton:hover {
 	background-color: rgba(79, 110, 212, 0.1);
-	transform: translateY(-24px); /* Adjust the value as needed */
+	transform: translateY(-1px);
 }
 
 .navButton:focus {
@@ -137,7 +137,7 @@
 
 /* CAFY Button States */
 .cafyButton:hover {
-	transform: translateY(-2px);
+	/*transform: translateY(-1px);*/
 	box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2), 0 6px 12px rgba(0, 0, 0, 0.15);
 	background: linear-gradient(
 		135deg,
