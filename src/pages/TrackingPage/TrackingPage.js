@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import {
 	Activity,
 	Laugh,
+	Angry,
 	Smile,
 	Meh,
 	Frown,
@@ -43,8 +44,8 @@ const TrackingPage = ({
 		{ value: 5, icon: Laugh, color: '#10B981', bgColor: '#ECFDF5' },
 		{ value: 4, icon: Smile, color: '#84CC16', bgColor: '#F7FEE7' },
 		{ value: 3, icon: Meh, color: '#F59E0B', bgColor: '#FFFBEB' },
-		{ value: 2, icon: Annoyed, color: '#F97316', bgColor: '#FFF7ED' },
-		{ value: 1, icon: Frown, color: '#EF4444', bgColor: '#FEF2F2' },
+		{ value: 2, icon: Frown, color: '#F97316', bgColor: '#FFF7ED' },
+		{ value: 1, icon: Angry, color: '#EF4444', bgColor: '#FEF2F2' },
 	];
 
 	// Function to get care tip from taxonomy
@@ -185,7 +186,7 @@ const TrackingPage = ({
 												: rating.bgColor,
 										}}
 									>
-										<IconComponent size={40} color={rating.color} />
+										<IconComponent color={rating.color} />
 									</button>
 								);
 							})}

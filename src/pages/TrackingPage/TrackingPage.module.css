@@ -77,13 +77,12 @@
 	align-items: center;
 	justify-content: center;
 	padding: var(--spacing-md);
-	border: 2px solid;
-	border-radius: var(--border-radius-lg);
+	/*border: 2px solid;
+	border-radius: var(--border-radius-lg);*/
 	cursor: pointer;
 	transition: var(--transition-normal);
 	flex: 1;
-	min-width: 80px;
-	min-height: 80px;
+	border-radius: 50%;
 	box-shadow: var(--shadow-sm);
 }
 
@@ -335,14 +334,14 @@
 	}
 
 	.ratingButton {
-		min-width: 50px;
-		min-height: 50px;
-		padding: var(--spacing-sm);
+		width: 50px;
+		height: 50px;
+		padding: 0rem;
 	}
 
 	.ratingButton svg {
-		width: 32px;
-		height: 32px;
+		width: 50px;
+		height: 50px;
 	}
 
 	.sectionTitle {
@@ -396,14 +395,14 @@
 	}
 
 	.ratingButton {
-		min-width: 50px;
-		min-height: 50px;
-		padding: 0.5rem;
+		min-width: 48px;
+		min-height: 48px;
+		padding: 0rem;
 	}
 
 	.ratingButton svg {
-		width: 28px;
-		height: 28px;
+		width: 48px;
+		height: 48px;
 	}
 
 	.emptyState {
@@ -454,8 +453,8 @@
 	}
 
 	.ratingButton svg {
-		width: 48px;
-		height: 48px;
+		width: 100px;
+		height: 100px;
 	}
 
 	.sectionTitle {
