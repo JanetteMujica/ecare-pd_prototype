@@ -1,6 +1,11 @@
 /* JourneyPage Component Styles - Mobile-First Responsive Design */
-/* Based on GoalsPage structure with customizations for Journey content */
+/* Data visualization dashboard with tracking insights - FLEXBOX LAYOUT */
 
+/* =============================================================================
+   BASE STYLES - SMALLEST MOBILE PHONES (320px+)
+   ============================================================================= */
+
+/* Container & Layout */
 .container {
 	height: 100vh;
 	background: var(--color-bg-app);
@@ -8,369 +13,597 @@
 	flex-direction: column;
 	overflow: hidden;
 	width: 100%;
-	position: relative; /* For fixed positioned banner */
+	position: relative;
 }
 
-/* Main content area - Fixed banner spacing */
 .content {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
 	min-height: 0;
 	overflow: auto;
-	/* Add top padding to account for fixed positioned banner */
-	padding-top: calc(
-		var(--spacing-xs) * 2 + var(--font-size-lg) + 0.5rem
-	); /* Banner height approximation */
+	padding: var(--spacing-xs);
+	gap: var(--spacing-md);
 }
 
-/* Title icon styling - Mobile-first base */
-.titleIcon {
+/* Period Selector */
+.periodSelector {
+	display: flex;
+	gap: var(--spacing-xs);
+	justify-content: space-around;
+	margin-top: var(--spacing-md);
+}
+
+.periodButton {
+	background: white;
+	border: 2px solid var(--color-border-light);
+	border-radius: var(--border-radius-md);
+	padding: 6px var(--spacing-xs);
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-medium);
+	font-size: 10px;
+	color: var(--color-text-primary);
+	cursor: pointer;
+	transition: var(--transition-normal);
+	flex: 1;
+}
+
+.periodButton:hover {
+	border-color: var(--color-coral);
+	color: var(--color-coral);
+}
+
+.periodButtonActive {
+	background: var(--color-coral);
+	border-color: var(--color-coral);
+	color: white;
+}
+
+/* Dashboard Layout */
+.dashboardContainer {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+	width: 100%;
+}
+
+.dashboardRow {
+	display: flex;
+	gap: var(--spacing-xs);
+	width: 100%;
+}
+
+/* Dashboard Cards */
+.dashboardCard {
+	background: white;
+	border-radius: var(--border-radius-lg);
+	padding: 10px;
+	box-shadow: var(--shadow-sm);
+	border: 1px solid var(--color-border-light);
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	flex: 1;
+	text-align: center;
+}
+
+.cardHeader {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-xs);
+	justify-content: left;
+	text-transform: uppercase;
+}
+
+.cardIcon {
+	width: 25px;
+	height: 25px;
+	color: var(--color-coral);
+}
+
+.cardLabel {
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-heavy);
+	font-size: 13px;
+	color: var(--color-text-primary);
+}
+
+.cardValueContainer {
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	flex-direction: row;
+}
+
+.cardValue {
+	font-family: 'Filson Pro', sans-serif;
+	font-size: var(--font-size-3xl);
+	font-weight: var(--font-weight-bold);
+	color: var(--color-text-primary);
+}
+
+.cardValue span {
+	font-weight: var(--font-weight-medium);
+	font-size: var(--font-size-xs);
+}
+
+.mehIcon {
+	width: 16px;
+	height: 16px;
+	color: #f59e0b;
+}
+
+.cardUnit {
+	font-weight: var(--font-weight-medium);
+	font-size: var(--font-size-sm);
+	color: var(--color-text-primary);
+}
+
+/* Medication Adherence */
+.adherenceIndicator {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--spacing-xs);
+	font-size: var(--font-size-3xl);
+	font-weight: var(--font-weight-bold);
+}
+
+.adherenceStatus {
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-medium);
+	font-size: var(--font-size-xs);
+	color: var(--color-text-primary);
+	margin-top: var(--spacing-xs);
+	font-style: italic;
+}
+
+/* Watch Data */
+.watchDataContainer {
+	display: flex;
+	flex-direction: column;
+	/*gap: var(--spacing-xs);*/
+}
+
+.watchMetric {
+	display: flex;
+	flex-direction: row;
+	align-items: center; /* Change from baseline to center */
+	justify-content: left;
+	text-align: left;
+	gap: 5px;
+	flex: 1;
+}
+
+.watchValue,
+.watchLabel {
+	align-self: baseline;
+}
+
+.watchIconContainer {
 	width: 20px;
 	height: 20px;
-	color: white;
-	flex-shrink: 0;
-	transition: var(--transition-normal);
-}
-
-/* Hero section - Matching structure */
-.hero {
+	border-radius: 50%;
+	background-color: var(--color-text-primary);
 	display: flex;
-	flex-direction: column;
-	padding: var(--spacing-sm);
-	text-align: left;
-	min-height: 0;
-	flex: 1;
-	justify-content: flex-start;
-	gap: 0;
-	overflow: visible;
+	align-items: center;
+	justify-content: center;
+	align-self: center !important;
+	padding: 3px; /* This creates the border space */
+	box-sizing: border-box; /* Important: includes padding in total size */
 }
 
-/* Heading container */
-.headingContainer {
-	max-width: 64rem;
-	margin: 0.5rem 0 0.25rem 0;
-	animation: fadeInUp 1s ease-out 0.2s both;
-	flex-shrink: 0;
-	align-self: flex-start;
+.watchMetric svg {
+	color: white;
 }
 
-/* Main heading - Mobile-first typography */
-.mainHeading {
+.watchIcon {
+	width: 100%;
+	height: 100%;
+	color: var(--color-coral);
+}
+
+.watchValue {
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-heavy);
+	font-size: 12px;
+	color: var(--color-text-primary);
+}
+
+.watchLabel {
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-medium);
+	font-size: 9px;
+	color: var(--color-text-primary);
+}
+
+/* Sections */
+.section {
+	background: white;
+	border-radius: var(--border-radius-lg);
+	padding: var(--spacing-md);
+	box-shadow: var(--shadow-sm);
+	border: 1px solid var(--color-border-light);
+}
+
+.sectionTitle {
 	font-family: 'Filson Pro', sans-serif;
 	font-weight: var(--font-weight-bold);
-	font-size: var(--font-size-lg);
-	line-height: var(--line-height-tight);
-	letter-spacing: -0.025em;
-	margin: 0;
+	font-size: var(--font-size-base);
 	color: var(--color-text-primary);
+	margin: 0 0 var(--spacing-md) 0;
 	display: flex;
 	align-items: center;
-	justify-content: center;
 	gap: var(--spacing-sm);
+	text-transform: uppercase;
 }
 
-/* Title icon container - Journey theme color */
-.titleIconContainer {
-	width: 2rem;
-	height: 2rem;
-	border-radius: var(--border-radius-full);
-	background-color: var(--color-secondary); /* Different color for Journey */
+.sectionIcon {
+	width: 25px;
+	height: 25px;
+	color: var(--color-coral);
+}
+
+/* Placeholders */
+.chartPlaceholder,
+.diaryPlaceholder {
+	background: var(--color-bg-light);
+	border: 2px dashed var(--color-border-light);
+	border-radius: var(--border-radius-md);
+	padding: var(--spacing-md);
+	min-height: 120px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	box-shadow: var(--shadow-md);
-	border: 3px solid white;
-	flex-shrink: 0;
-	transition: var(--transition-normal);
 }
 
-/* Content container for Journey-specific content */
-.journeyContainer {
-	flex: 1;
-	margin: 0.25rem 0;
-	display: flex;
-	align-items: flex-start;
-	justify-content: center;
-	min-height: auto;
-	max-height: none;
-	overflow: visible;
-	padding-top: var(--spacing-md);
-}
-
-/* Journey content grid */
-.journeyContent {
+.placeholderContent {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	gap: var(--spacing-md);
-	width: 100%;
-	max-width: 600px;
-	padding: var(--spacing-lg);
-}
-
-/* Empty state styling - Mobile-first */
-.emptyState {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
 	text-align: center;
-	padding: var(--spacing-lg);
-	min-height: 300px;
-	gap: var(--spacing-md);
 }
 
-.emptyIcon {
-	margin-bottom: var(--spacing-md);
+.placeholderIcon {
+	width: 32px;
+	height: 32px;
+	color: var(--color-text-primary);
 	opacity: 0.7;
 }
 
-.emptyTitle {
-	font-family: 'Filson Pro', sans-serif;
-	font-weight: var(--font-weight-bold);
-	font-size: var(--font-size-xl);
-	margin: 0;
-	color: var(--color-text-primary);
-}
-
-.emptyDescription {
+.placeholderText {
 	font-family: 'Filson Pro', sans-serif;
 	font-weight: var(--font-weight-medium);
-	font-size: var(--font-size-base);
-	opacity: 0.8;
-	margin: 0;
+	font-size: var(--font-size-sm);
 	color: var(--color-text-primary);
-	max-width: 400px;
+	margin: 0;
+	max-width: 300px;
 	line-height: var(--line-height-normal);
 }
 
-/* Enhanced mobile-first breakpoints with banner spacing */
-@media (max-width: 480px) {
-	.content {
-		padding-top: calc(0.25rem * 2 + var(--font-size-base) + 0.5rem);
+/* =============================================================================
+   RESPONSIVE BREAKPOINTS - MOBILE FIRST
+   ============================================================================= */
+
+/* Small phones - 375px+ */
+@media (min-width: 375px) {
+	.periodButton {
+		font-size: 11px;
+		padding: var(--spacing-xs) var(--spacing-sm);
 	}
 
-	.titleIcon {
+	.dashboardContainer {
+		gap: var(--spacing-sm);
+	}
+
+	.dashboardRow {
+		gap: var(--spacing-sm);
+	}
+
+	.dashboardCard {
+		padding: var(--spacing-sm);
+	}
+
+	.cardValue {
+	}
+
+	.watchDataContainer {
+		gap: var(--spacing-sm);
+	}
+
+	.watchDataRow {
+		gap: 4px;
+	}
+
+	.watchValue {
+	}
+
+	.watchLabel {
+	}
+
+	.chartPlaceholder,
+	.diaryPlaceholder {
+		min-height: 150px;
+	}
+}
+
+/* Regular mobile phones - 480px+ */
+@media (min-width: 480px) {
+	.content {
+		padding: var(--spacing-sm);
+		gap: var(--spacing-lg);
+	}
+
+	.periodButton {
+		padding: var(--spacing-sm) var(--spacing-md);
+		font-size: var(--font-size-sm);
+	}
+
+	.dashboardContainer {
+		gap: var(--spacing-md);
+	}
+
+	.dashboardRow {
+		gap: var(--spacing-md);
+	}
+
+	.dashboardCard {
+		padding: var(--spacing-md);
+	}
+
+	.cardIcon {
+		width: 20px;
+		height: 20px;
+	}
+
+	.cardLabel {
+		font-size: var(--font-size-xs);
+	}
+
+	.cardValue {
+		font-size: var(--font-size-lg);
+	}
+
+	.mehIcon {
+		width: 20px;
+		height: 20px;
+	}
+
+	.watchIcon {
+		width: 16px;
+		height: 16px;
+	}
+
+	.watchValue {
+		font-size: var(--font-size-xs);
+	}
+
+	.watchLabel {
+		font-size: 10px;
+	}
+
+	.watchDataContainer {
+		gap: var(--spacing-md);
+	}
+
+	.watchDataRow {
+		gap: var(--spacing-xs);
+	}
+
+	.section {
+		padding: var(--spacing-lg);
+	}
+
+	.sectionTitle {
+		font-size: var(--font-size-lg);
+	}
+
+	.sectionIcon {
+		width: 24px;
+		height: 24px;
+	}
+
+	.chartPlaceholder,
+	.diaryPlaceholder {
+		padding: var(--spacing-xl);
+		min-height: 200px;
+	}
+
+	.placeholderIcon {
+		width: 48px;
+		height: 48px;
+	}
+
+	.placeholderText {
+		font-size: var(--font-size-base);
+	}
+}
+
+/* Tablets - 768px+ */
+@media (min-width: 768px) {
+	.content {
+		padding: var(--spacing-md) var(--spacing-lg);
+		gap: var(--spacing-xl);
+	}
+
+	.periodButton {
+		font-size: var(--font-size-base);
+		padding: var(--spacing-md) var(--spacing-lg);
+	}
+
+	.dashboardContainer {
+		gap: var(--spacing-lg);
+	}
+
+	.dashboardRow {
+		gap: var(--spacing-lg);
+	}
+
+	.dashboardCard {
+		padding: var(--spacing-lg);
+	}
+
+	.cardIcon {
+		width: 24px;
+		height: 24px;
+	}
+
+	.cardLabel {
+		font-size: var(--font-size-sm);
+	}
+
+	.cardValue {
+		font-size: var(--font-size-xl);
+	}
+
+	.mehIcon {
+		width: 24px;
+		height: 24px;
+	}
+
+	.watchIcon {
 		width: 18px;
 		height: 18px;
 	}
 
-	.titleIconContainer {
-		width: 2.25rem;
-		height: 2.25rem;
+	.watchValue {
+		font-size: var(--font-size-sm);
 	}
 
-	.mainHeading {
+	.watchLabel {
+		font-size: var(--font-size-xs);
+	}
+
+	.watchDataContainer {
+		gap: var(--spacing-lg);
+	}
+
+	.sectionTitle {
 		font-size: var(--font-size-xl);
 	}
 
-	.emptyState {
-		min-height: 280px;
+	.sectionIcon {
+		width: 28px;
+		height: 28px;
 	}
 
-	/* Landscape mobile */
-	@media (orientation: landscape) and (max-height: 600px) {
-		.content {
-			padding-top: calc(0.1875rem * 2 + var(--font-size-sm) + 0.25rem);
-		}
-	}
-}
-
-/* Small iPhones - Compact styles */
-@media (max-width: 375px) {
-	.hero {
-		padding: 0.375rem;
-	}
-
-	.headingContainer {
-		margin: 0.125rem auto;
-	}
-
-	.mainHeading {
-		font-size: var(--font-size-base);
-		line-height: 1.05;
-	}
-
-	.titleIconContainer {
-		width: 1.75rem;
-		height: 1.75rem;
-	}
-
-	.journeyContainer {
-		margin: 0.25rem 0;
-	}
-
-	.journeyContent {
-		gap: var(--spacing-sm);
-		max-width: 300px;
-		padding: var(--spacing-md);
-	}
-
-	.emptyState {
-		padding: var(--spacing-md);
+	.chartPlaceholder,
+	.diaryPlaceholder {
 		min-height: 250px;
 	}
 
-	.emptyTitle {
-		font-size: var(--font-size-lg);
+	.placeholderIcon {
+		width: 64px;
+		height: 64px;
 	}
 
-	.emptyDescription {
-		font-size: var(--font-size-sm);
-		max-width: 300px;
+	.placeholderText {
+		font-size: var(--font-size-lg);
+		max-width: 400px;
 	}
 }
 
-/* Standard tablets */
-@media (min-width: 768px) {
-	.content {
-		padding-top: calc(var(--spacing-sm) * 2 + var(--font-size-2xl) + 0.75rem);
-	}
-
-	.hero {
-		padding: var(--spacing-md) var(--spacing-lg);
-		gap: var(--spacing-sm);
-	}
-
-	.headingContainer {
-		margin: 0.375rem auto;
-	}
-
-	.mainHeading {
-		font-size: var(--font-size-2xl);
-	}
-
-	.titleIconContainer {
-		width: 3rem;
-		height: 3rem;
-	}
-
-	.journeyContainer {
-		margin: var(--spacing-xs) 0;
-		flex: 1;
-	}
-
-	.journeyContent {
-		gap: var(--spacing-lg);
-		max-width: 700px;
-	}
-
-	.emptyTitle {
-		font-size: var(--font-size-2xl);
-	}
-
-	.emptyDescription {
-		font-size: var(--font-size-lg);
-		max-width: 480px;
-	}
-}
-
-/* Desktop */
+/* Desktop - 1024px+ */
 @media (min-width: 1024px) {
 	.content {
-		padding-top: calc(var(--spacing-md) * 2 + var(--font-size-3xl) + 1rem);
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: var(--spacing-lg) var(--spacing-xl);
 	}
 
-	.journeyContent {
+	.dashboardContainer {
 		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.cardValue {
+		font-size: var(--font-size-2xl);
+	}
+
+	.chartPlaceholder,
+	.diaryPlaceholder {
+		min-height: 300px;
 	}
 }
 
-/* Laptops and larger */
+/* Large laptops - 1367px+ */
 @media (min-width: 1367px) {
 	.content {
-		padding-top: calc(var(--spacing-lg) * 2 + var(--font-size-4xl) + 1.25rem);
-	}
-
-	.hero {
 		padding: var(--spacing-xl) var(--spacing-2xl);
-		gap: var(--spacing-lg);
-		justify-content: flex-start;
+		gap: var(--spacing-2xl);
 	}
 
-	.headingContainer {
-		margin: 0.75rem auto;
-	}
-
-	.mainHeading {
-		font-size: var(--font-size-4xl);
-	}
-
-	.titleIconContainer {
-		width: 4rem;
-		height: 4rem;
-	}
-
-	.journeyContainer {
-		margin: var(--spacing-sm) 0;
-		flex: 1;
-	}
-
-	.journeyContent {
+	.dashboardContainer {
 		max-width: 900px;
-		gap: var(--spacing-xl);
 	}
 
-	.emptyTitle {
+	.dashboardCard {
+		padding: var(--spacing-xl);
+	}
+
+	.cardValue {
 		font-size: var(--font-size-3xl);
 	}
 
-	.emptyDescription {
-		font-size: var(--font-size-xl);
-		max-width: 600px;
+	.sectionTitle {
+		font-size: var(--font-size-2xl);
 	}
 
-	/* Very large screens */
-	@media (min-width: 1440px) {
-		.content {
-			padding-top: calc(var(--spacing-lg) * 2 + var(--font-size-5xl) + 1.5rem);
-		}
-
-		.mainHeading {
-			font-size: var(--font-size-5xl);
-		}
-
-		.titleIconContainer {
-			width: 4.5rem;
-			height: 4.5rem;
-		}
-
-		.journeyContent {
-			max-width: 1000px;
-		}
+	.sectionIcon {
+		width: 32px;
+		height: 32px;
 	}
 }
 
-/* Animations */
-@keyframes fadeInUp {
-	from {
-		opacity: 0;
-		transform: translateY(15px);
+/* Very large screens - 1440px+ */
+@media (min-width: 1440px) {
+	.content {
+		max-width: 1400px;
 	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
+
+	.dashboardContainer {
+		max-width: 1000px;
 	}
 }
 
-/* Accessibility improvements */
+/* =============================================================================
+   SPECIAL MEDIA QUERIES
+   ============================================================================= */
+
+/* Landscape mobile orientation */
+@media (orientation: landscape) and (max-height: 600px) {
+	.chartPlaceholder,
+	.diaryPlaceholder {
+		min-height: 120px;
+	}
+}
+
+/* Accessibility - Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-	.headingContainer {
-		animation: none;
+	.periodButton,
+	.dashboardCard {
+		transition: none;
 	}
 }
 
-/* High contrast mode support */
+/* Accessibility - High contrast */
 @media (prefers-contrast: high) {
 	.container {
 		background: var(--color-bg-primary);
 	}
 
-	.mainHeading,
-	.emptyTitle,
-	.emptyDescription {
-		color: var(--color-text-primary);
+	.dashboardCard,
+	.section {
+		border: 2px solid var(--color-border-dark);
+	}
+
+	.periodButton {
+		border: 2px solid var(--color-border-dark);
+	}
+
+	.periodButtonActive {
+		border: 2px solid var(--color-text-primary);
 	}
 }
 
@@ -380,5 +613,30 @@
 		background: white;
 		height: auto;
 		overflow: visible;
+	}
+
+	.dashboardContainer,
+	.section {
+		break-inside: avoid;
+		margin-bottom: var(--spacing-md);
+	}
+
+	.periodSelector {
+		display: none;
+	}
+}
+
+/* =============================================================================
+   ANIMATIONS
+   ============================================================================= */
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(15px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }
