@@ -14,6 +14,7 @@ import {
 import Banner from '../../components/layout/Banner';
 import PageTitle from '../../components/layout/PageTitle';
 import TrackingComparison from '../../components/features/TrackingComparison';
+import DiaryEntries from '../../components/features/DiaryEntries';
 import { colors } from '../../constants/colors';
 import { appFeatures } from '../../constants/features';
 import styles from './JourneyPage.module.css';
@@ -231,21 +232,13 @@ const JourneyPage = ({ onLogoClick }) => {
 					<TrackingComparison selectedPeriod={selectedPeriod} />
 				</div>
 
-				{/* Diary Entries Section */}
+				{/* Diary Entries Section - Replaced placeholder with actual component */}
 				<div className={styles.section}>
 					<h3 className={styles.sectionTitle}>
 						<NotebookPen className={styles.sectionIcon} />
 						Diary Entries
 					</h3>
-					<div className={styles.diaryPlaceholder}>
-						<div className={styles.placeholderContent}>
-							<NotebookPen className={styles.placeholderIcon} />
-							<p className={styles.placeholderText}>
-								Your diary entries and insights will appear here as you continue
-								tracking your daily experiences.
-							</p>
-						</div>
-					</div>
+					<DiaryEntries />
 				</div>
 			</div>
 		</div>

@@ -194,12 +194,16 @@ const TrackingPage = ({
 
 						{/* Comment Section */}
 						<div className={styles.commentSection}>
+							<h3 className={styles.sectionTitle}>JOURNAL ENTRY</h3>
 							<h3 className={styles.sectionTitle}>
-								Additional notes (optional)
+								How are you feeling? Any challenges or successes to note about{' '}
+								<span className={styles.goalHighlight}>
+									{currentGoal.name || currentGoal.title}
+								</span>
+								?
 							</h3>
 							<textarea
 								className={styles.commentTextarea}
-								placeholder='How are you feeling? Any challenges or successes to note?'
 								value={comment}
 								onChange={(e) => setComment(e.target.value)}
 								rows={4}
@@ -222,7 +226,7 @@ const TrackingPage = ({
 									) : (
 										<>
 											<Save size={20} />
-											Save Progress
+											Save
 										</>
 									)}
 								</button>
@@ -253,7 +257,7 @@ const TrackingPage = ({
 								className={styles.nextGoalButton}
 								onClick={handleNextGoal}
 							>
-								Next Care Priority
+								Next
 								<ArrowRight size={20} />
 							</button>
 							<p className={styles.goalProgress}>

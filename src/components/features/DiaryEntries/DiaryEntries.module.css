@@ -1,0 +1,534 @@
+/* DiaryEntries Component Styles - Mobile-First Responsive Design */
+/* Consistent with TrackingPage and JourneyPage styling patterns */
+
+/* =============================================================================
+   CONTAINER & LAYOUT
+   ============================================================================= */
+
+.diaryContainer {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-lg);
+	width: 100%;
+}
+
+/* =============================================================================
+   NEW ENTRY SECTION
+   ============================================================================= */
+
+.newEntryCard {
+	background: white;
+	border-radius: var(--border-radius-lg);
+	padding: var(--spacing-lg);
+	box-shadow: var(--shadow-sm);
+	border: 1px solid var(--color-border-light);
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.newEntryTitle {
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-bold);
+	font-size: var(--font-size-lg);
+	color: var(--color-text-primary);
+	margin: 0 0 var(--spacing-md) 0;
+	text-transform: uppercase;
+}
+
+.entryForm {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-md);
+}
+
+.entryTextarea {
+	width: 100%;
+	padding: var(--spacing-md);
+	border: 2px solid var(--color-border-light);
+	border-radius: var(--border-radius-md);
+	font-family: 'Filson Pro', sans-serif;
+	font-size: var(--font-size-base);
+	line-height: var(--line-height-normal);
+	resize: vertical;
+	transition: var(--transition-normal);
+	box-sizing: border-box;
+	min-height: 120px;
+}
+
+.entryTextarea:focus {
+	outline: none;
+	border-color: var(--color-peach);
+	box-shadow: 0 0 0 3px rgba(255, 168, 138, 0.1);
+}
+
+.entryTextarea::placeholder {
+	color: var(--color-text-tertiary);
+	font-style: italic;
+}
+
+/* Save Section - Same as TrackingPage */
+.saveSection {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	align-items: flex-end;
+}
+
+.saveButton {
+	background: var(--color-coral);
+	color: white;
+	border: none;
+	border-radius: var(--border-radius-md);
+	padding: var(--spacing-md) var(--spacing-lg);
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-bold);
+	font-size: var(--font-size-base);
+	cursor: pointer;
+	transition: var(--transition-normal);
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-sm);
+	justify-content: center;
+	min-height: var(--min-touch-target-mobile);
+	box-shadow: var(--shadow-sm);
+}
+
+.saveButton:hover:not(.saveButtonDisabled) {
+	background: var(--color-coral);
+	transform: translateY(-1px);
+	box-shadow: var(--shadow-md);
+}
+
+.saveButton:active {
+	transform: translateY(0);
+}
+
+.saveButtonDisabled {
+	background-color: rgb(79, 110, 212);
+	color: white;
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.saveConfirmation {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-xs);
+	color: #10b981;
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-medium);
+	font-size: var(--font-size-sm);
+	padding: var(--spacing-sm);
+	background: #10b98120;
+	border-radius: var(--border-radius-md);
+	border: 1px solid #10b981;
+}
+
+/* =============================================================================
+   SEARCH & FILTER SECTION
+   ============================================================================= */
+
+.searchSection {
+	background: white;
+	border-radius: var(--border-radius-lg);
+	padding: var(--spacing-lg);
+	box-shadow: var(--shadow-sm);
+	border: 1px solid var(--color-border-light);
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.searchControls {
+	display: flex;
+	gap: var(--spacing-md);
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.searchInput {
+	position: relative;
+	flex: 1;
+	min-width: 250px;
+}
+
+.searchIcon {
+	position: absolute;
+	left: var(--spacing-md);
+	top: 50%;
+	transform: translateY(-50%);
+	color: var(--color-text-tertiary);
+}
+
+.searchField {
+	width: 100%;
+	padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) 2.5rem;
+	border: 2px solid var(--color-border-light);
+	border-radius: var(--border-radius-md);
+	font-family: 'Filson Pro', sans-serif;
+	font-size: var(--font-size-base);
+	transition: var(--transition-normal);
+	box-sizing: border-box;
+}
+
+.searchField:focus {
+	outline: none;
+	border-color: var(--color-peach);
+	box-shadow: 0 0 0 3px rgba(255, 168, 138, 0.1);
+}
+
+.filterButton {
+	background: var(--color-bg-light);
+	border: 2px solid var(--color-border-light);
+	border-radius: var(--border-radius-md);
+	padding: var(--spacing-md);
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-medium);
+	font-size: var(--font-size-base);
+	cursor: pointer;
+	transition: var(--transition-normal);
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-sm);
+	min-height: var(--min-touch-target-mobile);
+}
+
+.filterButton:hover {
+	border-color: var(--color-coral);
+	color: var(--color-coral);
+}
+
+.filterButtonActive {
+	background: var(--color-coral);
+	border-color: var(--color-coral);
+	color: white;
+}
+
+/* Filter Panel */
+.filterPanel {
+	margin-top: var(--spacing-md);
+	padding-top: var(--spacing-md);
+	border-top: 1px solid var(--color-border-light);
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--spacing-md);
+	align-items: center;
+}
+
+.filterGroup {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+}
+
+.filterLabel {
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-medium);
+	font-size: var(--font-size-sm);
+	color: var(--color-text-primary);
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-xs);
+	text-transform: uppercase;
+}
+
+.dateInput {
+	padding: var(--spacing-sm) var(--spacing-md);
+	border: 2px solid var(--color-border-light);
+	border-radius: var(--border-radius-md);
+	font-family: 'Filson Pro', sans-serif;
+	font-size: var(--font-size-base);
+	transition: var(--transition-normal);
+}
+
+.dateInput:focus {
+	outline: none;
+	border-color: var(--color-peach);
+	box-shadow: 0 0 0 3px rgba(255, 168, 138, 0.1);
+}
+
+.clearFiltersButton {
+	background: var(--color-text-tertiary);
+	color: white;
+	border: none;
+	border-radius: var(--border-radius-md);
+	padding: var(--spacing-sm) var(--spacing-md);
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-medium);
+	font-size: var(--font-size-sm);
+	cursor: pointer;
+	transition: var(--transition-normal);
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-xs);
+}
+
+.clearFiltersButton:hover {
+	background: var(--color-text-primary);
+}
+
+/* =============================================================================
+   ENTRIES HISTORY SECTION
+   ============================================================================= */
+
+.entriesHistory {
+	background: white;
+	border-radius: var(--border-radius-lg);
+	padding: var(--spacing-lg);
+	box-shadow: var(--shadow-sm);
+	border: 1px solid var(--color-border-light);
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.historyTitle {
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-bold);
+	font-size: var(--font-size-lg);
+	color: var(--color-text-primary);
+	margin: 0 0 var(--spacing-lg) 0;
+	text-transform: uppercase;
+}
+
+.entriesList {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-md);
+}
+
+.entryCard {
+	background: var(--color-bg-light);
+	border: 1px solid var(--color-border-light);
+	border-radius: var(--border-radius-md);
+	padding: var(--spacing-md);
+	transition: var(--transition-normal);
+}
+
+.entryCard:hover {
+	box-shadow: var(--shadow-sm);
+}
+
+.entryHeader {
+	margin-bottom: var(--spacing-md);
+}
+
+.entryMeta {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-sm);
+	flex-wrap: wrap;
+}
+
+.entryDate {
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-medium);
+	font-size: var(--font-size-sm);
+	color: var(--color-text-primary);
+}
+
+.entrySource {
+	padding: 2px var(--spacing-sm);
+	border-radius: var(--border-radius-sm);
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-medium);
+	font-size: var(--font-size-xs);
+	text-transform: uppercase;
+}
+
+.entrySourceTracking {
+	background: var(--color-coral);
+	color: white;
+}
+
+.entrySourceJourney {
+	background: var(--color-peach);
+	color: var(--color-text-primary);
+}
+
+.goalBadge {
+	padding: 2px var(--spacing-sm);
+	border-radius: var(--border-radius-sm);
+	background: var(--color-bg-primary);
+	color: var(--color-text-primary);
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-medium);
+	font-size: var(--font-size-xs);
+	border: 1px solid var(--color-border-light);
+}
+
+.entryContent p {
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-medium);
+	font-size: var(--font-size-base);
+	color: var(--color-text-primary);
+	line-height: var(--line-height-normal);
+	margin: 0;
+}
+
+/* Empty State */
+.emptyState {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: var(--spacing-xl);
+	text-align: center;
+	gap: var(--spacing-md);
+}
+
+.emptyIcon {
+	color: var(--color-text-tertiary);
+	opacity: 0.7;
+}
+
+.emptyText {
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-medium);
+	font-size: var(--font-size-base);
+	color: var(--color-text-primary);
+	margin: 0;
+	max-width: 400px;
+	line-height: var(--line-height-normal);
+}
+
+/* =============================================================================
+   RESPONSIVE BREAKPOINTS - MOBILE FIRST
+   ============================================================================= */
+
+/* Small phones - 375px+ */
+@media (min-width: 375px) {
+	.searchInput {
+		min-width: 200px;
+	}
+}
+
+/* Regular mobile phones - 480px+ */
+@media (min-width: 480px) {
+	.diaryContainer {
+		gap: var(--spacing-xl);
+	}
+
+	.newEntryCard,
+	.searchSection,
+	.entriesHistory {
+		padding: var(--spacing-lg);
+	}
+
+	.entryTextarea {
+		min-height: 140px;
+	}
+
+	.searchControls {
+		flex-wrap: nowrap;
+	}
+
+	.searchInput {
+		min-width: 300px;
+	}
+
+	.entryCard {
+		padding: var(--spacing-lg);
+	}
+}
+
+/* Tablets - 768px+ */
+@media (min-width: 768px) {
+	.newEntryTitle,
+	.historyTitle {
+		font-size: var(--font-size-xl);
+	}
+
+	.entryTextarea {
+		min-height: 160px;
+		font-size: var(--font-size-lg);
+	}
+
+	.searchField {
+		font-size: var(--font-size-lg);
+	}
+
+	.filterPanel {
+		flex-wrap: nowrap;
+	}
+
+	.entryContent p {
+		font-size: var(--font-size-lg);
+	}
+}
+
+/* Desktop - 1024px+ */
+@media (min-width: 1024px) {
+	.diaryContainer {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.entryTextarea {
+		min-height: 180px;
+	}
+}
+
+/* Large laptops - 1367px+ */
+@media (min-width: 1367px) {
+	.newEntryCard,
+	.searchSection,
+	.entriesHistory {
+		padding: var(--spacing-xl);
+	}
+
+	.diaryContainer {
+		gap: var(--spacing-2xl);
+	}
+}
+
+/* =============================================================================
+   ACCESSIBILITY & SPECIAL MEDIA QUERIES
+   ============================================================================= */
+
+/* Accessibility - Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	.saveButton,
+	.filterButton,
+	.clearFiltersButton,
+	.entryCard {
+		transition: none;
+	}
+
+	.saveButton:hover,
+	.filterButton:hover,
+	.clearFiltersButton:hover {
+		transform: none;
+	}
+}
+
+/* Accessibility - High contrast */
+@media (prefers-contrast: high) {
+	.newEntryCard,
+	.searchSection,
+	.entriesHistory,
+	.entryCard {
+		border: 2px solid var(--color-border-dark);
+	}
+
+	.saveButton,
+	.filterButton,
+	.clearFiltersButton {
+		border: 2px solid var(--color-text-primary);
+	}
+}
+
+/* Print styles */
+@media print {
+	.newEntryCard,
+	.searchSection {
+		display: none;
+	}
+
+	.entriesHistory {
+		break-inside: avoid;
+	}
+
+	.entryCard {
+		break-inside: avoid;
+		margin-bottom: var(--spacing-md);
+	}
+}
