@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ecare-pd_prototype/static/css/main.2e7be3e4.css",
-    "main.js": "/ecare-pd_prototype/static/js/main.049573c0.js",
+    "main.css": "/ecare-pd_prototype/static/css/main.c6e0c470.css",
+    "main.js": "/ecare-pd_prototype/static/js/main.9ea806b5.js",
     "static/media/FilsonProBlackItalic.otf": "/ecare-pd_prototype/static/media/FilsonProBlackItalic.6603ced6d767d04b008f.otf",
     "static/media/FilsonProMediumItalic.otf": "/ecare-pd_prototype/static/media/FilsonProMediumItalic.521f17964a81ae6d36b6.otf",
     "static/media/FilsonProBoldItalic.otf": "/ecare-pd_prototype/static/media/FilsonProBoldItalic.d49c98267ddaaefd8705.otf",
@@ -21,11 +21,11 @@
     "static/media/eCarePD_logo.svg": "/ecare-pd_prototype/static/media/eCarePD_logo.24a9014d75be2d0a58d66693dd1f58d3.svg",
     "static/media/cafy_logo.svg": "/ecare-pd_prototype/static/media/cafy_logo.ff6170f1cdf1297d0d121e36cb9889bc.svg",
     "index.html": "/ecare-pd_prototype/index.html",
-    "main.2e7be3e4.css.map": "/ecare-pd_prototype/static/css/main.2e7be3e4.css.map",
-    "main.049573c0.js.map": "/ecare-pd_prototype/static/js/main.049573c0.js.map"
+    "main.c6e0c470.css.map": "/ecare-pd_prototype/static/css/main.c6e0c470.css.map",
+    "main.9ea806b5.js.map": "/ecare-pd_prototype/static/js/main.9ea806b5.js.map"
   },
   "entrypoints": [
-    "static/css/main.2e7be3e4.css",
-    "static/js/main.049573c0.js"
+    "static/css/main.c6e0c470.css",
+    "static/js/main.9ea806b5.js"
   ]
 }
