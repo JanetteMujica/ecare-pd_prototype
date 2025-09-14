@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import Banner from '../../components/layout/Banner';
 import PageTitle from '../../components/layout/PageTitle';
+import TrackingComparison from '../../components/features/TrackingComparison';
 import { colors } from '../../constants/colors';
 import { appFeatures } from '../../constants/features';
 import styles from './JourneyPage.module.css';
@@ -221,21 +222,13 @@ const JourneyPage = ({ onLogoClick }) => {
 					</div>
 				</div>
 
-				{/* Compare Self-Reported Tracking Score Section */}
+				{/* Compare Tracking Score Section - Now with Interactive Graph */}
 				<div className={styles.section}>
 					<h3 className={styles.sectionTitle}>
 						<TrendingUp className={styles.sectionIcon} />
 						Comparing Tracking Score
 					</h3>
-					<div className={styles.chartPlaceholder}>
-						<div className={styles.placeholderContent}>
-							<TrendingUp className={styles.placeholderIcon} />
-							<p className={styles.placeholderText}>
-								Tracking score trends will be displayed here once you have more
-								data points.
-							</p>
-						</div>
-					</div>
+					<TrackingComparison selectedPeriod={selectedPeriod} />
 				</div>
 
 				{/* Diary Entries Section */}

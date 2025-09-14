@@ -1,0 +1,466 @@
+/* TrackingComparison Component Styles - Mobile-First Responsive Design */
+/* Comparison graph with dropdowns and line chart visualization */
+
+/* =============================================================================
+   BASE STYLES - SMALLEST MOBILE PHONES (320px+)
+   ============================================================================= */
+
+.container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-md);
+}
+
+/* Controls Section */
+.controls {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	margin-bottom: var(--spacing-md);
+}
+
+.dropdownContainer {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+}
+
+.dropdownLabel {
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-bold);
+	font-size: var(--font-size-sm);
+	color: var(--color-text-primary);
+	text-transform: uppercase;
+}
+
+.selectWrapper {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.dropdown {
+	width: 100%;
+	padding: var(--spacing-sm) calc(var(--spacing-lg) + 20px) var(--spacing-sm)
+		var(--spacing-sm);
+	border: 2px solid var(--color-border-light);
+	border-radius: var(--border-radius-md);
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-medium);
+	font-size: var(--font-size-sm);
+	color: var(--color-text-primary);
+	background: white;
+	cursor: pointer;
+	transition: var(--transition-normal);
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+.dropdown:focus {
+	outline: none;
+	border-color: var(--color-coral);
+	box-shadow: 0 0 0 3px rgba(255, 138, 101, 0.1);
+}
+
+.dropdown optgroup {
+	font-weight: var(--font-weight-bold);
+	color: var(--color-text-primary);
+	font-style: normal;
+}
+
+.dropdown option {
+	font-weight: var(--font-weight-medium);
+	color: var(--color-text-primary);
+	padding: var(--spacing-xs);
+}
+
+.dropdownIcon {
+	position: absolute;
+	right: var(--spacing-sm);
+	width: 16px;
+	height: 16px;
+	color: var(--color-text-tertiary);
+	pointer-events: none;
+}
+
+/* Graph Container */
+.graphContainer {
+	background: white;
+	border-radius: var(--border-radius-lg);
+	padding: var(--spacing-md);
+	box-shadow: var(--shadow-sm);
+	border: 1px solid var(--color-border-light);
+	overflow: hidden;
+}
+
+.graph {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.dataLine {
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.dataPoint {
+	cursor: pointer;
+	transition: var(--transition-normal);
+}
+
+.dataPoint:hover {
+	r: 6;
+}
+
+.axisEmoji {
+	display: block;
+}
+
+.axisLabel {
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-medium);
+}
+
+/* Graph Placeholder */
+.graphPlaceholder {
+	background: var(--color-bg-light);
+	border: 2px dashed var(--color-border-light);
+	border-radius: var(--border-radius-md);
+	padding: var(--spacing-lg);
+	min-height: 200px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: var(--spacing-md);
+	text-align: center;
+}
+
+.placeholderIcon {
+	width: 32px;
+	height: 32px;
+	color: var(--color-text-primary);
+	opacity: 0.7;
+}
+
+.graphPlaceholder p {
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-medium);
+	font-size: var(--font-size-sm);
+	color: var(--color-text-primary);
+	margin: 0;
+	opacity: 0.8;
+}
+
+/* Legend */
+.legend {
+	display: flex;
+	justify-content: center;
+	gap: var(--spacing-lg);
+	margin-top: var(--spacing-md);
+	padding-top: var(--spacing-md);
+	border-top: 1px solid var(--color-border-light);
+	flex-wrap: wrap;
+}
+
+.legendItem {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-xs);
+}
+
+.legendColor {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+
+.legendLabel {
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-medium);
+	font-size: var(--font-size-xs);
+	color: var(--color-text-primary);
+	white-space: nowrap;
+}
+
+/* =============================================================================
+   RESPONSIVE BREAKPOINTS - MOBILE FIRST
+   ============================================================================= */
+
+/* Small phones - 375px+ */
+@media (min-width: 375px) {
+	.dropdown {
+		font-size: var(--font-size-base);
+		padding: var(--spacing-sm) calc(var(--spacing-lg) + 24px) var(--spacing-sm)
+			var(--spacing-sm);
+	}
+
+	.dropdownIcon {
+		width: 18px;
+		height: 18px;
+	}
+
+	.graphContainer {
+		padding: var(--spacing-lg);
+	}
+
+	.placeholderIcon {
+		width: 40px;
+		height: 40px;
+	}
+
+	.graphPlaceholder p {
+		font-size: var(--font-size-base);
+	}
+
+	.legendLabel {
+		font-size: var(--font-size-sm);
+	}
+}
+
+/* Regular mobile phones - 480px+ */
+@media (min-width: 480px) {
+	.controls {
+		flex-direction: row;
+		gap: var(--spacing-md);
+	}
+
+	.dropdownContainer {
+		flex: 1;
+	}
+
+	.graphContainer {
+		padding: var(--spacing-lg);
+	}
+
+	.graphPlaceholder {
+		min-height: 250px;
+		padding: var(--spacing-xl);
+	}
+
+	.placeholderIcon {
+		width: 48px;
+		height: 48px;
+	}
+
+	.legend {
+		gap: var(--spacing-xl);
+	}
+
+	.legendColor {
+		width: 14px;
+		height: 14px;
+	}
+
+	.legendLabel {
+		font-size: var(--font-size-base);
+	}
+}
+
+/* Tablets - 768px+ */
+@media (min-width: 768px) {
+	.container {
+		gap: var(--spacing-lg);
+	}
+
+	.controls {
+		gap: var(--spacing-lg);
+		max-width: 600px;
+	}
+
+	.dropdownLabel {
+		font-size: var(--font-size-base);
+	}
+
+	.dropdown {
+		padding: var(--spacing-md) calc(var(--spacing-xl) + 24px) var(--spacing-md)
+			var(--spacing-md);
+		font-size: var(--font-size-base);
+	}
+
+	.dropdownIcon {
+		width: 20px;
+		height: 20px;
+	}
+
+	.graphContainer {
+		padding: var(--spacing-xl);
+	}
+
+	.graphPlaceholder {
+		min-height: 300px;
+	}
+
+	.placeholderIcon {
+		width: 64px;
+		height: 64px;
+	}
+
+	.graphPlaceholder p {
+		font-size: var(--font-size-lg);
+		max-width: 400px;
+	}
+
+	.legendColor {
+		width: 16px;
+		height: 16px;
+	}
+
+	.legendLabel {
+		font-size: var(--font-size-base);
+	}
+}
+
+/* Desktop - 1024px+ */
+@media (min-width: 1024px) {
+	.controls {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.graphContainer {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+	.dropdown {
+		font-size: var(--font-size-lg);
+	}
+
+	.dataPoint:hover {
+		r: 7;
+	}
+}
+
+/* Large laptops - 1367px+ */
+@media (min-width: 1367px) {
+	.container {
+		gap: var(--spacing-xl);
+	}
+
+	.controls {
+		max-width: 1000px;
+	}
+
+	.graphContainer {
+		max-width: 1100px;
+		padding: var(--spacing-2xl);
+	}
+
+	.graphPlaceholder {
+		min-height: 350px;
+	}
+}
+
+/* =============================================================================
+   SPECIAL MEDIA QUERIES
+   ============================================================================= */
+
+/* Landscape mobile orientation */
+@media (orientation: landscape) and (max-height: 600px) {
+	.graphPlaceholder {
+		min-height: 150px;
+		padding: var(--spacing-md);
+	}
+
+	.graphContainer {
+		padding: var(--spacing-md);
+	}
+}
+
+/* Accessibility - Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	.dropdown,
+	.dataPoint {
+		transition: none;
+	}
+
+	.dataPoint:hover {
+		transform: none;
+	}
+}
+
+/* Accessibility - High contrast */
+@media (prefers-contrast: high) {
+	.dropdown {
+		border: 2px solid var(--color-border-dark);
+	}
+
+	.dropdown:focus {
+		border: 2px solid var(--color-text-primary);
+	}
+
+	.graphContainer {
+		border: 2px solid var(--color-border-dark);
+	}
+
+	.dataLine {
+		stroke-width: 4;
+	}
+
+	.dataPoint {
+		stroke-width: 3;
+		r: 5;
+	}
+}
+
+/* Print styles */
+@media print {
+	.container {
+		break-inside: avoid;
+	}
+
+	.controls {
+		display: none;
+	}
+
+	.graphContainer {
+		box-shadow: none;
+		border: 1px solid #000;
+	}
+}
+
+/* =============================================================================
+   ANIMATIONS
+   ============================================================================= */
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(15px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Smooth data point animations */
+.dataPoint {
+	animation: fadeInUp 0.3s ease-out;
+}
+
+.dataLine {
+	stroke-dasharray: 1000;
+	stroke-dashoffset: 1000;
+	animation: drawLine 1s ease-out forwards;
+}
+
+@keyframes drawLine {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+
+/* =============================================================================
+   FOCUS STATES
+   ============================================================================= */
+
+.dropdown:focus-visible {
+	outline: 2px solid var(--color-coral);
+	outline-offset: 2px;
+}
