@@ -121,6 +121,30 @@
 	font-weight: var(--font-weight-heavy);
 }
 
+/* Link button styling */
+.linkButton {
+	background: none;
+	border: none;
+	color: var(--color-primary-dark);
+	text-decoration: underline;
+	cursor: pointer;
+	font-family: 'Filson Pro', sans-serif;
+	font-size: var(--font-size-sm);
+	transition: var(--transition-fast);
+	font-weight: var(--font-weight-heavy);
+}
+
+.linkButton:hover {
+	opacity: 0.8;
+	text-decoration-thickness: 2px;
+}
+
+.linkButton:focus {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+	border-radius: var(--border-radius-sm);
+}
+
 /* Enhanced mobile-first breakpoints */
 @media (max-width: 480px) {
 	.cafyLogo {

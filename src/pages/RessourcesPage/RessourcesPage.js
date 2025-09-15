@@ -1,5 +1,5 @@
-import React from 'react';
-import { Lightbulb, ExternalLink, BookOpen, MapPin } from 'lucide-react';
+import React, { useState } from 'react';
+import { ExternalLink, BookOpen, MapPin, ChevronRight } from 'lucide-react';
 import Banner from '../../components/layout/Banner';
 import PageTitle from '../../components/layout/PageTitle';
 import { colors } from '../../constants/colors';
@@ -8,13 +8,16 @@ import taxonomyData from '../../data/taxonomy.json';
 import styles from './RessourcesPage.module.css';
 
 const RessourcesPage = ({ goals = [], onLogoClick }) => {
+	// State to track current care tip index for each goal
+	const [currentTipIndices, setCurrentTipIndices] = useState({});
+
 	// Get the resources feature data for consistent styling
 	const resourcesFeature = appFeatures.find(
 		(feature) => feature.id === 'resources'
 	);
 
-	// Function to find care tips for a goal from taxonomy
-	const getCareTipsForGoal = (goalId) => {
+	// Function to find all care tips for a goal from taxonomy
+	const getAllCareTipsForGoal = (goalId) => {
 		const flows = taxonomyData.cafy_conversation_flow.flows;
 
 		// Search through all flows and steps to find the option
@@ -24,11 +27,8 @@ const RessourcesPage = ({ goals = [], onLogoClick }) => {
 				if (step.options) {
 					const option = step.options.find((opt) => opt.id === goalId);
 					if (option && option['care-tips']) {
-						// Filter for Initial Educational Care Tips
-						const initialTips = option['care-tips'].filter(
-							(tip) => tip.type === 'Initial Educational Care Tips'
-						);
-						return initialTips;
+						// Return all care tips (should be 11 total)
+						return option['care-tips'];
 					}
 				}
 			}
@@ -36,25 +36,53 @@ const RessourcesPage = ({ goals = [], onLogoClick }) => {
 		return [];
 	};
 
-	// Get all care tips for current goals
-	const getAllCareTips = () => {
-		const allTips = [];
+	// Function to get the current care tip for a specific goal
+	const getCurrentCareTipForGoal = (goalId) => {
+		const allTips = getAllCareTipsForGoal(goalId);
+		if (allTips.length === 0) return null;
+
+		const currentIndex = currentTipIndices[goalId] || 0;
+		return allTips[currentIndex] || allTips[0];
+	};
+
+	// Handle clicking the next care tip button
+	const handleNextCareTip = (goalId) => {
+		const allTips = getAllCareTipsForGoal(goalId);
+		if (allTips.length === 0) return;
+
+		setCurrentTipIndices((prev) => {
+			const currentIndex = prev[goalId] || 0;
+			const nextIndex = (currentIndex + 1) % allTips.length; // Cycle back to 0 after reaching the end
+			return {
+				...prev,
+				[goalId]: nextIndex,
+			};
+		});
+	};
+
+	// Get current care tips for all goals (one tip per goal)
+	const getCurrentCareTips = () => {
+		const currentTips = [];
 
 		goals.forEach((goal) => {
-			const tips = getCareTipsForGoal(goal.id);
-			tips.forEach((tip) => {
-				allTips.push({
-					...tip,
+			const currentTip = getCurrentCareTipForGoal(goal.id);
+			if (currentTip) {
+				currentTips.push({
+					...currentTip,
 					goalName: goal.name,
 					goalId: goal.id,
 				});
-			});
+			}
 		});
 
-		return allTips;
+		// DEBUGGING: Log the results
+		console.log('Goals received:', goals);
+		console.log('Current care tips:', currentTips);
+
+		return currentTips;
 	};
 
-	const careTips = getAllCareTips();
+	const careTips = getCurrentCareTips();
 
 	return (
 		<div className={styles.container}>
@@ -81,33 +109,50 @@ const RessourcesPage = ({ goals = [], onLogoClick }) => {
 						<div className={styles.careTipsGrid}>
 							{careTips.map((tip, index) => (
 								<div
-									key={`${tip.goalId}-${tip.id}`}
+									key={`${tip.goalId}-${tip.id}-${index}`}
 									className={styles.careTipCard}
 								>
 									<div className={styles.careTipHeader}>
-										<Lightbulb className={styles.careTipIcon} />
 										<span className={styles.careTipGoal}>{tip.goalName}</span>
 									</div>
 									<div className={styles.careTipContent}>
 										<p className={styles.careTipText}>
-											{tip.tip === 'placeholder'
-												? `Educational care tip for ${tip.goalName}. This personalized guidance helps you better understand and manage this aspect of your Parkinson's journey.`
+											<span className={styles.careTipId}>#{tip.id}</span>
+											{tip.tip === 'placeholder' ||
+											tip.tip === 'Initial Educational Care Tips' ||
+											tip.tip === 'Educational Care Tips' ||
+											tip.tip === 'Reinforcement-Educational Care Tips' ||
+											tip.tip === 'Initial Basic Care Tips' ||
+											tip.tip === 'Basic Care Tips' ||
+											tip.tip === 'Reinforcement - Basic Care Tips' ||
+											tip.tip === 'Initial Advanced Care Tips' ||
+											tip.tip === 'Advance Care Tips' ||
+											tip.tip === 'Reinforcement-Advanced Care Tips' ||
+											tip.tip === 'Escalation Care Tips'
+												? `This is a ${tip.type.toLowerCase()} for managing ${tip.goalName.toLowerCase()}. The specific care tip content will be updated in the taxonomy.`
 												: tip.tip}
 										</p>
 									</div>
 									<div className={styles.careTipFooter}>
 										<span className={styles.careTipType}>{tip.type}</span>
+										<button
+											className={styles.nextTipButton}
+											onClick={() => handleNextCareTip(tip.goalId)}
+											title='Next care tip'
+										>
+											<ChevronRight className={styles.nextTipIcon} />
+										</button>
 									</div>
 								</div>
 							))}
 						</div>
 					) : (
 						<div className={styles.emptyState}>
-							<Lightbulb className={styles.emptyIcon} />
 							<h4 className={styles.emptyTitle}>No Care Tips Yet</h4>
 							<p className={styles.emptyDescription}>
-								Once you set up your goals, personalized care tips will appear
-								here to help guide your Parkinson's management journey.
+								{goals.length === 0
+									? "Once you set up your goals, personalized care tips will appear here to help guide your Parkinson's management journey."
+									: "We're working on loading your personalized care tips. Please check back soon."}
 							</p>
 						</div>
 					)}

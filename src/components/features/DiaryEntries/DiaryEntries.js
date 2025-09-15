@@ -7,6 +7,11 @@ import {
 	Calendar,
 	X,
 	Filter,
+	Bookmark,
+	BookmarkCheck,
+	ArrowUpDown,
+	CalendarRange,
+	Star,
 } from 'lucide-react';
 import styles from './DiaryEntries.module.css';
 
@@ -16,12 +21,15 @@ const DiaryEntries = () => {
 	const [isSaved, setIsSaved] = useState(false);
 	const [showSaveConfirmation, setShowSaveConfirmation] = useState(false);
 
-	// State for search and filters
+	// Enhanced search and filter state
 	const [searchTerm, setSearchTerm] = useState('');
-	const [selectedDate, setSelectedDate] = useState('');
+	const [startDate, setStartDate] = useState('');
+	const [endDate, setEndDate] = useState('');
+	const [sortOrder, setSortOrder] = useState('newest'); // 'newest', 'oldest'
+	const [showBookmarkedOnly, setShowBookmarkedOnly] = useState(false);
 	const [showFilters, setShowFilters] = useState(false);
 
-	// Mock data - in real app, this would come from props or context
+	// Enhanced mock data with bookmarks
 	const [diaryEntries, setDiaryEntries] = useState([
 		{
 			id: 1,
@@ -30,6 +38,7 @@ const DiaryEntries = () => {
 			date: '2024-09-14T10:30:00',
 			source: 'journey',
 			goalName: null,
+			isBookmarked: true,
 		},
 		{
 			id: 2,
@@ -38,6 +47,7 @@ const DiaryEntries = () => {
 			date: '2024-09-13T14:15:00',
 			source: 'tracking',
 			goalName: 'Physical activity',
+			isBookmarked: false,
 		},
 		{
 			id: 3,
@@ -46,6 +56,7 @@ const DiaryEntries = () => {
 			date: '2024-09-12T16:45:00',
 			source: 'tracking',
 			goalName: 'Hobbies',
+			isBookmarked: true,
 		},
 		{
 			id: 4,
@@ -54,6 +65,16 @@ const DiaryEntries = () => {
 			date: '2024-09-11T08:20:00',
 			source: 'journey',
 			goalName: null,
+			isBookmarked: false,
+		},
+		{
+			id: 5,
+			content:
+				'Challenging day with medication side effects. Doctor appointment scheduled for next week to discuss adjustments.',
+			date: '2024-09-10T16:30:00',
+			source: 'journey',
+			goalName: null,
+			isBookmarked: true,
 		},
 	]);
 
@@ -66,6 +87,7 @@ const DiaryEntries = () => {
 				date: new Date().toISOString(),
 				source: 'journey',
 				goalName: null,
+				isBookmarked: false,
 			};
 
 			setDiaryEntries((prev) => [newDiaryEntry, ...prev]);
@@ -80,6 +102,17 @@ const DiaryEntries = () => {
 		}
 	};
 
+	// Handle bookmark toggle
+	const toggleBookmark = (entryId) => {
+		setDiaryEntries((prev) =>
+			prev.map((entry) =>
+				entry.id === entryId
+					? { ...entry, isBookmarked: !entry.isBookmarked }
+					: entry
+			)
+		);
+	};
+
 	// Reset saved state when user starts typing again
 	useEffect(() => {
 		if (newEntry) {
@@ -88,15 +121,45 @@ const DiaryEntries = () => {
 		}
 	}, [newEntry]);
 
-	// Filter entries based on search and date
-	const filteredEntries = diaryEntries.filter((entry) => {
-		const matchesSearch = entry.content
-			.toLowerCase()
-			.includes(searchTerm.toLowerCase());
-		const entryDate = new Date(entry.date).toISOString().split('T')[0];
-		const matchesDate = !selectedDate || entryDate === selectedDate;
-		return matchesSearch && matchesDate;
-	});
+	// Enhanced filtering and sorting logic
+	const filteredAndSortedEntries = React.useMemo(() => {
+		let filtered = diaryEntries.filter((entry) => {
+			// Text search filter
+			const matchesSearch = entry.content
+				.toLowerCase()
+				.includes(searchTerm.toLowerCase());
+
+			// Date range filter
+			const entryDate = new Date(entry.date);
+			const startDateObj = startDate ? new Date(startDate) : null;
+			const endDateObj = endDate ? new Date(endDate + 'T23:59:59') : null;
+
+			const matchesDateRange =
+				(!startDateObj || entryDate >= startDateObj) &&
+				(!endDateObj || entryDate <= endDateObj);
+
+			// Bookmark filter
+			const matchesBookmark = !showBookmarkedOnly || entry.isBookmarked;
+
+			return matchesSearch && matchesDateRange && matchesBookmark;
+		});
+
+		// Sort entries
+		filtered.sort((a, b) => {
+			const dateA = new Date(a.date);
+			const dateB = new Date(b.date);
+			return sortOrder === 'newest' ? dateB - dateA : dateA - dateB;
+		});
+
+		return filtered;
+	}, [
+		diaryEntries,
+		searchTerm,
+		startDate,
+		endDate,
+		sortOrder,
+		showBookmarkedOnly,
+	]);
 
 	// Format date for display
 	const formatDate = (dateString) => {
@@ -110,11 +173,27 @@ const DiaryEntries = () => {
 		});
 	};
 
-	// Clear filters
+	// Clear all filters
 	const clearFilters = () => {
 		setSearchTerm('');
-		setSelectedDate('');
+		setStartDate('');
+		setEndDate('');
+		setSortOrder('newest');
+		setShowBookmarkedOnly(false);
 	};
+
+	// Check if any filters are active
+	const hasActiveFilters =
+		searchTerm ||
+		startDate ||
+		endDate ||
+		showBookmarkedOnly ||
+		sortOrder !== 'newest';
+
+	// Get bookmarked count
+	const bookmarkedCount = diaryEntries.filter(
+		(entry) => entry.isBookmarked
+	).length;
 
 	return (
 		<div className={styles.diaryContainer}>
@@ -163,7 +242,7 @@ const DiaryEntries = () => {
 				</div>
 			</div>
 
-			{/* Search and Filter Section */}
+			{/* Enhanced Search and Filter Section */}
 			<div className={styles.searchSection}>
 				<div className={styles.searchControls}>
 					<div className={styles.searchInput}>
@@ -185,26 +264,117 @@ const DiaryEntries = () => {
 					>
 						<Filter size={20} />
 						Filters
+						{hasActiveFilters && <span className={styles.filterBadge}></span>}
 					</button>
 				</div>
 
-				{/* Filter Panel */}
+				{/* Enhanced Filter Panel */}
 				{showFilters && (
 					<div className={styles.filterPanel}>
-						<div className={styles.filterGroup}>
-							<label className={styles.filterLabel}>
-								<Calendar size={16} />
-								Filter by Date
-							</label>
-							<input
-								type='date'
-								value={selectedDate}
-								onChange={(e) => setSelectedDate(e.target.value)}
-								className={styles.dateInput}
-							/>
+						{/* Date Range Filters */}
+						<div className={styles.filterRow}>
+							<div className={styles.filterGroup}>
+								<label className={styles.filterLabel}>
+									<CalendarRange size={16} />
+									Date Range
+								</label>
+								<div className={styles.dateRangeInputs}>
+									<div className={styles.dateInputGroup}>
+										<label className={styles.dateLabel}>From:</label>
+										<input
+											type='date'
+											value={startDate}
+											onChange={(e) => setStartDate(e.target.value)}
+											className={styles.dateInput}
+										/>
+									</div>
+									<div className={styles.dateInputGroup}>
+										<label className={styles.dateLabel}>To:</label>
+										<input
+											type='date'
+											value={endDate}
+											onChange={(e) => setEndDate(e.target.value)}
+											className={styles.dateInput}
+										/>
+									</div>
+								</div>
+							</div>
+
+							{/* Sort Order */}
+							<div className={styles.filterGroup}>
+								<label className={styles.filterLabel}>
+									<ArrowUpDown size={16} />
+									Sort Order
+								</label>
+								<select
+									value={sortOrder}
+									onChange={(e) => setSortOrder(e.target.value)}
+									className={styles.sortSelect}
+								>
+									<option value='newest'>Newest First</option>
+									<option value='oldest'>Oldest First</option>
+								</select>
+							</div>
 						</div>
 
-						{(searchTerm || selectedDate) && (
+						{/* Bookmark Filter */}
+						<div className={styles.filterRow}>
+							<div className={styles.filterGroup}>
+								<label className={styles.filterLabel}>
+									<Star size={16} />
+									Bookmarked Entries
+								</label>
+								<div className={styles.bookmarkToggle}>
+									<button
+										className={`${styles.bookmarkFilterButton} ${
+											showBookmarkedOnly ? styles.bookmarkFilterActive : ''
+										}`}
+										onClick={() => setShowBookmarkedOnly(!showBookmarkedOnly)}
+									>
+										<Bookmark size={16} />
+										Show Bookmarked Only ({bookmarkedCount})
+									</button>
+								</div>
+							</div>
+						</div>
+
+						{/* Clear Filters */}
+						{hasActiveFilters && (
+							<div className={styles.filterActions}>
+								<button
+									className={styles.clearFiltersButton}
+									onClick={clearFilters}
+								>
+									<X size={16} />
+									Clear All Filters
+								</button>
+							</div>
+						)}
+					</div>
+				)}
+			</div>
+
+			{/* Entries History */}
+			<div className={styles.entriesHistory}>
+				<h4 className={styles.historyTitle}>
+					Your Diary Entries ({filteredAndSortedEntries.length})
+					{showBookmarkedOnly && (
+						<span className={styles.bookmarkedIndicator}>
+							<Bookmark size={16} />
+							Bookmarked Only
+						</span>
+					)}
+				</h4>
+
+				{filteredAndSortedEntries.length === 0 ? (
+					<div className={styles.emptyState}>
+						<NotebookPen className={styles.emptyIcon} size={48} />
+						<p className={styles.emptyText}>
+							{hasActiveFilters
+								? 'No entries found matching your search criteria.'
+								: 'No diary entries yet. Start writing your first entry above!'}
+						</p>
+						{hasActiveFilters && (
 							<button
 								className={styles.clearFiltersButton}
 								onClick={clearFilters}
@@ -214,27 +384,9 @@ const DiaryEntries = () => {
 							</button>
 						)}
 					</div>
-				)}
-			</div>
-
-			{/* Entries History */}
-			<div className={styles.entriesHistory}>
-				<h4 className={styles.historyTitle}>
-					Your Diary Entries ({filteredEntries.length})
-				</h4>
-
-				{filteredEntries.length === 0 ? (
-					<div className={styles.emptyState}>
-						<NotebookPen className={styles.emptyIcon} size={48} />
-						<p className={styles.emptyText}>
-							{searchTerm || selectedDate
-								? 'No entries found matching your search criteria.'
-								: 'No diary entries yet. Start writing your first entry above!'}
-						</p>
-					</div>
 				) : (
 					<div className={styles.entriesList}>
-						{filteredEntries.map((entry) => (
+						{filteredAndSortedEntries.map((entry) => (
 							<div key={entry.id} className={styles.entryCard}>
 								<div className={styles.entryHeader}>
 									<div className={styles.entryMeta}>
@@ -254,6 +406,21 @@ const DiaryEntries = () => {
 											<span className={styles.goalBadge}>{entry.goalName}</span>
 										)}
 									</div>
+									<button
+										className={`${styles.bookmarkButton} ${
+											entry.isBookmarked ? styles.bookmarkButtonActive : ''
+										}`}
+										onClick={() => toggleBookmark(entry.id)}
+										title={
+											entry.isBookmarked ? 'Remove bookmark' : 'Add bookmark'
+										}
+									>
+										{entry.isBookmarked ? (
+											<BookmarkCheck size={20} />
+										) : (
+											<Bookmark size={20} />
+										)}
+									</button>
 								</div>
 								<div className={styles.entryContent}>
 									<p>{entry.content}</p>

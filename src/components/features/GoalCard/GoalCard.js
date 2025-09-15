@@ -1,7 +1,7 @@
 import React from 'react';
 import { Info, RefreshCw, Trash2, Watch } from 'lucide-react';
 import Button from '../../ui/Button';
-import { colors, createColoredShadow } from '../../../constants/colors';
+import { colors } from '../../../constants/colors';
 import styles from './GoalCard.module.css';
 
 const GoalCard = ({
@@ -14,19 +14,6 @@ const GoalCard = ({
 	onWatch,
 }) => {
 	const { id, name, goal_description, smart_watch = false } = goal;
-
-	// Use the exact same styling approach as FeatureCard with CSS custom properties
-	const cardColor = colors.coral;
-	const cardStyles = {
-		borderColor: cardColor,
-		boxShadow: createColoredShadow
-			? createColoredShadow(cardColor, 0.4)
-			: `0 8px 25px -5px ${cardColor}66, 0 10px 10px -5px ${cardColor}40`,
-		'--card-color': cardColor,
-		'--card-shadow-hover': createColoredShadow
-			? createColoredShadow(cardColor, 0.6)
-			: `0 20px 35px -5px ${cardColor}99, 0 15px 15px -5px ${cardColor}60`,
-	};
 
 	const goalNameStyles = {
 		color: colors.text?.primary || colors.primaryDark,
@@ -45,7 +32,7 @@ const GoalCard = ({
 	};
 
 	return (
-		<div className={styles.card} style={cardStyles}>
+		<div className={styles.card}>
 			{/* Header with name and action buttons */}
 			<div className={styles.header}>
 				<h3 className={styles.goalName} style={goalNameStyles}>

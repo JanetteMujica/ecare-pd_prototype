@@ -35,14 +35,12 @@ const CafyIntroPage = ({ onStartGoals, onCancel, onUpdateGoalsViaList }) => {
 					>
 						{cafy.greeting}
 					</h2>
-
 					<p
 						className={styles.description}
 						style={{ color: colors.primaryDark }}
 					>
 						{cafy.description}
 					</p>
-
 					<Button
 						onClick={onStartGoals}
 						size='large'
@@ -51,27 +49,16 @@ const CafyIntroPage = ({ onStartGoals, onCancel, onUpdateGoalsViaList }) => {
 					>
 						{cafy.cta}
 					</Button>
-
 					{onUpdateGoalsViaList && (
-						<button
+						<p
 							onClick={(e) => {
 								e.preventDefault();
 								onUpdateGoalsViaList();
 							}}
-							className={styles.linkText}
-							style={{
-								background: 'none',
-								border: 'none',
-								color: colors.primaryDark,
-								textDecoration: 'underline',
-								cursor: 'pointer',
-								fontSize: 'inherit',
-								fontFamily: 'inherit',
-								padding: 0,
-							}}
+							className={styles.linkButton}
 						>
 							Update goals via list
-						</button>
+						</p>
 					)}
 				</div>
 			</div>

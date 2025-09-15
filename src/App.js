@@ -262,6 +262,7 @@ const App = () => {
 				onGetStarted={handleGetStarted}
 				onFeatureClick={handleFeatureClick}
 				onLogoClick={handleLogoClick}
+				onUpdateGoalsViaList={handleUpdateGoalsViaList} // ADD: Pass the handler
 				initialView={welcomeInitialView} // Pass the initial view state
 			/>
 		);
@@ -301,6 +302,8 @@ const App = () => {
 	}
 
 	// Render page content based on current page (with navigation)
+	// In your App.js, update the resources case in the renderPage function:
+
 	const renderPage = () => {
 		console.log('Rendering page:', currentPage, 'Goals:', userGoals.length);
 
@@ -335,7 +338,10 @@ const App = () => {
 			case 'journey':
 				return <JourneyPage onLogoClick={handleLogoClick} />;
 			case 'resources':
-				return <ResourcesPage onLogoClick={handleLogoClick} />;
+				// FIXED: Add the goals prop here
+				return (
+					<ResourcesPage goals={userGoals} onLogoClick={handleLogoClick} />
+				);
 			default:
 				return (
 					<GoalsPage

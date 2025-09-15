@@ -2,8 +2,7 @@
 .card {
 	background-color: white;
 	border-radius: var(--border-radius-lg);
-	border-width: 2px;
-	border-style: solid;
+	border: 1px solid var(--color-border-light);
 	transition: var(--transition-normal);
 	font-family: 'Filson Pro', sans-serif;
 	width: 100%;
@@ -11,7 +10,7 @@
 	flex-direction: column;
 	padding: var(--spacing-md);
 	gap: var(--spacing-sm);
-	/* No base box-shadow - let JavaScript handle all shadows */
+	box-shadow: var(--shadow-sm);
 }
 
 /* Enhanced hover effect matching FeatureCard */

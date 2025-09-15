@@ -14,6 +14,7 @@ const WelcomePage = ({
 	onGetStarted,
 	onFeatureClick,
 	onLogoClick,
+	onUpdateGoalsViaList, // ADD: New prop for updating goals via list
 	initialView = 'welcome',
 }) => {
 	// ADD: Accept onLogoClick prop and initialView prop
@@ -93,6 +94,7 @@ const WelcomePage = ({
 			<CafyIntroPage
 				onStartGoals={handleStartGoals}
 				onCancel={handleCafyCancel}
+				onUpdateGoalsViaList={onUpdateGoalsViaList} // PASS: the prop through
 			/>
 		);
 	}

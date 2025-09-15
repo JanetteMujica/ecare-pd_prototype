@@ -194,7 +194,7 @@ const TrackingPage = ({
 
 						{/* Comment Section */}
 						<div className={styles.commentSection}>
-							<h3 className={styles.sectionTitle}>JOURNAL ENTRY</h3>
+							<h3 className={styles.sectionTitle}>DIARY ENTRY</h3>
 							<h3 className={styles.sectionTitle}>
 								How are you feeling? Any challenges or successes to note about{' '}
 								<span className={styles.goalHighlight}>

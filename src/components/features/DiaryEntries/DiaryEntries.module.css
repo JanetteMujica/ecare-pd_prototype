@@ -1,5 +1,5 @@
 /* DiaryEntries Component Styles - Mobile-First Responsive Design */
-/* Consistent with TrackingPage and JourneyPage styling patterns */
+/* Enhanced with advanced filtering and bookmarking features */
 
 /* =============================================================================
    CONTAINER & LAYOUT
@@ -66,7 +66,7 @@
 	font-style: italic;
 }
 
-/* Save Section - Same as TrackingPage */
+/* Save Section */
 .saveSection {
 	display: flex;
 	flex-direction: column;
@@ -125,7 +125,7 @@
 }
 
 /* =============================================================================
-   SEARCH & FILTER SECTION
+   ENHANCED SEARCH & FILTER SECTION
    ============================================================================= */
 
 .searchSection {
@@ -190,6 +190,7 @@
 	align-items: center;
 	gap: var(--spacing-sm);
 	min-height: var(--min-touch-target-mobile);
+	position: relative;
 }
 
 .filterButton:hover {
@@ -203,32 +204,73 @@
 	color: white;
 }
 
-/* Filter Panel */
+/* Filter Active Badge */
+.filterBadge {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	width: 8px;
+	height: 8px;
+	background: var(--color-coral);
+	border-radius: 50%;
+	border: 2px solid white;
+}
+
+/* Enhanced Filter Panel */
 .filterPanel {
 	margin-top: var(--spacing-md);
 	padding-top: var(--spacing-md);
 	border-top: 1px solid var(--color-border-light);
 	display: flex;
-	flex-wrap: wrap;
+	flex-direction: column;
+	gap: var(--spacing-lg);
+}
+
+.filterRow {
+	display: flex;
+	flex-direction: column;
 	gap: var(--spacing-md);
-	align-items: center;
+	padding: var(--spacing-md);
+	background: var(--color-bg-light);
+	border-radius: var(--border-radius-md);
+	border: 1px solid var(--color-border-light);
 }
 
 .filterGroup {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
+	gap: var(--spacing-sm);
 }
 
 .filterLabel {
 	font-family: 'Filson Pro', sans-serif;
-	font-weight: var(--font-weight-medium);
+	font-weight: var(--font-weight-bold);
 	font-size: var(--font-size-sm);
 	color: var(--color-text-primary);
 	display: flex;
 	align-items: center;
 	gap: var(--spacing-xs);
 	text-transform: uppercase;
+}
+
+/* Date Range Inputs */
+.dateRangeInputs {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+.dateInputGroup {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+}
+
+.dateLabel {
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-medium);
+	font-size: var(--font-size-sm);
+	color: var(--color-text-primary);
 }
 
 .dateInput {
@@ -238,12 +280,73 @@
 	font-family: 'Filson Pro', sans-serif;
 	font-size: var(--font-size-base);
 	transition: var(--transition-normal);
+	background: white;
 }
 
 .dateInput:focus {
 	outline: none;
 	border-color: var(--color-peach);
 	box-shadow: 0 0 0 3px rgba(255, 168, 138, 0.1);
+}
+
+/* Sort Select */
+.sortSelect {
+	padding: var(--spacing-sm) var(--spacing-md);
+	border: 2px solid var(--color-border-light);
+	border-radius: var(--border-radius-md);
+	font-family: 'Filson Pro', sans-serif;
+	font-size: var(--font-size-base);
+	background: white;
+	cursor: pointer;
+	transition: var(--transition-normal);
+}
+
+.sortSelect:focus {
+	outline: none;
+	border-color: var(--color-peach);
+	box-shadow: 0 0 0 3px rgba(255, 168, 138, 0.1);
+}
+
+/* Bookmark Toggle and Filter */
+.bookmarkToggle {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-sm);
+}
+
+.bookmarkFilterButton {
+	background: var(--color-bg-light);
+	border: 2px solid var(--color-border-light);
+	border-radius: var(--border-radius-md);
+	padding: var(--spacing-sm) var(--spacing-md);
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-medium);
+	font-size: var(--font-size-sm);
+	cursor: pointer;
+	transition: var(--transition-normal);
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-xs);
+	color: var(--color-text-primary);
+}
+
+.bookmarkFilterButton:hover {
+	border-color: #f59e0b;
+	color: #f59e0b;
+}
+
+.bookmarkFilterActive {
+	background: #f59e0b;
+	border-color: #f59e0b;
+	color: white;
+}
+
+/* Filter Actions */
+.filterActions {
+	display: flex;
+	justify-content: center;
+	padding-top: var(--spacing-md);
+	border-top: 1px solid var(--color-border-light);
 }
 
 .clearFiltersButton {
@@ -287,6 +390,24 @@
 	color: var(--color-text-primary);
 	margin: 0 0 var(--spacing-lg) 0;
 	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: var(--spacing-sm);
+}
+
+.bookmarkedIndicator {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-xs);
+	font-size: var(--font-size-sm);
+	color: #f59e0b;
+	font-weight: var(--font-weight-medium);
+	background: #f59e0b20;
+	padding: var(--spacing-xs) var(--spacing-sm);
+	border-radius: var(--border-radius-sm);
+	border: 1px solid #f59e0b;
 }
 
 .entriesList {
@@ -309,6 +430,10 @@
 
 .entryHeader {
 	margin-bottom: var(--spacing-md);
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: var(--spacing-sm);
 }
 
 .entryMeta {
@@ -316,6 +441,7 @@
 	align-items: center;
 	gap: var(--spacing-sm);
 	flex-wrap: wrap;
+	flex: 1;
 }
 
 .entryDate {
@@ -353,6 +479,39 @@
 	font-weight: var(--font-weight-medium);
 	font-size: var(--font-size-xs);
 	border: 1px solid var(--color-border-light);
+}
+
+/* Bookmark Button */
+.bookmarkButton {
+	background: transparent;
+	border: 2px solid var(--color-border-light);
+	border-radius: var(--border-radius-sm);
+	padding: var(--spacing-xs);
+	cursor: pointer;
+	transition: var(--transition-normal);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--color-text-tertiary);
+	min-width: 36px;
+	min-height: 36px;
+}
+
+.bookmarkButton:hover {
+	border-color: #f59e0b;
+	color: #f59e0b;
+	background: #f59e0b10;
+}
+
+.bookmarkButtonActive {
+	background: #f59e0b;
+	border-color: #f59e0b;
+	color: white;
+}
+
+.bookmarkButtonActive:hover {
+	background: #d97706;
+	border-color: #d97706;
 }
 
 .entryContent p {
@@ -399,6 +558,15 @@
 	.searchInput {
 		min-width: 200px;
 	}
+
+	.dateRangeInputs {
+		flex-direction: row;
+		gap: var(--spacing-md);
+	}
+
+	.dateInputGroup {
+		flex: 1;
+	}
 }
 
 /* Regular mobile phones - 480px+ */
@@ -428,6 +596,16 @@
 	.entryCard {
 		padding: var(--spacing-lg);
 	}
+
+	.filterRow {
+		flex-direction: row;
+		align-items: flex-start;
+		gap: var(--spacing-lg);
+	}
+
+	.filterGroup {
+		flex: 1;
+	}
 }
 
 /* Tablets - 768px+ */
@@ -446,12 +624,16 @@
 		font-size: var(--font-size-lg);
 	}
 
-	.filterPanel {
-		flex-wrap: nowrap;
-	}
-
 	.entryContent p {
 		font-size: var(--font-size-lg);
+	}
+
+	.entryHeader {
+		align-items: center;
+	}
+
+	.historyTitle {
+		flex-wrap: nowrap;
 	}
 }
 
@@ -464,6 +646,15 @@
 
 	.entryTextarea {
 		min-height: 180px;
+	}
+
+	.filterPanel {
+		flex-direction: row;
+		align-items: flex-start;
+	}
+
+	.filterRow {
+		flex: 1;
 	}
 }
 
@@ -489,13 +680,17 @@
 	.saveButton,
 	.filterButton,
 	.clearFiltersButton,
+	.bookmarkButton,
+	.bookmarkFilterButton,
 	.entryCard {
 		transition: none;
 	}
 
 	.saveButton:hover,
 	.filterButton:hover,
-	.clearFiltersButton:hover {
+	.clearFiltersButton:hover,
+	.bookmarkButton:hover,
+	.bookmarkFilterButton:hover {
 		transform: none;
 	}
 }
@@ -505,14 +700,21 @@
 	.newEntryCard,
 	.searchSection,
 	.entriesHistory,
-	.entryCard {
+	.entryCard,
+	.filterRow {
 		border: 2px solid var(--color-border-dark);
 	}
 
 	.saveButton,
 	.filterButton,
-	.clearFiltersButton {
+	.clearFiltersButton,
+	.bookmarkButton,
+	.bookmarkFilterButton {
 		border: 2px solid var(--color-text-primary);
+	}
+
+	.filterBadge {
+		border: 3px solid white;
 	}
 }
 
@@ -530,5 +732,44 @@
 	.entryCard {
 		break-inside: avoid;
 		margin-bottom: var(--spacing-md);
+	}
+
+	.bookmarkButton {
+		display: none;
+	}
+}
+
+/* =============================================================================
+   ANIMATIONS
+   ============================================================================= */
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(15px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Focus animations for better accessibility */
+.searchField:focus,
+.entryTextarea:focus,
+.dateInput:focus,
+.sortSelect:focus {
+	animation: focusPulse 0.3s ease-in-out;
+}
+
+@keyframes focusPulse {
+	0% {
+		box-shadow: 0 0 0 0 rgba(255, 168, 138, 0.4);
+	}
+	50% {
+		box-shadow: 0 0 0 6px rgba(255, 168, 138, 0.2);
+	}
+	100% {
+		box-shadow: 0 0 0 3px rgba(255, 168, 138, 0.1);
 	}
 }

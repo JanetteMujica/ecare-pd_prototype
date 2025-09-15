@@ -10,11 +10,11 @@ ecare-pd_prototype
 │  ├─ robots.txt
 │  └─ static
 │     ├─ css
-│     │  ├─ main.391a0047.css
-│     │  └─ main.391a0047.css.map
+│     │  ├─ main.d5a563b1.css
+│     │  └─ main.d5a563b1.css.map
 │     ├─ js
-│     │  ├─ main.c8747163.js
-│     │  └─ main.c8747163.js.LICENSE.txt
+│     │  ├─ main.9b100adb.js
+│     │  └─ main.9b100adb.js.LICENSE.txt
 │     └─ media
 │        ├─ cafy_logo.ff6170f1cdf1297d0d121e36cb9889bc.svg
 │        ├─ eCarePD_logo.24a9014d75be2d0a58d66693dd1f58d3.svg
@@ -73,14 +73,22 @@ ecare-pd_prototype
    │  │  │  ├─ CircularProcess.js
    │  │  │  ├─ CircularProcess.module.css
    │  │  │  └─ index.js
+   │  │  ├─ DiaryEntries
+   │  │  │  ├─ DiaryEntries.js
+   │  │  │  ├─ DiaryEntries.module.css
+   │  │  │  └─ index.js
    │  │  ├─ GoalCard
    │  │  │  ├─ GoalCard.js
    │  │  │  ├─ GoalCard.module.css
    │  │  │  └─ index.js
-   │  │  └─ GoalSettingFlow
-   │  │     ├─ GoalSettingFlow.css
-   │  │     ├─ GoalSettingFlow.js
-   │  │     └─ index.js
+   │  │  ├─ GoalSettingFlow
+   │  │  │  ├─ GoalSettingFlow.css
+   │  │  │  ├─ GoalSettingFlow.js
+   │  │  │  └─ index.js
+   │  │  └─ TrackingComparison
+   │  │     ├─ index.js
+   │  │     ├─ TrackingComparison.js
+   │  │     └─ TrackingComparison.module.css
    │  ├─ layout
    │  │  ├─ AppLayout
    │  │  │  ├─ AppLayout.js
@@ -115,6 +123,7 @@ ecare-pd_prototype
    │  ├─ colors.js
    │  └─ features.js
    ├─ data
+   │  ├─ syntheticTrackingData.js
    │  └─ taxonomy.json
    ├─ hooks
    ├─ index.css

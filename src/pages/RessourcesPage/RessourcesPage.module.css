@@ -118,6 +118,9 @@
 .careTipFooter {
 	padding-top: var(--spacing-xs);
 	border-top: 1px solid var(--color-border-light);
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 }
 
 .careTipType {
@@ -126,14 +129,55 @@
 	font-size: var(--font-size-xs);
 	color: var(--color-text-muted);
 	font-style: italic;
+	flex: 1;
+}
+
+/* Care Tip ID Styling */
+.careTipId {
+	font-family: 'Filson Pro', sans-serif;
+	font-weight: var(--font-weight-bold);
+	font-size: var(--font-size-sm);
+	color: var(--color-coral);
+	margin-right: var(--spacing-sm);
+	display: inline-block;
+}
+
+/* Next Tip Button */
+.nextTipButton {
+	background: var(--color-coral);
+	border: none;
+	border-radius: 50%;
+	width: 32px;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: var(--transition-normal);
+	flex-shrink: 0;
+}
+
+.nextTipButton:hover {
+	background: var(--color-primary-dark);
+	transform: scale(1.1);
+}
+
+.nextTipButton:active {
+	transform: scale(0.95);
+}
+
+.nextTipIcon {
+	width: 16px;
+	height: 16px;
+	color: white;
 }
 
 /* Care Finder Section */
 .careFinderContent {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	text-align: center;
+	align-items: flex-end;
+	text-align: left;
 	gap: var(--spacing-lg);
 	padding: var(--spacing-lg) 0;
 }
@@ -268,6 +312,20 @@
 
 	.careTipText {
 		font-size: var(--font-size-base);
+	}
+
+	.careTipId {
+		font-size: var(--font-size-base);
+	}
+
+	.nextTipButton {
+		width: 36px;
+		height: 36px;
+	}
+
+	.nextTipIcon {
+		width: 18px;
+		height: 18px;
 	}
 
 	.careFinderContent {
@@ -436,12 +494,14 @@
 /* Accessibility - Reduced motion */
 @media (prefers-reduced-motion: reduce) {
 	.careTipCard,
-	.careFinderLink {
+	.careFinderLink,
+	.nextTipButton {
 		transition: none;
 	}
 
 	.careTipCard:hover,
-	.careFinderLink:hover {
+	.careFinderLink:hover,
+	.nextTipButton:hover {
 		transform: none;
 	}
 }
@@ -462,11 +522,13 @@
 		border-color: var(--color-border-dark);
 	}
 
-	.careFinderLink {
+	.careFinderLink,
+	.nextTipButton {
 		border: 2px solid var(--color-coral);
 	}
 
-	.careFinderLink:hover {
+	.careFinderLink:hover,
+	.nextTipButton:hover {
 		border-color: var(--color-primary-dark);
 	}
 
@@ -499,7 +561,8 @@
 		margin-bottom: var(--spacing-md);
 	}
 
-	.careFinderLink {
+	.careFinderLink,
+	.nextTipButton {
 		background: white !important;
 		color: var(--color-coral) !important;
 		border: 1px solid var(--color-coral) !important;
@@ -508,6 +571,10 @@
 	.careFinderLink:after {
 		content: ' (' attr(href) ')';
 		font-size: var(--font-size-xs);
+	}
+
+	.nextTipButton {
+		display: none;
 	}
 }
 
