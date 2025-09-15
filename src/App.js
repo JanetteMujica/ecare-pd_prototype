@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import WelcomePage from './pages/WelcomePage';
 import CafyIntroPage from './pages/CafyIntroPage';
 import UpdateGoalsPage from './pages/UpdateGoalsPage';
@@ -25,6 +25,30 @@ const App = () => {
 	// ADD: New state for tracking functionality
 	const [currentTrackedGoal, setCurrentTrackedGoal] = useState(null);
 	const [currentGoalIndex, setCurrentGoalIndex] = useState(0);
+
+	// Function to check if goals are set - MORE FLEXIBLE CHECK
+	const hasGoals = () => {
+		const result = userGoals.length > 0; // Simplified check - just need goals
+		console.log('hasGoals check:', {
+			userGoalsLength: userGoals.length,
+			goalSettingCompleted,
+			result,
+			currentPage,
+			showWelcome,
+		});
+		return result;
+	};
+
+	// Debug effect to log state changes
+	useEffect(() => {
+		console.log('State updated:', {
+			goalSettingCompleted,
+			userGoalsLength: userGoals.length,
+			currentPage,
+			showWelcome,
+			hasGoals: hasGoals(),
+		});
+	}, [goalSettingCompleted, userGoals, currentPage, showWelcome]);
 
 	// Function to find goal_description from taxonomy data
 	const getGoalDescription = (goalId) => {
@@ -96,8 +120,6 @@ const App = () => {
 		setShowGoalSettingFlow(false);
 
 		if (completed && selections && selections.length > 0) {
-			setGoalSettingCompleted(true);
-
 			// Transform selections to match GoalsPage expected format
 			const goalsWithMetadata = selections.map((goal) => ({
 				...goal,
@@ -106,9 +128,16 @@ const App = () => {
 				short_description: goal.short_description,
 			}));
 
-			setUserGoals(goalsWithMetadata);
+			console.log(
+				'Setting goals and completing goal setting:',
+				goalsWithMetadata
+			);
 
-			// IMPORTANT: Set showWelcome to false and navigate to goals
+			// IMPORTANT: Set goals first, then update other state
+			setUserGoals(goalsWithMetadata);
+			setGoalSettingCompleted(true);
+
+			// Navigate to goals page
 			setShowWelcome(false);
 			setCurrentPage('goals');
 			setCameFromWelcome(false);
@@ -137,7 +166,7 @@ const App = () => {
 		setCameFromWelcome(false);
 	};
 
-	// FIXED: Handle CAFY button click from navigation
+	// UPDATED: Handle CAFY button click from navigation
 	const handleCafyClick = () => {
 		console.log('CAFY button clicked from navigation');
 		// Instead of going directly to cafy-intro page, go to welcome page
@@ -149,28 +178,46 @@ const App = () => {
 		setWelcomeInitialView('cafy-intro'); // Start welcome page in cafy-intro view
 	};
 
-	// Handle navigation
+	// UPDATED: Handle navigation - redirect to CAFY intro if no goals
 	const handleNavigate = (pageId) => {
+		console.log('Navigation clicked:', pageId, 'hasGoals:', hasGoals());
+
+		// If no goals are set and trying to access goal-dependent pages, redirect to CAFY intro
+		if (
+			!hasGoals() &&
+			['goals', 'tracking', 'journey', 'resources'].includes(pageId)
+		) {
+			console.log('Redirecting to CAFY intro - no goals set');
+			setShowWelcome(false);
+			setCurrentPage('cafy-intro');
+			setShowGoalSettingFlow(false);
+			setCameFromWelcome(true);
+			setWelcomeInitialView('welcome');
+			return;
+		}
+
 		setCurrentPage(pageId);
 		setShowGoalSettingFlow(false);
 		setCameFromWelcome(false);
 		setWelcomeInitialView('welcome'); // Reset welcome view when navigating
 	};
 
-	// Handle feature clicks from circular process (Goals button on welcome page)
+	// UPDATED: Handle feature clicks from circular process (Goals button on welcome page)
 	const handleFeatureClick = (feature) => {
 		if (feature.id === 'goals-completed') {
 			// Handle goal completion from welcome page
 			handleGoalSettingComplete(true, feature.selections);
 			return;
 		}
-		if (feature.id === 'goals') {
-			if (goalSettingCompleted && userGoals.length > 0) {
-				// If goals already completed, go directly to goals page
+
+		// For all goal-dependent features, redirect to CAFY intro if no goals
+		if (['goals', 'tracking', 'journey', 'resources'].includes(feature.id)) {
+			if (hasGoals()) {
+				// If goals are set, go directly to the requested page
 				setShowWelcome(false);
-				setCurrentPage('goals');
+				setCurrentPage(feature.id);
 			} else {
-				// First time or no goals yet, go to CAFY intro
+				// If no goals, go to CAFY intro
 				setShowWelcome(false);
 				setCurrentPage('cafy-intro');
 				setCameFromWelcome(true);
@@ -193,7 +240,14 @@ const App = () => {
 			setCameFromWelcome(false);
 			setWelcomeInitialView('welcome'); // Reset to default welcome view
 		} else {
-			setCurrentPage('goals');
+			// If we have goals, go to goals page, otherwise stay on cafy-intro
+			if (hasGoals()) {
+				setCurrentPage('goals');
+			} else {
+				// Stay on cafy-intro or go back to welcome
+				setShowWelcome(true);
+				setCurrentPage('welcome');
+			}
 		}
 	};
 
@@ -209,8 +263,15 @@ const App = () => {
 	// Handle updating goals from UpdateGoalsPage
 	const handleUpdateGoalsFromList = (updatedGoals) => {
 		setUserGoals(updatedGoals);
+		// IMPORTANT: Set goalSettingCompleted based on whether goals exist
+		setGoalSettingCompleted(updatedGoals.length > 0);
 		setCurrentPage('goals');
-		console.log('Goals updated from list:', updatedGoals);
+		console.log(
+			'Goals updated from list:',
+			updatedGoals,
+			'goalSettingCompleted:',
+			updatedGoals.length > 0
+		);
 	};
 
 	// Handle cancel from UpdateGoalsPage
@@ -235,8 +296,27 @@ const App = () => {
 	};
 
 	const handleDeleteGoal = (goalId) => {
-		setUserGoals((prev) => prev.filter((goal) => goal.id !== goalId));
-		console.log('Deleted goal:', goalId);
+		const updatedGoals = userGoals.filter((goal) => goal.id !== goalId);
+		setUserGoals(updatedGoals);
+
+		// If no goals left, reset goal completion status and redirect to CAFY intro
+		if (updatedGoals.length === 0) {
+			setGoalSettingCompleted(false);
+			console.log('All goals deleted, redirecting to CAFY intro');
+			// Redirect to CAFY intro page
+			setShowWelcome(false);
+			setCurrentPage('cafy-intro');
+			setShowGoalSettingFlow(false);
+			setCameFromWelcome(false); // User didn't come from welcome, came from goals deletion
+			setWelcomeInitialView('welcome');
+		}
+
+		console.log(
+			'Deleted goal:',
+			goalId,
+			'Remaining goals:',
+			updatedGoals.length
+		);
 	};
 
 	// UPDATED: Handle tracking goal with goal selection
@@ -311,8 +391,6 @@ const App = () => {
 	}
 
 	// Render page content based on current page (with navigation)
-	// In your App.js, update the resources case in the renderPage function:
-
 	const renderPage = () => {
 		console.log('Rendering page:', currentPage, 'Goals:', userGoals.length);
 
@@ -329,7 +407,6 @@ const App = () => {
 						onWatchGoal={handleWatchGoal}
 						onUpdateGoalsViaList={handleUpdateGoalsViaList}
 						onLogoClick={handleLogoClick}
-						onBeginCareJourney={handleBeginCareJourney} // NEW: Pass the handler
 					/>
 				);
 			case 'tracking':
@@ -343,25 +420,13 @@ const App = () => {
 							setCurrentGoalIndex(nextIndex);
 							setCurrentTrackedGoal(userGoals[nextIndex]);
 						}}
-						onBeginCareJourney={handleBeginCareJourney} // NEW: Pass the handler
 					/>
 				);
 			case 'journey':
-				return (
-					<JourneyPage
-						onLogoClick={handleLogoClick}
-						goals={userGoals} // NEW: Pass goals to JourneyPage
-						onBeginCareJourney={handleBeginCareJourney} // NEW: Pass the handler
-					/>
-				);
+				return <JourneyPage onLogoClick={handleLogoClick} goals={userGoals} />;
 			case 'resources':
-				// FIXED: Add the goals prop here
 				return (
-					<ResourcesPage
-						goals={userGoals}
-						onLogoClick={handleLogoClick}
-						onBeginCareJourney={handleBeginCareJourney} // NEW: Pass the handler
-					/>
+					<ResourcesPage goals={userGoals} onLogoClick={handleLogoClick} />
 				);
 			default:
 				return (
@@ -375,19 +440,30 @@ const App = () => {
 						onWatchGoal={handleWatchGoal}
 						onUpdateGoalsViaList={handleUpdateGoalsViaList}
 						onLogoClick={handleLogoClick}
-						onBeginCareJourney={handleBeginCareJourney} // NEW: Pass the handler
 					/>
 				);
 		}
 	};
 
+	// IMPORTANT: Check what we're returning here
+	const showNavigation = hasGoals();
+	console.log(
+		'Final render - showNavigation:',
+		showNavigation,
+		'currentPage:',
+		currentPage
+	);
+
 	return (
 		<AppLayout>
-			<Navigation
-				currentPage={currentPage}
-				onNavigate={handleNavigate}
-				onCafyClick={handleCafyClick}
-			/>
+			{/* Show Navigation when goals are set */}
+			{showNavigation && (
+				<Navigation
+					currentPage={currentPage}
+					onNavigate={handleNavigate}
+					onCafyClick={handleCafyClick}
+				/>
+			)}
 			<main className='app-main'>{renderPage()}</main>
 		</AppLayout>
 	);

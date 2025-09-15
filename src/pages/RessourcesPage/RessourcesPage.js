@@ -1,24 +1,12 @@
 import React, { useState } from 'react';
-import {
-	ExternalLink,
-	BookOpen,
-	MapPin,
-	ChevronRight,
-	ArrowRight,
-} from 'lucide-react';
+import { ExternalLink, BookOpen, MapPin, ChevronRight } from 'lucide-react';
 import Banner from '../../components/layout/Banner';
 import PageTitle from '../../components/layout/PageTitle';
-import Button from '../../components/ui/Button';
-import { colors } from '../../constants/colors';
-import { appFeatures, appContent } from '../../constants/features';
+import { appFeatures } from '../../constants/features';
 import taxonomyData from '../../data/taxonomy.json';
 import styles from './RessourcesPage.module.css';
 
-const RessourcesPage = ({
-	goals = [],
-	onLogoClick,
-	onBeginCareJourney, // NEW: Handler for the "Begin Your Care Journey" button
-}) => {
+const RessourcesPage = ({ goals = [], onLogoClick }) => {
 	// State to track current care tip index for each goal
 	const [currentTipIndices, setCurrentTipIndices] = useState({});
 
@@ -26,7 +14,6 @@ const RessourcesPage = ({
 	const resourcesFeature = appFeatures.find(
 		(feature) => feature.id === 'resources'
 	);
-	const { welcome } = appContent;
 
 	// Function to find all care tips for a goal from taxonomy
 	const getAllCareTipsForGoal = (goalId) => {
@@ -72,13 +59,6 @@ const RessourcesPage = ({
 		});
 	};
 
-	// NEW: Handle "Begin Your Care Journey" button click
-	const handleBeginJourney = () => {
-		if (onBeginCareJourney) {
-			onBeginCareJourney();
-		}
-	};
-
 	// Get current care tips for all goals (one tip per goal)
 	const getCurrentCareTips = () => {
 		const currentTips = [];
@@ -102,55 +82,6 @@ const RessourcesPage = ({
 	};
 
 	const careTips = getCurrentCareTips();
-
-	// NEW: Check if there are no goals, show empty state
-	if (!goals || goals.length === 0) {
-		return (
-			<div className={styles.container}>
-				{/* Banner with clickable logo */}
-				<Banner onLogoClick={onLogoClick} />
-
-				{/* Main content */}
-				<div className={styles.content}>
-					{/* Page Title */}
-					<PageTitle
-						icon={resourcesFeature.icon}
-						title={resourcesFeature.title}
-						color={resourcesFeature.color}
-					/>
-
-					{/* Empty state with "Begin Your Care Journey" button */}
-					<div className={styles.emptyState}>
-						<h2 className={styles.emptyTitle}>No Goal Selected</h2>
-						<p className={styles.emptyDescription}>
-							Please select goals with CAFY
-						</p>
-
-						{/* Begin Your Care Journey Button */}
-						<div className={styles.ctaSection}>
-							<Button
-								onClick={handleBeginJourney}
-								className={styles.ctaButton}
-								size='medium'
-								ariaLabel='Begin Your Care Journey'
-							>
-								{/* Button glow effect */}
-								<div
-									className={styles.buttonGlow}
-									style={{ backgroundColor: colors.peach }}
-								></div>
-
-								<span className={styles.buttonContent}>
-									<span>{welcome.cta}</span>
-									<ArrowRight size={18} className={styles.buttonIcon} />
-								</span>
-							</Button>
-						</div>
-					</div>
-				</div>
-			</div>
-		);
-	}
 
 	return (
 		<div className={styles.container}>
@@ -218,9 +149,8 @@ const RessourcesPage = ({
 						<div className={styles.emptyState}>
 							<h4 className={styles.emptyTitle}>No Care Tips Yet</h4>
 							<p className={styles.emptyDescription}>
-								{goals.length === 0
-									? "Once you set up your goals, personalized care tips will appear here to help guide your Parkinson's management journey."
-									: "We're working on loading your personalized care tips. Please check back soon."}
+								We're working on loading your personalized care tips. Please
+								check back soon.
 							</p>
 						</div>
 					)}

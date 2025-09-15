@@ -1,11 +1,9 @@
 import React from 'react';
-import { ShipWheel, ArrowRight } from 'lucide-react';
+import { ShipWheel } from 'lucide-react';
 import Banner from '../../components/layout/Banner';
 import PageTitle from '../../components/layout/PageTitle';
 import GoalCard from '../../components/features/GoalCard';
-import Button from '../../components/ui/Button';
-import { colors } from '../../constants/colors';
-import { appFeatures, appContent } from '../../constants/features';
+import { appFeatures } from '../../constants/features';
 import styles from './GoalsPage.module.css';
 
 const GoalsPage = ({
@@ -16,11 +14,10 @@ const GoalsPage = ({
 	onViewInfo,
 	onViewCareTips,
 	onWatchGoal,
-	onBeginCareJourney, // NEW: Handler for the "Begin Your Care Journey" button
+	onLogoClick,
 }) => {
 	// Get the goals feature data for consistent styling
 	const goalsFeature = appFeatures.find((feature) => feature.id === 'goals');
-	const { welcome } = appContent;
 
 	const handleEditGoal = (goalId) => {
 		if (onEditGoal) {
@@ -58,82 +55,21 @@ const GoalsPage = ({
 		}
 	};
 
-	// NEW: Handle "Begin Your Care Journey" button click
-	const handleBeginJourney = () => {
-		if (onBeginCareJourney) {
-			onBeginCareJourney();
-		}
-	};
-
-	if (!goals || goals.length === 0) {
-		return (
-			<div className={styles.container}>
-				{/* Banner with eCare-PD logo */}
-				<Banner />
-
-				{/* Page Title */}
-				<PageTitle
-					icon={goalsFeature.icon}
-					title={goalsFeature.title}
-					color={goalsFeature.color}
-				/>
-
-				{/* Empty state with "Begin Your Care Journey" button */}
-				<div className={styles.emptyState}>
-					<h2 className={styles.emptyTitle}>No Goal Selected</h2>
-					<p className={styles.emptyDescription}>
-						Please select goals with CAFY
-					</p>
-
-					{/* Begin Your Care Journey Button */}
-					<div className={styles.ctaSection}>
-						<Button
-							onClick={handleBeginJourney}
-							className={styles.ctaButton}
-							size='medium'
-							ariaLabel='Begin Your Care Journey'
-						>
-							{/* Button glow effect */}
-							<div
-								className={styles.buttonGlow}
-								style={{ backgroundColor: colors.peach }}
-							></div>
-
-							<span className={styles.buttonContent}>
-								<span>{welcome.cta}</span>
-								<ArrowRight size={18} className={styles.buttonIcon} />
-							</span>
-						</Button>
-					</div>
-				</div>
-			</div>
-		);
-	}
-
 	return (
 		<div className={styles.container}>
-			{/* Banner with eCare-PD logo - FIXED: Banner comes first */}
-			<Banner />
-
-			{/* Page Title below banner - FIXED: PageTitle comes after Banner
-			<PageTitle
-				icon={goalsFeature.icon}
-				title={goalsFeature.title}
-				color={goalsFeature.color}
-			/>*/}
+			{/* Banner with eCare-PD logo */}
+			<Banner onLogoClick={onLogoClick} />
 
 			{/* Main content */}
 			<div className={styles.content}>
 				<div className={styles.hero}>
-					{/* REMOVED: Old headingContainer with title and icon */}
-
 					<PageTitle
 						icon={goalsFeature.icon}
 						title={goalsFeature.title}
 						color={goalsFeature.color}
 					/>
 
-					{/* Goals container - starts directly */}
+					{/* Goals container */}
 					<div className={styles.goalsContainer}>
 						{goals.map((goal) => (
 							<GoalCard
