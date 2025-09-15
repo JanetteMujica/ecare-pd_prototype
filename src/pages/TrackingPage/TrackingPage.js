@@ -13,8 +13,9 @@ import {
 } from 'lucide-react';
 import Banner from '../../components/layout/Banner';
 import PageTitle from '../../components/layout/PageTitle';
+import Button from '../../components/ui/Button';
 import { colors } from '../../constants/colors';
-import { appFeatures } from '../../constants/features';
+import { appFeatures, appContent } from '../../constants/features';
 import taxonomyData from '../../data/taxonomy.json';
 import styles from './TrackingPage.module.css';
 
@@ -24,6 +25,7 @@ const TrackingPage = ({
 	allGoals = [],
 	currentGoalIndex = 0,
 	onNextGoal,
+	onBeginCareJourney, // NEW: Handler for the "Begin Your Care Journey" button
 }) => {
 	// State for tracking data
 	const [selectedRating, setSelectedRating] = useState(null);
@@ -38,6 +40,7 @@ const TrackingPage = ({
 	const trackingFeature = appFeatures.find(
 		(feature) => feature.id === 'tracking'
 	);
+	const { welcome } = appContent;
 
 	// Rating scale configuration - removed labels, added lighter background colors
 	const ratingScale = [
@@ -121,6 +124,13 @@ const TrackingPage = ({
 		}
 	};
 
+	// NEW: Handle "Begin Your Care Journey" button click
+	const handleBeginJourney = () => {
+		if (onBeginCareJourney) {
+			onBeginCareJourney();
+		}
+	};
+
 	// If no goal is selected, show message
 	if (!currentGoal) {
 		return (
@@ -133,11 +143,31 @@ const TrackingPage = ({
 						color={trackingFeature.color}
 					/>
 					<div className={styles.emptyState}>
-						<Activity className={styles.emptyIcon} size={64} />
 						<h2 className={styles.emptyTitle}>No Goal Selected</h2>
 						<p className={styles.emptyDescription}>
-							Please select a goal from your Goals page to start tracking.
+							Please select goals with CAFY
 						</p>
+
+						{/* Begin Your Care Journey Button */}
+						<div className={styles.ctaSection}>
+							<Button
+								onClick={handleBeginJourney}
+								className={styles.ctaButton}
+								size='medium'
+								ariaLabel='Begin Your Care Journey'
+							>
+								{/* Button glow effect */}
+								<div
+									className={styles.buttonGlow}
+									style={{ backgroundColor: colors.peach }}
+								></div>
+
+								<span className={styles.buttonContent}>
+									<span>{welcome.cta}</span>
+									<ArrowRight size={18} className={styles.buttonIcon} />
+								</span>
+							</Button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -235,7 +265,7 @@ const TrackingPage = ({
 								{showSaveConfirmation && (
 									<div className={styles.saveConfirmation}>
 										<CheckCircle size={16} />
-										Your progress has been saved successfully!
+										It has been saved successfully!
 									</div>
 								)}
 							</div>

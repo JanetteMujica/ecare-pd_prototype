@@ -80,6 +80,15 @@ const App = () => {
 		return false;
 	};
 
+	// NEW: Handler for "Begin Your Care Journey" button - goes to CAFY intro
+	const handleBeginCareJourney = () => {
+		setShowWelcome(false);
+		setCurrentPage('cafy-intro');
+		setShowGoalSettingFlow(false);
+		setCameFromWelcome(true); // Mark that we came from a page, so cancel goes back properly
+		setWelcomeInitialView('welcome');
+	};
+
 	// Then in handleGoalSettingComplete, change the transformation:
 	const handleGoalSettingComplete = (completed = false, selections = []) => {
 		console.log('Goal setting complete called:', { completed, selections });
@@ -320,6 +329,7 @@ const App = () => {
 						onWatchGoal={handleWatchGoal}
 						onUpdateGoalsViaList={handleUpdateGoalsViaList}
 						onLogoClick={handleLogoClick}
+						onBeginCareJourney={handleBeginCareJourney} // NEW: Pass the handler
 					/>
 				);
 			case 'tracking':
@@ -333,14 +343,25 @@ const App = () => {
 							setCurrentGoalIndex(nextIndex);
 							setCurrentTrackedGoal(userGoals[nextIndex]);
 						}}
+						onBeginCareJourney={handleBeginCareJourney} // NEW: Pass the handler
 					/>
 				);
 			case 'journey':
-				return <JourneyPage onLogoClick={handleLogoClick} />;
+				return (
+					<JourneyPage
+						onLogoClick={handleLogoClick}
+						goals={userGoals} // NEW: Pass goals to JourneyPage
+						onBeginCareJourney={handleBeginCareJourney} // NEW: Pass the handler
+					/>
+				);
 			case 'resources':
 				// FIXED: Add the goals prop here
 				return (
-					<ResourcesPage goals={userGoals} onLogoClick={handleLogoClick} />
+					<ResourcesPage
+						goals={userGoals}
+						onLogoClick={handleLogoClick}
+						onBeginCareJourney={handleBeginCareJourney} // NEW: Pass the handler
+					/>
 				);
 			default:
 				return (
@@ -354,6 +375,7 @@ const App = () => {
 						onWatchGoal={handleWatchGoal}
 						onUpdateGoalsViaList={handleUpdateGoalsViaList}
 						onLogoClick={handleLogoClick}
+						onBeginCareJourney={handleBeginCareJourney} // NEW: Pass the handler
 					/>
 				);
 		}
