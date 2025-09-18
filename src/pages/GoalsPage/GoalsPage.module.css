@@ -45,6 +45,105 @@
 	padding-bottom: var(--spacing-lg);
 }
 
+/* Add Goals Card Styles */
+.addGoalsCard {
+	background-color: white;
+	border-radius: var(--border-radius-lg);
+	border: 2px dashed #94a3b8;
+	transition: var(--transition-normal);
+	font-family: 'Filson Pro', sans-serif;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: var(--spacing-md);
+	cursor: pointer;
+	position: relative;
+	min-height: 200px; /* Match approximate height of GoalCard */
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.addGoalsCard:hover {
+	transform: translateY(-2px);
+	border-color: var(--color-primary);
+	background-color: #f8fafc;
+	box-shadow: var(--shadow-xl);
+}
+
+.addGoalsCard:focus {
+	outline: none;
+	box-shadow: 0 0 0 var(--focus-ring-width) var(--focus-ring-color);
+	border-color: var(--color-primary);
+}
+
+.addGoalsCard:active {
+	transform: translateY(0);
+	box-shadow: var(--shadow-md);
+}
+
+.addGoalsContent {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--spacing-md);
+	width: 100%;
+}
+
+.addGoalsIcon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 60px;
+	height: 60px;
+	border-radius: var(--border-radius-full);
+	background-color: #f1f5f9;
+	color: #64748b;
+	transition: var(--transition-normal);
+}
+
+.addGoalsCard:hover .addGoalsIcon {
+	background-color: var(--color-primary);
+	color: white;
+	transform: scale(1.05);
+}
+
+.addGoalsText {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+	align-items: center;
+}
+
+.addGoalsTitle {
+	font-size: var(--font-size-lg);
+	font-weight: var(--font-weight-black);
+	margin: 0;
+	line-height: var(--line-height-tight);
+	text-transform: uppercase;
+	letter-spacing: 0.025em;
+	color: var(--color-text-primary);
+	transition: var(--transition-normal);
+}
+
+.addGoalsCard:hover .addGoalsTitle {
+	color: var(--color-primary);
+}
+
+.addGoalsDescription {
+	font-size: var(--font-size-sm);
+	line-height: var(--line-height-normal);
+	margin: 0;
+	opacity: 0.7;
+	color: var(--color-text-primary);
+	max-width: 250px;
+	transition: var(--transition-normal);
+}
+
+.addGoalsCard:hover .addGoalsDescription {
+	opacity: 0.9;
+}
+
 /* Info Overlay Styles */
 .infoOverlay {
 	position: fixed;
@@ -187,10 +286,30 @@
 		align-items: stretch; /* Make cards same height */
 	}
 
-	/* Style for individual goal cards - 2 per row */
+	/* Style for individual goal cards and add goals card - 2 per row */
 	.goalsContainer > * {
 		flex: 0 1 calc(50% - var(--spacing-lg) / 2);
 		min-width: 0; /* Prevent flex items from overflowing */
+	}
+
+	/* Adjust Add Goals Card for tablet */
+	.addGoalsCard {
+		padding: var(--spacing-lg);
+		min-height: 250px;
+	}
+
+	.addGoalsIcon {
+		width: 70px;
+		height: 70px;
+	}
+
+	.addGoalsTitle {
+		font-size: var(--font-size-xl);
+	}
+
+	.addGoalsDescription {
+		font-size: var(--font-size-base);
+		max-width: 300px;
 	}
 
 	/* Info modal adjustments for tablets */
@@ -211,6 +330,26 @@
 @media (min-width: 1024px) {
 	.content {
 		padding-top: calc(var(--spacing-md) * 2 + var(--font-size-3xl) + 1rem);
+	}
+
+	/* Adjust Add Goals Card for desktop */
+	.addGoalsCard {
+		padding: var(--spacing-xl);
+		min-height: 280px;
+	}
+
+	.addGoalsIcon {
+		width: 80px;
+		height: 80px;
+	}
+
+	.addGoalsTitle {
+		font-size: var(--font-size-2xl);
+	}
+
+	.addGoalsDescription {
+		font-size: var(--font-size-lg);
+		max-width: 350px;
 	}
 
 	/* Info modal adjustments for desktop */
@@ -284,12 +423,16 @@
 @media (prefers-reduced-motion: reduce) {
 	.infoOverlay,
 	.infoModal,
-	.closeButton {
+	.closeButton,
+	.addGoalsCard,
+	.addGoalsIcon {
 		animation: none;
 		transition: none;
 	}
 
-	.closeButton:hover {
+	.closeButton:hover,
+	.addGoalsCard:hover,
+	.addGoalsCard:hover .addGoalsIcon {
 		transform: none;
 	}
 }
@@ -302,6 +445,15 @@
 
 	.closeButton {
 		border: 1px solid var(--color-border-medium);
+	}
+
+	.addGoalsCard {
+		border: 3px dashed var(--color-text-primary);
+	}
+
+	.addGoalsCard:hover {
+		border: 3px solid var(--color-primary);
+		background-color: var(--color-bg-secondary);
 	}
 }
 
@@ -330,5 +482,26 @@
 
 	.infoDescription {
 		font-size: var(--font-size-sm);
+	}
+
+	/* Mobile Add Goals Card adjustments */
+	.addGoalsCard {
+		padding: var(--spacing-sm);
+		min-height: 180px;
+		border-radius: var(--border-radius-md);
+	}
+
+	.addGoalsIcon {
+		width: 50px;
+		height: 50px;
+	}
+
+	.addGoalsTitle {
+		font-size: var(--font-size-base);
+	}
+
+	.addGoalsDescription {
+		font-size: var(--font-size-xs);
+		max-width: 200px;
 	}
 }

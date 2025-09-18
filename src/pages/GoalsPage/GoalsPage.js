@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { ShipWheel, X, Info } from 'lucide-react';
+import { ShipWheel, X, Info, Plus } from 'lucide-react';
 import Banner from '../../components/layout/Banner';
 import PageTitle from '../../components/layout/PageTitle';
 import GoalCard from '../../components/features/GoalCard';
 import { appFeatures } from '../../constants/features';
+import { colors } from '../../constants/colors';
 import styles from './GoalsPage.module.css';
 
 const GoalsPage = ({
@@ -15,6 +16,7 @@ const GoalsPage = ({
 	onViewCareTips,
 	onWatchGoal,
 	onLogoClick,
+	onUpdateGoals, // Add this prop to handle navigation to UpdateGoalsPage
 }) => {
 	// State for info overlay
 	const [showInfoOverlay, setShowInfoOverlay] = useState(false);
@@ -70,6 +72,12 @@ const GoalsPage = ({
 		}
 	};
 
+	const handleUpdateGoals = () => {
+		if (onUpdateGoals) {
+			onUpdateGoals();
+		}
+	};
+
 	// Handle overlay click (close when clicking outside the modal)
 	const handleOverlayClick = (e) => {
 		if (e.target === e.currentTarget) {
@@ -121,6 +129,33 @@ const GoalsPage = ({
 								}
 							/>
 						))}
+
+						{/* Add Goals Button Card */}
+						<div
+							className={styles.addGoalsCard}
+							onClick={handleUpdateGoals}
+							role='button'
+							tabIndex={0}
+							onKeyDown={(e) => {
+								if (e.key === 'Enter' || e.key === ' ') {
+									e.preventDefault();
+									handleUpdateGoals();
+								}
+							}}
+							aria-label='Add or update goals'
+						>
+							<div className={styles.addGoalsContent}>
+								<div className={styles.addGoalsIcon}>
+									<Plus size={32} />
+								</div>
+								<div className={styles.addGoalsText}>
+									<h3 className={styles.addGoalsTitle}>Add Goals</h3>
+									<p className={styles.addGoalsDescription}>
+										Update your health goals and track your progress
+									</p>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
