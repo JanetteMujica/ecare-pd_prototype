@@ -132,6 +132,10 @@
 	justify-content: center;
 }
 
+.intro-icon-success {
+	background-color: #10b981;
+}
+
 .intro-title {
 	font-family: 'Filson Pro', sans-serif;
 	font-size: var(--font-size-3xl);
@@ -172,12 +176,36 @@
 	margin: 0;
 }
 
+.step-title-centered {
+	text-align: center;
+	margin-bottom: var(--spacing-lg);
+}
+
 .step-message {
 	font-family: 'Filson Pro', sans-serif;
 	font-size: var(--font-size-base);
 	color: var(--color-text-primary);
 	line-height: var(--line-height-relaxed);
 	margin: 0;
+}
+
+.step-message-with-logo {
+	text-align: left;
+	margin: 0;
+	flex: 1;
+}
+
+/* Logo Layout */
+.logo-message-container {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	gap: var(--spacing-md);
+}
+
+.logo-placeholder {
+	flex-shrink: 0;
+	margin-top: var(--spacing-xs);
 }
 
 /* Options Container */

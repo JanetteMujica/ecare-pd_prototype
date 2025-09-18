@@ -382,27 +382,11 @@ const GoalSettingFlow = ({ onComplete, onCancel }) => {
 	) => (
 		<div className='step-container'>
 			<div className='step-header'>
-				<h2
-					className='step-title'
-					style={{ textAlign: 'center', marginBottom: 'var(--spacing-lg)' }}
-				>
-					{title}
-				</h2>
-				<div
-					style={{
-						display: 'flex',
-						alignItems: 'flex-start',
-						justifyContent: 'center',
-						gap: 'var(--spacing-md)',
-					}}
-				>
-					<CafyLogoPlaceholder
-						size='medium'
-						style={{ flexShrink: 0, marginTop: 'var(--spacing-xs)' }}
-					/>
+				<h2 className='step-title step-title-centered'>{title}</h2>
+				<div className='logo-message-container'>
+					<CafyLogoPlaceholder size='medium' className='logo-placeholder' />
 					<p
-						className='step-message'
-						style={{ textAlign: 'left', margin: 0, flex: 1 }}
+						className='step-message step-message-with-logo'
 						dangerouslySetInnerHTML={{ __html: message }}
 					/>
 				</div>
@@ -614,7 +598,7 @@ const GoalSettingFlow = ({ onComplete, onCancel }) => {
 		if (currentStep === 'complete') {
 			return (
 				<div className='intro-container'>
-					<div className='intro-icon' style={{ backgroundColor: '#10b981' }}>
+					<div className='intro-icon intro-icon-success'>
 						<Check size={32} color='white' />
 					</div>
 					<h1 className='intro-title'>Great job!</h1>
