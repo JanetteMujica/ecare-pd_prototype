@@ -185,7 +185,7 @@
 							},
 							{
 								"id": "bradykinesia",
-								"name": "Bradykinesia-slow movement",
+								"name": "Slow Movement (Bradykinesia)",
 								"text": "Are your movements slower than they used to be?",
 								"goal_setting": true,
 								"definition": "definition",
@@ -465,8 +465,8 @@
 							},
 							{
 								"id": "light_headedness",
-								"name": "Light-headedness (Dizziness)",
-								"text": "Light-headedness or dizziness — especially when standing up.",
+								"name": "Light Headedness (Dizziness)",
+								"text": "Light Headedness (Dizziness) — especially when standing up.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description",
@@ -744,8 +744,8 @@
 								"smart_watch": false
 							},
 							{
-								"id": "swallowing",
-								"name": "Swallowing",
+								"id": "swallowing_problems",
+								"name": "Swallowing Problems",
 								"text": "Do you ever find it difficult to chew or swallow food or drinks?",
 								"goal_setting": true,
 								"definition": "definition",
@@ -889,8 +889,8 @@
 							},
 							{
 								"id": "urinary_issues",
-								"name": "Urinary issues",
-								"text": "Urinary issues — Do you need to pee often, especially at night, or feel like your bladder doesn't empty fully?",
+								"name": "Urinary Issues",
+								"text": "Urinary Issues — Do you need to pee often, especially at night, or feel like your bladder doesn't empty fully?",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description",
@@ -1033,8 +1033,8 @@
 							},
 							{
 								"id": "daytime_sleepiness",
-								"name": "Daytime sleepiness",
-								"text": "Daytime sleepiness — Do you feel drowsy during the day or fall asleep without meaning to?",
+								"name": "Daytime Sleepiness",
+								"text": "Daytime Sleepiness — Do you feel drowsy during the day or fall asleep without meaning to?",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description",
@@ -1169,8 +1169,8 @@
 							},
 							{
 								"id": "restless_legs",
-								"name": "Restless legs",
-								"text": "Restless legs — Do you feel a need to move your legs at night, or get uncomfortable sensations when lying down?",
+								"name": "Restless Legs",
+								"text": "Restless Legs — Do you feel a need to move your legs at night, or get uncomfortable sensations when lying down?",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description",
@@ -1244,8 +1244,8 @@
 						"allow_multiple": true,
 						"options": [
 							{
-								"id": "vision_problems",
-								"name": "Vision problems",
+								"id": "vision_disturbances",
+								"name": "Vision Disturbances",
 								"text": "Do you find your vision blurry, see double, or notice your eyes feel dry when you read?",
 								"goal_setting": true,
 								"definition": "definition",
@@ -1312,8 +1312,8 @@
 								"smart_watch": false
 							},
 							{
-								"id": "smell_loss",
-								"name": "Smell loss",
+								"id": "loss_of_smell",
+								"name": "Loss of Smell",
 								"text": "Have scents you used to enjoy becoming fainter or disappeared?",
 								"goal_setting": true,
 								"definition": "definition",
@@ -1381,7 +1381,7 @@
 							},
 							{
 								"id": "taste_loss",
-								"name": "Taste loss",
+								"name": "Loss of Taste",
 								"text": "Do foods taste dull or lack their usual flavor?",
 								"goal_setting": true,
 								"definition": "definition",
@@ -1448,8 +1448,8 @@
 								"smart_watch": false
 							},
 							{
-								"id": "abnormal_sensations",
-								"name": "Abnormal sensations",
+								"id": "sensory_changes",
+								"name": "Sensory Changes (Numbness, Tingling)",
 								"text": "Are you experiencing odd sensations—like tingling, burning, or numb spots in your body?",
 								"goal_setting": true,
 								"definition": "definition",
@@ -1517,7 +1517,7 @@
 							},
 							{
 								"id": "speech_problems",
-								"name": "Speech problems",
+								"name": "Speech Problems",
 								"text": "Does your voice feel weak or faint when you speak, making it hard for others to hear you?",
 								"goal_setting": true,
 								"definition": "definition",
@@ -1620,7 +1620,7 @@
 						"options": [
 							{
 								"id": "physical_activity",
-								"name": "Physical activity",
+								"name": "Physical activity (Movement & Exercise)",
 								"text": "Would you like to be more active by walking, stretching, or doing other kinds of exercise?",
 								"goal_setting": true,
 								"definition": "definition",
@@ -2077,8 +2077,8 @@
 						"options": [
 							{
 								"id": "panic_attack",
-								"name": "Anxiety & Panick Attack ",
-								"text": "Anxiety & Panick Attack  - Have you recently felt sudden fear or anxiety that caused physical reactions, like a racing heart or shortness of breath?",
+								"name": "Anxiety or Panick Attack",
+								"text": "Anxiety or Panick Attack  - Have you recently felt sudden fear or anxiety that caused physical reactions, like a racing heart or shortness of breath?",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description",
@@ -2145,8 +2145,8 @@
 							},
 							{
 								"id": "impulsive_behavior",
-								"name": "Impulsive behavior",
-								"text": "Impulsive behavior - Have you noticed urges that feel hard to control—like overspending, overeating?",
+								"name": "Impulsive Bhavior",
+								"text": "Impulsive Behavior - Have you noticed urges that feel hard to control—like overspending, overeating?",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description",
@@ -2213,8 +2213,8 @@
 							},
 							{
 								"id": "emotional_changes",
-								"name": "Emotional changes (Depression)",
-								"text": "Emotional changes (Depression) - Have you been feeling down or less motivated than usual lately? ",
+								"name": "Emotional Changes (Depression)",
+								"text": "Emotional Changes (Depression) - Have you been feeling down or less motivated than usual lately? ",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "short description",
@@ -2569,7 +2569,7 @@
 							},
 							{
 								"id": "false_beliefs",
-								"name": "False beliefs",
+								"name": "False Beliefs",
 								"text": "Feeling confused, suspicious, or firmly convinced of things that later don't seem to make sense.",
 								"goal_setting": true,
 								"definition": "definition",
@@ -2708,7 +2708,7 @@
 				]
 			},
 			"medication": {
-				"id": "medication",
+				"id": "medication_management",
 				"title": "Medication Management",
 				"steps": [
 					{
@@ -2890,7 +2890,7 @@
 						"allow_multiple": true,
 						"options": [
 							{
-								"id": "weight_management",
+								"id": "weight",
 								"name": "Weight",
 								"text": "Do you want to better manage weight loss or gain linked to Parkinson's?",
 								"goal_setting": true,
