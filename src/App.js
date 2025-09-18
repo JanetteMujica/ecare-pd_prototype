@@ -414,7 +414,7 @@ const App = () => {
 						onViewInfo={handleViewInfo}
 						onViewCareTips={handleViewCareTips}
 						onWatchGoal={handleWatchGoal}
-						onUpdateGoalsViaList={handleUpdateGoalsViaList}
+						onUpdateGoals={handleUpdateGoalsViaList} // FIXED: Changed from onUpdateGoalsViaList to onUpdateGoals
 						onLogoClick={handleLogoClick}
 					/>
 				);
@@ -447,7 +447,7 @@ const App = () => {
 						onViewInfo={handleViewInfo}
 						onViewCareTips={handleViewCareTips}
 						onWatchGoal={handleWatchGoal}
-						onUpdateGoalsViaList={handleUpdateGoalsViaList}
+						onUpdateGoals={handleUpdateGoalsViaList} // FIXED: Changed from onUpdateGoalsViaList to onUpdateGoals
 						onLogoClick={handleLogoClick}
 					/>
 				);
