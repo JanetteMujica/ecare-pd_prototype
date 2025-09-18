@@ -196,6 +196,15 @@ const App = () => {
 			return;
 		}
 
+		// Special handling for tracking page - set first goal as current if none selected
+		if (pageId === 'tracking' && userGoals.length > 0) {
+			// If no current tracked goal, set the first goal as default
+			if (!currentTrackedGoal) {
+				setCurrentTrackedGoal(userGoals[0]);
+				setCurrentGoalIndex(0);
+			}
+		}
+
 		setCurrentPage(pageId);
 		setShowGoalSettingFlow(false);
 		setCameFromWelcome(false);

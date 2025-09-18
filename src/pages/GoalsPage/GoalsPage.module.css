@@ -42,6 +42,130 @@
 	max-height: none;
 	overflow: visible;
 	padding-top: var(--spacing-lg);
+	padding-bottom: var(--spacing-lg);
+}
+
+/* Info Overlay Styles */
+.infoOverlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.6);
+	backdrop-filter: blur(4px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1000;
+	padding: var(--spacing-md);
+	animation: fadeIn 0.2s ease-out;
+}
+
+.infoModal {
+	background: var(--color-bg-primary);
+	border-radius: var(--border-radius-lg);
+	box-shadow: var(--shadow-lg);
+	max-width: 500px;
+	width: 100%;
+	max-height: 80vh;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	animation: slideIn 0.3s ease-out;
+	border: 1px solid var(--color-border-light);
+}
+
+.infoHeader {
+	display: flex;
+	align-items: center;
+	padding: var(--spacing-lg);
+	border-bottom: 1px solid var(--color-border-light);
+	background: var(--color-bg-secondary);
+	gap: var(--spacing-md);
+	flex-shrink: 0;
+}
+
+.infoIcon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: var(--border-radius-full);
+	background: rgba(79, 110, 212, 0.1);
+	flex-shrink: 0;
+}
+
+.infoTitle {
+	flex: 1;
+	margin: 0;
+	font-family: 'Filson Pro', sans-serif;
+	font-size: var(--font-size-lg);
+	font-weight: var(--font-weight-bold);
+	color: var(--color-text-primary);
+	line-height: var(--line-height-tight);
+}
+
+.closeButton {
+	background: none;
+	border: none;
+	padding: var(--spacing-xs);
+	cursor: pointer;
+	border-radius: var(--border-radius-md);
+	color: var(--color-text-muted);
+	transition: var(--transition-fast);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 32px;
+	min-height: 32px;
+	flex-shrink: 0;
+}
+
+.closeButton:hover {
+	background: var(--color-bg-hover);
+	color: var(--color-text-primary);
+}
+
+.closeButton:focus {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
+.infoContent {
+	padding: var(--spacing-lg);
+	overflow-y: auto;
+	flex: 1;
+}
+
+.infoDescription {
+	margin: 0;
+	font-family: 'Filson Pro', sans-serif;
+	font-size: var(--font-size-base);
+	color: var(--color-text-primary);
+	line-height: var(--line-height-relaxed);
+}
+
+/* Animations */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slideIn {
+	from {
+		opacity: 0;
+		transform: translateY(-20px) scale(0.95);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
 }
 
 /* Standard tablets - Change to row layout with 2 cards per row */
@@ -68,12 +192,34 @@
 		flex: 0 1 calc(50% - var(--spacing-lg) / 2);
 		min-width: 0; /* Prevent flex items from overflowing */
 	}
+
+	/* Info modal adjustments for tablets */
+	.infoModal {
+		max-width: 600px;
+	}
+
+	.infoTitle {
+		font-size: var(--font-size-xl);
+	}
+
+	.infoDescription {
+		font-size: var(--font-size-lg);
+	}
 }
 
 /* Desktop */
 @media (min-width: 1024px) {
 	.content {
 		padding-top: calc(var(--spacing-md) * 2 + var(--font-size-3xl) + 1rem);
+	}
+
+	/* Info modal adjustments for desktop */
+	.infoOverlay {
+		padding: var(--spacing-lg);
+	}
+
+	.closeButton:hover {
+		transform: scale(1.05);
 	}
 }
 
@@ -131,5 +277,58 @@
 		.content {
 			padding-top: calc(var(--spacing-lg) * 2 + var(--font-size-5xl) + 1.5rem);
 		}
+	}
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+	.infoOverlay,
+	.infoModal,
+	.closeButton {
+		animation: none;
+		transition: none;
+	}
+
+	.closeButton:hover {
+		transform: none;
+	}
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+	.infoModal {
+		border: 2px solid var(--color-text-primary);
+	}
+
+	.closeButton {
+		border: 1px solid var(--color-border-medium);
+	}
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 480px) {
+	.infoOverlay {
+		padding: var(--spacing-sm);
+	}
+
+	.infoModal {
+		max-height: 90vh;
+		border-radius: var(--border-radius-md);
+	}
+
+	.infoHeader {
+		padding: var(--spacing-md);
+	}
+
+	.infoContent {
+		padding: var(--spacing-md);
+	}
+
+	.infoTitle {
+		font-size: var(--font-size-base);
+	}
+
+	.infoDescription {
+		font-size: var(--font-size-sm);
 	}
 }
