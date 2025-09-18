@@ -392,8 +392,8 @@ const GoalSettingFlow = ({ onComplete, onCancel }) => {
 					style={{
 						display: 'flex',
 						alignItems: 'flex-start',
+						justifyContent: 'center',
 						gap: 'var(--spacing-md)',
-						marginBottom: 'var(--spacing-lg)',
 					}}
 				>
 					<CafyLogoPlaceholder
@@ -575,7 +575,9 @@ const GoalSettingFlow = ({ onComplete, onCancel }) => {
 				finalDialogue.finalmessage_followedbyBulletList,
 				<>
 					<div className='summary-container'>
-						<h3 className='summary-title'>Your Selected Care Priorities:</h3>
+						<h3 className='summary-title'>
+							Your Selected Self-Care Priorities:
+						</h3>
 						<ul className='summary-list'>
 							{finalSelections.map((selection, index) => (
 								<li key={index} className='summary-item'>
@@ -617,7 +619,7 @@ const GoalSettingFlow = ({ onComplete, onCancel }) => {
 					</div>
 					<h1 className='intro-title'>Great job!</h1>
 					<p className='intro-description'>
-						You've successfully identified your care priorities. Your
+						You've successfully identified your self-care priorities. Your
 						personalized goals are now ready to help guide your Parkinson's
 						management journey.
 					</p>

@@ -3,7 +3,7 @@
 		"initial_dialogue": {
 			"id": "initial",
 			"title": "Ship Free ! Let's explore what matters most to you.",
-			"message": "Everyone’s experience with Parkinson’s is different. It can affect your body, your mood, your energy — and your everyday life. Let’s start with a few simple statements to explore what matters most to you right now. Choose the ones you’d like to focus on. ",
+			"message": "Everyone's experience with Parkinson's is different. It can affect your body, your mood, your energy — and your everyday life. Let's start with a few simple statements to explore what matters most to you right now. Choose the ones you'd like to focus on. ",
 			"question_type": "multiple_choice",
 			"allow_multiple": true,
 			"options": [
@@ -36,8 +36,8 @@
 		},
 		"final_dialogue": {
 			"id": "final_summary",
-			"title": "Care Priorities Summary",
-			"finalmessage_followedbyBulletList": "Thanks for sharing what matters most to you. Here's a quick summary of the care priorities you've selected:",
+			"title": "Self-Care Priorities Summary",
+			"finalmessage_followedbyBulletList": "Thanks for sharing what matters most to you!",
 			"selection_summary": {
 				"format": "bullet_list",
 				"prefix": "• ",
@@ -66,8 +66,8 @@
 				"steps": [
 					{
 						"id": "physical_main",
-						"message": "You’ve chosen to focus on your physical symptoms and body changes. Let’s take a closer look at what’s been affecting you most. Which of these areas would you like to pay more attention to right now?",
-						"message_after_selection": "Thanks — let’s take a closer look at [selected_areas_name], and set a goal to help you feel more comfortable and supported day by day.",
+						"message": "You've chosen to focus on your physical symptoms and body changes. Let's take a closer look at what's been affecting you most. Which of these areas would you like to pay more attention to right now?",
+						"message_after_selection": "Thanks — let's take a closer look at [selected_areas_name], and set a goal to help you feel more comfortable and supported day by day.",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
@@ -121,8 +121,8 @@
 								"text": "Do you experience any shaking or tremors? ",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Tremors are involuntary, rhythmic muscle movements that commonly affect the hands, arms, or legs. In Parkinson's, they often occur at rest or with action and may lessen during voluntary movement or sleep.",
+								"goal_description": "Tremors can get in the way of your comfort and routines. Take a moment each day to track when they occur, so I can better support you by sending helpful care tips.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -151,7 +151,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -189,8 +189,8 @@
 								"text": "Are your movements slower than they used to be?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Slowness of movement, or bradykinesia, is a core motor symptom in Parkinson's disease. It is characterized by reduced movement speed and amplitude, commonly with hands or legs, making everyday tasks more effortful and less automatic.",
+								"goal_description": "Slow movement can make daily routines feel more difficult and make it harder to move independently.  Track your Bradykinesia so I can share care tips to help you move more confidently and comfortably each day.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -219,7 +219,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -257,8 +257,8 @@
 								"text": "Do you sometimes feel unsteady or afraid of falling?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Balance challenges are common in Parkinson's disease due to changes in the body's ability to coordinate posture and automatic reactions. These issues may increase fall risk and impact confidence during standing and walking.",
+								"goal_description": "When balance feels off, it can make everyday tasks more stressful. Keep track of when you feel most unsteady, and I'll use that information to share care tips that help you feel safer and more confident as you move through your day.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -287,7 +287,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -325,8 +325,8 @@
 								"text": "Have you had moments where your feet feel \"stuck\" or frozen when you try to start walking?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Freezing of gait is a common motor symptom in Parkinson's disease that involves a sudden, temporary inability to move the feet forward while walking, thus feeling \"stuck\". It often occurs when initiating movement, turning, or navigating through narrow spaces.",
+								"goal_description": "Gait Freezing can interrupt your steps and make walking feel frustrating. If you note when and where it happens, I can suggest personalized tips to help you move more freely and confident.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -355,7 +355,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -401,8 +401,8 @@
 								"text": "Pain — like muscle or joint aches, cramping, or unexplained pain.",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Pain is a common symptom of Parkinson's disease and can result from various causes, including stiffness, sustained muscle contraction (called dystonia), joint stress, or poor posture. Others may feel pain linked to how the brain processes pain signals, even when nothing seems wrong in the body.",
+								"goal_description": "Pain can get in the way of staying active and doing the things that you enjoy.  If you track when and where it shows up, I can help you find ways to manage it so you feel more comfortable throughout your day.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -431,7 +431,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -469,8 +469,8 @@
 								"text": "Light Headedness (Dizziness) — especially when standing up.",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Light-headedness, or orthostatic hypotension, refers to a drop in blood pressure when standing up, leading you to feel dizzy and increasing your risk of falling. It is common in Parkinson's and may be caused by medication side effects, dehydration, or changes in the autonomic nervous system.",
+								"goal_description": "Feeling dizzy can make everyday movement feel uncertain. If you track when it happens and how it affects you, I can offer care tips that help you feel steadier and more confident.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -499,7 +499,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -537,8 +537,8 @@
 								"text": "Unusual sweating — sweating too much or too little.",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Parkinson's disease can affect how the body regulates temperature, sometimes leading to excessive or unpredictable sweating. This may occur during \"off\" periods or with involuntary movements.",
+								"goal_description": "Sweating more than usual can be frustrating and uncomfortable. Let's track when it happens so I can share ideas to help you feel more at ease throughout your day.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -567,7 +567,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -605,8 +605,8 @@
 								"text": "Skin changes — dryness, itchiness, or irritation.",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Parkinson's disease can lead to changes in skin health, such as rashes, dryness, or conditions like seborrheic dermatitis, meaning red, itchy, and flaky skin.",
+								"goal_description": "Skin changes can be uncomfortable, but tracking them regularly helps me support you with care tips that keep your skin feeling better day to day.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -635,7 +635,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -681,8 +681,8 @@
 								"text": "Do you feel like you have too much saliva in your mouth?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Drooling in Parkinson's disease occurs due to reduced swallowing frequency and weakened facial muscles, leading to saliva accumulation in the mouth. It can happen during sleep, eating, or while concentrating on tasks.",
+								"goal_description": "Drooling can feel embarrassing and affect your confidence in social settings. By tracking when it happens most often, I can suggest strategies to help you manage it and feel more comfortable throughout your day.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -711,7 +711,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -749,8 +749,8 @@
 								"text": "Do you ever find it difficult to chew or swallow food or drinks?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Swallowing problems, or dysphagia, in Parkinson's disease occur due to changes in muscle coordination and timing needed for safe swallowing. It can increase risk of choking or aspiration and may affect nutrition and hydration.",
+								"goal_description": "Swallowing difficulties can make mealtimes stressful and affect your nutrition. Let's track when you experience these challenges so I can provide tips to help you eat and drink more safely and comfortably.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -779,7 +779,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -825,8 +825,8 @@
 								"text": "Constipation - Do you often feel bloated or have trouble passing stool?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Constipation in Parkinson's disease results from slowed gut motility due to reduced dopamine activity in the intestinal nervous system. It can occur years before motor symptoms appear and may worsen with certain medications.",
+								"goal_description": "Constipation can cause discomfort and interfere with your daily routine and medication absorption. By tracking your bowel patterns and related symptoms, I can suggest strategies to help keep your digestive system moving more regularly.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -855,7 +855,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -893,8 +893,8 @@
 								"text": "Urinary Issues — Do you need to pee often, especially at night, or feel like your bladder doesn't empty fully?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Urinary issues in Parkinson's disease can include urgency, frequency, nocturia (waking at night to urinate), incomplete emptying, and difficulty initiating urination. These problems stem from changes in the nervous system control of bladder function.",
+								"goal_description": "Bladder problems can disrupt your sleep and make you anxious about leaving home. Let's track your urinary patterns so I can offer strategies to help you feel more comfortable and confident managing these symptoms.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -923,7 +923,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -959,7 +959,7 @@
 					},
 					{
 						"id": "sleep_fatigue_details",
-						"message": "Parkinson’s can affect both your sleep and your energy during the day. You might find it harder to fall or stay asleep, feel very tired even after resting, or notice strange sensations in your legs at night. Which of these feels most important to you right now?",
+						"message": "Parkinson's can affect both your sleep and your energy during the day. You might find it harder to fall or stay asleep, feel very tired even after resting, or notice strange sensations in your legs at night. Which of these feels most important to you right now?",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
@@ -969,8 +969,8 @@
 								"text": "Insomnia — Do you often wake up at night or struggle to fall asleep?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Insomnia in Parkinson's disease involves difficulty falling asleep, staying asleep, or waking too early. It can be caused by motor symptoms, medication effects, anxiety, depression, or changes in sleep architecture.",
+								"goal_description": "Poor sleep can worsen Parkinson's symptoms and affect your quality of life. By tracking your sleep patterns and what might be interfering, I can suggest approaches to help you get more restful nights.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -999,7 +999,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -1037,8 +1037,8 @@
 								"text": "Daytime Sleepiness — Do you feel drowsy during the day or fall asleep without meaning to?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Excessive daytime sleepiness in Parkinson's disease involves feeling drowsy during normal waking hours or experiencing sudden sleep attacks. It can be caused by poor nighttime sleep, medications (especially dopamine agonists), or disease-related changes in sleep-wake cycles.",
+								"goal_description": "Daytime sleepiness can be dangerous and interfere with your daily activities. Let's track when you feel most drowsy and what might be contributing, so I can help you stay more alert and safe throughout the day.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -1067,7 +1067,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -1105,8 +1105,8 @@
 								"text": "Fatigue — Do you feel deeply tired or worn out, even after resting?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Fatigue in Parkinson's disease is a persistent feeling of tiredness or exhaustion that doesn't improve with rest. It can be physical, mental, or both, and may result from the disease process itself, sleep disturbances, depression, or medications.",
+								"goal_description": "Fatigue can limit your ability to do things you enjoy and participate in daily activities. By tracking your energy levels and what affects them, I can suggest strategies to help you manage fatigue and feel more energized.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -1135,7 +1135,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -1173,8 +1173,8 @@
 								"text": "Restless Legs — Do you feel a need to move your legs at night, or get uncomfortable sensations when lying down?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Restless legs syndrome (RLS) in Parkinson's involves uncomfortable sensations in the legs that create an irresistible urge to move them, typically worse in the evening or at night. It can be related to the Parkinson's disease process or medications.",
+								"goal_description": "Restless legs can seriously disrupt your sleep and relaxation time. Let's track when these sensations are most bothersome so I can suggest ways to find relief and get better rest.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -1203,7 +1203,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -1249,8 +1249,8 @@
 								"text": "Do you find your vision blurry, see double, or notice your eyes feel dry when you read?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Vision disturbances in Parkinson's disease can include dry eyes, blurred or double vision, difficulty reading, problems with eye movement, and reduced blink rate. These may result from medication effects or changes in the nervous system control of eye muscles.",
+								"goal_description": "Vision problems can make reading, driving, and daily tasks more challenging and frustrating. By tracking when your vision bothers you most, I can suggest strategies to help protect your eyes and improve your visual comfort.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -1279,7 +1279,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -1317,8 +1317,8 @@
 								"text": "Have scents you used to enjoy becoming fainter or disappeared?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Loss of smell, or hyposmia/anosmia, is one of the earliest non-motor symptoms of Parkinson's disease, affecting up to 95% of people with the condition. It occurs due to alpha-synuclein deposits in the olfactory system and often appears years before motor symptoms.",
+								"goal_description": "Losing your sense of smell can affect your enjoyment of food, ability to detect dangers like gas leaks, and overall quality of life. Let's track any changes you notice so I can suggest ways to adapt and stay safe.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -1347,7 +1347,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -1385,8 +1385,8 @@
 								"text": "Do foods taste dull or lack their usual flavor?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Loss of taste, or hypogeusia/ageusia, in Parkinson's disease is often secondary to loss of smell, since smell contributes significantly to flavor perception. It can also result from dry mouth, medication side effects, or changes in taste bud function.",
+								"goal_description": "Changes in taste can make eating less enjoyable and affect your appetite and nutrition. By noting which foods are most affected, I can suggest ways to enhance flavors and maintain your interest in eating well.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -1415,7 +1415,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -1453,8 +1453,8 @@
 								"text": "Are you experiencing odd sensations—like tingling, burning, or numb spots in your body?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Sensory changes in Parkinson's disease can include numbness, tingling, burning, or other unusual sensations, particularly in the hands and feet. These may result from the disease process itself, medication effects, or secondary conditions.",
+								"goal_description": "Unusual sensations can be distracting and concerning. By tracking where and when you experience these feelings, I can help you understand what might be causing them and suggest ways to find relief.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -1483,7 +1483,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -1521,8 +1521,8 @@
 								"text": "Does your voice feel weak or faint when you speak, making it hard for others to hear you?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Speech problems in Parkinson's disease include reduced voice volume (hypophonia), monotone speech, mumbling, rapid speech, or difficulty articulating words clearly. These result from changes in muscle control and coordination of the vocal cords, tongue, and breathing.",
+								"goal_description": "Speech difficulties can make communication frustrating and affect your relationships and confidence. Let's track when your speech is most affected so I can suggest exercises and strategies to help you communicate more clearly.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -1551,7 +1551,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -1594,7 +1594,7 @@
 					{
 						"id": "lifestyle_main",
 						"message": "Staying active is a powerful way to care for yourself — whether that means moving, connecting with others, or doing what brings you joy. Where would you like to focus attention right now?",
-						"message_after_selection": "Thanks — let’s take a closer look at [selected_areas_name], and set a goal to help you feel more comfortable and supported day by day.",
+						"message_after_selection": "Thanks — let's take a closer look at [selected_areas_name], and set a goal to help you feel more comfortable and supported day by day.",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
@@ -1607,7 +1607,7 @@
 							{
 								"id": "social_relationships",
 								"name": "Social Relationships",
-								"text": "Taking care of your social life & relationships – maintaining bonds, sharing moments with others, and staying socially and emotionally engaged. ",
+								"text": "Taking care of your social life & relationships — maintaining bonds, sharing moments with others, and staying socially and emotionally engaged. ",
 								"next_step": "social_relationships_details"
 							}
 						]
@@ -1624,8 +1624,8 @@
 								"text": "Would you like to be more active by walking, stretching, or doing other kinds of exercise?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Physical activity and exercise are crucial for managing Parkinson's symptoms and slowing disease progression. Regular movement can improve balance, flexibility, strength, mood, and overall quality of life while potentially providing neuroprotective benefits.",
+								"goal_description": "Staying physically active can help you maintain your independence and feel stronger. Let's track your activity levels and find exercises you enjoy, so I can encourage you and suggest ways to keep moving that work for your body.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -1654,7 +1654,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -1692,8 +1692,8 @@
 								"text": "Would you like to spend more time on a hobby or activity you enjoy?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Engaging in hobbies and meaningful activities provides cognitive stimulation, emotional satisfaction, and social connection. For people with Parkinson's, hobbies can help maintain fine motor skills, provide purpose, and improve overall well-being and quality of life.",
+								"goal_description": "Hobbies bring joy and keep your mind and hands active, which is especially important with Parkinson's. Let's track the activities that make you happiest so I can help you stay engaged with the things you love.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -1722,7 +1722,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -1758,7 +1758,7 @@
 					},
 					{
 						"id": "social_relationships_details",
-						"message": "Whether it’s spending time with loved ones, planning a small outing, or staying emotionally close to someone who matters — taking care of your relationships is part of taking care of yourself. Here are some common areas where people need support. Just let me know what feels most relevant for you right now.",
+						"message": "Whether it's spending time with loved ones, planning a small outing, or staying emotionally close to someone who matters — taking care of your relationships is part of taking care of yourself. Here are some common areas where people need support. Just let me know what feels most relevant for you right now.",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
@@ -1768,8 +1768,8 @@
 								"text": "Is staying socially connected important to you right now? ",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Maintaining social connections is vital for emotional well-being and cognitive health in Parkinson's disease. Social engagement can reduce depression, provide emotional support, maintain communication skills, and improve overall quality of life.",
+								"goal_description": "Social connections are essential for your well-being and can help you feel less isolated. Let's track your social interactions and find ways to stay connected with the people who matter most to you.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -1798,7 +1798,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -1836,8 +1836,8 @@
 								"text": "Would you like help planning social activities, vacations or going out more often?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Leisure activities and outings provide opportunities for enjoyment, social interaction, and maintaining independence. They can help combat isolation, provide mental stimulation, and create positive experiences that improve mood and overall quality of life.",
+								"goal_description": "Leisure activities and social outings can bring joy and help you stay engaged with life. Let's track what activities you enjoy most so I can help you plan and participate in experiences that make you feel fulfilled.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -1866,7 +1866,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -1904,8 +1904,8 @@
 								"text": "Are you looking for ways to support your caregivers or make family life feel more balanced?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Caregiver respite involves providing support and relief for family members or caregivers, ensuring they have time for self-care and preventing burnout. This benefits both caregivers and people with Parkinson's by maintaining healthy, sustainable care relationships.",
+								"goal_description": "Supporting your caregivers is important for maintaining healthy relationships and ensuring everyone's well-being. Let's track how you and your caregivers are doing so I can suggest ways to create balance and prevent burnout.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -1934,7 +1934,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -1972,8 +1972,8 @@
 								"text": "Would you like help understanding how Parkinson's may affect your intimacy or emotional closeness?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Intimacy in Parkinson's disease can be affected by physical symptoms, medication side effects, body image concerns, and emotional changes. Addressing intimacy issues involves open communication, adaptive strategies, and sometimes medical interventions to maintain close relationships.",
+								"goal_description": "Intimacy and emotional closeness are important parts of relationships that can be affected by Parkinson's. Let's track any concerns you have so I can provide sensitive guidance and support for maintaining intimate connections.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -2002,7 +2002,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -2044,8 +2044,8 @@
 				"steps": [
 					{
 						"id": "mental_health_main",
-						"message": "People with Parkinson could notice some changes in their mood, memory, or perception. Being aware of these changes is a way to take care of yourself. Let’s take a moment to better understand what you’ve been going through. Which of these areas would you like to focus on first?",
-						"message_after_selection": "Thanks — let’s take a closer look at [selected_areas_name], and set a goal to help you feel more comfortable and supported day by day.",
+						"message": "People with Parkinson could notice some changes in their mood, memory, or perception. Being aware of these changes is a way to take care of yourself. Let's take a moment to better understand what you've been going through. Which of these areas would you like to focus on first?",
+						"message_after_selection": "Thanks — let's take a closer look at [selected_areas_name], and set a goal to help you feel more comfortable and supported day by day.",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
@@ -2081,8 +2081,8 @@
 								"text": "Anxiety or Panick Attack  - Have you recently felt sudden fear or anxiety that caused physical reactions, like a racing heart or shortness of breath?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Anxiety and panic attacks in Parkinson's disease involve intense fear, worry, or physical symptoms like racing heart, shortness of breath, and sweating. They can be related to medication fluctuations, fear about symptoms, or changes in brain chemistry.",
+								"goal_description": "Anxiety and panic can be very distressing and may worsen other Parkinson's symptoms. Let's track when these feelings occur so I can help you identify triggers and suggest coping strategies to help you feel calmer and more in control.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -2111,7 +2111,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -2149,8 +2149,8 @@
 								"text": "Impulsive Behavior - Have you noticed urges that feel hard to control—like overspending, overeating?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Impulsive behavior in Parkinson's disease can include compulsive shopping, gambling, eating, sexual behavior, or medication use. These are often side effects of dopamine replacement therapies and can significantly impact relationships and finances.",
+								"goal_description": "Impulse control problems can be very disruptive to your life and relationships. It's important to track these behaviors so I can help you recognize patterns and suggest strategies to manage urges more effectively.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -2179,7 +2179,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -2217,8 +2217,8 @@
 								"text": "Emotional Changes (Depression) - Have you been feeling down or less motivated than usual lately? ",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Depression in Parkinson's disease involves persistent sadness, loss of interest in activities, fatigue, and feelings of hopelessness. It can be caused by brain changes from the disease itself, reaction to diagnosis, or as a side effect of some medications.",
+								"goal_description": "Depression can make everything feel harder and affect your motivation to take care of yourself. By tracking your mood and what influences it, I can help you identify patterns and suggest ways to improve your emotional well-being.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -2247,7 +2247,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -2293,8 +2293,8 @@
 								"text": "Have you been forgetting things more often, like names, appointments, or steps in a task you usually do with ease?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Forgetfulness in Parkinson's disease can involve difficulty remembering names, appointments, or task sequences. While not everyone with Parkinson's experiences significant memory problems, some may have mild cognitive changes that affect daily functioning.",
+								"goal_description": "Memory changes can be frustrating and make daily tasks more challenging. Let's track what types of things you're forgetting most often so I can suggest memory strategies and tools to help you stay organized and confident.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -2323,7 +2323,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -2361,8 +2361,8 @@
 								"text": "Do you feel overwhelmed or find it hard to focus when there's a lot going on, or when decisions need to be made?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Mental overload in Parkinson's disease occurs when cognitive demands exceed processing capacity, leading to feeling overwhelmed, difficulty concentrating, or problems with multitasking. This can happen due to reduced cognitive flexibility and executive function changes.",
+								"goal_description": "Feeling mentally overwhelmed can make everyday situations feel stressful and unmanageable. Let's track what situations trigger this feeling so I can suggest ways to simplify tasks and reduce cognitive load.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -2391,7 +2391,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -2429,8 +2429,8 @@
 								"text": "Have you noticed it takes more time to understand or respond to things, or that judging distances or space feels harder?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Brain fog in Parkinson's disease involves feeling mentally cloudy, having slower thinking, difficulty concentrating, or problems with spatial judgment. It can result from the disease itself, medications, sleep problems, or mood changes.",
+								"goal_description": "Brain fog can make you feel less sharp and confident in your thinking abilities. By tracking when your mind feels clearest and foggiest, I can help identify what factors influence your cognitive clarity and suggest ways to optimize your mental performance.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -2459,7 +2459,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -2505,8 +2505,8 @@
 								"text": "Seeing things or hearing voices or sounds that others don't.",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Hallucinations in Parkinson's disease typically involve seeing things that aren't there (visual hallucinations), less commonly hearing things (auditory hallucinations). They can be caused by medications, disease progression, sleep problems, or infections.",
+								"goal_description": "Hallucinations can be disturbing and concerning for you and your family. It's important to track when and what you experience so I can help you understand potential causes and work with your healthcare team to address them safely.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -2535,7 +2535,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -2573,8 +2573,8 @@
 								"text": "Feeling confused, suspicious, or firmly convinced of things that later don't seem to make sense.",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "False beliefs or delusions in Parkinson's disease involve being firmly convinced of something that isn't true, such as paranoid thoughts or misconceptions. They can result from medication effects, disease progression, or other factors affecting brain function.",
+								"goal_description": "False beliefs can be distressing and affect your relationships and decision-making. Tracking these experiences helps me understand patterns and work with you to address them appropriately with your healthcare team.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -2603,7 +2603,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -2641,8 +2641,8 @@
 								"text": "Feeling confused by objects or surroundings, and it takes a moment to figure out what's real.",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Perceptual distortions in Parkinson's disease involve misinterpreting what you see or experience, such as thinking a shadow is a person or feeling confused about familiar surroundings. These can occur due to visual processing changes or medication effects.",
+								"goal_description": "Perceptual distortions can make you feel uncertain about what's real and affect your confidence. Let's track when these experiences happen so I can help you develop strategies to verify your perceptions and feel more grounded.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -2671,7 +2671,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -2714,7 +2714,7 @@
 					{
 						"id": "medication_main",
 						"message": "Managing Parkinson's every day starts with your medication routine. When you take your medication at the right time and dose, you give yourself the best chance to reduce \"off\" periods and feel more in control throughout your day. But managing symptoms it's also about understanding how your body reacts. Would you like to:",
-						"message_after_selection": "Thanks — let’s take a closer look at [selected_areas_name], and set a goal to help you feel more comfortable and supported day by day.",
+						"message_after_selection": "Thanks — let's take a closer look at [selected_areas_name], and set a goal to help you feel more comfortable and supported day by day.",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
@@ -2724,8 +2724,8 @@
 								"text": "Build a strong medication routine",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Medication adherence involves taking Parkinson's medications exactly as prescribed, at the right times and doses. Consistent adherence is crucial for maintaining stable symptom control and preventing motor fluctuations throughout the day.",
+								"goal_description": "Good medication adherence is essential for managing your Parkinson's symptoms effectively. Let's track your medication routine so I can help you stay consistent and get the most benefit from your treatment.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -2754,7 +2754,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -2792,8 +2792,8 @@
 								"text": "Record side effects or something unusual you've noticed",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Side effects awareness involves recognizing and monitoring potential adverse reactions to Parkinson's medications, including nausea, dizziness, hallucinations, impulse control disorders, and motor complications like dyskinesias.",
+								"goal_description": "Being aware of medication side effects helps ensure your treatment is both effective and safe. Let's track any unusual symptoms or reactions so I can help you identify patterns and communicate effectively with your healthcare team.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -2822,7 +2822,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -2865,7 +2865,7 @@
 					{
 						"id": "wellbeing_main",
 						"message": "Managing your home life, meals, and daily routines can take effort — but small changes can make a big difference. Let's take a closer look at what might help you most right now. Where would you like to focus your attention?",
-						"message_after_selection": "Thanks — let’s take a closer look at [selected_areas_name], and set a goal to help you feel more comfortable and supported day by day.",
+						"message_after_selection": "Thanks — let's take a closer look at [selected_areas_name], and set a goal to help you feel more comfortable and supported day by day.",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
@@ -2895,8 +2895,8 @@
 								"text": "Do you want to better manage weight loss or gain linked to Parkinson's?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Weight changes in Parkinson's disease can include unintended weight loss due to increased energy needs, swallowing difficulties, or medication effects, or weight gain from reduced activity or certain medications.",
+								"goal_description": "Maintaining a healthy weight is important for your strength, energy, and overall health with Parkinson's. Let's track your weight patterns and eating habits so I can suggest strategies to help you achieve and maintain your optimal weight.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -2925,7 +2925,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -2963,8 +2963,8 @@
 								"text": "Would you like to improve digestion, energy, or balanced meals?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Proper nutrition in Parkinson's disease involves maintaining balanced meals that support medication absorption, provide adequate protein and fiber, address swallowing difficulties, and support overall health and energy levels.",
+								"goal_description": "Good nutrition can help you feel more energized and may improve how well your medications work. Let's track your eating patterns and nutritional needs so I can suggest meal ideas and eating strategies that work best for you.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -2993,7 +2993,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -3039,8 +3039,8 @@
 								"text": "Would you like help making daily routines easier and more manageable?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Empowering daily life involves developing strategies and using adaptive tools to make everyday activities like dressing, cooking, cleaning, and personal care easier and more manageable despite Parkinson's symptoms.",
+								"goal_description": "Maintaining independence in daily activities is important for your confidence and quality of life. Let's track which tasks are most challenging so I can suggest adaptive techniques and tools to help you manage them more easily.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -3069,7 +3069,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
@@ -3107,8 +3107,8 @@
 								"text": "Would you feel more secure if you had support for balance, falls, or home safety?",
 								"goal_setting": true,
 								"definition": "definition",
-								"short_description": "short description",
-								"goal_description": "goal description",
+								"short_description": "Enhancing physical safety involves modifying the home environment, using assistive devices, and developing strategies to prevent falls and injuries while maintaining independence and mobility in daily activities.",
+								"goal_description": "Feeling safe in your home is crucial for your confidence and independence. Let's assess your safety concerns and home environment so I can suggest modifications and safety strategies to help you move around more securely.",
 								"care-tips": [
 									{
 										"id": 1,
@@ -3137,7 +3137,7 @@
 									},
 									{
 										"id": 6,
-										"type": "Reinforcement – Basic Care Tips",
+										"type": "Reinforcement — Basic Care Tips",
 										"tip": "Reinforcement - Basic Care Tips"
 									},
 									{
