@@ -29,13 +29,13 @@ const DiaryEntries = () => {
 	const [showBookmarkedOnly, setShowBookmarkedOnly] = useState(false);
 	const [showFilters, setShowFilters] = useState(false);
 
-	// Enhanced mock data with bookmarks
+	// Allison's diary entries - reflecting her story as a recently diagnosed teacher
 	const [diaryEntries, setDiaryEntries] = useState([
 		{
 			id: 1,
 			content:
-				'Had a good morning walk today. Tremor was minimal and I felt more energetic than usual. The new medication timing seems to be working better.',
-			date: '2024-09-14T10:30:00',
+				'First week back to school since diagnosis. The kids are as energetic as ever! I noticed my fatigue hits hardest around 2 PM, right when Grade 3 has their math lesson. Made a note to take my afternoon Levodopa dose 30 minutes earlier tomorrow. The new medication schedule is helping, but I still feel that afternoon dip. At least my morning tremor was barely noticeable during circle time.',
+			date: '2024-09-16T16:30:00',
 			source: 'journey',
 			goalName: null,
 			isBookmarked: true,
@@ -43,35 +43,62 @@ const DiaryEntries = () => {
 		{
 			id: 2,
 			content:
-				'Feeling a bit stiff this morning. Balance was okay during my physical therapy exercises. Need to remember to take medication with food.',
-			date: '2024-09-13T14:15:00',
+				"Sleep was terrible again - only got about 5 hours. Woke up at 3 AM and couldn't get back to sleep. The constipation is getting worse too, even with the extra fiber I've been adding to breakfast. Called Dr. Martinez's office to discuss adjusting my evening dose timing. Maybe taking it earlier will help with the sleep issues. Planning to try that chamomile tea my colleague Sarah recommended.",
+			date: '2024-09-15T07:45:00',
 			source: 'tracking',
-			goalName: 'Physical activity',
-			isBookmarked: false,
+			goalName: 'Sleep improvement',
+			isBookmarked: true,
 		},
 		{
 			id: 3,
 			content:
-				'Great day overall! Managed to complete my gardening hobby session without too much fatigue. Really enjoying this new routine.',
-			date: '2024-09-12T16:45:00',
-			source: 'tracking',
-			goalName: 'Hobbies',
-			isBookmarked: true,
-		},
-		{
-			id: 4,
-			content:
-				'Sleep was better last night after implementing the new bedtime routine. Woke up feeling more refreshed.',
-			date: '2024-09-11T08:20:00',
+				"Had coffee with my son Jake today. He's worried about me but trying not to show it. I assured him that I'm managing well and that the medication is helping. We walked around the Rideau Centre for about an hour - felt good to get some exercise. My balance felt steady, and we even laughed about how I'm walking slower than the elderly mall walkers now. Small victories!",
+			date: '2024-09-14T14:20:00',
 			source: 'journey',
 			goalName: null,
 			isBookmarked: false,
 		},
 		{
+			id: 4,
+			content:
+				"Tried the new exercise routine from my physiotherapist. 20 minutes of gentle movements and balance exercises. The fatigue wasn't as overwhelming afterward as I expected. Actually felt more energized for the rest of the evening. Setting a goal to do this 3 times a week. My handwriting is still shaky during lesson planning, but I'm getting better at typing up my notes instead.",
+			date: '2024-09-13T18:15:00',
+			source: 'tracking',
+			goalName: 'Regular exercise',
+			isBookmarked: true,
+		},
+		{
 			id: 5,
 			content:
-				'Challenging day with medication side effects. Doctor appointment scheduled for next week to discuss adjustments.',
-			date: '2024-09-10T16:30:00',
+				'Rough day with medication timing. Forgot my noon dose because of parent-teacher conferences running late. By 3 PM, the stiffness in my left hand was noticeable - had trouble writing on the whiteboard. One parent asked if I was okay. I just said I had a minor injury. Not ready to discuss the diagnosis with parents yet. Need to set phone reminders for medication times.',
+			date: '2024-09-12T17:00:00',
+			source: 'tracking',
+			goalName: 'Medication routine',
+			isBookmarked: true,
+		},
+		{
+			id: 6,
+			content:
+				"Beautiful autumn day in Ottawa! The leaves are just starting to change. Took a short walk through Major's Hill Park during lunch break. The fresh air helped with the afternoon fatigue. I've been reading about how important vitamin D is for people with Parkinson's, so I'm trying to get more sunlight. The principal noticed I seemed more energetic during our staff meeting afterward.",
+			date: '2024-09-11T13:30:00',
+			source: 'journey',
+			goalName: null,
+			isBookmarked: false,
+		},
+		{
+			id: 7,
+			content:
+				"Weekend experiment: took my evening medication 2 hours earlier. Slept for 6 hours straight! First time in weeks. Woke up feeling more rested, though still tired. The constipation is still an issue - adding prunes to my morning routine. Jake is coming for dinner on Sunday, so I want to meal prep something healthy that won't interact with my medication.",
+			date: '2024-09-10T08:00:00',
+			source: 'tracking',
+			goalName: 'Sleep improvement',
+			isBookmarked: true,
+		},
+		{
+			id: 8,
+			content:
+				"One year since my diagnosis. It's been a journey of learning and adapting. Some days are harder than others, but I'm grateful for my supportive colleagues, my wonderful students who keep me motivated, and the healthcare team helping me manage this. The medication side effects are challenging, but I'm getting better at recognizing patterns and adjusting my routine accordingly.",
+			date: '2024-09-09T20:45:00',
 			source: 'journey',
 			goalName: null,
 			isBookmarked: true,
@@ -205,7 +232,7 @@ const DiaryEntries = () => {
 						className={styles.entryTextarea}
 						value={newEntry}
 						onChange={(e) => setNewEntry(e.target.value)}
-						placeholder="How are you feeling today? Any thoughts, challenges, or successes you'd like to note..."
+						placeholder="How are you feeling today? How did teaching go? Any thoughts about medication, sleep, or managing symptoms you'd like to note..."
 						rows={4}
 					/>
 

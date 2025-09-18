@@ -1,12 +1,13 @@
-// Synthetic tracking data for demo purposes
-// This simulates real tracking data that would come from the TrackingPage
+// Synthetic tracking data tailored for Allison Johnson's story
+// Recently diagnosed teacher managing fatigue, sleep disturbance, and constipation
 
-// Helper function to generate realistic tracking data with variations
+// Helper function to generate realistic tracking data with variations based on Allison's specific patterns
 const generateTrackingData = (
 	startDate,
 	endDate,
 	baselineScore = 3,
-	volatility = 1
+	volatility = 1,
+	specificPatterns = {}
 ) => {
 	const data = [];
 	const start = new Date(startDate);
@@ -23,10 +24,40 @@ const generateTrackingData = (
 		const randomChange = (Math.random() - 0.5) * volatility;
 		currentScore = Math.max(1, Math.min(5, currentScore + randomChange));
 
-		// Add some weekly patterns (slightly better on weekends for some conditions)
+		// Add Allison-specific patterns
 		const dayOfWeek = date.getDay();
-		if (dayOfWeek === 0 || dayOfWeek === 6) {
-			currentScore = Math.min(5, currentScore + 0.2);
+
+		// Allison's specific patterns as a teacher
+		if (specificPatterns.teacherPattern) {
+			// Monday blues and Friday relief pattern
+			if (dayOfWeek === 1) currentScore = Math.max(1, currentScore - 0.3); // Monday
+			if (dayOfWeek === 5) currentScore = Math.min(5, currentScore + 0.2); // Friday
+			// Weekends slightly better for most symptoms
+			if (dayOfWeek === 0 || dayOfWeek === 6) {
+				currentScore = Math.min(5, currentScore + 0.3);
+			}
+		}
+
+		// Sleep-related patterns (worse at beginning of week, medication adjustments)
+		if (specificPatterns.sleepPattern) {
+			// Recent medication timing changes showing gradual improvement
+			const progressFactor = i / dayDiff; // Gets better over time
+			currentScore = Math.min(5, currentScore + progressFactor * 0.4);
+		}
+
+		// Fatigue patterns (afternoon crashes, seasonal effects)
+		if (specificPatterns.fatiguePattern) {
+			// Teaching schedule impact - more fatigue during school days
+			if (dayOfWeek >= 1 && dayOfWeek <= 5) {
+				currentScore = Math.max(1, currentScore - 0.4);
+			}
+		}
+
+		// Medication adherence patterns (getting better with routine)
+		if (specificPatterns.medicationPattern) {
+			// Improving adherence over time as routine establishes
+			const adherenceImprovement = Math.min(0.6, (i / dayDiff) * 0.6);
+			currentScore = Math.min(5, currentScore + adherenceImprovement);
 		}
 
 		data.push({
@@ -142,54 +173,146 @@ export const trackingOptions = [
 	{ id: 'physical_safety', name: 'Physical Safety', category: 'Wellbeing' },
 ];
 
-// Generate synthetic data for each tracking option
+// Generate synthetic data for each tracking option tailored to Allison's experience
 export const generateSyntheticData = (period) => {
 	const { startDate, endDate } = getDateRange(period);
 	const syntheticData = {};
 
 	trackingOptions.forEach((option) => {
-		// Create different patterns for different types of conditions
-		let baseline, volatility;
+		// Create different patterns based on Allison's specific conditions
+		let baseline, volatility, patterns;
 
-		switch (option.category) {
-			case 'Movement':
-				baseline = 2.8; // Slightly below average
-				volatility = 0.8;
-				break;
-			case 'Physical Comfort':
-				baseline = 2.5; // More challenging
-				volatility = 1.2;
-				break;
-			case 'Sleep & Energy':
-				baseline = 3.2; // Variable
+		switch (option.id) {
+			// Allison's primary symptoms - more challenging
+			case 'fatigue':
+				baseline = 2.2; // Major challenge for her
 				volatility = 1.0;
+				patterns = { teacherPattern: true, fatiguePattern: true };
 				break;
-			case 'Mental Health':
-				baseline = 3.5; // Generally better managed
-				volatility = 0.9;
+			case 'insomnia':
+				baseline = 2.4; // Another major issue
+				volatility = 1.1;
+				patterns = { sleepPattern: true, teacherPattern: true };
 				break;
-			case 'Lifestyle':
-				baseline = 3.8; // More controllable
-				volatility = 0.6;
-				break;
-			case 'Medication':
-				baseline = 4.0; // Well managed
-				volatility = 0.4;
-				break;
-			case 'Wellbeing':
-				baseline = 3.6; // Generally good
-				volatility = 0.7;
-				break;
-			default:
-				baseline = 3.0;
+			case 'constipation':
+				baseline = 2.3; // Third major symptom
 				volatility = 0.8;
+				patterns = { teacherPattern: true };
+				break;
+
+			// Medication-related (she's learning to manage)
+			case 'medication_adherence':
+				baseline = 3.7; // Good but improving
+				volatility = 0.5;
+				patterns = { medicationPattern: true };
+				break;
+			case 'side_effects':
+				baseline = 2.8; // Managing but aware
+				volatility = 0.9;
+				patterns = { medicationPattern: true };
+				break;
+
+			// Movement symptoms (mild for her early stage)
+			case 'tremor':
+				baseline = 3.8; // Mild tremor, mainly noticed during specific tasks
+				volatility = 0.6;
+				patterns = { teacherPattern: true };
+				break;
+			case 'balance':
+				baseline = 3.5; // Generally good balance
+				volatility = 0.7;
+				patterns = { teacherPattern: true };
+				break;
+
+			// Work-related lifestyle factors
+			case 'physical_activity':
+				baseline = 3.2; // Trying to maintain activity
+				volatility = 0.8;
+				patterns = { teacherPattern: true };
+				break;
+			case 'daily_living':
+				baseline = 3.6; // Managing well but with effort
+				volatility = 0.6;
+				patterns = { teacherPattern: true };
+				break;
+
+			// Mental/emotional (dealing with recent diagnosis)
+			case 'emotional_changes':
+				baseline = 3.1; // Some ups and downs adjusting to diagnosis
+				volatility = 0.9;
+				patterns = { teacherPattern: true };
+				break;
+			case 'brain_fog':
+				baseline = 2.9; // Noticeable during demanding teaching periods
+				volatility = 0.8;
+				patterns = { teacherPattern: true, fatiguePattern: true };
+				break;
+
+			// Social connections (important to her)
+			case 'living_connected':
+				baseline = 3.8; // Good social support
+				volatility = 0.5;
+				patterns = { teacherPattern: true };
+				break;
+
+			// Other symptoms (less prominent for her)
+			case 'drooling':
+				baseline = 4.2; // Minimal issue
+				volatility = 0.4;
+				patterns = {};
+				break;
+			case 'speech_problems':
+				baseline = 4.0; // Slight concerns during long teaching days
+				volatility = 0.5;
+				patterns = { teacherPattern: true };
+				break;
+
+			// Default patterns for other symptoms
+			default:
+				switch (option.category) {
+					case 'Movement':
+						baseline = 3.4; // Early stage, manageable
+						volatility = 0.7;
+						patterns = { teacherPattern: true };
+						break;
+					case 'Sleep & Energy':
+						baseline = 2.6; // Her major challenge area
+						volatility = 1.0;
+						patterns = { sleepPattern: true, teacherPattern: true };
+						break;
+					case 'Mental Health':
+						baseline = 3.2; // Adjusting to diagnosis
+						volatility = 0.8;
+						patterns = { teacherPattern: true };
+						break;
+					case 'Lifestyle':
+						baseline = 3.5; // Working to maintain quality of life
+						volatility = 0.6;
+						patterns = { teacherPattern: true };
+						break;
+					case 'Medication':
+						baseline = 3.4; // Learning to manage
+						volatility = 0.7;
+						patterns = { medicationPattern: true };
+						break;
+					case 'Wellbeing':
+						baseline = 3.3; // Focused on maintaining independence
+						volatility = 0.7;
+						patterns = { teacherPattern: true };
+						break;
+					default:
+						baseline = 3.0;
+						volatility = 0.8;
+						patterns = {};
+				}
 		}
 
 		syntheticData[option.id] = generateTrackingData(
 			startDate,
 			endDate,
 			baseline,
-			volatility
+			volatility,
+			patterns
 		);
 	});
 

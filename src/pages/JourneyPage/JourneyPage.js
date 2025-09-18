@@ -29,35 +29,34 @@ const JourneyPage = ({ onLogoClick, goals = [] }) => {
 	// Time period options
 	const timePeriods = ['This Week', 'This Month', '6 Months'];
 
-	// Simulated data - in real app this would come from tracking data and medical watch
+	// Allison's data - reflects her story as a recently diagnosed teacher managing symptoms
 	const dashboardData = {
 		trackingScore: {
-			average: 2.6,
+			average: 3.1, // Slightly above average as she's actively managing her condition
 			icon: TrendingUp,
 			label: 'Tracking Score',
 		},
 		journalEntries: {
-			average: 15,
+			average: 42, // More detailed entries as she's learning to manage her condition
 			unit: 'words/day',
 			icon: NotebookPen,
 			label: 'Writing Diary',
 		},
 		medicationAdherence: {
-			percentage: 75,
-			/*status: 'needs improvement',*/
+			percentage: 85, // Good adherence as she's focused on managing side effects
 			icon: PillBottle,
 			label: 'Sticking to meds',
 		},
 		watchData: {
-			steps: { value: 3540, label: 'steps', icon: Footprints },
-			calories: { value: 1230, label: 'calories', icon: Flame },
+			steps: { value: 4200, label: 'steps', icon: Footprints }, // Moderate activity, trying to stay active for teaching
+			calories: { value: 1450, label: 'calories', icon: Flame }, // Appropriate for her age and activity level
 			sleep: {
-				value: '6h 15m',
+				value: '5h 30m', // Reflects her sleep disturbance symptoms
 				label: 'sleep',
 				icon: BedSingle,
 			},
 			heartRate: {
-				value: 62,
+				value: 68, // Slightly elevated due to stress and medication
 				unit: 'bpm',
 				label: 'resting heart rate',
 				icon: HeartPulse,
@@ -110,7 +109,6 @@ const JourneyPage = ({ onLogoClick, goals = [] }) => {
 								<div className={styles.cardValue}>
 									{dashboardData.trackingScore.average}
 								</div>
-								{/* <Meh className={styles.mehIcon} />*/}
 							</div>
 						</div>
 
@@ -150,9 +148,6 @@ const JourneyPage = ({ onLogoClick, goals = [] }) => {
 								<div className={styles.adherenceIndicator}>
 									<span>{dashboardData.medicationAdherence.percentage}%</span>
 								</div>
-								<div className={styles.adherenceStatus}>
-									{dashboardData.medicationAdherence.status}
-								</div>
 							</div>
 						</div>
 
@@ -160,7 +155,7 @@ const JourneyPage = ({ onLogoClick, goals = [] }) => {
 						<div className={styles.dashboardCard}>
 							<div className={styles.cardHeader}>
 								<Watch className={styles.cardIcon} />
-								<span className={styles.cardLabel}>Moving daily</span>
+								<span className={styles.cardLabel}>Daily movement</span>
 							</div>
 							<div className={styles.watchDataContainer}>
 								<div className={styles.watchMetric}>

@@ -28,8 +28,48 @@ const TrackingComparison = ({ selectedPeriod = 'This Week' }) => {
 		1: { component: Angry, color: '#EF4444', label: 'Very Poor' },
 	};
 
+	// Specific options for Tracking 2 (Physical & Mental Health influencers)
+	const tracking2Options = [
+		{ id: 'anxiety', name: 'Anxiety', category: 'Mental Health' },
+		{
+			id: 'emotional_changes',
+			name: 'Emotional changes (depression)',
+			category: 'Mental Health',
+		},
+		{ id: 'fatigue', name: 'Fatigue', category: 'Physical Health' },
+		{ id: 'hobbies', name: 'Hobbies', category: 'Lifestyle' },
+		{ id: 'leisure', name: 'Leisure', category: 'Lifestyle' },
+		{
+			id: 'living_connected',
+			name: 'Living connected',
+			category: 'Social Health',
+		},
+		{
+			id: 'medication_routine',
+			name: 'Medication Routine',
+			category: 'Medication',
+		},
+		{ id: 'nutrition', name: 'Nutrition', category: 'Physical Health' },
+		{ id: 'pain', name: 'Pain', category: 'Physical Health' },
+		{
+			id: 'physical_activity',
+			name: 'Physical Activity',
+			category: 'Physical Health',
+		},
+		{
+			id: 'side_effects_awareness',
+			name: 'Side Effects Awareness (Medication)',
+			category: 'Medication',
+		},
+	];
+
 	// Get tracking option name by id
 	const getTrackingName = (id) => {
+		// First check in tracking2Options
+		const tracking2Option = tracking2Options.find((opt) => opt.id === id);
+		if (tracking2Option) return tracking2Option.name;
+
+		// Then check in main trackingOptions
 		const option = trackingOptions.find((opt) => opt.id === id);
 		return option ? option.name : id;
 	};
@@ -59,8 +99,22 @@ const TrackingComparison = ({ selectedPeriod = 'This Week' }) => {
 		return acc;
 	}, {});
 
-	// Render dropdown with grouped options
-	const renderDropdown = (value, onChange, label, excludeId = null) => (
+	// Group tracking2Options by category
+	const groupedTracking2Options = tracking2Options.reduce((acc, option) => {
+		if (!acc[option.category]) {
+			acc[option.category] = [];
+		}
+		acc[option.category].push(option);
+		return acc;
+	}, {});
+
+	// Render dropdown for Tracking 1 (all options with coral categories)
+	const renderTracking1Dropdown = (
+		value,
+		onChange,
+		label,
+		excludeId = null
+	) => (
 		<div className={styles.dropdownContainer}>
 			<label className={styles.dropdownLabel}>{label}</label>
 			<div className={styles.selectWrapper}>
@@ -70,7 +124,11 @@ const TrackingComparison = ({ selectedPeriod = 'This Week' }) => {
 					onChange={(e) => onChange(e.target.value)}
 				>
 					{Object.entries(groupedOptions).map(([category, options]) => (
-						<optgroup key={category} label={category}>
+						<optgroup
+							key={category}
+							label={category}
+							className={styles.coralOptgroup}
+						>
 							{options
 								.filter((option) => option.id !== excludeId)
 								.map((option) => (
@@ -80,6 +138,44 @@ const TrackingComparison = ({ selectedPeriod = 'This Week' }) => {
 								))}
 						</optgroup>
 					))}
+				</select>
+				<ChevronDown className={styles.dropdownIcon} />
+			</div>
+		</div>
+	);
+
+	// Render dropdown for Tracking 2 (specific health influencers)
+	const renderTracking2Dropdown = (
+		value,
+		onChange,
+		label,
+		excludeId = null
+	) => (
+		<div className={styles.dropdownContainer}>
+			<label className={styles.dropdownLabel}>{label}</label>
+			<div className={styles.selectWrapper}>
+				<select
+					className={styles.dropdown}
+					value={value}
+					onChange={(e) => onChange(e.target.value)}
+				>
+					{Object.entries(groupedTracking2Options).map(
+						([category, options]) => (
+							<optgroup
+								key={category}
+								label={category}
+								className={styles.coralOptgroup}
+							>
+								{options
+									.filter((option) => option.id !== excludeId)
+									.map((option) => (
+										<option key={option.id} value={option.id}>
+											{option.name}
+										</option>
+									))}
+							</optgroup>
+						)
+					)}
 				</select>
 				<ChevronDown className={styles.dropdownIcon} />
 			</div>
@@ -311,13 +407,18 @@ const TrackingComparison = ({ selectedPeriod = 'This Week' }) => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.controls}>
-				{renderDropdown(
+				{renderTracking1Dropdown(
 					tracking1,
 					setTracking1,
 					'Compare Tracking 1:',
 					tracking2
 				)}
-				{renderDropdown(tracking2, setTracking2, 'With Tracking 2:', tracking1)}
+				{renderTracking2Dropdown(
+					tracking2,
+					setTracking2,
+					'With Tracking 2:',
+					tracking1
+				)}
 			</div>
 
 			{renderGraph()}

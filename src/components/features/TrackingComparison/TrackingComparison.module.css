@@ -70,10 +70,20 @@
 	font-style: normal;
 }
 
+/* Coral styling for optgroup labels */
+.dropdown .coralOptgroup,
+.dropdown optgroup {
+	font-weight: var(--font-weight-bold);
+	color: var(--color-coral);
+	font-style: normal;
+	background-color: rgba(255, 138, 101, 0.05);
+}
+
 .dropdown option {
 	font-weight: var(--font-weight-medium);
 	color: var(--color-text-primary);
 	padding: var(--spacing-xs);
+	background-color: white;
 }
 
 .dropdownIcon {
@@ -405,6 +415,12 @@
 	.dataPoint {
 		stroke-width: 3;
 		r: 5;
+	}
+
+	/* Ensure optgroup labels remain visible in high contrast */
+	.dropdown optgroup {
+		color: var(--color-coral);
+		font-weight: var(--font-weight-bold);
 	}
 }
 
