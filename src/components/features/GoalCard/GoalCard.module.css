@@ -52,12 +52,13 @@
 }
 
 .iconButton {
+	padding: 0 !important;
 	width: 2rem;
 	height: 2rem;
 	border: none;
 	border-radius: var(--border-radius-md);
-	background-color: #f8fafc;
-	color: #64748b;
+	background-color: var(--color-primary);
+	color: #ffffff;
 	cursor: pointer;
 	transition: var(--transition-normal);
 	display: flex;
@@ -68,8 +69,8 @@
 }
 
 .iconButton:hover {
-	background-color: #e2e8f0;
-	color: #475569;
+	background-color: var(--color-primary-dark);
+	color: #ffffff;
 	transform: scale(1.05);
 	box-shadow: var(--shadow-md);
 }
@@ -83,9 +84,14 @@
 	transform: scale(0.95);
 }
 
+.deleteButton {
+	background-color: var(--color-primary);
+	color: #ffffff;
+}
+
 .deleteButton:hover {
-	background-color: #fef2f2;
-	color: #dc2626;
+	background-color: var(--color-primary-dark);
+	color: #ffffff;
 }
 
 /* Content container */
@@ -212,8 +218,8 @@
 	}
 
 	.iconButton {
-		width: 1.75rem;
-		height: 1.75rem;
+		width: 2.75rem;
+		height: 2.75rem;
 	}
 
 	.description p {
@@ -251,8 +257,8 @@
 	}
 
 	.iconButton {
-		width: 2.25rem;
-		height: 2.25rem;
+		width: 3rem;
+		height: 3rem;
 	}
 
 	.description p {
@@ -289,8 +295,8 @@
 	}
 
 	.iconButton {
-		width: 2.5rem;
-		height: 2.5rem;
+		width: 3.25rem;
+		height: 3.25rem;
 	}
 
 	.description p {

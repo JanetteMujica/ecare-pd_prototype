@@ -121,28 +121,13 @@
 	font-weight: var(--font-weight-heavy);
 }
 
-/* Link button styling */
-.linkButton {
-	background: none;
-	border: none;
-	color: var(--color-primary-dark);
-	text-decoration: underline;
-	cursor: pointer;
-	font-family: 'Filson Pro', sans-serif;
-	font-size: var(--font-size-sm);
-	transition: var(--transition-fast);
-	font-weight: var(--font-weight-heavy);
-}
-
-.linkButton:hover {
-	opacity: 0.8;
-	text-decoration-thickness: 2px;
-}
-
-.linkButton:focus {
-	outline: 2px solid var(--color-primary);
-	outline-offset: 2px;
-	border-radius: var(--border-radius-sm);
+/* Button Group - Two buttons side by side */
+.buttonGroup {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	width: 100%;
+	align-items: stretch;
 }
 
 /* Enhanced mobile-first breakpoints */
@@ -288,6 +273,11 @@
 		font-size: var(--font-size-base);
 		padding: var(--spacing-sm) var(--spacing-md);
 	}
+
+	.buttonGroup {
+		flex-direction: row;
+		gap: var(--spacing-md);
+	}
 }
 
 /* Larger iPads in landscape (e.g., iPad Pro) */
@@ -320,6 +310,11 @@
 	.cancelButton {
 		font-size: var(--font-size-lg);
 		padding: var(--spacing-sm) var(--spacing-lg);
+	}
+
+	.buttonGroup {
+		flex-direction: row;
+		gap: var(--spacing-lg);
 	}
 }
 
@@ -357,6 +352,11 @@
 	.cancelButton {
 		font-size: var(--font-size-base);
 		padding: var(--spacing-sm) var(--spacing-md);
+	}
+
+	.buttonGroup {
+		flex-direction: row;
+		gap: var(--spacing-lg);
 	}
 
 	/* Standard laptop screens - good proportions */

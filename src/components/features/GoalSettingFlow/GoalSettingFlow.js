@@ -54,9 +54,8 @@ const GoalSettingFlow = ({ onComplete, onCancel }) => {
 		if (currentStep === 'flow') {
 			const totalSteps = completedFlows.size + (currentFlow ? 1 : 0);
 			const maxFlows = Object.keys(flows).length;
-			return 10 + (totalSteps / maxFlows) * 70;
+			return 10 + (totalSteps / maxFlows) * 80;
 		}
-		if (currentStep === 'summary') return 90;
 		if (currentStep === 'complete') return 100;
 		return 0;
 	};
@@ -211,8 +210,6 @@ const GoalSettingFlow = ({ onComplete, onCancel }) => {
 			} else {
 				navigateToNextFlow();
 			}
-		} else if (currentStep === 'summary') {
-			setCurrentStep('complete');
 		}
 	};
 
@@ -238,13 +235,13 @@ const GoalSettingFlow = ({ onComplete, onCancel }) => {
 			setCurrentStepIndex(0);
 			setShowingAfterSelection(false);
 		} else {
-			// All flows completed, collect selections and go to summary
+			// All flows completed, collect selections and go directly to complete
 			console.log('All flows completed, collecting final selections...');
 			// Use setTimeout to ensure state is updated before collecting
 			setTimeout(() => {
 				collectFinalSelections();
 			}, 0);
-			setCurrentStep('summary');
+			setCurrentStep('complete');
 		}
 	};
 
@@ -553,48 +550,6 @@ const GoalSettingFlow = ({ onComplete, onCancel }) => {
 			);
 		}
 
-		if (currentStep === 'summary') {
-			return renderStepWithLogo(
-				finalDialogue.title,
-				finalDialogue.finalmessage_followedbyBulletList,
-				<>
-					<div className='summary-container'>
-						<h3 className='summary-title'>
-							Your Selected Self-Care Priorities:
-						</h3>
-						<ul className='summary-list'>
-							{finalSelections.map((selection, index) => (
-								<li key={index} className='summary-item'>
-									<span className='summary-bullet'>• </span>
-									<div className='summary-text'>
-										<strong>{selection.name}</strong>
-										{selection.short_description && (
-											<span> : {selection.short_description}</span>
-										)}
-									</div>
-								</li>
-							))}
-						</ul>
-					</div>
-
-					<div className='navigation'>
-						<button onClick={handleBack} className='back-button'>
-							<ArrowLeft size={16} />
-							<span>Back</span>
-						</button>
-
-						<button
-							onClick={handleNext}
-							className='next-button next-button-enabled'
-						>
-							<span>Continue</span>
-							<ArrowRight size={16} />
-						</button>
-					</div>
-				</>
-			);
-		}
-
 		if (currentStep === 'complete') {
 			return (
 				<div className='intro-container'>
@@ -625,7 +580,7 @@ const GoalSettingFlow = ({ onComplete, onCancel }) => {
 				<div className='header-content'>
 					<ECareLogo size='medium' />
 					<button onClick={handleCancel} className='cancel-button'>
-						Cancel
+						Close
 					</button>
 				</div>
 			</div>

@@ -10,6 +10,7 @@ import {
 	Save,
 	CheckCircle,
 	ArrowRight,
+	PartyPopper,
 } from 'lucide-react';
 import Banner from '../../components/layout/Banner';
 import PageTitle from '../../components/layout/PageTitle';
@@ -23,12 +24,15 @@ const TrackingPage = ({
 	allGoals = [],
 	currentGoalIndex = 0,
 	onNextGoal,
+	onNavigateToJourney,
 }) => {
 	// State for tracking data
 	const [selectedRating, setSelectedRating] = useState(null);
 	const [comment, setComment] = useState('');
 	const [isSaved, setIsSaved] = useState(false);
 	const [showSaveConfirmation, setShowSaveConfirmation] = useState(false);
+	const [trackedGoals, setTrackedGoals] = useState(new Set());
+	const [showCompletion, setShowCompletion] = useState(false);
 
 	// Ref for scrolling to top
 	const contentRef = useRef(null);
@@ -105,10 +109,24 @@ const TrackingPage = ({
 			setIsSaved(true);
 			setShowSaveConfirmation(true);
 
-			// Hide confirmation after 3 seconds
-			setTimeout(() => {
-				setShowSaveConfirmation(false);
-			}, 3000);
+			// Mark this goal as tracked
+			const newTrackedGoals = new Set(trackedGoals);
+			newTrackedGoals.add(currentGoal?.id);
+			setTrackedGoals(newTrackedGoals);
+
+			// Check if all goals have been tracked
+			if (newTrackedGoals.size === allGoals.length) {
+				// Show completion screen after a brief delay
+				setTimeout(() => {
+					setShowSaveConfirmation(false);
+					setShowCompletion(true);
+				}, 1500);
+			} else {
+				// Hide confirmation after 3 seconds
+				setTimeout(() => {
+					setShowSaveConfirmation(false);
+				}, 3000);
+			}
 		}
 	};
 
@@ -124,124 +142,148 @@ const TrackingPage = ({
 		<div className={styles.container}>
 			<Banner onLogoClick={onLogoClick} />
 			<div className={styles.content} ref={contentRef}>
-				<PageTitle
-					icon={trackingFeature.icon}
-					title={trackingFeature.title}
-					color={trackingFeature.color}
-				/>
-
-				<div className={styles.hero}>
-					{/* Single Combined Card: Question + Rating + Notes */}
-					<div className={styles.trackingCard}>
-						{/* Question Section */}
-						<h2 className={styles.questionTitle}>
-							How is your{' '}
-							<span className={styles.goalHighlight}>
-								{currentGoal?.name || currentGoal?.title}
-							</span>{' '}
-							today?
-						</h2>
-
-						{/* Rating Scale */}
-						<div className={styles.ratingScale}>
-							{ratingScale.map((rating) => {
-								const IconComponent = rating.icon;
-								const isSelected = selectedRating === rating.value;
-
-								return (
-									<button
-										key={rating.value}
-										className={`${styles.ratingButton} ${
-											isSelected ? styles.ratingButtonSelected : ''
-										}`}
-										onClick={() => handleRatingSelect(rating.value)}
-										style={{
-											borderColor: isSelected ? rating.color : rating.color,
-											backgroundColor: isSelected
-												? `${rating.color}30`
-												: rating.bgColor,
-										}}
-									>
-										<IconComponent color={rating.color} />
-									</button>
-								);
-							})}
+				{showCompletion ? (
+					// Completion Screen
+					<div className={styles.completionContainer}>
+						<div className={styles.completionIcon}>
+							<PartyPopper size={48} color='#10B981' />
 						</div>
-
-						{/* Comment Section */}
-						<div className={styles.commentSection}>
-							<h3 className={styles.sectionTitle}>DIARY ENTRY</h3>
-							<h3 className={styles.sectionTitle}>
-								How are you feeling? Any challenges or successes to note about{' '}
-								<span className={styles.goalHighlight}>
-									{currentGoal?.name || currentGoal?.title}
-								</span>
-								?
-							</h3>
-							<textarea
-								className={styles.commentTextarea}
-								value={comment}
-								onChange={(e) => setComment(e.target.value)}
-								rows={4}
-							/>
-
-							{/* Save Button */}
-							<div className={styles.saveSection}>
-								<button
-									className={`${styles.saveButton} ${
-										!selectedRating ? styles.saveButtonDisabled : ''
-									}`}
-									onClick={handleSave}
-									disabled={!selectedRating}
-								>
-									{isSaved ? (
-										<>
-											<CheckCircle size={20} />
-											Saved
-										</>
-									) : (
-										<>
-											<Save size={20} />
-											Save
-										</>
-									)}
-								</button>
-
-								{/* Save Confirmation */}
-								{showSaveConfirmation && (
-									<div className={styles.saveConfirmation}>
-										<CheckCircle size={16} />
-										It has been saved successfully!
-									</div>
-								)}
-							</div>
-						</div>
-					</div>
-
-					{/* Care Tip Card */}
-					<div className={styles.careTipCard}>
-						<h3 className={styles.careTipTitle}>Care Tip</h3>
-						<p className={styles.careTipContent}>
-							{getCareTip(currentGoal?.id)}
+						<h1 className={styles.completionTitle}>Great job!</h1>
+						<p className={styles.completionDescription}>
+							You've successfully tracked all your goals. You can now view your
+							self-care journey.
 						</p>
+						<button
+							className={styles.journeyButton}
+							onClick={onNavigateToJourney}
+						>
+							View My Journey
+							<ArrowRight size={20} />
+						</button>
 					</div>
+				) : (
+					<>
+						<PageTitle
+							icon={trackingFeature.icon}
+							title={trackingFeature.title}
+							color={trackingFeature.color}
+						/>
 
-					{/* Next Goal Button */}
-					{allGoals.length > 1 && (
-						<div className={styles.nextGoalSection}>
-							<button
-								className={styles.nextGoalButton}
-								onClick={handleNextGoal}
-							>
-								Next
-								<ArrowRight size={20} />
-							</button>
-							<p className={styles.goalProgress}>
-								Goal {currentGoalIndex + 1} of {allGoals.length}
-							</p>
+						<div className={styles.hero}>
+							{/* Single Combined Card: Question + Rating + Notes */}
+							<div className={styles.trackingCard}>
+								{/* Question Section */}
+								<h2 className={styles.questionTitle}>
+									How is your{' '}
+									<span className={styles.goalHighlight}>
+										{currentGoal?.name || currentGoal?.title}
+									</span>{' '}
+									today?
+								</h2>
+
+								{/* Rating Scale */}
+								<div className={styles.ratingScale}>
+									{ratingScale.map((rating) => {
+										const IconComponent = rating.icon;
+										const isSelected = selectedRating === rating.value;
+
+										return (
+											<button
+												key={rating.value}
+												className={`${styles.ratingButton} ${
+													isSelected ? styles.ratingButtonSelected : ''
+												}`}
+												onClick={() => handleRatingSelect(rating.value)}
+												style={{
+													borderColor: isSelected ? rating.color : rating.color,
+													backgroundColor: isSelected
+														? `${rating.color}30`
+														: rating.bgColor,
+												}}
+											>
+												<IconComponent color={rating.color} />
+											</button>
+										);
+									})}
+								</div>
+
+								{/* Comment Section */}
+								<div className={styles.commentSection}>
+									<h3 className={styles.sectionTitle}>DIARY ENTRY</h3>
+									<h3 className={styles.sectionTitle}>
+										How are you feeling? Any challenges or successes to note
+										about{' '}
+										<span className={styles.goalHighlight}>
+											{currentGoal?.name || currentGoal?.title}
+										</span>
+										?
+									</h3>
+									<textarea
+										className={styles.commentTextarea}
+										value={comment}
+										onChange={(e) => setComment(e.target.value)}
+										rows={4}
+									/>
+
+									{/* Save Button */}
+									<div className={styles.saveSection}>
+										<button
+											className={`${styles.saveButton} ${
+												!selectedRating ? styles.saveButtonDisabled : ''
+											}`}
+											onClick={handleSave}
+											disabled={!selectedRating}
+										>
+											{isSaved ? (
+												<>
+													<CheckCircle size={20} />
+													Saved
+												</>
+											) : (
+												<>
+													<Save size={20} />
+													Save
+												</>
+											)}
+										</button>
+
+										{/* Save Confirmation */}
+										{showSaveConfirmation && (
+											<div className={styles.saveConfirmation}>
+												<CheckCircle size={16} />
+												It has been saved successfully!
+											</div>
+										)}
+									</div>
+								</div>
+							</div>
+
+							{/* Care Tip Card */}
+							<div className={styles.careTipCard}>
+								<h3 className={styles.careTipTitle}>Care Tip</h3>
+								<p className={styles.careTipContent}>
+									{getCareTip(currentGoal?.id)}
+								</p>
+							</div>
+
+							{/* Next Goal Button */}
+							{allGoals.length > 1 && (
+								<div className={styles.nextGoalSection}>
+									<button
+										className={styles.nextGoalButton}
+										onClick={handleNextGoal}
+									>
+										Next
+										<ArrowRight size={20} />
+									</button>
+									<p className={styles.goalProgress}>
+										Goal {currentGoalIndex + 1} of {allGoals.length}
+									</p>
+								</div>
+							)}
 						</div>
-					)}
-				</div>
+					</>
+				)}
 			</div>
 		</div>
 	);

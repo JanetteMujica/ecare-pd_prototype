@@ -19,7 +19,7 @@ const CafyIntroPage = ({ onStartGoals, onCancel, onUpdateGoalsViaList }) => {
 							className={styles.cancelButton}
 							aria-label='Cancel goal setting'
 						>
-							Cancel
+							Close
 						</button>
 					)}
 				</div>
@@ -41,25 +41,26 @@ const CafyIntroPage = ({ onStartGoals, onCancel, onUpdateGoalsViaList }) => {
 					>
 						{cafy.description}
 					</p>
-					<Button
-						onClick={onStartGoals}
-						size='large'
-						variant='primary'
-						ariaLabel='Start setting goals with CAFY'
-					>
-						{cafy.cta}
-					</Button>
-					{onUpdateGoalsViaList && (
-						<p
-							onClick={(e) => {
-								e.preventDefault();
-								onUpdateGoalsViaList();
-							}}
-							className={styles.linkButton}
+					<div className={styles.buttonGroup}>
+						<Button
+							onClick={onStartGoals}
+							size='large'
+							variant='primary'
+							ariaLabel='Start setting goals with CAFY'
 						>
-							Update goals via list
-						</p>
-					)}
+							{cafy.cta}
+						</Button>
+						{onUpdateGoalsViaList && (
+							<Button
+								onClick={onUpdateGoalsViaList}
+								size='large'
+								variant='primary'
+								ariaLabel='Select self-care goals with a list'
+							>
+								{cafy.cta2}
+							</Button>
+						)}
+					</div>
 				</div>
 			</div>
 		</div>

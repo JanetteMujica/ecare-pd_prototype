@@ -45,23 +45,23 @@ const GoalCard = ({
 						aria-label={`View info for ${name}`}
 						title='View Info'
 					>
-						<Info size={16} />
+						<Info size={25} />
 					</button>
-					<button
+					{/*	<button
 						onClick={handleUpdateClick}
 						className={styles.iconButton}
 						aria-label={`Update ${name}`}
 						title='Update Goal'
 					>
 						<RefreshCw size={16} />
-					</button>
+					</button> */}
 					<button
 						onClick={() => onDelete && onDelete(id)}
 						className={`${styles.iconButton} ${styles.deleteButton}`}
 						aria-label={`Delete ${name}`}
 						title='Delete Goal'
 					>
-						<Trash2 size={16} />
+						<Trash2 size={25} />
 					</button>
 				</div>
 			</div>

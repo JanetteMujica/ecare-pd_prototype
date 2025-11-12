@@ -138,7 +138,7 @@ const UpdateGoalsPage = ({ currentGoals = [], onUpdateGoals, onCancel }) => {
 							className={styles.cancelButton}
 							aria-label='Cancel goal update'
 						>
-							Cancel
+							Close
 						</button>
 					)}
 				</div>

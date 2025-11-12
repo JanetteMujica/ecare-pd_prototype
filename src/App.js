@@ -166,16 +166,15 @@ const App = () => {
 		setCameFromWelcome(false);
 	};
 
-	// UPDATED: Handle CAFY button click from navigation
+	// Handle CAFY button click from navigation - Navigate to welcome page
 	const handleCafyClick = () => {
 		console.log('CAFY button clicked from navigation');
-		// Instead of going directly to cafy-intro page, go to welcome page
-		// and set it to show the cafy-intro view
+		// Go to the full welcome page with all feature cards
 		setShowWelcome(true);
 		setCurrentPage('welcome');
 		setShowGoalSettingFlow(false);
-		setCameFromWelcome(true);
-		setWelcomeInitialView('cafy-intro'); // Start welcome page in cafy-intro view
+		setCameFromWelcome(false);
+		setWelcomeInitialView('welcome'); // Show the full welcome page
 	};
 
 	// UPDATED: Handle navigation - redirect to CAFY intro if no goals
@@ -429,6 +428,7 @@ const App = () => {
 							setCurrentGoalIndex(nextIndex);
 							setCurrentTrackedGoal(userGoals[nextIndex]);
 						}}
+						onNavigateToJourney={() => handleNavigate('journey')}
 					/>
 				);
 			case 'journey':

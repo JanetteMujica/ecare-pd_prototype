@@ -14,7 +14,7 @@ export const appFeatures = [
 		id: 'goals',
 		icon: ShipWheel,
 		title: 'Goals',
-		desc: 'Set simple goals that matter to you',
+		desc: 'Set your self-care goals',
 		color: colors.coral,
 		number: '1',
 		path: '/goals',
@@ -23,7 +23,7 @@ export const appFeatures = [
 		id: 'tracking',
 		icon: Telescope,
 		title: 'Tracking',
-		desc: 'Keep track of your care priorities',
+		desc: 'Keep track of your self-care',
 		color: colors.primary,
 		number: '2',
 		path: '/tracking',
@@ -65,15 +65,16 @@ export const appContent = {
 		description:
 			"Living with Parkinson's has its challenges, but you don't have to face them alone. eCARE-PD helps you stay active in your care, one step at a time. Together, we'll set goals, track your health, and offer support that's tailored to your experience.",
 		ctaText: 'Start today by focusing on what matters most to you',
-		cta: 'Begin Your Care Journey',
+		cta: 'Begin Your Self-Care Journey',
 	},
 
 	cafy: {
 		greeting:
-			"Hi, I'm CAFY — your assistant designed to help you navigate Parkinson's, one day at a time.",
+			"Hi, I'm CAFY ! I help you navigate Parkinson's, one day at a time.",
 		description:
-			"Because your Parkinson's journey is unique, my role is to guide you step by step in identifying what matters most to you, so you can set goals that support your well-being.",
-		cta: 'Start Setting Goals with CAFY',
+			"Your Parkinson's journey is unique, I can guide you in identifying what matters the most to you.",
+		cta: 'Set self-care goals with CAFY',
+		cta2: 'Select self-care goals with a list',
 	},
 };
 

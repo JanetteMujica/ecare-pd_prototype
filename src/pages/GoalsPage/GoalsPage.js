@@ -151,7 +151,7 @@ const GoalsPage = ({
 								<div className={styles.addGoalsText}>
 									<h3 className={styles.addGoalsTitle}>Add Goals</h3>
 									<p className={styles.addGoalsDescription}>
-										Update your health goals and track your progress
+										Update your self-care goals and track your journey
 									</p>
 								</div>
 							</div>
