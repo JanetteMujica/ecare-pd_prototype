@@ -35,6 +35,11 @@ const GoalSettingFlow = ({ onComplete, onCancel }) => {
 		console.log('Current flow:', currentFlow);
 		console.log('Current step index:', currentStepIndex);
 		console.log('Final selections:', finalSelections);
+		console.log('Progress:', {
+			currentQuestion: calculateCurrentQuestion(),
+			totalQuestions: calculateTotalQuestions(),
+			percentage: calculateProgress(),
+		});
 	}, [
 		currentStep,
 		selectedOptions,
@@ -48,16 +53,113 @@ const GoalSettingFlow = ({ onComplete, onCancel }) => {
 		scrollToTop();
 	}, [currentStep, currentStepIndex, showingAfterSelection]);
 
-	// Calculate progress
-	const calculateProgress = () => {
-		if (currentStep === 'initial') return 10;
-		if (currentStep === 'flow') {
-			const totalSteps = completedFlows.size + (currentFlow ? 1 : 0);
-			const maxFlows = Object.keys(flows).length;
-			return 10 + (totalSteps / maxFlows) * 80;
+	// Calculate total questions based on user selections
+	const calculateTotalQuestions = () => {
+		// Start with 1 for the initial question
+		let total = 1;
+
+		// Get selected main flows from initial selection
+		const selectedFlows = Object.keys(selectedOptions.initial || {}).filter(
+			(key) => selectedOptions.initial[key]
+		);
+
+		// For each selected flow
+		selectedFlows.forEach((flowOptionId) => {
+			const flowOption = initialDialogue.options.find(
+				(opt) => opt.id === flowOptionId
+			);
+			if (flowOption && flowOption.next_flow) {
+				const flowData = flows[flowOption.next_flow];
+				if (flowData && flowData.steps.length > 0) {
+					// Add 1 for the main category selection step (step 0)
+					total += 1;
+
+					// Check if this flow has been completed to count subcategories
+					const mainStepKey = `${flowOption.next_flow}_0`;
+					const selectedSubcategories = Object.keys(
+						selectedOptions[mainStepKey] || {}
+					).filter((key) => selectedOptions[mainStepKey][key]);
+
+					// Add 1 question for each selected subcategory
+					total += selectedSubcategories.length;
+				}
+			}
+		});
+
+		return total;
+	};
+
+	// Calculate current question number
+	const calculateCurrentQuestion = () => {
+		if (currentStep === 'initial') return 1;
+		if (currentStep === 'complete') return calculateTotalQuestions();
+
+		let questionNumber = 1; // Initial question
+
+		// Get selected flows in order
+		const selectedFlows = Object.keys(selectedOptions.initial || {}).filter(
+			(key) => selectedOptions.initial[key]
+		);
+
+		// Count questions from completed flows
+		completedFlows.forEach((completedFlowId) => {
+			const flowData = flows[completedFlowId];
+			if (flowData) {
+				// Add 1 for main step
+				questionNumber += 1;
+
+				// Add count of selected subcategories
+				const mainStepKey = `${completedFlowId}_0`;
+				const selectedSubcategories = Object.keys(
+					selectedOptions[mainStepKey] || {}
+				).filter((key) => selectedOptions[mainStepKey][key]);
+				questionNumber += selectedSubcategories.length;
+			}
+		});
+
+		// Add questions from current flow
+		if (currentFlow && currentStep === 'flow') {
+			const flowData = flows[currentFlow];
+			if (flowData) {
+				// If we're on step 0 (main category selection) or showing after selection message
+				if (currentStepIndex === 0 || showingAfterSelection) {
+					questionNumber += 1;
+				} else {
+					// We're on a detail step, so main step is done
+					questionNumber += 1;
+
+					// Count which subcategory detail step we're on
+					const mainStepKey = `${currentFlow}_0`;
+					const mainStepData = flowData.steps[0];
+					const selectedSubcategories = mainStepData.options.filter((opt) => {
+						const isSelected = selectedOptions[mainStepKey]?.[opt.id];
+						return isSelected && opt.next_step;
+					});
+
+					// Find which subcategory we're currently viewing
+					const currentSubcategoryIndex = selectedSubcategories.findIndex(
+						(subcat) => subcat.next_step === flowData.steps[currentStepIndex].id
+					);
+
+					if (currentSubcategoryIndex !== -1) {
+						questionNumber += currentSubcategoryIndex + 1;
+					}
+				}
+			}
 		}
+
+		return questionNumber;
+	};
+
+	// Calculate progress percentage
+	const calculateProgress = () => {
+		const total = calculateTotalQuestions();
+		const current = calculateCurrentQuestion();
+
+		if (total === 0) return 0;
 		if (currentStep === 'complete') return 100;
-		return 0;
+
+		return Math.min(100, Math.round((current / total) * 100));
 	};
 
 	const handleOptionSelect = (optionId, isMultiple = false) => {
@@ -589,7 +691,11 @@ const GoalSettingFlow = ({ onComplete, onCancel }) => {
 			<div className='progress-section'>
 				<div className='progress-container'>
 					<div className='progress-header'>
-						<span className='progress-text'>Goal Setting Progress</span>
+						<span className='progress-text'>
+							{currentStep === 'complete'
+								? 'Complete!'
+								: `Question ${calculateCurrentQuestion()} of ${calculateTotalQuestions()}`}
+						</span>
 						<span className='progress-text'>
 							{Math.round(calculateProgress())}%
 						</span>
