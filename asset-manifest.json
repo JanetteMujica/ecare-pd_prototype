@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ecare-pd_prototype/static/css/main.d28ee925.css",
-    "main.js": "/ecare-pd_prototype/static/js/main.cdcd5609.js",
+    "main.js": "/ecare-pd_prototype/static/js/main.6928da70.js",
     "static/media/FilsonProBlackItalic.otf": "/ecare-pd_prototype/static/media/FilsonProBlackItalic.6603ced6d767d04b008f.otf",
     "static/media/FilsonProMediumItalic.otf": "/ecare-pd_prototype/static/media/FilsonProMediumItalic.521f17964a81ae6d36b6.otf",
     "static/media/FilsonProBoldItalic.otf": "/ecare-pd_prototype/static/media/FilsonProBoldItalic.d49c98267ddaaefd8705.otf",
@@ -22,10 +22,10 @@
     "static/media/cafy_logo.svg": "/ecare-pd_prototype/static/media/cafy_logo.ff6170f1cdf1297d0d121e36cb9889bc.svg",
     "index.html": "/ecare-pd_prototype/index.html",
     "main.d28ee925.css.map": "/ecare-pd_prototype/static/css/main.d28ee925.css.map",
-    "main.cdcd5609.js.map": "/ecare-pd_prototype/static/js/main.cdcd5609.js.map"
+    "main.6928da70.js.map": "/ecare-pd_prototype/static/js/main.6928da70.js.map"
   },
   "entrypoints": [
     "static/css/main.d28ee925.css",
-    "static/js/main.cdcd5609.js"
+    "static/js/main.6928da70.js"
   ]
 }
