@@ -3,7 +3,7 @@
 		"initial_dialogue": {
 			"id": "initial",
 			"title": "Ship Free ! Let's explore what matters most to you.",
-			"message": "Everyone's experience with Parkinson's is different. It can affect your body, your mood, your energy — and your everyday life. Let's start with a few simple statements to explore what matters most to you right now. Choose the ones you'd like to focus on. ",
+			"message": "What would you like to focus on today? ",
 			"question_type": "multiple_choice",
 			"allow_multiple": true,
 			"options": [
@@ -66,8 +66,8 @@
 				"steps": [
 					{
 						"id": "physical_main",
-						"message": "You've chosen to focus on your physical symptoms and body changes. Let's take a closer look at what's been affecting you most. Which of these areas would you like to pay more attention to right now?",
-						"message_after_selection": "Thanks — let's take a closer look at [selected_areas_name], and set a goal to help you feel more comfortable and supported day by day.",
+						"message": "Which of these areas would you like to pay more attention to right now?",
+						"message_after_selection": "Let's take a closer look at [selected_areas_name].",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
@@ -111,14 +111,14 @@
 					},
 					{
 						"id": "moving_walking_details",
-						"message": "Many people with Parkinson's notice changes in how they walk or move — like slowness, freezing, or trouble keeping their balance. To better support your mobility, I'd like to ask a few simple questions.",
+						"message": "To better support your mobility, what have you noticed?",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
 							{
 								"id": "tremor",
 								"name": "Tremor",
-								"text": "Do you experience any shaking or tremors? ",
+								"text": "I experience shaking or tremors. ",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Tremors are involuntary, rhythmic muscle movements that commonly affect the hands, arms, or legs. In Parkinson's, they often occur at rest or with action and may lessen during voluntary movement or sleep.",
@@ -186,7 +186,7 @@
 							{
 								"id": "bradykinesia",
 								"name": "Slow Movement (Bradykinesia)",
-								"text": "Are your movements slower than they used to be?",
+								"text": "My movements are slower than they used to be.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Slowness of movement, or bradykinesia, is a core motor symptom in Parkinson's disease. It is characterized by reduced movement speed and amplitude, commonly with hands or legs, making everyday tasks more effortful and less automatic.",
@@ -254,7 +254,7 @@
 							{
 								"id": "balance",
 								"name": "Balance",
-								"text": "Do you sometimes feel unsteady or afraid of falling?",
+								"text": "I sometimes feel unsteady or afraid of falling.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Balance challenges are common in Parkinson's disease due to changes in the body's ability to coordinate posture and automatic reactions. These issues may increase fall risk and impact confidence during standing and walking.",
@@ -322,7 +322,7 @@
 							{
 								"id": "freezing",
 								"name": "Gait Freezing",
-								"text": "Have you had moments where your feet feel \"stuck\" or frozen when you try to start walking?",
+								"text": "I have moments where my feet feel stuck or frozen when I try to start walking.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Freezing of gait is a common motor symptom in Parkinson's disease that involves a sudden, temporary inability to move the feet forward while walking, thus feeling \"stuck\". It often occurs when initiating movement, turning, or navigating through narrow spaces.",
@@ -391,7 +391,7 @@
 					},
 					{
 						"id": "body_reactions_details",
-						"message": "People with Parkinson's can feel different kinds of discomfort — sometimes it's pain, sometimes it's other changes that affect your body and sensations. Which of these symptoms has been the most bothersome for you lately?",
+						"message": "Which of these symptoms has been the most bothersome for you lately?",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
@@ -671,14 +671,14 @@
 					},
 					{
 						"id": "saliva_control_details",
-						"message": "Some people with Parkinson's notice more saliva in their mouth or trouble swallowing—especially at night or during meals. Have you noticed any of the following?",
+						"message": "Have you noticed any of the following?",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
 							{
 								"id": "drooling",
 								"name": "Drooling",
-								"text": "Do you feel like you have too much saliva in your mouth?",
+								"text": "I feel like I have too much saliva in my mouth.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Drooling in Parkinson's disease occurs due to reduced swallowing frequency and weakened facial muscles, leading to saliva accumulation in the mouth. It can happen during sleep, eating, or while concentrating on tasks.",
@@ -746,7 +746,7 @@
 							{
 								"id": "swallowing_problems",
 								"name": "Swallowing Problems",
-								"text": "Do you ever find it difficult to chew or swallow food or drinks?",
+								"text": "I sometimes find it difficult to chew or swallow food or drinks.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Swallowing problems, or dysphagia, in Parkinson's disease occur due to changes in muscle coordination and timing needed for safe swallowing. It can increase risk of choking or aspiration and may affect nutrition and hydration.",
@@ -815,14 +815,14 @@
 					},
 					{
 						"id": "bowel_bladder_details",
-						"message": "Parkinson's can slow down how your gut and bladder work. This might lead to constipation or more frequent trips to the bathroom, especially at night. These changes can affect your comfort and your sleep. Can you tell me which of these has been more of a problem for you lately?",
+						"message": "What has been more of a problem for you lately?",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
 							{
 								"id": "constipation",
 								"name": "Constipation",
-								"text": "Constipation - Do you often feel bloated or have trouble passing stool?",
+								"text": "I often feel bloated or have trouble passing stool.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Constipation in Parkinson's disease results from slowed gut motility due to reduced dopamine activity in the intestinal nervous system. It can occur years before motor symptoms appear and may worsen with certain medications.",
@@ -890,7 +890,7 @@
 							{
 								"id": "urinary_issues",
 								"name": "Urinary Issues",
-								"text": "Urinary Issues — Do you need to pee often, especially at night, or feel like your bladder doesn't empty fully?",
+								"text": "I need to pee often, especially at night, or feel like my bladder doesn't empty fully.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Urinary issues in Parkinson's disease can include urgency, frequency, nocturia (waking at night to urinate), incomplete emptying, and difficulty initiating urination. These problems stem from changes in the nervous system control of bladder function.",
@@ -959,14 +959,14 @@
 					},
 					{
 						"id": "sleep_fatigue_details",
-						"message": "Parkinson's can affect both your sleep and your energy during the day. You might find it harder to fall or stay asleep, feel very tired even after resting, or notice strange sensations in your legs at night. Which of these feels most important to you right now?",
+						"message": "Which of these feels most important to you right now?",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
 							{
 								"id": "insomnia",
 								"name": "Insomnia",
-								"text": "Insomnia — Do you often wake up at night or struggle to fall asleep?",
+								"text": "Insomnia — I often wake up at night or struggle to fall asleep.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Insomnia in Parkinson's disease involves difficulty falling asleep, staying asleep, or waking too early. It can be caused by motor symptoms, medication effects, anxiety, depression, or changes in sleep architecture.",
@@ -1034,7 +1034,7 @@
 							{
 								"id": "daytime_sleepiness",
 								"name": "Daytime Sleepiness",
-								"text": "Daytime Sleepiness — Do you feel drowsy during the day or fall asleep without meaning to?",
+								"text": "Daytime Sleepiness — I feel drowsy during the day or fall asleep without meaning to.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Excessive daytime sleepiness in Parkinson's disease involves feeling drowsy during normal waking hours or experiencing sudden sleep attacks. It can be caused by poor nighttime sleep, medications (especially dopamine agonists), or disease-related changes in sleep-wake cycles.",
@@ -1102,7 +1102,7 @@
 							{
 								"id": "fatigue",
 								"name": "Fatigue",
-								"text": "Fatigue — Do you feel deeply tired or worn out, even after resting?",
+								"text": "Fatigue — I feel deeply tired or worn out, even after resting.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Fatigue in Parkinson's disease is a persistent feeling of tiredness or exhaustion that doesn't improve with rest. It can be physical, mental, or both, and may result from the disease process itself, sleep disturbances, depression, or medications.",
@@ -1170,7 +1170,7 @@
 							{
 								"id": "restless_legs",
 								"name": "Restless Legs",
-								"text": "Restless Legs — Do you feel a need to move your legs at night, or get uncomfortable sensations when lying down?",
+								"text": "Restless Legs — I feel a need to move my legs at night or get uncomfortable sensations when lying down.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Restless legs syndrome (RLS) in Parkinson's involves uncomfortable sensations in the legs that create an irresistible urge to move them, typically worse in the evening or at night. It can be related to the Parkinson's disease process or medications.",
@@ -1239,14 +1239,14 @@
 					},
 					{
 						"id": "sensory_voice_details",
-						"message": "I've got a few quick questions to help you figure out which sensory change matters most right now:",
+						"message": "Which sensory changes matter most right now?",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
 							{
 								"id": "vision_disturbances",
 								"name": "Vision Disturbances",
-								"text": "Do you find your vision blurry, see double, or notice your eyes feel dry when you read?",
+								"text": "I find my vision blurry, see double, or notice my eyes feel dry when I read.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Vision disturbances in Parkinson's disease can include dry eyes, blurred or double vision, difficulty reading, problems with eye movement, and reduced blink rate. These may result from medication effects or changes in the nervous system control of eye muscles.",
@@ -1314,7 +1314,7 @@
 							{
 								"id": "loss_of_smell",
 								"name": "Loss of Smell",
-								"text": "Have scents you used to enjoy becoming fainter or disappeared?",
+								"text": "Scents I used to enjoy have become fainter or disappeared.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Loss of smell, or hyposmia/anosmia, is one of the earliest non-motor symptoms of Parkinson's disease, affecting up to 95% of people with the condition. It occurs due to alpha-synuclein deposits in the olfactory system and often appears years before motor symptoms.",
@@ -1382,7 +1382,7 @@
 							{
 								"id": "taste_loss",
 								"name": "Loss of Taste",
-								"text": "Do foods taste dull or lack their usual flavor?",
+								"text": "Foods taste dull or lack their usual flavor to me.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Loss of taste, or hypogeusia/ageusia, in Parkinson's disease is often secondary to loss of smell, since smell contributes significantly to flavor perception. It can also result from dry mouth, medication side effects, or changes in taste bud function.",
@@ -1450,7 +1450,7 @@
 							{
 								"id": "sensory_changes",
 								"name": "Sensory Changes (Numbness, Tingling)",
-								"text": "Are you experiencing odd sensations—like tingling, burning, or numb spots in your body?",
+								"text": "I experience odd sensations like tingling, burning, or numb spots in my body.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Sensory changes in Parkinson's disease can include numbness, tingling, burning, or other unusual sensations, particularly in the hands and feet. These may result from the disease process itself, medication effects, or secondary conditions.",
@@ -1518,7 +1518,7 @@
 							{
 								"id": "speech_problems",
 								"name": "Speech Problems",
-								"text": "Does your voice feel weak or faint when you speak, making it hard for others to hear you?",
+								"text": "My voice feels weak or faint when I speak, making it hard for others to hear me.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Speech problems in Parkinson's disease include reduced voice volume (hypophonia), monotone speech, mumbling, rapid speech, or difficulty articulating words clearly. These result from changes in muscle control and coordination of the vocal cords, tongue, and breathing.",
@@ -1593,35 +1593,35 @@
 				"steps": [
 					{
 						"id": "lifestyle_main",
-						"message": "Staying active is a powerful way to care for yourself — whether that means moving, connecting with others, or doing what brings you joy. Where would you like to focus attention right now?",
-						"message_after_selection": "Thanks — let's take a closer look at [selected_areas_name], and set a goal to help you feel more comfortable and supported day by day.",
+						"message": "Where would you like to focus attention right now?",
+						"message_after_selection": "Lt's take a closer look at [selected_areas_name].",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
 							{
 								"id": "staying_active",
 								"name": "Staying Active",
-								"text": "Staying active — like doing exercises, walking, stretching, or doing hobbies that keep your body and mind engaged. ",
+								"text": "Staying active — like doing exercises, walking, stretching, or doing hobbies that keep my body and mind engaged. ",
 								"next_step": "staying_active_details"
 							},
 							{
 								"id": "social_relationships",
 								"name": "Social Relationships",
-								"text": "Taking care of your social life & relationships — maintaining bonds, sharing moments with others, and staying socially and emotionally engaged. ",
+								"text": "Taking care of my social life & relationships — maintaining bonds, sharing moments with others, and staying socially and emotionally engaged. ",
 								"next_step": "social_relationships_details"
 							}
 						]
 					},
 					{
 						"id": "staying_active_details",
-						"message": "Staying active is one of your best tools against Parkinson's. Which sounds most motivating right now?",
+						"message": "What sounds most motivating right now?",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
 							{
 								"id": "physical_activity",
 								"name": "Physical activity (Movement & Exercise)",
-								"text": "Would you like to be more active by walking, stretching, or doing other kinds of exercise?",
+								"text": "I would like to be more active by walking, stretching, or doing other kinds of exercise.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Physical activity and exercise are crucial for managing Parkinson's symptoms and slowing disease progression. Regular movement can improve balance, flexibility, strength, mood, and overall quality of life while potentially providing neuroprotective benefits.",
@@ -1689,7 +1689,7 @@
 							{
 								"id": "hobbies",
 								"name": "Hobbies",
-								"text": "Would you like to spend more time on a hobby or activity you enjoy?",
+								"text": "I would like to spend more time on a hobby or activity I enjoy.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Engaging in hobbies and meaningful activities provides cognitive stimulation, emotional satisfaction, and social connection. For people with Parkinson's, hobbies can help maintain fine motor skills, provide purpose, and improve overall well-being and quality of life.",
@@ -1758,14 +1758,14 @@
 					},
 					{
 						"id": "social_relationships_details",
-						"message": "Whether it's spending time with loved ones, planning a small outing, or staying emotionally close to someone who matters — taking care of your relationships is part of taking care of yourself. Here are some common areas where people need support. Just let me know what feels most relevant for you right now.",
+						"message": "What feels more relevant for your right now?",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
 							{
 								"id": "living_connected",
 								"name": "Living connected",
-								"text": "Is staying socially connected important to you right now? ",
+								"text": "Staying socially connected is important to me right now.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Maintaining social connections is vital for emotional well-being and cognitive health in Parkinson's disease. Social engagement can reduce depression, provide emotional support, maintain communication skills, and improve overall quality of life.",
@@ -1833,7 +1833,7 @@
 							{
 								"id": "leisure",
 								"name": "Leisure",
-								"text": "Would you like help planning social activities, vacations or going out more often?",
+								"text": "I would like help planning social activities, vacations, or going out more often",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Leisure activities and outings provide opportunities for enjoyment, social interaction, and maintaining independence. They can help combat isolation, provide mental stimulation, and create positive experiences that improve mood and overall quality of life.",
@@ -1901,7 +1901,7 @@
 							{
 								"id": "respite",
 								"name": "Caregiver Respite",
-								"text": "Are you looking for ways to support your caregivers or make family life feel more balanced?",
+								"text": "I am looking for ways to support my caregivers or make family life feel more balanced.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Caregiver respite involves providing support and relief for family members or caregivers, ensuring they have time for self-care and preventing burnout. This benefits both caregivers and people with Parkinson's by maintaining healthy, sustainable care relationships.",
@@ -1969,7 +1969,7 @@
 							{
 								"id": "intimacy",
 								"name": "Intimacy",
-								"text": "Would you like help understanding how Parkinson's may affect your intimacy or emotional closeness?",
+								"text": "I would like help understanding how Parkinson's may affect my intimacy or emotional closeness.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Intimacy in Parkinson's disease can be affected by physical symptoms, medication side effects, body image concerns, and emotional changes. Addressing intimacy issues involves open communication, adaptive strategies, and sometimes medical interventions to maintain close relationships.",
@@ -2044,8 +2044,8 @@
 				"steps": [
 					{
 						"id": "mental_health_main",
-						"message": "People with Parkinson could notice some changes in their mood, memory, or perception. Being aware of these changes is a way to take care of yourself. Let's take a moment to better understand what you've been going through. Which of these areas would you like to focus on first?",
-						"message_after_selection": "Thanks — let's take a closer look at [selected_areas_name], and set a goal to help you feel more comfortable and supported day by day.",
+						"message": "Which of these areas would you like to focus on first?",
+						"message_after_selection": "Let's take a closer look at [selected_areas_name].",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
@@ -2071,14 +2071,14 @@
 					},
 					{
 						"id": "emotional_behavioral_details",
-						"message": "Changes in how you feel are common with Parkinson's, and you're not alone. Let's take a closer look at what's been affecting you most lately. Which of these has felt most present or difficult for you recently?",
+						"message": "What feels most present or difficult for you?",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
 							{
 								"id": "panic_attack",
 								"name": "Anxiety or Panick Attack",
-								"text": "Anxiety or Panick Attack  - Have you recently felt sudden fear or anxiety that caused physical reactions, like a racing heart or shortness of breath?",
+								"text": "Anxiety or Panick Attack  - I have recently felt sudden fear or anxiety that caused physical reactions, like a racing heart or shortness of breath.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Anxiety and panic attacks in Parkinson's disease involve intense fear, worry, or physical symptoms like racing heart, shortness of breath, and sweating. They can be related to medication fluctuations, fear about symptoms, or changes in brain chemistry.",
@@ -2146,7 +2146,7 @@
 							{
 								"id": "impulsive_behavior",
 								"name": "Impulsive Bhavior",
-								"text": "Impulsive Behavior - Have you noticed urges that feel hard to control—like overspending, overeating?",
+								"text": "Impulsive Behavior - I have urges that feel hard to control, like overspending or overeating.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Impulsive behavior in Parkinson's disease can include compulsive shopping, gambling, eating, sexual behavior, or medication use. These are often side effects of dopamine replacement therapies and can significantly impact relationships and finances.",
@@ -2214,7 +2214,7 @@
 							{
 								"id": "emotional_changes",
 								"name": "Emotional Changes (Depression)",
-								"text": "Emotional Changes (Depression) - Have you been feeling down or less motivated than usual lately? ",
+								"text": "Emotional Changes (Depression) - I have been feeling down or less motivated than usual lately.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Depression in Parkinson's disease involves persistent sadness, loss of interest in activities, fatigue, and feelings of hopelessness. It can be caused by brain changes from the disease itself, reaction to diagnosis, or as a side effect of some medications.",
@@ -2283,14 +2283,14 @@
 					},
 					{
 						"id": "memory_focus_details",
-						"message": "You might notice that daily tasks and new information are difficult to remember. These changes can creep in slowly, so it helps to name them. Have you noticed any of these?",
+						"message": "Have you noticed any of these?",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
 							{
 								"id": "forgetfulness",
 								"name": "Forgetfulness",
-								"text": "Have you been forgetting things more often, like names, appointments, or steps in a task you usually do with ease?",
+								"text": "I am forgetting things more often, like names, appointments, or steps in a task I usually do with ease.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Forgetfulness in Parkinson's disease can involve difficulty remembering names, appointments, or task sequences. While not everyone with Parkinson's experiences significant memory problems, some may have mild cognitive changes that affect daily functioning.",
@@ -2358,7 +2358,7 @@
 							{
 								"id": "mental_overload ",
 								"name": "Mental Overload",
-								"text": "Do you feel overwhelmed or find it hard to focus when there's a lot going on, or when decisions need to be made?",
+								"text": "I feel overwhelmed or find it hard to focus when there's a lot going on, or when decisions need to be made.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Mental overload in Parkinson's disease occurs when cognitive demands exceed processing capacity, leading to feeling overwhelmed, difficulty concentrating, or problems with multitasking. This can happen due to reduced cognitive flexibility and executive function changes.",
@@ -2426,7 +2426,7 @@
 							{
 								"id": "brain_fog",
 								"name": "Brain Fog",
-								"text": "Have you noticed it takes more time to understand or respond to things, or that judging distances or space feels harder?",
+								"text": "It takes more time to understand or respond to things, or that judging distances or space feels harder.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Brain fog in Parkinson's disease involves feeling mentally cloudy, having slower thinking, difficulty concentrating, or problems with spatial judgment. It can result from the disease itself, medications, sleep problems, or mood changes.",
@@ -2495,7 +2495,7 @@
 					},
 					{
 						"id": "perceptions_details",
-						"message": "Sometimes, Parkinson's can cause us to not be aware of things we see or hear. Do you experience any of the following:",
+						"message": "Do you experience any of the following:",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
@@ -2713,15 +2713,15 @@
 				"steps": [
 					{
 						"id": "medication_main",
-						"message": "Managing Parkinson's every day starts with your medication routine. When you take your medication at the right time and dose, you give yourself the best chance to reduce \"off\" periods and feel more in control throughout your day. But managing symptoms it's also about understanding how your body reacts. Would you like to:",
-						"message_after_selection": "Thanks — let's take a closer look at [selected_areas_name], and set a goal to help you feel more comfortable and supported day by day.",
+						"message": "What would you like to focus on?",
+						"message_after_selection": "Let's take a closer look at [selected_areas_name].",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
 							{
 								"id": "medication_adherence",
 								"name": "Medication Adherence",
-								"text": "Build a strong medication routine",
+								"text": "Building a strong medication routine",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Medication adherence involves taking Parkinson's medications exactly as prescribed, at the right times and doses. Consistent adherence is crucial for maintaining stable symptom control and preventing motor fluctuations throughout the day.",
@@ -2789,7 +2789,7 @@
 							{
 								"id": "side_effects",
 								"name": "Side Effects Awareness ",
-								"text": "Record side effects or something unusual you've noticed",
+								"text": "Recording side effects or something unusual I've noticed",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Side effects awareness involves recognizing and monitoring potential adverse reactions to Parkinson's medications, including nausea, dizziness, hallucinations, impulse control disorders, and motor complications like dyskinesias.",
@@ -2864,35 +2864,35 @@
 				"steps": [
 					{
 						"id": "wellbeing_main",
-						"message": "Managing your home life, meals, and daily routines can take effort — but small changes can make a big difference. Let's take a closer look at what might help you most right now. Where would you like to focus your attention?",
-						"message_after_selection": "Thanks — let's take a closer look at [selected_areas_name], and set a goal to help you feel more comfortable and supported day by day.",
+						"message": "Where would you like to focus your attention?",
+						"message_after_selection": "Let's take a closer look at [selected_areas_name].",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
 							{
 								"id": "weight_nutrition",
 								"name": "Weight & Nutrition",
-								"text": "Would support with meals or diet be helpful to you right now?",
+								"text": "I would like diet advice or support with meals.",
 								"next_step": "weight_nutrition_details"
 							},
 							{
 								"id": "daily_tasks",
 								"name": "Daily Tasks & Reorganizing Space",
-								"text": "Would you like help making daily tasks easier or finding simple ways to feel safer and more independent at home?",
+								"text": "I would like help making daily tasks easier or finding simple ways to feel safer and more independent at home.",
 								"next_step": "daily_tasks_details"
 							}
 						]
 					},
 					{
 						"id": "weight_nutrition_details",
-						"message": "What you eat — and how your body responds — can really affect how you feel day to day. Let's see where you'd like support.",
+						"message": "Where would you like support?",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
 							{
 								"id": "weight",
 								"name": "Weight",
-								"text": "Do you want to better manage weight loss or gain linked to Parkinson's?",
+								"text": "I want to better manage my weight, whether I'm losing or gaining, due to Parkinson's.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Weight changes in Parkinson's disease can include unintended weight loss due to increased energy needs, swallowing difficulties, or medication effects, or weight gain from reduced activity or certain medications.",
@@ -2960,7 +2960,7 @@
 							{
 								"id": "nutrition",
 								"name": "Nutrition",
-								"text": "Would you like to improve digestion, energy, or balanced meals?",
+								"text": "I want to improve my digestion, energy, and maintain balanced meals.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Proper nutrition in Parkinson's disease involves maintaining balanced meals that support medication absorption, provide adequate protein and fiber, address swallowing difficulties, and support overall health and energy levels.",
@@ -3029,14 +3029,14 @@
 					},
 					{
 						"id": "daily_tasks_details",
-						"message": "Everyday activities — like getting dressed, cooking, or moving safely around your home — can take extra effort with Parkinson's. Let's see where you need support.",
+						"message": "Where do you need support?",
 						"question_type": "multiple_choice",
 						"allow_multiple": true,
 						"options": [
 							{
 								"id": "daily_living",
 								"name": "Empowering Daily Life",
-								"text": "Would you like help making daily routines easier and more manageable?",
+								"text": "I would like help making my daily routines easier and more manageable.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Empowering daily life involves developing strategies and using adaptive tools to make everyday activities like dressing, cooking, cleaning, and personal care easier and more manageable despite Parkinson's symptoms.",
@@ -3104,7 +3104,7 @@
 							{
 								"id": "physical_safety",
 								"name": "Enhancing Physical Safety",
-								"text": "Would you feel more secure if you had support for balance, falls, or home safety?",
+								"text": "I would like support to feel more secure with balance, falls, and home safety.",
 								"goal_setting": true,
 								"definition": "definition",
 								"short_description": "Enhancing physical safety involves modifying the home environment, using assistive devices, and developing strategies to prevent falls and injuries while maintaining independence and mobility in daily activities.",
