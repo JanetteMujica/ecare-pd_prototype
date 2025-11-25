@@ -1,4 +1,10 @@
 /* FeatureCard Component Styles - Mobile-First Responsive Design */
+/* Simplified breakpoints: base (mobile), 820px (tablet), 1180px (laptop), 1440px (desktop) */
+
+/* ============================================
+   BASE STYLES (Mobile < 820px)
+   ============================================ */
+
 .card {
 	background-color: white;
 	border-radius: var(--border-radius-lg);
@@ -15,7 +21,7 @@
 	display: flex;
 	align-items: center;
 	gap: var(--spacing-sm);
-	padding: var(--spacing-md);
+	/*padding: var(--spacing-md);*/
 	flex-direction: row;
 }
 
@@ -24,7 +30,7 @@
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
-	padding: var(--spacing-md);
+	/*padding: var(--spacing-md);*/
 	gap: var(--spacing-sm);
 }
 
@@ -113,7 +119,7 @@
 	color: var(--color-text-primary);
 }
 
-/* Small Mobile (320px-480px) */
+/* Small Mobile optimizations (< 480px) */
 @media (max-width: 480px) {
 	.card {
 		border-radius: var(--border-radius-md);
@@ -149,8 +155,19 @@
 	}
 }
 
-/* Tablet (481px-1023px) */
-@media (min-width: 481px) and (max-width: 1023px) {
+/* Flexbox Grid Support for Card Containers - Mobile */
+.cardGrid {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-md);
+	width: 100%;
+}
+
+/* ============================================
+   TABLET (820px+)
+   ============================================ */
+
+@media (min-width: 820px) {
 	.vertical,
 	.horizontal {
 		padding: var(--spacing-lg);
@@ -179,13 +196,28 @@
 	.headerContainer {
 		gap: var(--spacing-md);
 	}
+
+	/* Flexbox Grid Support */
+	.cardGrid {
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: var(--spacing-lg);
+	}
+
+	.cardGrid .card {
+		flex: 1;
+		min-width: 280px;
+	}
 }
 
-/* Desktop (1024px+) */
-@media (min-width: 1024px) {
+/* ============================================
+   LAPTOP (1180px+)
+   ============================================ */
+
+@media (min-width: 1180px) {
 	.vertical,
 	.horizontal {
-		padding: var(--spacing-xl);
+		padding: var(--spacing-sm);
 		gap: var(--spacing-lg);
 	}
 
@@ -212,10 +244,22 @@
 	.headerContainer {
 		gap: var(--spacing-lg);
 	}
+
+	/* Flexbox Grid Support */
+	.cardGrid {
+		gap: var(--spacing-xl);
+	}
+
+	.cardGrid .card {
+		min-width: 320px;
+	}
 }
 
-/* Large Desktop (1280px+) */
-@media (min-width: 1280px) {
+/* ============================================
+   DESKTOP (1440px+)
+   ============================================ */
+
+@media (min-width: 1440px) {
 	.vertical,
 	.horizontal {
 		padding: var(--spacing-2xl);
@@ -244,56 +288,29 @@
 	.headerContainer {
 		gap: var(--spacing-xl);
 	}
-}
 
-/* Extra Large Desktop (1536px+) */
-@media (min-width: 1536px) {
-	.iconContainer {
-		width: 5rem;
-		height: 5rem;
-	}
+	/* Extra large screens */
+	@media (min-width: 1600px) {
+		.iconContainer {
+			width: 5rem;
+			height: 5rem;
+		}
 
-	.title {
-		font-size: var(--font-size-3xl);
-	}
+		.title {
+			font-size: var(--font-size-3xl);
+		}
 
-	.description {
-		font-size: var(--font-size-2xl);
-	}
-}
-
-/* Flexbox Grid Support for Card Containers */
-.cardGrid {
-	display: flex;
-	flex-direction: column;
-	gap: var(--spacing-md);
-	width: 100%;
-}
-
-@media (min-width: 481px) {
-	.cardGrid {
-		flex-direction: row;
-		flex-wrap: wrap;
-		gap: var(--spacing-lg);
-	}
-
-	.cardGrid .card {
-		flex: 1;
-		min-width: 280px;
+		.description {
+			font-size: var(--font-size-2xl);
+		}
 	}
 }
 
-@media (min-width: 1024px) {
-	.cardGrid {
-		gap: var(--spacing-xl);
-	}
+/* ============================================
+   ACCESSIBILITY & PREFERENCES
+   ============================================ */
 
-	.cardGrid .card {
-		min-width: 320px;
-	}
-}
-
-/* High contrast mode support */
+/* High contrast mode */
 @media (prefers-contrast: high) {
 	.card {
 		border-width: 3px;
@@ -307,7 +324,7 @@
 	}
 }
 
-/* Reduced motion support */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
 	.card,
 	.interactive {

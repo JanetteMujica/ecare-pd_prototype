@@ -24,6 +24,7 @@
 	--color-border-medium: #d1d5db;
 
 	/* Spacing - Mobile First Responsive */
+	--spacing-xxs: 0rem;
 	--spacing-xs: 0.25rem; /* 4px */
 	--spacing-sm: 0.5rem; /* 8px */
 	--spacing-md: 1rem; /* 16px */
@@ -33,7 +34,7 @@
 	--spacing-3xl: 4rem; /* 64px */
 	--spacing-4xl: 5rem; /* 80px */
 	--spacing-5xl: 6rem; /* 96px */
-	
+
 	/* Container max widths */
 	--container-sm: 100%;
 	--container-md: 768px;
@@ -52,7 +53,7 @@
 	--font-size-4xl: 2.25rem; /* 36px */
 	--font-size-5xl: 3rem; /* 48px */
 	--font-size-6xl: 3.75rem; /* 60px */
-	
+
 	/* Responsive Typography Scale Variables */
 	--font-scale-mobile: 1;
 	--font-scale-tablet: 1.125;

@@ -1,4 +1,11 @@
 /* Logo Placeholder Styles - Mobile-First Responsive Design */
+/* Simplified breakpoints: base (mobile), 820px (tablet), 1180px (laptop), 1440px (desktop) */
+/* Larger sizes throughout for better visibility and accessibility */
+
+/* ============================================
+   BASE STYLES (Mobile < 820px)
+   ============================================ */
+
 .placeholder {
 	background-color: var(--color-border-light);
 	display: flex;
@@ -13,7 +20,6 @@
 	border-color: var(--color-text-muted);
 }
 
-/* Real Logo Container */
 .logoContainer {
 	display: flex;
 	align-items: center;
@@ -42,32 +48,6 @@
 	border-radius: var(--border-radius-full);
 }
 
-/* Sizes */
-.small {
-	width: 3rem;
-	height: 3rem;
-}
-
-.medium {
-	width: 5rem;
-	height: 5rem;
-}
-
-.large {
-	width: 7rem;
-	height: 7rem;
-}
-
-.xlarge {
-	width: 9rem;
-	height: 9rem;
-}
-
-.xxlarge {
-	width: 12rem;
-	height: 12rem;
-}
-
 /* Text for placeholders */
 .text {
 	color: var(--color-text-muted);
@@ -79,107 +59,196 @@
 	padding: var(--spacing-xs);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-	.text {
-		font-size: 0.625rem;
-	}
+/* ============================================
+   SIZES - BASE (Mobile)
+   Increased from original for better visibility
+   ============================================ */
+
+/* Circular sizes */
+.small {
+	width: 3.5rem; /* 56px - meets accessibility minimum */
 }
 
-/* Rectangular specific sizing */
+.medium {
+	width: 6rem; /* 96px - larger for better visibility */
+}
+
+.large {
+	width: 8.5rem; /* 136px */
+}
+
+.xlarge {
+	width: 11rem; /* 176px */
+}
+
+.xxlarge {
+	width: 14rem; /* 224px */
+}
+
+/* Rectangular sizes (wider aspect ratio) */
 .rectangular.small {
-	width: 4rem;
-	height: 3rem;
+	width: 4.5rem; /* 72px */
 }
 
 .rectangular.medium {
-	width: 6rem;
-	height: 4.5rem;
+	width: 7.5rem; /* 120px */
 }
 
 .rectangular.large {
-	width: 8rem;
-	height: 6rem;
+	width: 10.5rem; /* 168px */
 }
 
 .rectangular.xlarge {
-	width: 10rem;
-	height: 7.5rem;
+	width: 13.5rem; /* 216px */
 }
 
 .rectangular.xxlarge {
-	width: 14rem;
-	height: 10rem;
+	width: 17.5rem; /* 280px */
 }
 
-/* Tablet responsiveness */
-@media (min-width: 768px) and (max-width: 1023px) {
+/* ============================================
+   TABLET (820px+)
+   ============================================ */
+
+@media (min-width: 820px) {
+	.text {
+		font-size: var(--font-size-sm);
+	}
+
+	/* Circular sizes */
 	.medium {
-		width: 6rem;
-		height: 6rem;
+		width: 7rem;
 	}
 
-	.large {
-		width: 8rem;
-		height: 8rem;
-	}
-
-	.xlarge {
-		width: 10rem;
-		height: 10rem;
-	}
-}
-
-/* Desktop responsiveness */
-@media (min-width: 1024px) {
-	.medium {
-		width: 6rem;
-		height: 6rem;
-	}
-
-	.large {
-		width: 9rem;
-		height: 9rem;
-	}
-
-	.xlarge {
-		width: 11rem;
-		height: 11rem;
-	}
-
-	.xxlarge {
-		width: 14rem;
-		height: 14rem;
-	}
-}
-
-/* Large screen adjustments */
-@media (min-width: 1280px) {
 	.large {
 		width: 10rem;
-		height: 10rem;
 	}
 
 	.xlarge {
 		width: 13rem;
-		height: 13rem;
 	}
 
 	.xxlarge {
 		width: 16rem;
-		height: 16rem;
+	}
+
+	/* Rectangular sizes */
+	.rectangular.medium {
+		width: 8.75rem;
+	}
+
+	.rectangular.large {
+		width: 12.5rem;
+	}
+
+	.rectangular.xlarge {
+		width: 16.25rem;
+	}
+
+	.rectangular.xxlarge {
+		width: 20rem;
 	}
 }
 
-/* High contrast mode support */
+/* ============================================
+   LAPTOP (1180px+)
+   ============================================ */
+
+@media (min-width: 1180px) {
+	/* Circular sizes */
+	.medium {
+		width: 7.5rem;
+	}
+
+	.large {
+		width: 11rem;
+	}
+
+	.xlarge {
+		width: 14.5rem;
+	}
+
+	.xxlarge {
+		width: 18rem;
+	}
+
+	/* Rectangular sizes */
+	.rectangular.medium {
+		width: 9.5rem;
+	}
+
+	.rectangular.large {
+		width: 13.75rem;
+	}
+
+	.rectangular.xlarge {
+		width: 18rem;
+	}
+
+	.rectangular.xxlarge {
+		width: 22.5rem;
+	}
+}
+
+/* ============================================
+   DESKTOP (1440px+)
+   ============================================ */
+
+@media (min-width: 1440px) {
+	/* Circular sizes */
+	.medium {
+		width: 8rem;
+	}
+
+	.large {
+		width: 12rem;
+	}
+
+	.xlarge {
+		width: 16rem;
+	}
+
+	.xxlarge {
+		width: 20rem;
+	}
+
+	/* Rectangular sizes */
+	.rectangular.medium {
+		width: 10rem;
+	}
+
+	.rectangular.large {
+		width: 15rem;
+	}
+
+	.rectangular.xlarge {
+		width: 20rem;
+	}
+
+	.rectangular.xxlarge {
+		width: 25rem;
+	}
+}
+
+/* ============================================
+   ACCESSIBILITY & PREFERENCES
+   ============================================ */
+
+/* High contrast mode */
 @media (prefers-contrast: high) {
 	.placeholder {
 		border-style: solid;
-		border-width: 2px;
+		border-width: 3px;
+		border-color: currentColor;
+	}
+
+	.logoContainer {
+		outline: 2px solid currentColor;
+		outline-offset: 2px;
 	}
 }
 
-/* Reduced motion support */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
 	.logoImage,
 	.placeholder,
@@ -196,5 +265,11 @@
 @media print {
 	.logoImage {
 		filter: grayscale(100%);
+		-webkit-print-color-adjust: exact;
+		color-adjust: exact;
+	}
+
+	.placeholder {
+		border-style: solid;
 	}
 }

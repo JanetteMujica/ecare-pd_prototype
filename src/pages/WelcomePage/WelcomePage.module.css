@@ -5,7 +5,7 @@
 	flex-direction: column;
 	overflow: hidden;
 	width: 100%;
-	margin-top: 120px;
+	margin-top: 80px;
 }
 
 /* Main content area - Single screen without scrolling */
@@ -42,7 +42,7 @@
 .mainHeading {
 	font-family: 'Filson Pro', sans-serif;
 	font-weight: var(--font-weight-bold);
-	font-size: var(--font-size-lg);
+	font-size: 1.5rem; /* 26px - Better readability on mobile */
 	line-height: var(--line-height-tight);
 	letter-spacing: -0.025em;
 	margin: 0;
@@ -125,113 +125,37 @@
 	transform: translateX(var(--spacing-xs));
 }
 
-/* Smallest iPhones - Keep existing ultra-compact styles */
-@media (max-width: 375px) {
+/* ============================================
+   TABLET (820px+)
+   ============================================ */
+
+@media (min-width: 820px) {
 	.hero {
-		padding: 0.375rem;
-	}
-
-	.headingContainer {
-		margin: 0.125rem auto;
-	}
-
-	.mainHeading {
-		font-size: var(--font-size-base);
-		line-height: 1.05;
-	}
-
-	.subtitle {
-		font-size: var(--font-size-xs);
-		margin: 0.125rem 0 0 0;
-	}
-
-	.circularProcessContainer {
-		margin: 0.25rem 0;
-	}
-
-	.ctaSection {
-		padding: 0.1875rem 0;
-	}
-
-	.ctaButton {
-		font-size: var(--font-size-sm) !important;
-		padding: 0.75rem 1.5rem !important;
-		min-height: var(--min-touch-target) !important;
-	}
-
-	.buttonIcon {
-		width: 16px !important;
-		height: 16px !important;
-	}
-
-	/* Landscape mobile - optimized for all elements */
-	@media (orientation: landscape) and (max-height: 600px) {
-		.hero {
-			padding: 0.25rem 1rem;
-			justify-content: space-around;
-		}
-
-		.headingContainer {
-			margin: 0.0625rem auto;
-		}
-
-		.mainHeading {
-			font-size: 0.875rem;
-			line-height: 1;
-		}
-
-		.subtitle {
-			font-size: 0.625rem;
-			margin: 0.0625rem 0 0 0;
-		}
-
-		.circularProcessContainer {
-			margin: 0rem 0;
-		}
-
-		.ctaSection {
-			padding: 0.0625rem 0;
-		}
-
-		.ctaButton {
-			font-size: 0.75rem !important;
-			padding: 0.5rem 1rem !important;
-			min-height: 36px !important;
-		}
-
-		.buttonIcon {
-			width: 14px !important;
-			height: 14px !important;
-		}
-	}
-}
-
-/* Standard iPads in landscape (up to 10.2" models) */
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-	.hero {
-		padding: var(--spacing-md) var(--spacing-lg);
+		padding: var(--spacing-md) var(--spacing-xl);
 		gap: var(--spacing-sm);
 		justify-content: space-between;
 	}
 
 	.container {
-		margin-top: 120px;
+		margin-top: 100px;
 	}
 
 	.headingContainer {
-		margin: 0.375rem auto;
+		margin: 0.5rem auto;
 	}
 
 	.mainHeading {
-		font-size: 2.25rem;
+		font-size: 2rem; /* Increased from 2.25rem for better readability on tablets */
+		line-height: var(--line-height-tight);
 	}
 
 	.subtitle {
-		font-size: 1.25rem;
+		font-size: 1.375rem; /* Slightly larger for better proportion */
+		margin: var(--spacing-sm) 0 0 0;
 	}
 
 	.circularProcessContainer {
-		margin: var(--spacing-xs) 0;
+		/*margin: var(--spacing-sm) 0;*/
 		flex: 1;
 	}
 
@@ -251,32 +175,35 @@
 	}
 }
 
-/* Larger iPads in landscape (e.g., iPad Pro) */
-@media (min-width: 1025px) and (max-width: 1366px) and (orientation: landscape) {
+/* ============================================
+   LAPTOP (1180px+)
+   ============================================ */
+
+@media (min-width: 1180px) {
 	.hero {
-		padding: var(--spacing-lg) var(--spacing-xl);
+		padding: var(--spacing-lg) var(--spacing-2xl);
 		gap: var(--spacing-md);
 		justify-content: space-between;
 	}
 
 	.container {
-		margin-top: 140px;
+		margin-top: 90px;
 	}
 
 	.headingContainer {
-		margin: 0.5rem auto;
+		margin: 0.625rem auto;
 	}
 
 	.mainHeading {
-		font-size: 3rem;
+		font-size: 1.75rem;
 	}
 
 	.subtitle {
-		font-size: 1.5rem;
+		font-size: 1rem;
 	}
 
 	.circularProcessContainer {
-		margin: var(--spacing-sm) 0;
+		/*margin: var(--spacing-sm) 0;*/
 		flex: 1;
 	}
 
@@ -296,8 +223,11 @@
 	}
 }
 
-/* Laptops and larger */
-@media (min-width: 1367px) {
+/* ============================================
+   DESKTOP (1440px+)
+   ============================================ */
+
+@media (min-width: 1440px) {
 	.hero {
 		padding: var(--spacing-xl) var(--spacing-2xl);
 		gap: var(--spacing-lg);
@@ -313,15 +243,15 @@
 	}
 
 	.mainHeading {
-		font-size: 3.5rem;
+		font-size: 4rem; /* Large and impactful on desktop */
 	}
 
 	.subtitle {
-		font-size: 1.75rem;
+		font-size: 1.875rem;
 	}
 
 	.circularProcessContainer {
-		margin: var(--spacing-sm) 0;
+		/*margin: var(--spacing-sm) 0;*/
 		flex: 1;
 	}
 
@@ -339,26 +269,29 @@
 		width: 24px;
 		height: 24px;
 	}
+}
 
-	/* Very large screens */
-	@media (min-width: 1440px) {
-		.mainHeading {
-			font-size: 4rem;
-		}
+/* ============================================
+   EXTRA LARGE DESKTOP (1920px+)
+   ============================================ */
 
-		.container {
-			margin-top: 200px;
-		}
+@media (min-width: 1920px) {
+	.container {
+		margin-top: 200px;
+	}
 
-		.subtitle {
-			font-size: 2rem;
-		}
+	.mainHeading {
+		font-size: 4.5rem;
+	}
 
-		.ctaButton {
-			font-size: 1.5rem !important;
-			padding: 1.375rem 2.75rem !important;
-			min-height: 64px !important;
-		}
+	.subtitle {
+		font-size: 2.125rem;
+	}
+
+	.ctaButton {
+		font-size: 1.5rem !important;
+		padding: 1.375rem 2.75rem !important;
+		min-height: 64px !important;
 	}
 }
 

@@ -1,9 +1,10 @@
 /* Banner Component Styles - Mobile-First Responsive Design */
-/* Uses fixed positioning to ensure full viewport width */
-/* Heights match GoalSettingFlow blue banner consistently */
-/* Logo sizing handled by LogoPlaceholder component with size='medium' */
+/* Simplified breakpoints: base (mobile), 820px (tablet), 1180px (laptop), 1440px (desktop) */
 
-/* Blue banner - Base styles (mobile-first) */
+/* ============================================
+   BASE STYLES (Mobile < 820px)
+   ============================================ */
+
 .blueBanner {
 	position: fixed;
 	top: 0;
@@ -11,9 +12,9 @@
 	right: 0;
 	width: 100vw;
 	background-color: var(--color-primary-dark);
-	padding: var(--spacing-sm) 0;
+	padding: var(--spacing-xs) 0; /* Thinner banner */
 	box-shadow: var(--shadow-md);
-	z-index: 1000; /* High z-index to ensure it's above everything */
+	z-index: 1000;
 	flex-shrink: 0;
 	border: none;
 	box-sizing: border-box;
@@ -30,11 +31,11 @@
 	box-sizing: border-box;
 }
 
-/* Logo button - Make logo clickable */
 .logoButton {
 	background: none;
 	border: none;
-	padding: var(--spacing-xs);
+	padding-top: var(--spacing-sm);
+	padding-bottom: var(--spacing-xxs);
 	margin: 0;
 	cursor: pointer;
 	display: flex;
@@ -44,6 +45,9 @@
 	border-radius: var(--border-radius-sm);
 	color: inherit;
 	text-decoration: none;
+	/* Ensure minimum touch target size (44x44px for accessibility) */
+	min-width: 44px;
+	min-height: 44px;
 }
 
 .logoButton:hover {
@@ -60,52 +64,18 @@
 	outline-offset: 2px;
 }
 
-/* Logo styling - Let LogoPlaceholder component handle sizing */
 .logo {
 	transition: var(--transition-normal);
 	display: block;
 }
 
-/* Small iPhones - Compact styles */
-@media (max-width: 375px) {
+/* ============================================
+   TABLET (820px+)
+   ============================================ */
+
+@media (min-width: 820px) {
 	.blueBanner {
-		padding: var(--spacing-sm) 0; /* Consistent with GoalSettingFlow */
-	}
-
-	.logoButton {
-		padding: 0.125rem;
-	}
-
-	/* Very small screens */
-	@media (max-width: 360px) {
-		.logoButton {
-			padding: 0.0625rem;
-		}
-	}
-
-	/* Landscape mobile */
-	@media (orientation: landscape) and (max-height: 600px) {
-		.blueBanner {
-			padding: var(--spacing-sm) 0; /* Consistent with GoalSettingFlow */
-		}
-
-		.logoButton {
-			padding: 0.0625rem;
-		}
-	}
-}
-
-/* Standard mobile devices */
-@media (min-width: 376px) and (max-width: 767px) {
-	.blueBanner {
-		padding: var(--spacing-sm) 0; /* Consistent with GoalSettingFlow */
-	}
-}
-
-/* Standard tablets */
-@media (min-width: 768px) and (max-width: 1023px) {
-	.blueBanner {
-		padding: var(--spacing-sm) 0; /* Consistent with GoalSettingFlow */
+		padding: var(--spacing-sm) 0;
 	}
 
 	.bannerContent {
@@ -113,29 +83,18 @@
 	}
 
 	.logoButton {
-		padding: var(--spacing-sm);
+		min-width: 48px;
+		min-height: 48px;
 	}
 }
 
-/* Standard iPads in landscape (up to 10.2" models) */
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+/* ============================================
+   LAPTOP (1180px+)
+   ============================================ */
+
+@media (min-width: 1180px) {
 	.blueBanner {
-		padding: var(--spacing-sm) 0; /* Consistent with GoalSettingFlow */
-	}
-
-	.bannerContent {
-		padding: 0 var(--spacing-xl);
-	}
-
-	.logoButton {
-		padding: var(--spacing-sm);
-	}
-}
-
-/* Desktop */
-@media (min-width: 1024px) {
-	.blueBanner {
-		padding: var(--spacing-sm) 0; /* Consistent with GoalSettingFlow */
+		padding: var(--spacing-sm) 0;
 	}
 
 	.bannerContent {
@@ -143,41 +102,31 @@
 	}
 
 	.logoButton {
-		padding: var(--spacing-md);
 	}
 }
 
-/* Larger iPads in landscape (e.g., iPad Pro) */
-@media (min-width: 1025px) and (max-width: 1366px) and (orientation: landscape) {
-	.blueBanner {
-		padding: var(--spacing-sm) 0; /* Consistent with GoalSettingFlow */
-	}
+/* ============================================
+   DESKTOP (1440px+)
+   ============================================ */
 
-	.bannerContent {
-		padding: 0 var(--spacing-2xl);
+@media (min-width: 1440px) {
+	.blueBanner {
+		padding: var(--spacing-md) 0;
 	}
 
 	.logoButton {
-		padding: var(--spacing-lg);
 	}
 }
 
-/* Laptops and larger */
-@media (min-width: 1367px) {
-	.blueBanner {
-		padding: var(--spacing-sm) 0; /* Consistent with GoalSettingFlow */
-	}
+/* ============================================
+   ACCESSIBILITY & PREFERENCES
+   ============================================ */
 
-	.logoButton {
-		padding: var(--spacing-lg);
-	}
-}
-
-/* High contrast mode support */
+/* High contrast mode */
 @media (prefers-contrast: high) {
 	.blueBanner {
 		background-color: #000000 !important;
-		border-bottom: 2px solid #000000;
+		border-bottom: 2px solid #ffffff;
 	}
 
 	.logoButton:focus {
@@ -186,21 +135,18 @@
 	}
 
 	.logoButton:hover {
-		background-color: rgba(255, 255, 255, 0.2);
+		background-color: rgba(255, 255, 255, 0.25);
 	}
 }
 
-/* Reduced motion support */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
 	.logoButton,
 	.logo {
 		transition: none;
 	}
 
-	.logoButton:hover {
-		transform: none;
-	}
-
+	.logoButton:hover,
 	.logoButton:active {
 		transform: none;
 	}
