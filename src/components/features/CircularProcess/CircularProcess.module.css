@@ -172,7 +172,7 @@
 
 @media (min-width: 1440px) {
 	.container {
-		padding: var(--spacing-lg);
+		/*padding: var(--spacing-lg);*/
 	}
 
 	.verticalLayout {

@@ -163,13 +163,12 @@ const TrackingPage = ({
 					</div>
 				) : (
 					<>
-						<PageTitle
-							icon={trackingFeature.icon}
-							title={trackingFeature.title}
-							color={trackingFeature.color}
-						/>
-
 						<div className={styles.hero}>
+							<PageTitle
+								icon={trackingFeature.icon}
+								title={trackingFeature.title}
+								color={trackingFeature.color}
+							/>
 							{/* Single Combined Card: Question + Rating + Notes */}
 							<div className={styles.trackingCard}>
 								{/* Question Section */}

@@ -15,7 +15,6 @@
 	flex-direction: column;
 	min-height: 0;
 	overflow: auto;
-	padding-top: var(--spacing-lg);
 }
 
 .hero {
@@ -42,7 +41,7 @@
 	max-height: none;
 	overflow: visible;
 	padding-top: var(--spacing-lg);
-	padding-bottom: var(--spacing-lg);
+	padding-bottom: var(--spacing-xl);
 }
 
 /* Add Goals Card Styles */
@@ -267,10 +266,12 @@
 	}
 }
 
-/* Standard tablets - Change to row layout with 2 cards per row */
-@media (min-width: 768px) {
+/* Responsive Design - Mobile-first base styles above */
+/* Breakpoints: 820px (tablet), 1180px (laptop), 1440px (desktop) */
+
+/* Tablet (820px+) - Change to row layout with 2 cards per row */
+@media (min-width: 820px) {
 	.content {
-		padding-top: calc(var(--spacing-lg) * 2 + var(--font-size-2xl) + 0.75rem);
 	}
 
 	.hero {
@@ -296,6 +297,7 @@
 	.addGoalsCard {
 		padding: var(--spacing-lg);
 		min-height: 250px;
+		margin-bottom: 120px;
 	}
 
 	.addGoalsIcon {
@@ -326,10 +328,9 @@
 	}
 }
 
-/* Desktop */
-@media (min-width: 1024px) {
+/* Laptop (1180px+) */
+@media (min-width: 1180px) {
 	.content {
-		padding-top: calc(var(--spacing-md) * 2 + var(--font-size-3xl) + 1rem);
 	}
 
 	/* Adjust Add Goals Card for desktop */
@@ -362,33 +363,9 @@
 	}
 }
 
-/* Larger iPads in landscape (e.g., iPad Pro) */
-@media (min-width: 1025px) and (max-width: 1366px) and (orientation: landscape) {
-	.hero {
-		padding: var(--spacing-lg) var(--spacing-xl);
-		gap: var(--spacing-md);
-		justify-content: flex-start;
-	}
-
-	.goalsContainer {
-		margin: var(--spacing-lg) 0;
-		flex: 1;
-		flex-direction: row;
-		flex-wrap: wrap;
-		align-items: stretch;
-	}
-
-	/* Maintain 2 cards per row for iPad landscape */
-	.goalsContainer > * {
-		flex: 0 1 calc(50% - var(--spacing-md) / 2);
-		min-width: 0;
-	}
-}
-
-/* Laptops and larger */
-@media (min-width: 1367px) {
+/* Desktop (1440px+) */
+@media (min-width: 1440px) {
 	.content {
-		padding-top: calc(var(--spacing-lg) * 2 + var(--font-size-4xl) + 1.25rem);
 	}
 
 	.hero {
@@ -409,13 +386,6 @@
 	.goalsContainer > * {
 		flex: 0 1 calc(50% - var(--spacing-lg) / 2);
 		min-width: 0;
-	}
-
-	/* Very large screens */
-	@media (min-width: 1440px) {
-		.content {
-			padding-top: calc(var(--spacing-lg) * 2 + var(--font-size-5xl) + 1.5rem);
-		}
 	}
 }
 
@@ -457,51 +427,4 @@
 	}
 }
 
-/* Mobile-specific adjustments */
-@media (max-width: 480px) {
-	.infoOverlay {
-		padding: var(--spacing-sm);
-	}
-
-	.infoModal {
-		max-height: 90vh;
-		border-radius: var(--border-radius-md);
-	}
-
-	.infoHeader {
-		padding: var(--spacing-md);
-	}
-
-	.infoContent {
-		padding: var(--spacing-md);
-	}
-
-	.infoTitle {
-		font-size: var(--font-size-base);
-	}
-
-	.infoDescription {
-		font-size: var(--font-size-sm);
-	}
-
-	/* Mobile Add Goals Card adjustments */
-	.addGoalsCard {
-		padding: var(--spacing-sm);
-		min-height: 180px;
-		border-radius: var(--border-radius-md);
-	}
-
-	.addGoalsIcon {
-		width: 50px;
-		height: 50px;
-	}
-
-	.addGoalsTitle {
-		font-size: var(--font-size-base);
-	}
-
-	.addGoalsDescription {
-		font-size: var(--font-size-xs);
-		max-width: 200px;
-	}
-}
+/* End of media queries */

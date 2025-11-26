@@ -262,7 +262,7 @@
 @media (min-width: 1440px) {
 	.vertical,
 	.horizontal {
-		padding: var(--spacing-2xl);
+		padding: var(--spacing-md);
 		gap: var(--spacing-xl);
 	}
 

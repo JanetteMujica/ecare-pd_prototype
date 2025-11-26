@@ -1,4 +1,10 @@
-/* Button Component Styles - Mobile-First Responsive Design */
+/* Button Component Styles - Simplified 4-Breakpoint Responsive Design */
+/* Breakpoints: base (mobile), 820px (tablet), 1180px (laptop), 1440px (desktop) */
+
+/* ========================================
+   BASE STYLES (Mobile First)
+   ======================================== */
+
 .button {
 	font-family: 'Filson Pro', sans-serif;
 	font-weight: var(--font-weight-bold);
@@ -9,7 +15,7 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	gap: var(--spacing-sm);
+	gap: var(--spacing-xs);
 	text-decoration: none;
 	position: relative;
 	overflow: hidden;
@@ -57,22 +63,22 @@
 	color: var(--color-bg-primary);
 }
 
-/* Sizes - Mobile First Base Styles */
+/* Size Variants - Mobile Base */
 .large {
-	padding: var(--spacing-md) var(--spacing-xl);
-	font-size: var(--font-size-lg);
-	min-height: 52px;
+	padding: var(--spacing-sm) var(--spacing-lg);
+	font-size: var(--font-size-base);
+	min-height: 48px;
 }
 
 .medium {
-	padding: var(--spacing-sm) var(--spacing-lg);
-	font-size: var(--font-size-base);
-	min-height: var(--min-touch-target-mobile);
+	padding: var(--spacing-xs) var(--spacing-md);
+	font-size: var(--font-size-sm);
+	min-height: 44px;
 }
 
 .small {
-	padding: var(--spacing-xs) var(--spacing-md);
-	font-size: var(--font-size-sm);
+	padding: var(--spacing-xs) var(--spacing-sm);
+	font-size: var(--font-size-xs);
 	min-height: 40px;
 }
 
@@ -87,139 +93,104 @@
 	width: 100%;
 }
 
-/* Small Mobile (320px-480px) */
-@media (max-width: 480px) {
+/* ========================================
+   TABLET (820px+)
+   ======================================== */
+
+@media (min-width: 820px) {
 	.button {
-		min-height: 44px;
-		font-size: var(--font-size-sm);
-		padding: var(--spacing-xs) var(--spacing-md);
-		gap: var(--spacing-xs);
-	}
-
-	.large {
-		min-height: 48px;
-		font-size: var(--font-size-base);
-		padding: var(--spacing-sm) var(--spacing-lg);
-	}
-
-	.medium {
-		min-height: 44px;
-		font-size: var(--font-size-sm);
-		padding: var(--spacing-xs) var(--spacing-md);
-	}
-
-	.small {
-		min-height: 38px;
-		font-size: var(--font-size-xs);
-		padding: var(--spacing-xs) var(--spacing-sm);
-	}
-}
-
-/* Tablet Portrait and Landscape (481px-1023px) */
-@media (min-width: 481px) and (max-width: 1023px) {
-	.button {
-		min-height: 52px;
-		font-size: var(--font-size-lg);
-		padding: var(--spacing-sm) var(--spacing-xl);
 		gap: var(--spacing-sm);
+		padding: var(--spacing-sm) var(--spacing-xl);
+		font-size: var(--font-size-lg);
+		min-height: 52px;
 	}
 
 	.large {
-		min-height: 56px;
-		font-size: var(--font-size-xl);
 		padding: var(--spacing-md) var(--spacing-2xl);
+		font-size: var(--font-size-xl);
+		min-height: 56px;
 	}
 
 	.medium {
-		min-height: 52px;
-		font-size: var(--font-size-lg);
 		padding: var(--spacing-sm) var(--spacing-xl);
+		font-size: var(--font-size-lg);
+		min-height: 52px;
 	}
 
 	.small {
-		min-height: 44px;
-		font-size: var(--font-size-base);
 		padding: var(--spacing-sm) var(--spacing-lg);
+		font-size: var(--font-size-base);
+		min-height: 44px;
 	}
 }
 
-/* Desktop (1024px+) */
-@media (min-width: 1024px) {
+/* ========================================
+   LAPTOP (1180px+)
+   ======================================== */
+
+@media (min-width: 1180px) {
 	.button {
-		min-height: 56px;
-		font-size: var(--font-size-xl);
+		gap: var(--spacing-sm);
 		padding: var(--spacing-md) var(--spacing-2xl);
-		gap: var(--spacing-md);
+		font-size: var(--font-size-xl);
+		min-height: 56px;
 	}
 
 	.large {
-		min-height: 64px;
-		font-size: var(--font-size-2xl);
 		padding: var(--spacing-lg) var(--spacing-3xl);
+		font-size: var(--font-size-2xl);
+		min-height: 64px;
 	}
 
 	.medium {
-		min-height: 56px;
-		font-size: var(--font-size-xl);
 		padding: var(--spacing-md) var(--spacing-2xl);
+		font-size: var(--font-size-xl);
+		min-height: 56px;
 	}
 
 	.small {
-		min-height: 48px;
-		font-size: var(--font-size-lg);
 		padding: var(--spacing-sm) var(--spacing-xl);
+		font-size: var(--font-size-lg);
+		min-height: 48px;
 	}
 }
 
-/* Large Desktop (1280px+) */
-@media (min-width: 1280px) {
+/* ========================================
+   DESKTOP (1440px+)
+   ======================================== */
+
+@media (min-width: 1440px) {
 	.button {
-		min-height: 60px;
-		font-size: var(--font-size-2xl);
+		gap: var(--spacing-md);
 		padding: var(--spacing-lg) var(--spacing-3xl);
+		font-size: var(--font-size-2xl);
+		min-height: 60px;
 	}
 
 	.large {
-		min-height: 68px;
-		font-size: var(--font-size-3xl);
-		padding: var(--spacing-xl) var(--spacing-4xl);
-	}
-
-	.medium {
-		min-height: 60px;
+		padding: var(--spacing-xl) var(--spacing-3xl);
 		font-size: var(--font-size-2xl);
-		padding: var(--spacing-lg) var(--spacing-3xl);
-	}
-
-	.small {
-		min-height: 52px;
-		font-size: var(--font-size-xl);
-		padding: var(--spacing-md) var(--spacing-2xl);
-	}
-}
-
-/* Extra Large Desktop (1536px+) */
-@media (min-width: 1536px) {
-	.large {
 		min-height: 72px;
-		font-size: var(--font-size-4xl);
-		padding: var(--spacing-xl) var(--spacing-5xl);
 	}
 
 	.medium {
-		min-height: 64px;
-		font-size: var(--font-size-3xl);
-		padding: var(--spacing-lg) var(--spacing-4xl);
+		padding: var(--spacing-lg) var(--spacing-3xl);
+		font-size: var(--font-size-2xl);
+		min-height: 60px;
 	}
 
 	.small {
-		min-height: 56px;
-		font-size: var(--font-size-2xl);
-		padding: var(--spacing-md) var(--spacing-3xl);
+		padding: var(--spacing-md) var(--spacing-2xl);
+		font-size: var(--font-size-xl);
+		min-height: 52px;
 	}
 }
 
-/* High contrast mode support */
+/* ========================================
+   ACCESSIBILITY & SPECIAL CASES
+   ======================================== */
+
+/* High Contrast Mode */
 @media (prefers-contrast: high) {
 	.button {
 		border: 2px solid;
@@ -234,7 +205,7 @@
 	}
 }
 
-/* Reduced motion support */
+/* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
 	.button {
 		transition: none;
@@ -246,7 +217,7 @@
 	}
 }
 
-/* Print styles */
+/* Print Styles */
 @media print {
 	.button {
 		background-color: white !important;

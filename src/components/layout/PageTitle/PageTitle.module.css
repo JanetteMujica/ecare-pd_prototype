@@ -5,7 +5,7 @@
 	position: relative;
 	z-index: 999; /* Below the banner (1000) but above page content */
 	/* Base margin: 0.25rem padding + 1.125rem logo + 0.25rem padding + 0.5rem buffer = 2.125rem */
-	margin-top: 6rem;
+	margin-top: 3rem;
 }
 
 .content {
@@ -35,7 +35,7 @@
 	transition: var(--transition-normal);
 }
 
-/* Title styling - Mobile-first (matching GoalCard title exactly) */
+/* Title styling - Mobile-first base styles */
 .title {
 	font-family: 'Filson Pro', sans-serif;
 	font-weight: var(
@@ -49,78 +49,13 @@
 	transition: var(--transition-normal);
 }
 
-/* Small Mobile (320px-480px) */
-@media (max-width: 480px) {
+/* Responsive Design - Mobile-first base styles above */
+/* Breakpoints: 820px (tablet), 1180px (laptop), 1440px (desktop) */
+
+/* Tablet (820px+) */
+@media (min-width: 820px) {
 	.container {
-		padding: var(--spacing-sm) 0 var(--spacing-xs) 0;
-		margin-top: 6rem;
-	}
-
-	.titleSection {
-		gap: var(--spacing-sm);
-	}
-
-	.iconContainer {
-		width: 2.5rem;
-		height: 2.5rem;
-		border-width: 2px;
-	}
-
-	/* Landscape mobile */
-	@media (orientation: landscape) and (max-height: 600px) {
-		.container {
-			padding: var(--spacing-xs) 0 0.125rem 0;
-			margin-top: 6rem;
-		}
-
-		.iconContainer {
-			width: 1.75rem; /* Reduced from 2rem */
-			height: 1.75rem; /* Reduced from 2rem */
-		}
-
-		.title {
-			font-size: var(--font-size-sm); /* Reduced from base */
-		}
-
-		.titleSection {
-			gap: var(--spacing-xs);
-		}
-	}
-}
-
-/* Small iPhones - Compact styles */
-@media (max-width: 375px) {
-	.container {
-		padding: var(--spacing-xs) 0 0.25rem 0;
-		/* Small iPhone: same as mobile 480px = 2rem */
-		margin-top: 6rem;
-	}
-
-	.iconContainer {
-		width: 2.5rem; /* Reduced from 2.25rem */
-		height: 2.5rem; /* Reduced from 2.25rem */
-	}
-
-	.title {
-		font-size: var(--font-size-3xl); /* Reduced from base */
-	}
-
-	.titleSection {
-		gap: var(--spacing-xs);
-	}
-}
-
-/* Standard mobile devices (481px-767px) */
-@media (min-width: 481px) and (max-width: 767px) {
-	.container {
-		margin-top: 6rem;
-	}
-}
-
-/* Standard tablets (768px+) */
-@media (min-width: 768px) {
-	.container {
-		margin-top: 0rem;
+		margin-top: 2.5rem;
 	}
 
 	.iconContainer {
@@ -130,8 +65,8 @@
 	}
 }
 
-/* Desktop (1024px+) */
-@media (min-width: 1024px) {
+/* Laptop (1180px+) */
+@media (min-width: 1180px) {
 	.container {
 		/* Desktop margin: 1rem padding + 1.875rem logo + 1rem padding + 0.5rem buffer = 4.375rem */
 		margin-top: 5rem;
@@ -147,43 +82,26 @@
 	}
 }
 
-/* Large Desktop (1280px+) */
-@media (min-width: 1280px) {
+/* Desktop (1440px+) */
+@media (min-width: 1440px) {
 	.container {
 		padding: var(--spacing-2xl) 0 var(--spacing-xl) 0;
-		/* Large desktop margin: 1.5rem padding + 2.25rem logo + 1.5rem padding + 0.5rem buffer = 5.75rem */
-		margin-top: 5.75rem;
+		/* Desktop margin optimized for large screens */
+		margin-top: 6.5rem;
 	}
 
 	.iconContainer {
-		width: 4rem; /* Reduced from 4.5rem */
-		height: 4rem; /* Reduced from 4.5rem */
+		width: 4.5rem;
+		height: 4.5rem;
 		border-width: 4px;
 	}
 
 	.title {
-		font-size: var(--font-size-4xl);
+		font-size: var(--font-size-5xl);
 	}
 
 	.titleSection {
 		gap: var(--spacing-xl);
-	}
-}
-
-/* Extra Large Desktop (1536px+) */
-@media (min-width: 1536px) {
-	.container {
-		/* Extra large margin: 1.5rem padding + 3rem logo + 1.5rem padding + 0.5rem buffer = 6.5rem */
-		margin-top: 7rem;
-	}
-
-	.iconContainer {
-		width: 4.5rem; /* Reduced from 5rem */
-		height: 4.5rem; /* Reduced from 5rem */
-	}
-
-	.title {
-		font-size: var(--font-size-5xl);
 	}
 }
 
