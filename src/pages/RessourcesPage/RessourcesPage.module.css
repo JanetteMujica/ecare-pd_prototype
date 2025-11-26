@@ -24,6 +24,7 @@
 	overflow: auto;
 	padding: var(--spacing-xs);
 	gap: var(--spacing-md);
+	padding-bottom: 120px; /* Space for bottom menu */
 }
 
 /* Sections - Consistent with JourneyPage */
@@ -176,7 +177,7 @@
 .careFinderContent {
 	display: flex;
 	flex-direction: column;
-	align-items: flex-end;
+	align-items: flex-start;
 	text-align: left;
 	gap: var(--spacing-lg);
 	padding: var(--spacing-lg) 0;
@@ -261,102 +262,14 @@
 /* =============================================================================
    RESPONSIVE BREAKPOINTS - MOBILE FIRST
    ============================================================================= */
+/* Breakpoints: 820px (tablet), 1180px (laptop), 1440px (desktop) */
 
-/* Small phones - 375px+ */
-@media (min-width: 375px) {
-	.careTipCard {
-		padding: var(--spacing-sm);
-	}
-
-	.careTipText {
-		font-size: var(--font-size-base);
-	}
-
-	.careFinderDescription {
-		font-size: var(--font-size-lg);
-	}
-}
-
-/* Regular mobile phones - 480px+ */
-@media (min-width: 480px) {
-	.content {
-		padding: var(--spacing-sm);
-		gap: var(--spacing-lg);
-	}
-
-	.section {
-		padding: var(--spacing-lg);
-	}
-
-	.sectionTitle {
-		font-size: var(--font-size-lg);
-	}
-
-	.sectionIcon {
-		width: 24px;
-		height: 24px;
-	}
-
-	.careTipCard {
-		padding: var(--spacing-lg);
-	}
-
-	.careTipIcon {
-		width: 24px;
-		height: 24px;
-	}
-
-	.careTipGoal {
-		font-size: var(--font-size-base);
-	}
-
-	.careTipText {
-		font-size: var(--font-size-base);
-	}
-
-	.careTipId {
-		font-size: var(--font-size-base);
-	}
-
-	.nextTipButton {
-		width: 36px;
-		height: 36px;
-	}
-
-	.nextTipIcon {
-		width: 18px;
-		height: 18px;
-	}
-
-	.careFinderContent {
-		padding: var(--spacing-xl) 0;
-	}
-
-	.emptyState {
-		min-height: 250px;
-		padding: var(--spacing-xl);
-	}
-
-	.emptyIcon {
-		width: 64px;
-		height: 64px;
-	}
-
-	.emptyTitle {
-		font-size: var(--font-size-xl);
-	}
-
-	.emptyDescription {
-		font-size: var(--font-size-lg);
-		max-width: 480px;
-	}
-}
-
-/* Tablets - 768px+ */
-@media (min-width: 768px) {
+/* Tablet (820px+) */
+@media (min-width: 820px) {
 	.content {
 		padding: var(--spacing-md) var(--spacing-lg);
 		gap: var(--spacing-xl);
+		padding-bottom: 140px; /* Space for bottom menu on tablet */
 	}
 
 	.careTipsGrid {
@@ -402,16 +315,17 @@
 
 	.emptyDescription {
 		font-size: var(--font-size-xl);
-		max-width: 600px;
+		max-width: 1000px;
 	}
 }
 
-/* Desktop - 1024px+ */
-@media (min-width: 1024px) {
+/* Laptop (1180px+) */
+@media (min-width: 1180px) {
 	.content {
 		max-width: 1200px;
 		margin: 0 auto;
 		padding: var(--spacing-lg) var(--spacing-xl);
+		padding-bottom: 150px; /* Space for bottom menu on laptop */
 	}
 
 	.careTipsGrid {
@@ -422,15 +336,21 @@
 
 	.careFinderContent {
 		max-width: 600px;
-		margin: 0 auto;
+		/* margin: 0 auto;*/
+	}
+
+	.careFinderDescription {
+		max-width: 600px;
 	}
 }
 
-/* Large laptops - 1367px+ */
-@media (min-width: 1367px) {
+/* Desktop (1440px+) */
+@media (min-width: 1440px) {
 	.content {
+		max-width: 1400px;
 		padding: var(--spacing-xl) var(--spacing-2xl);
 		gap: var(--spacing-2xl);
+		padding-bottom: 150px; /* Space for bottom menu on desktop */
 	}
 
 	.section {
@@ -438,7 +358,7 @@
 	}
 
 	.careTipsGrid {
-		max-width: 1200px;
+		max-width: 1300px;
 		gap: var(--spacing-xl);
 	}
 
@@ -461,17 +381,6 @@
 
 	.careFinderDescription {
 		font-size: var(--font-size-2xl);
-	}
-}
-
-/* Very large screens - 1440px+ */
-@media (min-width: 1440px) {
-	.content {
-		max-width: 1400px;
-	}
-
-	.careTipsGrid {
-		max-width: 1300px;
 	}
 }
 

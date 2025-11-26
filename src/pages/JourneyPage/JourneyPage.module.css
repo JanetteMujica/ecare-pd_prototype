@@ -24,6 +24,7 @@
 	overflow: auto;
 	padding: var(--spacing-xs);
 	gap: var(--spacing-md);
+	padding-bottom: 120px; /* Space for bottom menu */
 }
 
 /* Period Selector */
@@ -285,146 +286,14 @@
 /* =============================================================================
    RESPONSIVE BREAKPOINTS - MOBILE FIRST
    ============================================================================= */
+/* Breakpoints: 820px (tablet), 1180px (laptop), 1440px (desktop) */
 
-/* Small phones - 375px+ */
-@media (min-width: 375px) {
-	.periodButton {
-		font-size: 11px;
-		padding: var(--spacing-xs) var(--spacing-sm);
-	}
-
-	.dashboardContainer {
-		gap: var(--spacing-sm);
-	}
-
-	.dashboardRow {
-		gap: var(--spacing-sm);
-	}
-
-	.dashboardCard {
-		padding: var(--spacing-sm);
-	}
-
-	.cardValue {
-	}
-
-	.watchDataContainer {
-		gap: var(--spacing-sm);
-	}
-
-	.watchDataRow {
-		gap: 4px;
-	}
-
-	.watchValue {
-	}
-
-	.watchLabel {
-	}
-
-	.chartPlaceholder,
-	.diaryPlaceholder {
-		min-height: 150px;
-	}
-}
-
-/* Regular mobile phones - 480px+ */
-@media (min-width: 480px) {
-	.content {
-		padding: var(--spacing-sm);
-		gap: var(--spacing-lg);
-	}
-
-	.periodButton {
-		padding: var(--spacing-sm) var(--spacing-md);
-		font-size: var(--font-size-sm);
-	}
-
-	.dashboardContainer {
-		gap: var(--spacing-md);
-	}
-
-	.dashboardRow {
-		gap: var(--spacing-md);
-	}
-
-	.dashboardCard {
-		padding: var(--spacing-md);
-	}
-
-	.cardIcon {
-		width: 20px;
-		height: 20px;
-	}
-
-	.cardLabel {
-		font-size: var(--font-size-xs);
-	}
-
-	.cardValue {
-		font-size: var(--font-size-lg);
-	}
-
-	.mehIcon {
-		width: 20px;
-		height: 20px;
-	}
-
-	.watchIcon {
-		width: 16px;
-		height: 16px;
-	}
-
-	.watchValue {
-		font-size: var(--font-size-xs);
-	}
-
-	.watchLabel {
-		font-size: 10px;
-	}
-
-	.watchDataContainer {
-		gap: var(--spacing-md);
-	}
-
-	.watchDataRow {
-		gap: var(--spacing-xs);
-	}
-
-	.section {
-		padding: var(--spacing-lg);
-	}
-
-	.sectionTitle {
-		font-size: var(--font-size-lg);
-	}
-
-	.sectionIcon {
-		width: 24px;
-		height: 24px;
-	}
-
-	.chartPlaceholder,
-	.diaryPlaceholder {
-		padding: var(--spacing-xl);
-		min-height: 200px;
-	}
-
-	.placeholderIcon {
-		width: 48px;
-		height: 48px;
-	}
-
-	.placeholderText {
-		font-size: var(--font-size-base);
-	}
-}
-
-/* Tablets - 768px+ */
-@media (min-width: 768px) {
+/* Tablet (820px+) */
+@media (min-width: 820px) {
 	.content {
 		padding: var(--spacing-md) var(--spacing-lg);
 		gap: var(--spacing-xl);
+		padding-bottom: 140px; /* Space for bottom menu on tablet */
 	}
 
 	.periodButton {
@@ -504,17 +373,13 @@
 	}
 }
 
-/* Desktop - 1024px+ */
-@media (min-width: 1024px) {
+/* Laptop (1180px+) */
+@media (min-width: 1180px) {
 	.content {
 		max-width: 1200px;
 		margin: 0 auto;
 		padding: var(--spacing-lg) var(--spacing-xl);
-	}
-
-	.dashboardContainer {
-		max-width: 800px;
-		margin: 0 auto;
+		padding-bottom: 150px; /* Space for bottom menu on laptop */
 	}
 
 	.cardValue {
@@ -527,15 +392,13 @@
 	}
 }
 
-/* Large laptops - 1367px+ */
-@media (min-width: 1367px) {
+/* Desktop (1440px+) */
+@media (min-width: 1440px) {
 	.content {
+		max-width: 1400px;
 		padding: var(--spacing-xl) var(--spacing-2xl);
 		gap: var(--spacing-2xl);
-	}
-
-	.dashboardContainer {
-		max-width: 900px;
+		padding-bottom: 150px; /* Space for bottom menu on desktop */
 	}
 
 	.dashboardCard {
@@ -553,17 +416,6 @@
 	.sectionIcon {
 		width: 32px;
 		height: 32px;
-	}
-}
-
-/* Very large screens - 1440px+ */
-@media (min-width: 1440px) {
-	.content {
-		max-width: 1400px;
-	}
-
-	.dashboardContainer {
-		max-width: 1000px;
 	}
 }
 

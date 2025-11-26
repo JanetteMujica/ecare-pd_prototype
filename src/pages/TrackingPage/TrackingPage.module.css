@@ -32,6 +32,7 @@
 	gap: var(--spacing-lg);
 	overflow: visible;
 	width: 100%;
+	padding-bottom: 100px; /* Space for bottom menu */
 }
 
 /* Single Combined Card: Question + Rating + Notes */
@@ -229,7 +230,7 @@
 	gap: var(--spacing-sm);
 	text-align: center;
 	width: 100%;
-	padding-bottom: var(--spacing-xl);
+	padding-bottom: 120px;
 }
 
 .nextGoalButton {
@@ -380,145 +381,16 @@
 	transform: translateY(0);
 }
 
-/* Mobile-first breakpoints */
-@media (max-width: 480px) {
+/* Responsive Design - Mobile-first base styles above */
+/* Breakpoints: 820px (tablet), 1180px (laptop), 1440px (desktop) */
+
+/* Tablet (820px+) */
+@media (min-width: 820px) {
 	.content {
 	}
 
-	.hero {
-		padding: var(--spacing-sm);
-		gap: var(--spacing-md);
-	}
-
-	.trackingCard {
-		padding: var(--spacing-md);
-	}
-
-	.careTipCard {
-		padding: var(--spacing-md);
-	}
-
-	.questionTitle {
-		font-size: var(--font-size-xl);
-	}
-
-	.ratingScale {
-		gap: var(--spacing-xs);
-		margin-bottom: var(--spacing-md);
-	}
-
-	.ratingButton {
-		width: 50px;
-		height: 50px;
-		padding: 0rem;
-	}
-
-	.ratingButton svg {
-		width: 50px;
-		height: 50px;
-	}
-
-	.sectionTitle {
-		font-size: var(--font-size-sm);
-	}
-
-	.commentTextarea {
-		font-size: var(--font-size-sm);
-	}
-
-	.saveButton {
-		font-size: var(--font-size-sm);
-		padding: var(--spacing-sm) var(--spacing-md);
-	}
-
-	.careTipTitle {
-		font-size: var(--font-size-xl);
-	}
-
-	.careTipContent {
-		font-size: var(--font-size-sm);
-	}
-
-	.nextGoalButton {
-		font-size: var(--font-size-sm);
-		padding: var(--spacing-sm) var(--spacing-md);
-	}
-
-	.completionContainer {
-		padding: var(--spacing-md);
-	}
-
-	.completionIcon {
-		width: 64px;
-		height: 64px;
-	}
-
-	.completionTitle {
-		font-size: var(--font-size-2xl);
-	}
-
-	.completionDescription {
-		font-size: var(--font-size-base);
-	}
-
-	.journeyButton {
-		font-size: var(--font-size-base);
-		padding: var(--spacing-sm) var(--spacing-lg);
-	}
-
-	/* Landscape mobile */
-	@media (orientation: landscape) and (max-height: 600px) {
-		.content {
-		}
-
-		.hero {
-			gap: var(--spacing-sm);
-		}
-	}
-}
-
-/* Small iPhones */
-@media (max-width: 375px) {
-	.content {
-	}
-
-	.hero {
-		padding: 0.375rem;
-	}
-
-	.questionTitle {
-		font-size: var(--font-size-base);
-	}
-
-	.ratingButton {
-		min-width: 48px;
-		min-height: 48px;
-		padding: 0rem;
-	}
-
-	.ratingButton svg {
-		width: 48px;
-		height: 48px;
-	}
-
-	.emptyState {
-		padding: var(--spacing-md);
-		min-height: 250px;
-	}
-
-	.emptyTitle {
-		font-size: var(--font-size-lg);
-	}
-
-	.emptyDescription {
-		font-size: var(--font-size-sm);
-		max-width: 300px;
-	}
-}
-
-/* Standard tablets */
-@media (min-width: 768px) {
-	.content {
+	.nextGoalSection {
+		padding-bottom: 120px;
 	}
 
 	.hero {
@@ -591,9 +463,13 @@
 	}
 }
 
-/* Desktop */
-@media (min-width: 1024px) {
+/* Laptop (1180px+) */
+@media (min-width: 1180px) {
 	.content {
+	}
+
+	.nextGoalSection {
+		padding-bottom: 180px;
 	}
 
 	.questionTitle {
@@ -606,14 +482,15 @@
 	}
 }
 
-/* Laptops and larger */
-@media (min-width: 1367px) {
+/* Desktop (1440px+) */
+@media (min-width: 1440px) {
 	.content {
 	}
 
 	.hero {
 		padding: var(--spacing-xl) var(--spacing-2xl);
 		gap: var(--spacing-xl);
+		padding-bottom: 120px; /* Extra space for menu on large screens */
 	}
 
 	.trackingCard {
@@ -631,12 +508,6 @@
 	.emptyDescription {
 		font-size: var(--font-size-xl);
 		max-width: 600px;
-	}
-
-	/* Very large screens */
-	@media (min-width: 1440px) {
-		.content {
-		}
 	}
 }
 

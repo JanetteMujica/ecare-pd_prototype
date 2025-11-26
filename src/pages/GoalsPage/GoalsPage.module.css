@@ -15,6 +15,7 @@
 	flex-direction: column;
 	min-height: 0;
 	overflow: auto;
+	padding-bottom: 120px;
 }
 
 .hero {
@@ -41,7 +42,6 @@
 	max-height: none;
 	overflow: visible;
 	padding-top: var(--spacing-lg);
-	padding-bottom: var(--spacing-xl);
 }
 
 /* Add Goals Card Styles */
@@ -297,7 +297,6 @@
 	.addGoalsCard {
 		padding: var(--spacing-lg);
 		min-height: 250px;
-		margin-bottom: 120px;
 	}
 
 	.addGoalsIcon {
@@ -331,6 +330,10 @@
 /* Laptop (1180px+) */
 @media (min-width: 1180px) {
 	.content {
+	}
+
+	.container {
+		padding-bottom: 140px;
 	}
 
 	/* Adjust Add Goals Card for desktop */
